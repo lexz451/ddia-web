@@ -6,7 +6,7 @@ import XIcon from '@/lib/assets/x-twitter.svg';
 export default function Footer() {
     return (
         <footer className="container mx-auto mb-10">
-            <div className="Rectangle197 py-12 px-16 bg-[#012135] rounded-3xl flex flex-col">
+            <div className="Rectangle197 py-12 px-16 bg-design-dark-green rounded-3xl flex flex-col">
                 <div className="flex items-start justify-between gap-10">
                     <div className="mr-10">
                         <Logo className="w-24 h-16 -ml-1"></Logo>
@@ -20,32 +20,32 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="FootersColumn w-40 flex-col justify-start items-start gap-4 inline-flex mt-5">
-                        <div className="Heading self-stretch text-emerald-300 text-xs font-semibold  uppercase leading-tight">About Us</div>
+                        <div className="Heading self-stretch text-design-light-green text-sm font-semibold  uppercase leading-tight mb-2">About Us</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Mission / Vision</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Our Approach</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Core Strategies</div>
                     </div>
                     <div className="FootersColumn w-40 flex-col justify-start items-start gap-4 inline-flex mt-5">
-                        <div className="Heading self-stretch text-emerald-300 text-xs font-semibold  uppercase leading-tight">Our Work</div>
+                        <div className="Heading self-stretch text-design-light-green text-sm font-semibold  uppercase leading-tight mb-2">Our Work</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Research and Analysis</div>
-                        <ul className="list-disc ml-6 text-emerald-300 w-full">
+                        <ul className="list-disc ml-6 text-design-light-green w-full">
                             <li>
-                                <div className="Text text-emerald-300 text-sm font-normal  leading-normal">Public Opinion Research</div>
+                                <div className="Text text-design-light-green text-sm font-normal  leading-normal">Public Opinion Research</div>
                             </li>
                             <li className='mt-4'>
-                                <div className="Text w-44 text-emerald-300 text-sm font-normal  leading-normal">Social Listening and <br /> OSINT Investigations</div>
+                                <div className="Text w-44 text-design-light-green text-sm font-normal  leading-normal">Social Listening and <br /> OSINT Investigations</div>
                             </li>
                         </ul>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Reports and Publications</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Capacity Building</div>
-                        <ul className="list-disc ml-6 text-emerald-300 w-full">
+                        <ul className="list-disc ml-6 text-design-light-green w-full">
                             <li>
-                                <div className="Text text-emerald-300 text-sm font-normal  leading-normal">Workshops & Events</div>
+                                <div className="Text text-design-light-green text-sm font-normal  leading-normal">Workshops & Events</div>
                             </li>
                         </ul>
                     </div>
                     <div className="FootersColumn w-40 flex-col justify-start items-start gap-4 inline-flex mt-5">
-                        <div className="Heading self-stretch text-emerald-300 text-xs font-semibold  uppercase leading-tight">Latest Updates</div>
+                        <div className="Heading self-stretch text-design-light-green text-sm font-semibold  uppercase leading-tight mb-2">Latest Updates</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Announcements</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Blog</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">In the News</div>
@@ -53,13 +53,13 @@ export default function Footer() {
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Events</div>
                     </div>
                     <div className="FootersColumn w-40 flex-col justify-start items-start gap-4 inline-flex mt-5">
-                        <div className="Heading self-stretch text-emerald-300 text-xs font-semibold  uppercase leading-tight">DIA</div>
+                        <div className="Heading self-stretch text-design-light-green text-sm font-semibold  uppercase leading-tight mb-2">DIA</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Get involved</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">FAQs</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Meet the team</div>
                     </div>
                 </div>
-                <div className="Subscribe border-y border-white border-opacity-50 mt-14">
+                <div className="Subscribe border-y border-white border-opacity-20 mt-14">
                     <div className="Content py-8 justify-between items-center inline-flex w-full">
                         <div className="Cta flex-col justify-start items-start gap-2 inline-flex">
                             <div className="Heading self-stretch text-gray-400 text-sm font-semibold  uppercase leading-tight tracking-wide">Subscribe to our newsletter</div>
@@ -69,8 +69,8 @@ export default function Footer() {
                             {/* <div className="FootersTextInput h-10 px-3 py-2 bg-white rounded-md border border-white justify-start items-center flex">
                                 <input className="Placeholder text-gray-500 text-base font-normal  leading-normal">Enter your email</input>
                             </div> */}
-                            <input className="h-10 rounded-md px-4 placeholder:text-gray-500 leading-normal" placeholder="Enter your email" />
-                            <button className="FootersSubmitButton btn  bg-emerald-300 text-teal-950 ">
+                            <input className="h-10 rounded-md px-4 placeholder:text-gray-500  bg-white leading-normal" placeholder="Enter your email" />
+                            <button className="FootersSubmitButton btn bg-design-light-green text-design-dark-green">
                                 Subscribe
                             </button>
                         </div>
