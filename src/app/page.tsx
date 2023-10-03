@@ -20,7 +20,7 @@ export default function Home() {
         </div>
 
       </section>
-      <section>
+      <section className='container mx-auto my-20'>
         <GetInvolved></GetInvolved>
       </section>
     </main>

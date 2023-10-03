@@ -10,7 +10,7 @@ export default function Footer() {
                 <div className="flex items-start justify-between gap-10">
                     <div className="mr-10">
                         <Logo className="w-24 h-16 -ml-1"></Logo>
-                        <p className="IntroductoryText  mt-8 leading-snug text-sm text-white">
+                        <p className="IntroductoryText  mt-8 leading-snug text-sm text-white font-avenir">
                             Contact us at <a className="underline">info@ddia.org</a> <br /> to explore partnerships or to learn <br /> more about our work.
                         </p>
                         <div className="SocialIcons flex gap-6 mt-10">
@@ -20,43 +20,43 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="FootersColumn w-40 flex-col justify-start items-start gap-4 inline-flex mt-5">
-                        <div className="Heading self-stretch text-design-light-green text-sm font-semibold  uppercase leading-tight mb-2">About Us</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Mission / Vision</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Our Approach</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Core Strategies</div>
+                        <div className="Heading self-stretch text-design-light-green text-sm font-medium  uppercase leading-tight mb-2">About Us</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Mission / Vision</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Our Approach</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Core Strategies</div>
                     </div>
                     <div className="FootersColumn w-40 flex-col justify-start items-start gap-4 inline-flex mt-5">
-                        <div className="Heading self-stretch text-design-light-green text-sm font-semibold  uppercase leading-tight mb-2">Our Work</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Research and Analysis</div>
+                        <div className="Heading self-stretch text-design-light-green text-sm font-medium  uppercase leading-tight mb-2">Our Work</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Research and Analysis</div>
                         <ul className="list-disc ml-6 text-design-light-green w-full">
                             <li>
-                                <div className="Text text-design-light-green text-sm font-normal  leading-normal">Public Opinion Research</div>
+                                <div className="Text text-design-light-green text-sm font-normal font-avenir leading-normal">Public Opinion Research</div>
                             </li>
-                            <li className='mt-4'>
-                                <div className="Text w-44 text-design-light-green text-sm font-normal  leading-normal">Social Listening and <br /> OSINT Investigations</div>
+                            <li className='mt-3'>
+                                <div className="Text w-44 text-design-light-green text-sm font-normal font-avenir leading-normal">Social Listening and <br /> OSINT Investigations</div>
                             </li>
                         </ul>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Reports and Publications</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Capacity Building</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Reports and Publications</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Capacity Building</div>
                         <ul className="list-disc ml-6 text-design-light-green w-full">
                             <li>
-                                <div className="Text text-design-light-green text-sm font-normal  leading-normal">Workshops & Events</div>
+                                <div className="Text text-design-light-green text-sm font-normal font-avenir leading-normal">Workshops & Events</div>
                             </li>
                         </ul>
                     </div>
                     <div className="FootersColumn w-40 flex-col justify-start items-start gap-4 inline-flex mt-5">
-                        <div className="Heading self-stretch text-design-light-green text-sm font-semibold  uppercase leading-tight mb-2">Latest Updates</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Announcements</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Blog</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">In the News</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Resources</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Events</div>
+                        <div className="Heading self-stretch text-design-light-green text-sm font-medium  uppercase leading-tight mb-2">Latest Updates</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Announcements</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Blog</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">In the News</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Resources</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Events</div>
                     </div>
                     <div className="FootersColumn w-40 flex-col justify-start items-start gap-4 inline-flex mt-5">
-                        <div className="Heading self-stretch text-design-light-green text-sm font-semibold  uppercase leading-tight mb-2">DIA</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Get involved</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">FAQs</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">Meet the team</div>
+                        <div className="Heading self-stretch text-design-light-green text-sm font-medium  uppercase leading-tight mb-2">DIA</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Get involved</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">FAQs</div>
+                        <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Meet the team</div>
                     </div>
                 </div>
                 <div className="Subscribe border-y border-white border-opacity-20 mt-14">
@@ -76,12 +76,12 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="mt-10 flex justify-between">
+                <div className="mt-10 flex justify-between items-center">
                     <div className="IntroductoryText">
-                        <span className="text-neutral-100 text-sm font-normal  leading-7">Website designed and developed by </span>
-                        <span className="text-neutral-100 text-sm font-bold  leading-7">W.LAND</span>
+                        <span className="text-neutral-100 text-sm font-normal leading-7">Website designed and developed by </span>
+                        <span className="text-neutral-100 text-sm font-bold leading-7">W.LAND</span>
                     </div>
-                    <div className="Copyright w-96 text-right text-gray-400 text-sm font-normal  uppercase leading-normal">Privacy Policy  |  Terms of Use  |  Cookie Policy</div>
+                    <div className="Copyright w-96 text-right text-gray-400 text-sm font-normal font-avenir uppercase leading-normal">Privacy Policy  |  Terms of Use  |  Cookie Policy</div>
                 </div>
             </div>
 
