@@ -14,16 +14,16 @@ export default function Navbar() {
                 </div>
                 <ul className='inline-flex mr-10'>
                     <li>
-                        <a className="Heading w-20 text-center text-sky-900 text-sm font-medium font-['Avenir'] uppercase leading-10">About us</a>
+                        <a className="Heading w-20 text-center text-design-green text-sm font-medium font-['Avenir'] uppercase leading-10">About us</a>
                     </li>
                     <li>
-                        <div className="Heading w-28 text-center text-sky-900 text-sm font-medium font-['Avenir'] uppercase leading-10">Our work</div>
+                        <div className="Heading w-28 text-center text-design-green text-sm font-medium font-['Avenir'] uppercase leading-10">Our work</div>
                     </li>
                     <li>
-                        <div className="Heading w-36 text-center text-sky-900 text-sm font-medium font-['Avenir'] uppercase leading-10">meet the team</div>
+                        <div className="Heading w-36 text-center text-design-green text-sm font-medium font-['Avenir'] uppercase leading-10">meet the team</div>
                     </li>
                     <li>
-                        <div className="Heading w-32 text-center text-sky-900 text-sm font-medium font-['Avenir'] uppercase leading-10">Latest Updates</div>
+                        <div className="Heading w-32 text-center text-design-green text-sm font-medium font-['Avenir'] uppercase leading-10">Latest Updates</div>
                     </li>
                 </ul>
                 <div className='flex items-center gap-4'>
