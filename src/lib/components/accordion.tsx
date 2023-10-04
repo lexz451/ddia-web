@@ -40,11 +40,11 @@ export default function Accordion({
       </div>
 
       <div
-        className={`text-gray-500 ${
-          expanded ? "max-h-10 opacity-100" : "max-h-0 opacity-0"
-        } transition-all duration-300 ease-in-out`}
+        className={`grid text-gray-500 ${
+          expanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        } transition-all duration-300`}
       >
-        {children}
+        <div className="overflow-y-hidden">{children}</div>
       </div>
     </div>
   );
