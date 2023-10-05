@@ -9,7 +9,7 @@ interface IUpdate {
   img: StaticImageData;
   section: string;
   title: string;
-  abstract: string;
+  preview: string;
   link: string;
 }
 
@@ -19,24 +19,24 @@ function fakeFetch() {
       img: upd1,
       section: "section",
       title: "Lorem ipsum dolor sit.",
-      abstract:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates illo repellat quaerat ab consequuntur iste corporis deleniti eaque totam consequatur.",
+      preview:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit suscipit hic deserunt, enim ipsum voluptatem. Praesentium nesciunt rerum nisi vel dolorem asperiores",
       link: "123",
     },
     {
       img: upd2,
       section: "section",
       title: "Lorem ipsum dolor sit.",
-      abstract:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates illo repellat quaerat ab consequuntur iste corporis deleniti eaque totam consequatur.",
+      preview:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit suscipit hic deserunt, enim ipsum voluptatem. Praesentium nesciunt rerum nisi vel dolorem asperiores",
       link: "234",
     },
     {
       img: upd3,
       section: "section",
       title: "Lorem ipsum dolor sit.",
-      abstract:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates illo repellat quaerat ab consequuntur iste corporis deleniti eaque totam consequatur.",
+      preview:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit suscipit hic deserunt, enim ipsum voluptatem. Praesentium nesciunt rerum nisi vel dolorem asperiores",
       link: "345",
     },
   ];
@@ -49,7 +49,7 @@ export default function LatestUpdates() {
   return (
     <section className="flex flex-col">
       <div className="flex w-full">
-        <h2 className="font-semibold text-design-dark-green text-5xl">
+        <h2 className="font-extrabold text-design-dark-green text-5xl tracking-tighter">
           Latest Updates
         </h2>
         <Link
@@ -60,7 +60,7 @@ export default function LatestUpdates() {
         </Link>
       </div>
 
-      <div className="flex flex-row gap-14 justify-between mt-10">
+      <div className="flex flex-row gap-10 justify-between mt-10">
         {updatesInfo.map((upd) => {
           return (
             <div key={upd.link} className={`flex flex-col`}>
@@ -75,15 +75,32 @@ export default function LatestUpdates() {
                 />
               </div>
 
-              <h4 className="uppercase font-medium text-gray-400">
+              <h4 className="uppercase text-sm text-gray-400 tracking-tight">
                 {upd.section}
               </h4>
-              <h3 className="text-design-dark-green font-semibold mt-1 mb-2">
+              <h3 className="text-design-dark-green font-semibold tracking-tight text-xl mb-4 mt-2">
                 {upd.title}
               </h3>
-              <h4 className="text-gray-500">{upd.abstract}</h4>
-              <div className="my-4">
-                <Link className="text-design-green underline" href={upd.link}>
+              <h4 className="text-gray-500 tracking-tighter line-clamp-3">
+                {upd.preview}
+              </h4>
+              <div className="my-4 flex flex-row items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                >
+                  <path
+                    d="M8.97117 17.8042L17.9414 8.90137L8.97117 -0.00149975L0.000941627 8.90137L8.97117 17.8042Z"
+                    fill="#EBB785"
+                  />
+                </svg>
+                <Link
+                  className="text-design-green underline text-sm font-bold pl-2"
+                  href={upd.link}
+                >
                   Read more
                 </Link>
               </div>
