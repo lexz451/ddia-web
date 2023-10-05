@@ -43,7 +43,13 @@ export default function FAQ() {
         </div>
       </section>
 
-      <section className="px-12">
+      <section className="bg-design-green flex rounded-xl h-[50vh] mx-12">
+        <h1 className="text-design-light block text-5xl font-medium m-auto">
+          Banner
+        </h1>
+      </section>
+
+      <section className="px-12 my-20">
         <LatestUpdates />
       </section>
     </main>
