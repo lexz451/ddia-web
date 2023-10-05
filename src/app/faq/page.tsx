@@ -1,35 +1,50 @@
 import Accordion from "@/lib/components/accordion";
+import LatestUpdates from "@/lib/components/latest-updates";
 import Link from "next/link";
 
 export default function FAQ() {
   return (
-    <main>
-      <section className="Rectangle198 min-h-screen bg-gradient-to-b from-design-light-green to-white pt-[120px]">
-        <h1>Frequently Asked questions</h1>
-        <Link href="#">Contact us</Link>
-        <div className="bg-gray-100">
-          <div className="w-[55vw] mx-auto">
-            <Accordion title="What’s the best thing about Switzerland?">
-              <p>
-                {`I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.`}
-              </p>
-            </Accordion>
-            <Accordion title="How do you make holy water?">{""}</Accordion>
-            <Accordion title="What do you call someone with no body and no nose?">
-              {""}
-            </Accordion>
-            <Accordion title="Why do you never see elephants hiding in trees?">
-              {""}
-            </Accordion>
-            <Accordion title="Why can’t you hear a pterodactyl go to the bathroom?">
-              {""}
-            </Accordion>
-            <Accordion title="Why did the invisible man turn down the job offer?">
-              {""}
-            </Accordion>
-          </div>
+    <main className="bg-design-light">
+      <section className="Rectangle198 bg-gradient-to-b from-design-light-green to-design-light pt-[120px] pb-[8rem]">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-6xl text-design-green font-semibold mx-auto my-4">
+            Frequently asked questions
+          </h1>
+          <Link
+            href="#"
+            className="text-sm mx-auto r-btn text-design-green border-design-green"
+          >
+            Contact us
+          </Link>
         </div>
+      </section>
+
+      <section className="bg-design-light py-[6rem] translate-y-[-3rem]">
+        <div className="w-[55vw] mx-auto">
+          <Accordion title="What’s the best thing about Switzerland?">
+            {`I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.`}
+          </Accordion>
+          <Accordion title="How do you make holy water?">
+            {"You gotta call Jesus first"}
+          </Accordion>
+          <Accordion title="What do you call someone with no body and no nose?">
+            {"Nobody Nose. bdmptsss"}
+          </Accordion>
+          <Accordion title="Why do you never see elephants hiding in trees?">
+            {"They are hiding so well, that you are not able to see them."}
+          </Accordion>
+          <Accordion title="Why can’t you hear a pterodactyl go to the bathroom?">
+            {'Because the "P" is silent!'}
+          </Accordion>
+          <Accordion title="Why did the invisible man turn down the job offer?">
+            {"Because he just couldn't see himself doing it."}
+          </Accordion>
+        </div>
+      </section>
+
+      <section className="px-12">
+        <LatestUpdates />
       </section>
     </main>
   );
