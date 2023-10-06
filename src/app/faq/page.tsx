@@ -19,8 +19,8 @@ export default function FAQ() {
         </div>
       </section>
 
-      <section className="bg-design-light py-[6rem] translate-y-[-3rem]">
-        <div className="w-[55vw] mx-auto">
+      <section className="bg-design-light pt-[4rem] translate-y-[-3rem]">
+        <div className=" max-w-[57rem] p-11 mx-auto">
           <Accordion title="What’s the best thing about Switzerland?">
             {`I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.`}
@@ -43,13 +43,15 @@ export default function FAQ() {
         </div>
       </section>
 
-      <section className="bg-design-green flex rounded-xl h-[50vh] mx-12">
-        <h1 className="text-design-light block text-5xl font-medium m-auto">
-          Banner
-        </h1>
+      <section className="px-11 max-w-[1620px] mx-auto">
+        <div className="bg-design-green flex rounded-xl h-[20rem]">
+          <h1 className="text-design-light block text-5xl font-medium m-auto">
+            Banner
+          </h1>
+        </div>
       </section>
 
-      <section className="px-12 my-20">
+      <section className="my-20 max-w-[1620px] p-11 mx-auto">
         <LatestUpdates />
       </section>
     </main>
