@@ -1,4 +1,3 @@
-"use client";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import upd1 from "@/lib/assets/tecnologia-fondo-toque-humano-nueva-version-moderna-creacion-adan-11.png";
@@ -49,18 +48,18 @@ export default function LatestUpdates() {
   return (
     <section className="flex flex-col">
       <div className="flex w-full">
-        <h2 className="font-extrabold text-design-dark-green text-5xl tracking-tighter">
+        <h2 className="text-5xl font-extrabold tracking-tighter text-design-dark-green">
           Latest Updates
         </h2>
         <Link
           href={"#"}
-          className="r-btn text-sm border-design-green text-design-green ml-auto"
+          className="ml-auto text-sm r-btn border-design-green text-design-green"
         >
           See all
         </Link>
       </div>
 
-      <div className="flex flex-row gap-10 justify-between mt-10">
+      <div className="flex flex-row justify-between gap-10 mt-10">
         {updatesInfo.map((upd) => {
           return (
             <div key={upd.link} className={`flex flex-col`}>
@@ -75,16 +74,16 @@ export default function LatestUpdates() {
                 />
               </div>
 
-              <h4 className="uppercase text-sm text-gray-400 tracking-tight">
+              <h4 className="text-sm tracking-tight text-gray-400 uppercase">
                 {upd.section}
               </h4>
-              <h3 className="text-design-dark-green font-semibold tracking-tight text-xl mb-4 mt-2">
+              <h3 className="mt-2 mb-4 text-xl font-semibold tracking-tight text-design-dark-green">
                 {upd.title}
               </h3>
-              <h4 className="text-gray-500 tracking-tighter line-clamp-3">
+              <h4 className="tracking-tighter text-gray-500 line-clamp-3">
                 {upd.preview}
               </h4>
-              <div className="my-4 flex flex-row items-center">
+              <div className="flex flex-row items-center my-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -98,7 +97,7 @@ export default function LatestUpdates() {
                   />
                 </svg>
                 <Link
-                  className="text-design-green underline text-sm font-bold pl-2"
+                  className="pl-2 text-sm font-bold underline text-design-green"
                   href={upd.link}
                 >
                   Read more
