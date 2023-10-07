@@ -10,7 +10,7 @@ export default function AboutUs() {
   return (
     <main className="Rectangle198 min-h-screen bg-gradient-to-b from-design-light-green to-white pt-[120px]">
       <section className="w-[87%] max-w-[966px] mx-auto ">
-        <section className="mx-auto pb-14 min-w-min max-w-max">
+        <section className="mx-auto min-w-min max-w-max">
           <div className="flex flex-row gap-[2%] pb-8 justify-center">
             <Image
               className="basis-[21rem] object-cover object-left-top rounded-2xl"
@@ -61,7 +61,7 @@ export default function AboutUs() {
           </div>
         </section>
 
-        <section className="flex items-center justify-center gap-8 p-12 bg-[#fee9d7] rounded-2xl">
+        <section className="flex items-center justify-center gap-8 my-14 p-12 bg-[#fee9d7] rounded-2xl">
           <Image
             className="object-cover object-center max-w-[50%] grow-0 shrink-[3]"
             src={imgapproach}
@@ -86,28 +86,108 @@ export default function AboutUs() {
           </div>
         </section>
 
-        <h1>Core strategies</h1>
-        <p>
-          In our effort to foster an online information environment that is
-          trustworthy, welcoming, and conducive to stronger democracies and
-          societies, we are moving beyond a focus on content to:
-        </p>
+        <section className="flex flex-col items-center max-w-[790px] mx-auto mb-12">
+          <h1 className="text-5xl text-design-green font-[Inter] font-semibold pb-8">
+            Core strategies
+          </h1>
+          <p className="text-base text-design-dark text-center font-[Avenir] mb-16 max-w-[66ch]">
+            In our effort to foster an online information environment that is
+            trustworthy, welcoming, and conducive to stronger democracies and
+            societies, we are moving beyond a focus on content to:
+          </p>
 
-        <p>
-          Shape understanding of the systemic, social and behavioral factors
-          that contribute to the spread of false, misleading, and hate-fueled
-          information in Latino spaces online 
-        </p>
+          <div className="grid grid-cols-2 h-[16.4rem] mb-12 bg-[#fee9d7] rounded-2xl">
+            <Image
+              className="object-cover h-full object-center rounded-2xl"
+              src={imgfakeNews}
+              alt=""
+              width={0}
+              height={0}
+              sizes="30rem"
+            />
+            <div className="flex relative ml-12 h-full">
+              <svg
+                className="absolute top-[1.9rem]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 18 18"
+                fill="none"
+              >
+                <path
+                  d="M8.97117 17.8042L17.9414 8.90137L8.97117 -0.00149975L0.000941627 8.90137L8.97117 17.8042Z"
+                  fill="#EBB785"
+                />
+              </svg>
+              <p className="text-xl text-design-dark font-[Avenir] max-w-[27ch] mt-16">
+                Shape understanding of the systemic, social and behavioral
+                factors that contribute to the spread of false, misleading, and
+                hate-fueled information in Latino spaces online 
+              </p>
+            </div>
+          </div>
 
-        <p>
-          Incubate and adapt proven-effective interventions and approaches in
-          service of Latino communities
-        </p>
+          <div className="grid grid-cols-2 h-[16.4rem] mb-12 bg-[#fee9d7] rounded-2xl">
+            <Image
+              className="object-cover h-full object-center rounded-2xl"
+              src={imghandsCircle}
+              alt=""
+              width={0}
+              height={0}
+              sizes="30rem"
+            />
+            <div className="flex relative ml-12 h-full">
+              <svg
+                className="absolute top-[1.9rem]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 18 18"
+                fill="none"
+              >
+                <path
+                  d="M8.97117 17.8042L17.9414 8.90137L8.97117 -0.00149975L0.000941627 8.90137L8.97117 17.8042Z"
+                  fill="#EBB785"
+                />
+              </svg>
+              <p className="text-xl text-design-dark font-[Avenir] max-w-[27ch] mt-20">
+                Incubate and adapt proven-effective interventions and approaches
+                in service of Latino communities
+              </p>
+            </div>
+          </div>
 
-        <p>
-          Center Latinos’ perspectives and experiences in policy discussions and
-          decisions made about the future of the Internet and online world.
-        </p>
+          <div className="grid grid-cols-2 h-[16.4rem] mb-12 bg-[#fee9d7] rounded-2xl">
+            <Image
+              className="object-cover h-full object-center rounded-2xl"
+              src={imgholdingWorld}
+              alt=""
+              width={0}
+              height={0}
+              sizes="30rem"
+            />
+            <div className="flex relative ml-12 h-full">
+              <svg
+                className="absolute top-[1.9rem]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 18 18"
+                fill="none"
+              >
+                <path
+                  d="M8.97117 17.8042L17.9414 8.90137L8.97117 -0.00149975L0.000941627 8.90137L8.97117 17.8042Z"
+                  fill="#EBB785"
+                />
+              </svg>
+              <p className="text-xl text-design-dark font-[Avenir] max-w-[27ch] mt-16">
+                Center Latinos’ perspectives and experiences in policy
+                discussions and decisions made about the future of the Internet
+                and online world.
+              </p>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
   );
