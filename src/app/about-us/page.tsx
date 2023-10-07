@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <main className="Rectangle198 min-h-screen bg-gradient-to-b from-design-light-green to-white pt-[120px]">
+    <main className="Rectangle198 min-h-screen bg-gradient-to-b from-[#a8dadc] via-design-light to-white   pt-[120px]">
       <section className="w-[87%] max-w-[966px] mx-auto ">
         <section className="mx-auto min-w-min max-w-max">
           <div className="flex flex-row gap-[2%] pb-8 justify-center">
@@ -36,7 +36,7 @@ export default function AboutUs() {
               </p>
             </div>
           </div>
-          <div className="flex flex-row gap-[2%] pb-8 justify-center">
+          <div className="flex flex-row gap-[2%] justify-center">
             <div className="box-content flex flex-col justify-center w-auto px-[4%] py-[0.5rem] bg-design-light rounded-2xl">
               <h1 className="text-5xl text-design-green font-[Inter] font-semibold pb-8">
                 Our vision
@@ -61,7 +61,7 @@ export default function AboutUs() {
           </div>
         </section>
 
-        <section className="flex items-center justify-center gap-8 my-14 p-12 bg-[#fee9d7] rounded-2xl">
+        <section className="flex items-center justify-center gap-8 my-20 p-12 bg-[#fee9d7] rounded-2xl">
           <Image
             className="object-cover object-center max-w-[50%] grow-0 shrink-[3]"
             src={imgapproach}
