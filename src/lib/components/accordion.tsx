@@ -13,14 +13,19 @@ export default function Accordion({
   return (
     <div className="w-full mb-6 before:mb-8 before:block before:w-full before:h-[1px] before:bg-gray-200 ">
       <div className="flex mb-2">
-        <h3 className="font-medium">{title}</h3>
+        <h3
+          className="font-medium cursor-pointer"
+          onClick={() => setExpanded(expanded !== true)}
+        >
+          {title}
+        </h3>
         <div
-          className={`ml-auto px-2`}
+          className={`ml-auto px-2 cursor-pointer `}
           onClick={() => setExpanded(expanded !== true)}
         >
           <svg
-            className={`cursor-pointer transition-all duration-100 ease-out ${
-              expanded ? "scale-[-1]" : "scale-[1]"
+            className={`transition-all duration-100 ease-out ${
+              expanded ? "scale-[1]" : "scale-[-1]"
             }`}
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,9 +36,9 @@ export default function Accordion({
             <path
               d="M5 15L12 8L19 15"
               stroke="#9CA3AF"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
