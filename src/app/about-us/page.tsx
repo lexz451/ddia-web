@@ -97,14 +97,20 @@ export default function AboutUs() {
           </p>
 
           <div className="grid grid-cols-2 h-[16.4rem] mb-12 bg-[#fee9d7] rounded-2xl">
-            <Image
-              className="object-cover h-full object-center rounded-2xl"
-              src={imgfakeNews}
-              alt=""
-              width={0}
-              height={0}
-              sizes="30rem"
-            />
+            <div className="relative">
+              <Image
+                className="object-cover h-full object-center rounded-2xl"
+                src={imgfakeNews}
+                alt=""
+                width={0}
+                height={0}
+                sizes="30rem"
+              />
+              <h1 className="block absolute text-white right-[15%] top-[40%] text-5xl w-[4ch] rotate-[-15deg] font-[Bakbak One]">
+                Fake news
+              </h1>
+            </div>
+
             <div className="flex relative ml-12 h-full">
               <svg
                 className="absolute top-[1.9rem]"
