@@ -9,9 +9,9 @@ import Image from "next/image";
 export default function AboutUs() {
   return (
     <main className="Rectangle198 min-h-screen bg-gradient-to-b from-design-light-green to-white pt-[120px]">
-      <section className="w-[87%] max-w-[1520px] mx-auto">
-        <section className="w-full mx-auto">
-          <div className="flex flex-row w-full gap-[2%] pb-8 justify-center">
+      <section className="w-[87%] max-w-[966px] mx-auto ">
+        <section className="mx-auto pb-14 min-w-min max-w-max">
+          <div className="flex flex-row gap-[2%] pb-8 justify-center">
             <Image
               className="basis-[21rem] object-cover object-left-top rounded-2xl"
               src={imgvision1}
@@ -36,7 +36,7 @@ export default function AboutUs() {
               </p>
             </div>
           </div>
-          <div className="flex flex-row w-full gap-[2%] pb-8 justify-center">
+          <div className="flex flex-row gap-[2%] pb-8 justify-center">
             <div className="box-content flex flex-col justify-center w-auto px-[4%] py-[0.5rem] bg-design-light rounded-2xl">
               <h1 className="text-5xl text-design-green font-[Inter] font-semibold pb-8">
                 Our vision
@@ -61,16 +61,30 @@ export default function AboutUs() {
           </div>
         </section>
 
-        <h1>Our Approach</h1>
-        <p>
-          DIA is bringing together public opinion research, narrative analysis,
-          capacity building and policy to help Latinos live a healthy digital
-          life. We foster research and an exchange of ideas across disciplines,
-          leaders, and countries; guide interventions that serve our communities
-          in the US and across the Americas; and center Latinos and Latin
-          Americans in policy conversations about the future of the digital
-          information ecosystem.
-        </p>
+        <section className="flex items-center justify-center gap-8 p-12 bg-[#fee9d7] rounded-2xl">
+          <Image
+            className="object-cover object-center max-w-[50%] grow-0 shrink-[3]"
+            src={imgapproach}
+            alt=""
+            width={0}
+            height={0}
+            sizes="50rem"
+          />
+          <div className="basis-1/2 grow shrink-0">
+            <h1 className="text-5xl text-design-green font-[Inter] font-semibold pb-8">
+              Our Approach
+            </h1>
+            <p className="text-base text-design-dark font-[Avenir] max-w-[41ch]">
+              DIA is bringing together public opinion research, narrative
+              analysis, capacity building and policy to help Latinos live a
+              healthy digital life. We foster research and an exchange of ideas
+              across disciplines, leaders, and countries; guide interventions
+              that serve our communities in the US and across the Americas; and
+              center Latinos and Latin Americans in policy conversations about
+              the future of the digital information ecosystem.
+            </p>
+          </div>
+        </section>
 
         <h1>Core strategies</h1>
         <p>
