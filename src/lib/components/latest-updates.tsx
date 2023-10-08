@@ -1,9 +1,5 @@
-import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import upd1 from "@/lib/assets/tecnologia-fondo-toque-humano-nueva-version-moderna-creacion-adan-11.png";
-import upd2 from "@/lib/assets/diseno-bodegones-revolucion-11.png";
-import upd3 from "@/lib/assets/unnamed.png";
-import ServerImage from "./ServerImage";
+import ServerImage from "./server-image";
 import { TPost } from "../utils/types";
 
 
