@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "next": "latest",
+    "qs": "^6.11.2",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/node": "latest",
+    "@types/qs": "^6.9.8",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
