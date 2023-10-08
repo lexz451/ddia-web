@@ -11,6 +11,7 @@ export type TServerImage = {
     alternativeText: string;
     priority: boolean;
     sizes: string;
+    placeholder: string;
 }
 
 export type TPostType = {
