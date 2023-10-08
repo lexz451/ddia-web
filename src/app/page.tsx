@@ -1,8 +1,28 @@
 import Image from 'next/image';
 import HeroImg from '@/lib/assets/hero-1.png';
 import GetInvolved from '@/lib/components/get-involved';
+import { getApi } from '@/lib/utils/api';
+import LatestUpdates from '@/lib/components/latest-updates';
 
-export default function Home() {
+async function getData() {
+  const posts = await getApi('/posts', {
+    pagination: {
+      limit: 3
+    },
+    populate: ["feature_media", "post_type"],
+    sort: ["publish_date:desc"]
+  }, {
+    cache: 'no-cache'
+  });
+  return {
+    posts
+  };
+};
+
+export default async function Home() {
+
+  const { posts: { data: latestPosts } } = await getData();
+
   return (
     <main className="">
       <section className='Rectangle198 min-h-screen bg-gradient-to-b from-design-light-green to-white pt-[120px]'>
@@ -22,6 +42,9 @@ export default function Home() {
       </section>
       <section className='container mx-auto my-20'>
         <GetInvolved></GetInvolved>
+      </section>
+      <section className='container mx-auto my-20'>
+        <LatestUpdates posts={latestPosts}></LatestUpdates>
       </section>
     </main>
   )

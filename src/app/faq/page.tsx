@@ -1,8 +1,27 @@
 import Accordion from "@/lib/components/accordion";
 import LatestUpdates from "@/lib/components/latest-updates";
+import { getApi } from "@/lib/utils/api";
 import Link from "next/link";
 
-export default function FAQ() {
+async function getData() {
+  const posts = await getApi('/posts', {
+    pagination: {
+      limit: 3
+    },
+    populate: ["feature_media", "post_type"],
+    sort: ["publish_date:desc"]
+  }, {
+    cache: 'no-cache'
+  });
+  return {
+    posts
+  };
+};
+
+export default async function FAQ() {
+
+  const { posts: { data: latestPosts } } = await getData();
+
   return (
     <main className="bg-design-light">
       <section className="Rectangle198 bg-gradient-to-b from-design-light-green to-design-light pt-[120px] pb-[8rem]">
@@ -52,7 +71,7 @@ export default function FAQ() {
       </section>
 
       <section className="my-20 max-w-[1620px] p-11 mx-auto">
-        <LatestUpdates />
+        <LatestUpdates posts={latestPosts} />
       </section>
     </main>
   );
