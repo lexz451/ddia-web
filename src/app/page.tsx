@@ -3,6 +3,8 @@ import HeroImg from '@/lib/assets/hero-1.png';
 import GetInvolved from '@/lib/components/get-involved';
 import { getApi } from '@/lib/utils/api';
 import LatestUpdates from '@/lib/components/latest-updates';
+import OurWork from '@/lib/components/our-work';
+import AboutUs from '@/lib/components/about-us';
 
 async function getData() {
   const posts = await getApi('/posts', {
@@ -35,10 +37,16 @@ export default async function Home() {
             </button>
           </div>
           <div>
-            <Image alt='' src={HeroImg} />
+            <Image priority={true} alt='' src={HeroImg} />
           </div>
         </div>
 
+      </section>
+      <section className='container mx-auto my-10'>
+        <AboutUs></AboutUs>
+      </section>
+      <section>
+        <OurWork></OurWork>
       </section>
       <section className='container mx-auto my-20'>
         <GetInvolved></GetInvolved>

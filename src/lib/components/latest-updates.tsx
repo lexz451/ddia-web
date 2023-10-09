@@ -12,7 +12,7 @@ export default function LatestUpdates({
   return (
     <section className="flex flex-col">
       <div className="flex w-full">
-        <h2 className="text-5xl font-avenir font-semibold tracking-tighter text-design-dark-green">
+        <h2 className="text-5xl font-avenir tracking-tighter text-design-dark-green">
           Latest Updates
         </h2>
         <Link
