@@ -17,7 +17,11 @@ const config: Config = {
         'design-light-yellow': '#FFEAD8',
         'design-dark': '#1F1F24',
         'design-light': '#FAFAFA',
-      }
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        avenir: ['Avenir', 'sans-serif'],
+      },
     },
   },
   plugins: [],
