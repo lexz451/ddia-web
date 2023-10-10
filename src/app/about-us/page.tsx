@@ -9,8 +9,8 @@ import Image from "next/image";
 export default function AboutUs() {
   return (
     <main className="Rectangle198 min-h-screen bg-gradient-to-b from-[#a8dadc] via-design-light to-white pt-[120px]">
-      <section className="mx-auto mt-14 px-20">
-        <section className="mx-auto ">
+      <div className="container mx-auto mt-14">
+        <section>
           <div className="grid grid-cols-[1fr_2fr] gap-6 pb-10">
             <Image
               className="object-cover w-full object-left-top rounded-2xl"
@@ -198,7 +198,7 @@ export default function AboutUs() {
             </div>
           </div>
         </section>
-      </section>
+      </div>
     </main>
   );
 }
