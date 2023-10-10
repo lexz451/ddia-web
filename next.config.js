@@ -22,7 +22,7 @@ const nextConfig = {
                                             removeViewBox: false,
                                         },
                                     },
-                                },
+                                }
                             ]
                         },
                     },

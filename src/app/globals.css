@@ -6,17 +6,23 @@
   .btn {
     @apply px-4 py-2 rounded-md text-white font-normal text-base leading-normal;
   }
+
   .r-btn {
     @apply rounded-full border-[0.15em] px-[1.8em] py-[0.8em] font-semibold;
   }
+  
+  .navbar .navbar-menu li {
+      &:hover {
+        .indicator {
+          @apply opacity-100;
+        }
+        .text {
+          @apply border-design-green;
+        }
+        .overflow-menu {
+          @apply opacity-100 z-50 h-auto;
+        }
+      }
+    }
+  
 }
-
-:root {
-}
-
-/* :root {}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-  }
-} */
