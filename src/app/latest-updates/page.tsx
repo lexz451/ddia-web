@@ -156,6 +156,21 @@ export default function LatestUpdates() {
           );
         })}
       </section>
+
+      <div className="flex w-full my-20">
+        <Link
+          className="mx-auto text-white bg-design-dark-green border-design-dark-green r-btn"
+          href={"#"}
+        >
+          Load more
+        </Link>
+      </div>
+
+      <div className="flex w-full mb-20 h-80 rounded-3xl bg-gradient-to-b from-design-light-green to-gray-100">
+        <h1 className="m-auto font-[Inter] font-semibold text-5xl text-gray-500">
+          Banner
+        </h1>
+      </div>
     </main>
   );
 }
