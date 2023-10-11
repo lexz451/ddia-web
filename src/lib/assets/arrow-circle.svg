@@ -1,0 +1,18 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="45"
+    height="45"
+    viewBox="0 0 45 45"
+    fill="none"
+>
+    <circle
+        cx="22.5"
+        cy="22.5"
+        r="21.75"
+        stroke-width="1.5"
+    />
+    <path
+        d="M14.7438 29.867L28.8655 15.7453M28.8655 15.7453L14.3541 15.8783M28.8655 15.7453L28.7372 29.7385"
+        stroke-width="2"
+    />
+</svg>

@@ -3,6 +3,8 @@ import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import testImage from "@/lib/assets/manos-circulo.png";
 import Link from "next/link";
+import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
+import SearchIcon from "@/lib/assets/search.svg";
 
 //Temporal implementation
 type PostInfo = {
@@ -75,23 +77,8 @@ export default function LatestUpdates() {
             />
           </div>
 
-          <button className="flex ml-auto rounded-full h-11 w-11 ">
-            <svg
-              className="m-auto"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                stroke="#015C6B"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+          <button className="flex ml-auto rounded-full h-11 w-11">
+            <SearchIcon className="stroke-design-green m-auto"></SearchIcon>
           </button>
         </div>
       </section>
@@ -131,26 +118,7 @@ export default function LatestUpdates() {
                 </p>
               </div>
               <Link className="my-auto ml-20" href="#">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="45"
-                  height="45"
-                  viewBox="0 0 45 45"
-                  fill="none"
-                >
-                  <circle
-                    cx="22.5"
-                    cy="22.5"
-                    r="21.75"
-                    stroke="#015C6B"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M14.7438 29.867L28.8655 15.7453M28.8655 15.7453L14.3541 15.8783M28.8655 15.7453L28.7372 29.7385"
-                    stroke="#015C6B"
-                    stroke-width="2"
-                  />
-                </svg>
+                <ArrowCircleIcon className="stroke-design-green stroke-[1.5]"></ArrowCircleIcon>
               </Link>
             </div>
           );
