@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import Footer from '@/lib/components/footer'
+import ProgressIndicator from '@/lib/components/progress-indicator'
 
 const inter = Inter({ subsets: ['latin'] })
 const avenir = localFont({
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer/>
+        <ProgressIndicator/>
       </body>
     </html>
   )
