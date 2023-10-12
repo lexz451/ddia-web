@@ -1,9 +1,12 @@
 import Navbar from '@/lib/components/navbar'
-import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import Footer from '@/lib/components/footer'
+import { ProgressBar } from 'next-nprogress'
+
+import './globals.css'
+import { Suspense } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 const avenir = localFont({
@@ -26,7 +29,15 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
-        <Footer/>
+        <Footer />
+        <Suspense fallback={null}>
+          <ProgressBar
+            color='#333'
+            height='2px'
+            options={{}}
+            delay={0}
+          />
+        </Suspense>
       </body>
     </html>
   )

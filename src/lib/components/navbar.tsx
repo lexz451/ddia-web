@@ -2,13 +2,13 @@
 
 import Logo from '@/lib/assets/logo.svg';
 import Logo2 from '@/lib/assets/logo-simple.svg';
-import Arrow2 from '@/lib/assets/arrow-2.svg';
+import ArrowCircleIcon from '@/lib/assets/arrow-circle.svg';
 import IndicatorIcon from '@/lib/assets/indicator.svg';
 import GlobeIcon from '@/lib/assets/globe-alt.svg';
 import SearchIcon from '@/lib/assets/search.svg';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import useScroll from '../hooks/useScroll';
+import { Link } from 'next-nprogress';
 
 export default function Navbar() {
 
@@ -32,7 +32,7 @@ export default function Navbar() {
 
     return (
         <header className={`navbar fixed top-0 w-full z-50 ease-in-out transition-all duration-500 will-change-transform ${isScrolled ? '-translate-y-full' : ''} ${isScrolled && isVisible ? 'translate-y-0 bg-white bg-opacity-70 backdrop-blur-sm' : ''}`}>
-            <nav className="navbar-nav flex items-stretch container mx-auto">
+            <nav className="navbar-nav flex items-stretch container mx-auto max-w-6xl">
                 <div className={`navbar-brand transition-all duration-500 ease-in-out flex-1 ${isScrolled && isVisible ? 'py-2' : 'py-5'}`}>
                     <Link href="/" className={`brand-logo block relative transition-all duration-500 ease-in-out ${isScrolled && isVisible ? 'w-24 h-16' : 'w-32 h-20'}`}>
                         <Logo className={`absolute transition-all duration-500 ease-in-out brand-expanded ${isScrolled && isVisible ? 'opacity-0' : ''}`}></Logo>
@@ -62,8 +62,8 @@ export default function Navbar() {
                                     <div className='flex flex-col'>
                                         <div className='inline-flex items-center border-b border-white border-opacity-50 pb-2'>
                                             <div className="flex-1 text-white text-xl font-semibold leading-10">Research and Analysis</div>
-                                            <div className='w-8 h-8 rounded-full border border-white flex items-center justify-center'>
-                                                <Arrow2></Arrow2>
+                                            <div className='flex items-center justify-center'>
+                                                <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
                                             </div>
                                         </div>
                                         <div className="mt-5 text-white text-sm font-normal font-['Avenir'] uppercase leading-normal">Public Opinion Research</div>
@@ -76,8 +76,8 @@ export default function Navbar() {
                                     <div className='flex flex-col'>
                                         <div className='inline-flex items-center border-b border-white border-opacity-50 pb-2'>
                                             <div className="flex-1 text-white text-xl font-semibold leading-10">Reports and Publications</div>
-                                            <div className='w-8 h-8 rounded-full border border-white flex items-center justify-center'>
-                                                <Arrow2></Arrow2>
+                                            <div className='flex items-center justify-center'>
+                                                <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
                                             </div>
                                         </div>
                                         <ul className='list-disc ml-4 mt-5'>
@@ -88,8 +88,8 @@ export default function Navbar() {
                                     <div className='flex flex-col'>
                                         <div className='inline-flex items-center border-b border-white border-opacity-50 pb-2'>
                                             <div className="flex-1 text-white text-xl font-semibold leading-10">Capacity Building</div>
-                                            <div className='w-8 h-8 rounded-full border border-white flex items-center justify-center'>
-                                                <Arrow2></Arrow2>
+                                            <div className='flex items-center justify-center'>
+                                                <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
                                             </div>
                                         </div>
                                         <div className="mt-5 text-white text-sm font-normal font-['Avenir'] uppercase leading-normal">Reports and Publications</div>
@@ -113,7 +113,7 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li className='flex'>
-                        <Link href={'/about-us'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
+                        <Link href={'/latest'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className='text border-b-2 border-transparent transition-all duration-100 ease-in-out'>
                                 <span>Latest updates</span>

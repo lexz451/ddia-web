@@ -1,6 +1,7 @@
-import Link from "next/link";
+
 import ServerImage from "./server-image";
 import { TPost } from "../utils/types";
+import { Link } from "next-nprogress";
 
 
 export default function LatestUpdates({

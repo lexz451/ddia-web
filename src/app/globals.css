@@ -8,21 +8,20 @@
   }
 
   .r-btn {
-    @apply rounded-full border-[0.15em] px-[1.8em] py-[0.8em] font-semibold;
+    @apply rounded-full border-[0.15em] px-[1.8em] py-[0.7em] font-semibold;
   }
-  
+
   .navbar .navbar-menu li {
-      &:hover {
-        .indicator {
-          @apply opacity-100;
-        }
-        .text {
-          @apply border-design-green;
-        }
-        .overflow-menu {
-          @apply opacity-100 z-50 h-auto;
-        }
+    &:hover {
+      .indicator {
+        @apply opacity-100;
+      }
+      .text {
+        @apply border-design-green;
+      }
+      .overflow-menu {
+        @apply opacity-100 z-50 h-auto;
       }
     }
-  
+  }
 }

@@ -1,7 +1,7 @@
 import Accordion from "@/lib/components/accordion";
 import LatestUpdates from "@/lib/components/latest-updates";
 import { getApi } from "@/lib/utils/api";
-import Link from "next/link";
+import { Link } from "next-nprogress";
 
 async function getData() {
   const posts = await getApi('/posts', {
