@@ -1,3 +1,5 @@
+import { type } from "os";
+
 export type TServerImage = {
     id: number;
     name: string;
@@ -12,12 +14,24 @@ export type TServerImage = {
     priority: boolean;
     sizes: string;
     placeholder: string;
+    className: string;
 }
 
 export type TPostType = {
     id: number;
     name: string;
     description?: string;
+}
+
+export type TAuthor = {
+    id: number;
+    name: string;
+    slug: string;
+    bio?: string;
+    deleted: boolean;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
 }
 
 export type TPost = {
@@ -31,4 +45,5 @@ export type TPost = {
     createdAt: string;
     updatedAt: string;
     post_type: TPostType;
+    authors: TAuthor[];
 };

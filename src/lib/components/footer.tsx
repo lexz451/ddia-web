@@ -5,7 +5,7 @@ import XIcon from '@/lib/assets/x-twitter.svg';
 
 export default function Footer() {
     return (
-        <footer className="container mx-auto mb-10">
+        <footer className="container mx-auto mb-10 max-w-6xl">
             <div className="Rectangle197 py-12 px-16 bg-design-dark-green rounded-3xl flex flex-col">
                 <div className="flex items-start justify-between gap-10">
                     <div className="mr-10">
