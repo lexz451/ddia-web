@@ -8,7 +8,7 @@
   }
 
   .r-btn {
-    @apply rounded-full border-[0.15em] px-[1.8em] py-[0.7em] font-semibold;
+    @apply block w-fit rounded-full border-[0.15em] px-[1.8em] py-[0.7em] font-semibold;
   }
 
   .navbar .navbar-menu li {
