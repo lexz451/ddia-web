@@ -43,6 +43,8 @@ export async function fetchLatestPosts({
       },
       populate,
       sort
+    }, {
+      cache: 'reload'
     });
     return posts;
 }
