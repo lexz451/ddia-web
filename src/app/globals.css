@@ -10,6 +10,10 @@
   .r-btn {
     @apply rounded-full border-[0.15em] px-[1.8em] py-[0.8em] font-semibold;
   }
+
+  .page-container {
+    @apply container xl:max-w-6xl mx-auto px-4;
+  }
   
   .navbar .navbar-menu li {
       &:hover {
