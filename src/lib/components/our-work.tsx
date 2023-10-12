@@ -1,8 +1,5 @@
 "use client";
 import SearchIcon from '@/lib/assets/search-2.svg';
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGsapWithContext } from '@/hooks/useGsap';
 
 
@@ -18,7 +15,7 @@ export default function OurWork() {
             scrollTrigger: {
                 trigger: ".our-work-container",
                 pin: true,
-                start: "top top",
+                start: "center center",
                 end: "bottom top",
                 // markers: true,
                 scrub: true,
@@ -28,9 +25,9 @@ export default function OurWork() {
 
     return (
         <div className='our-work-container-wrapper w-screen overflow-hidden'>
-            <div className='our-work-container container mx-auto min-h-screen'>
+            <div className='our-work-container page-container'>
                 <div className='flex items-center h-full'>
-                    <div className={`scroller grid grid-flow-col auto-cols-[40vw] gap-20`}>
+                    <div className={`scroller grid grid-flow-col auto-cols-[35vw] gap-20`}>
                         <div className='self-center'>
                             <div>
                                 <div className="Headline text-design-green text-5xl font-extrabold font-['Avenir'] leading-10 mb-10">Our work</div>
@@ -40,7 +37,7 @@ export default function OurWork() {
                                 </div>
                             </div>
                         </div>
-                        <div className='max-w-[40rem] max-h-[40rem] aspect-square rounded-3xl bg-gradient-to-tr from-design-light-green to-white p-20'>
+                        <div className='max-w-[40rem] max-h-[40rem] h-full rounded-3xl bg-gradient-to-tr from-design-light-green to-white p-20'>
                             <SearchIcon className="mb-10"></SearchIcon>
                             <div className="mb-10 Headline text-design-dark-green text-4xl font-extrabold font-['Avenir'] leading-9">Research and Analysis</div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">DDIA uses narrative analysis, open source investigations, public opinion research, and information-sharing between disciplines across the Americas to deepen understanding of Latinos and information landscapes in the US and Latin America.</div>
@@ -51,10 +48,12 @@ export default function OurWork() {
                                 <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">Read more</div>
                             </div>
                         </div>
-                        <div className='max-w-[40rem] max-h-[40rem] aspect-square rounded-3xl bg-gradient-to-tr from-design-light-green to-white p-20'>
+                        <div className='max-w-[40rem] max-h-[40rem] h-full rounded-3xl bg-gradient-to-tr from-design-light-green to-white p-20'>
                             <SearchIcon className="mb-10"></SearchIcon>
-                            <div className="mb-10 Headline text-design-dark-green text-4xl font-extrabold font-['Avenir'] leading-9">Research and Analysis</div>
-                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">DDIA uses narrative analysis, open source investigations, public opinion research, and information-sharing between disciplines across the Americas to deepen understanding of Latinos and information landscapes in the US and Latin America.</div>
+                            <div className="mb-10 Headline text-design-dark-green text-4xl font-extrabold font-['Avenir'] leading-9">Reports and Publications</div>
+                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">
+                                DDIA&apos;s reports and publications contribute to the development of a set of theories on what is unique to Latinos and Latin Americans when it comes to information disorder online.
+                            </div>
                             <div className='flex items-center mt-4'>
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8.97117 17.8052L17.9414 8.90234L8.97117 -0.000523186L0.000941627 8.90234L8.97117 17.8052Z" fill="#fafafa" />
@@ -62,10 +61,12 @@ export default function OurWork() {
                                 <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">Read more</div>
                             </div>
                         </div>
-                        <div className='max-w-[40rem] max-h-[40rem] aspect-square rounded-3xl bg-gradient-to-tr from-design-light-green to-white p-20'>
+                        <div className='max-w-[40rem] max-h-[40rem] h-full rounded-3xl bg-gradient-to-tr from-design-light-green to-white p-20'>
                             <SearchIcon className="mb-10"></SearchIcon>
-                            <div className="mb-10 Headline text-design-dark-green text-4xl font-extrabold font-['Avenir'] leading-9">Research and Analysis</div>
-                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">DDIA uses narrative analysis, open source investigations, public opinion research, and information-sharing between disciplines across the Americas to deepen understanding of Latinos and information landscapes in the US and Latin America.</div>
+                            <div className="mb-10 Headline text-design-dark-green text-4xl font-extrabold font-['Avenir'] leading-9">Capacity Building</div>
+                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">
+                                DDIA is working to strengthen a healthier internet by applying research to practical solutions and interventions that reflect and serve the needs of Latino communities.
+                            </div>
                             <div className='flex items-center mt-4'>
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8.97117 17.8052L17.9414 8.90234L8.97117 -0.000523186L0.000941627 8.90234L8.97117 17.8052Z" fill="#fafafa" />

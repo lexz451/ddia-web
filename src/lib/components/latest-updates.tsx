@@ -17,7 +17,7 @@ export default function LatestUpdates({
           Latest Updates
         </h2>
         <Link
-          href={"#"}
+          href={"/latest"}
           className="ml-auto text-sm r-btn border-design-green text-design-green"
         >
           See all
