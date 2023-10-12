@@ -24,7 +24,7 @@ export default async function FAQ() {
 
   return (
     <main className="bg-design-light">
-      <section className="Rectangle198 bg-gradient-to-b from-design-light-green to-design-light pt-[120px] pb-[8rem]">
+      <section className="Rectangle198 bg-gradient-to-b from-design-light-green to-design-light pt-[180px] pb-[8rem]">
         <div className="flex flex-col justify-center">
           <h1 className="text-6xl text-design-green font-semibold mx-auto my-4">
             Frequently asked questions
@@ -39,7 +39,7 @@ export default async function FAQ() {
       </section>
 
       <section className="bg-design-light pt-[4rem] translate-y-[-3rem]">
-        <div className=" max-w-[57rem] p-11 mx-auto">
+        <div className="max-w-[57rem] p-11 mx-auto">
           <Accordion title="What’s the best thing about Switzerland?">
             {`I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.`}
@@ -62,7 +62,7 @@ export default async function FAQ() {
         </div>
       </section>
 
-      <section className="px-11 max-w-[1620px] mx-auto">
+      <section className="px-11 page-container">
         <div className="bg-design-green flex rounded-xl h-[20rem]">
           <h1 className="text-design-light block text-5xl font-medium m-auto">
             Banner
@@ -70,7 +70,7 @@ export default async function FAQ() {
         </div>
       </section>
 
-      <section className="my-20 max-w-[1620px] p-11 mx-auto">
+      <section className="my-20 p-11 page-container">
         <LatestUpdates posts={latestPosts} />
       </section>
     </main>

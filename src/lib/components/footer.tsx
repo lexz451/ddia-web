@@ -2,10 +2,11 @@ import Logo from '@/lib/assets/logo.svg';
 import FacebookIcon from '@/lib/assets/facebook.svg';
 import InstagramIcon from '@/lib/assets/instagram.svg';
 import XIcon from '@/lib/assets/x-twitter.svg';
+import { Link } from 'next-nprogress';
 
 export default function Footer() {
     return (
-        <footer className="container mx-auto mb-10 max-w-6xl">
+        <footer className="page-container mb-10">
             <div className="Rectangle197 py-12 px-16 bg-design-dark-green rounded-3xl flex flex-col">
                 <div className="flex items-start justify-between gap-10">
                     <div className="mr-10">
@@ -55,7 +56,7 @@ export default function Footer() {
                     <div className="FootersColumn w-40 flex-col justify-start items-start gap-4 inline-flex mt-5">
                         <div className="Heading self-stretch text-design-light-green text-sm font-semibold  uppercase leading-tight mb-2">DIA</div>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Get involved</div>
-                        <div className="Text text-gray-300 text-sm font-normal  leading-normal">FAQs</div>
+                        <Link href={'/faq'} className="Text text-gray-300 text-sm font-normal  leading-normal">FAQs</Link>
                         <div className="Text text-gray-300 text-sm font-normal  leading-normal">Meet the team</div>
                     </div>
                 </div>

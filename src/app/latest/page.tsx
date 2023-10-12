@@ -43,7 +43,7 @@ export default async function LatestUpdates({
   );
 
   return (
-    <main className="container mx-auto mt-[12rem] max-w-6xl">
+    <main className="page-container mt-[12rem]">
       <section className="flex items-start gap-10 mb-8">
         <div className="flex items-center flex-wrap flex-1 gap-2">
           <Link

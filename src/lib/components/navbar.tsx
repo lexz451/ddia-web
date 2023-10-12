@@ -32,18 +32,18 @@ export default function Navbar() {
 
     return (
         <header className={`navbar fixed top-0 w-full z-50 ease-in-out transition-all duration-500 will-change-transform ${isScrolled ? '-translate-y-full' : ''} ${isScrolled && isVisible ? 'translate-y-0 bg-white bg-opacity-70 backdrop-blur-sm' : ''}`}>
-            <nav className="navbar-nav flex items-stretch container mx-auto max-w-6xl">
+            <nav className="navbar-nav flex items-stretch page-container">
                 <div className={`navbar-brand transition-all duration-500 ease-in-out flex-1 ${isScrolled && isVisible ? 'py-2' : 'py-5'}`}>
                     <Link href="/" className={`brand-logo block relative transition-all duration-500 ease-in-out ${isScrolled && isVisible ? 'w-24 h-16' : 'w-32 h-20'}`}>
                         <Logo className={`absolute transition-all duration-500 ease-in-out brand-expanded ${isScrolled && isVisible ? 'opacity-0' : ''}`}></Logo>
-                        <Logo2 className="absolute transition-all duration-500 ease-in-out brand-collapsed"></Logo2>
+                        <Logo2 className={`absolute transition-all duration-500 ease-in-out brand-collapsed opacity-0 ${isScrolled && isVisible ? 'opacity-100' : ''}`}></Logo2>
                     </Link>
                 </div>
                 <ul className='navbar-menu inline-flex gap-5 mr-10'>
                     <li className='flex'>
                         <Link href={'/about-us'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
-                            <div className='text border-b-2 border-transparent transition-all duration-100 ease-in-out'>
+                            <div className='text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out'>
                                 <span>About us</span>
                             </div>
                         </Link>
@@ -52,12 +52,12 @@ export default function Navbar() {
                     <li className='flex'>
                         <Link href={'/about-us'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
-                            <div className='text border-b-2 border-transparent transition-all duration-100 ease-in-out'>
+                            <div className='text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out'>
                                 <span>Our work</span>
                             </div>
                         </Link>
                         <div className={`overflow-menu bg-design-green absolute left-0 right-0 opacity-0 h-0 overflow-hidden transition-all duration-200 ease-in-out ${isScrolled && isVisible ? 'top-[80px]' : 'top-[120px]'}`}>
-                            <div className='container mx-auto py-10'>
+                            <div className='page-container py-10'>
                                 <div className='grid grid-cols-3 gap-20'>
                                     <div className='flex flex-col'>
                                         <div className='inline-flex items-center border-b border-white border-opacity-50 pb-2'>
@@ -107,7 +107,7 @@ export default function Navbar() {
                     <li className='flex'>
                         <Link href={'/about-us'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
-                            <div className='text border-b-2 border-transparent transition-all duration-100 ease-in-out'>
+                            <div className='text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out'>
                                 <span>Meet the team</span>
                             </div>
                         </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
                     <li className='flex'>
                         <Link href={'/latest'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
-                            <div className='text border-b-2 border-transparent transition-all duration-100 ease-in-out'>
+                            <div className='text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out'>
                                 <span>Latest updates</span>
                             </div>
                         </Link>
