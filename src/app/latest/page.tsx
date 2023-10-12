@@ -18,8 +18,6 @@ async function fetchLatestUpdates(
   };
 }
 
-export const dynamic = 'force-dynamic';
-
 export default async function LatestUpdates({
   searchParams
 }: { searchParams: { [key: string]: string | string[] | undefined } }) {
