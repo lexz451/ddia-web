@@ -94,7 +94,7 @@ export default function Posts({
                                         {post.description}
                                     </p>
                                 </div>
-                                <Link className="my-auto ml-20" href="#">
+                                <Link className="my-auto ml-20" href={`/${post.slug}`}>
                                     <ArrowCircleIcon className="stroke-design-green stroke-[1.5]"></ArrowCircleIcon>
                                 </Link>
                             </div>
