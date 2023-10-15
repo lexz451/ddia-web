@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@lexz451/next-nprogress": "^0.1.0",
+    "@lexz451/next-nprogress": "^0.1.6",
     "gsap": "^3.12.2",
     "next": "latest",
     "node-html-parser": "^6.1.10",

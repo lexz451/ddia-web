@@ -32,10 +32,7 @@ export default function RootLayout({
         <Footer />
         <Suspense fallback={null}>
           <ProgressBar
-            color='#333'
-            height='2px'
-            options={{}}
-            delay={0}
+            color='#015C6B'
           />
         </Suspense>
       </body>
