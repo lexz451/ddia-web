@@ -11,9 +11,7 @@ import useScroll from '../hooks/useScroll';
 import { Link } from 'next-nprogress';
 import { usePathname } from 'next/navigation';
 
-export default function Navbar({
-    className
-}: { className: string }) {
+export default function Navbar() {
 
     const [isVisible, setIsVisible] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +44,7 @@ export default function Navbar({
     }, [scrollDirection, scrollPosition]);
 
     return (
-        <header className={`${className || ''} ${bgColor} navbar fixed top-0 w-full z-50 ease-in-out transition-all duration-500 will-change-transform ${isScrolled ? '-translate-y-full' : ''} ${isScrolled && isVisible ? 'translate-y-0 bg-white bg-opacity-70 backdrop-blur-sm' : ''}`}>
+        <header className={`${bgColor} navbar fixed top-0 w-full z-50 ease-in-out transition-all duration-500 will-change-transform ${isScrolled ? '-translate-y-full' : ''} ${isScrolled && isVisible ? 'translate-y-0 bg-white bg-opacity-70 backdrop-blur-sm' : ''}`}>
             <nav className="navbar-nav flex items-stretch page-container">
                 <div className={`navbar-brand transition-all duration-500 ease-in-out flex-1 ${isScrolled && isVisible ? 'py-2' : 'py-5'}`}>
                     <Link href="/" className={`brand-logo block relative transition-all duration-500 ease-in-out ${isScrolled && isVisible ? 'w-24 h-16' : 'w-32 h-20'}`}>
