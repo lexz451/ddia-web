@@ -46,4 +46,5 @@ export type TPost = {
     updatedAt: string;
     post_type: TPostType;
     authors: TAuthor[];
+    content: string;
 };

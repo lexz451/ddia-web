@@ -28,4 +28,17 @@
       }
     }
   }
+
+  .post-content {
+    @apply prose prose-lg max-w-none;
+    :first-child {
+      @apply mt-0;
+    }
+    [data-youtube-video] {
+      @apply w-full aspect-video;
+    }
+    .pdf-doc {
+      @apply w-full h-auto aspect-[8.5/11];
+    }
+  }
 }

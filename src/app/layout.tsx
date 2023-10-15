@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import Footer from '@/lib/components/footer'
-import { ProgressBar } from 'next-nprogress'
+import { ProgressBar } from '@lexz451/next-nprogress'
 
 import './globals.css'
 import { Suspense } from 'react'
@@ -32,10 +32,7 @@ export default function RootLayout({
         <Footer />
         <Suspense fallback={null}>
           <ProgressBar
-            color='#333'
-            height='2px'
-            options={{}}
-            delay={0}
+            color='#015C6B'
           />
         </Suspense>
       </body>

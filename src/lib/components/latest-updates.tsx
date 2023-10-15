@@ -1,7 +1,7 @@
 
 import ServerImage from "./server-image";
 import { TPost } from "../utils/types";
-import { Link } from "next-nprogress";
+import { Link } from "@lexz451/next-nprogress";
 
 
 export default function LatestUpdates({
@@ -28,9 +28,9 @@ export default function LatestUpdates({
         {posts.map((upd) => {
           return (
             <div key={upd.slug} className={`flex flex-col`}>
-              <div className="relative w-full mb-2">
-                {upd.feature_media && <ServerImage {...upd.feature_media} sizes="33vw"/>}
-              </div>
+              <Link href={`/${upd.slug}`} className="relative w-full mb-2 group rounded-2xl overflow-hidden">
+                {upd.feature_media && <ServerImage {...upd.feature_media} sizes="33vw" className="transition-transform duration-700 group-hover:scale-110"/>}
+              </Link>
 
               <h4 className="text-sm tracking-tight text-gray-400 uppercase">
                 {upd.post_type?.name}

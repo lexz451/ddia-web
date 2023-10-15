@@ -2,7 +2,7 @@
 
 import ServerImage from "@/lib/components/server-image";
 import { TPost } from "@/lib/utils/types";
-import { Link } from "next-nprogress";
+import { Link } from "@lexz451/next-nprogress";
 import { useEffect, useState } from "react";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 
@@ -94,7 +94,7 @@ export default function Posts({
                                         {post.description}
                                     </p>
                                 </div>
-                                <Link className="my-auto ml-20" href="#">
+                                <Link className="my-auto ml-20" href={`/${post.slug}`}>
                                     <ArrowCircleIcon className="stroke-design-green stroke-[1.5]"></ArrowCircleIcon>
                                 </Link>
                             </div>
