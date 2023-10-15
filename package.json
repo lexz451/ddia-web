@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lexz451/next-nprogress": "^0.1.0",
     "gsap": "^3.12.2",
     "next": "latest",
-    "next-nprogress": "github:lexz451/next-nprogress",
     "node-html-parser": "^6.1.10",
     "qs": "^6.11.2",
     "react": "latest",

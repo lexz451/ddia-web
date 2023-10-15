@@ -8,7 +8,7 @@ import GlobeIcon from '@/lib/assets/globe-alt.svg';
 import SearchIcon from '@/lib/assets/search.svg';
 import { useEffect, useState } from 'react';
 import useScroll from '../hooks/useScroll';
-import { Link } from 'next-nprogress';
+import { Link } from '@lexz451/next-nprogress';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {

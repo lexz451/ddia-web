@@ -1,15 +1,15 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@lexz451/next-nprogress':
+    specifier: ^0.1.0
+    version: 0.1.0
   gsap:
     specifier: ^3.12.2
     version: 3.12.2
   next:
     specifier: latest
     version: 13.5.4(@babel/core@7.23.0)(react-dom@18.2.0)(react@18.2.0)
-  next-nprogress:
-    specifier: github:lexz451/next-nprogress
-    version: github.com/lexz451/next-nprogress/5ac1e72805e47be1163ed3ef530d2fa857d83fc3
   node-html-parser:
     specifier: ^6.1.10
     version: 6.1.10
@@ -1414,6 +1414,12 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
+
+  /@lexz451/next-nprogress@0.1.0:
+    resolution: {integrity: sha512-eVYFplDbF96w/ybyIx/RDyvzPNEZ4+od5nYg0Rq2xDYj+dL0mBSQR2ZhTPJuuYAxyJqyNPhgxWSgvYNaCcB3tA==}
+    dependencies:
+      nprogress: 0.2.0
+    dev: false
 
   /@next/env@13.5.4:
     resolution: {integrity: sha512-LGegJkMvRNw90WWphGJ3RMHMVplYcOfRWf2Be3td3sUa+1AaxmsYyANsA+znrGCBjXJNi4XAQlSoEfUxs/4kIQ==}
@@ -4683,11 +4689,3 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
-
-  github.com/lexz451/next-nprogress/5ac1e72805e47be1163ed3ef530d2fa857d83fc3:
-    resolution: {tarball: https://codeload.github.com/lexz451/next-nprogress/tar.gz/5ac1e72805e47be1163ed3ef530d2fa857d83fc3}
-    name: next-nprogress
-    version: 0.1.0
-    dependencies:
-      nprogress: 0.2.0
-    dev: false

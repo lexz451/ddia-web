@@ -2,7 +2,7 @@ import Logo from '@/lib/assets/logo.svg';
 import FacebookIcon from '@/lib/assets/facebook.svg';
 import InstagramIcon from '@/lib/assets/instagram.svg';
 import XIcon from '@/lib/assets/x-twitter.svg';
-import { Link } from 'next-nprogress';
+import { Link } from '@lexz451/next-nprogress';
 
 export default function Footer() {
     return (

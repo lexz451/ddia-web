@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import Footer from '@/lib/components/footer'
-import { ProgressBar } from 'next-nprogress'
+import { ProgressBar } from '@lexz451/next-nprogress'
 
 import './globals.css'
 import { Suspense } from 'react'
