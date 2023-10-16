@@ -1,29 +1,17 @@
 import Image from 'next/image';
 import HeroImg from '@/lib/assets/hero-1.png';
 import GetInvolved from '@/lib/components/get-involved';
-import { getApi } from '@/lib/utils/api';
 import LatestUpdates from '@/lib/components/latest-updates';
 import OurWork from '@/lib/components/our-work';
 import AboutUs from '@/lib/components/about-us';
+import { fetchLatestPosts } from '@/lib/data/posts';
 
-async function getData() {
-  const posts = await getApi('/posts', {
-    pagination: {
-      limit: 3
-    },
-    populate: ["feature_media", "post_type"],
-    sort: ["publish_date:desc"]
-  }, {
-    cache: 'no-cache'
-  });
-  return {
-    posts
-  };
-};
 
 export default async function Home() {
 
-  const { posts: { data: latestPosts } } = await getData();
+  const { data: latestPosts } = await fetchLatestPosts({
+    limit: 3,
+  });
 
   return (
     <main className="">
@@ -34,7 +22,7 @@ export default async function Home() {
               Digital Democracy Institute of the Americas (DDIA)
             </h1>
             <p className="IntroductoryText max-w-prose text-design-dark md:text-xl font-normal font-['Avenir'] leading-7 mt-5">
-            The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.
+              The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.
             </p>
             <button className="Rectangle129 r-btn font-normal border-none bg-design-yellow rounded-3xl mt-10 text-design-green">
               Get involved
