@@ -27,16 +27,16 @@ export default async function Home() {
 
   return (
     <main className="">
-      <section className='Rectangle198 bg-gradient-to-b from-design-light-green to-white pt-[180px]'>
-        <div className='page-container grid grid-cols-2'>
-          <div className='flex flex-col justify-center'>
-            <h1 className="Headline text-design-green text-6xl font-extrabold font-['Avenir']">
+      <section className='Rectangle198 bg-gradient-to-b from-design-light-green to-white pt-[150px] md:pt-[180px]'>
+        <div className='page-container grid md:grid-cols-2'>
+          <div className='flex flex-col items-start justify-center'>
+            <h1 className="Headline text-design-green text-4xl md:text-6xl font-extrabold font-['Avenir']">
               Digital Democracy Institute of the Americas (DDIA)
             </h1>
-            <p className="IntroductoryText max-w-prose text-design-dark text-xl font-normal font-['Avenir'] leading-7 mt-5">
+            <p className="IntroductoryText max-w-prose text-design-dark md:text-xl font-normal font-['Avenir'] leading-7 mt-5">
             The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.
             </p>
-            <button className="Rectangle129 w-40 h-11 bg-design-yellow rounded-3xl border mt-10 text-design-green">
+            <button className="Rectangle129 r-btn font-normal border-none bg-design-yellow rounded-3xl mt-10 text-design-green">
               Get involved
             </button>
           </div>
@@ -52,9 +52,7 @@ export default async function Home() {
       <section>
         <OurWork></OurWork>
       </section>
-      <section className='page-container my-20'>
-        <GetInvolved></GetInvolved>
-      </section>
+      <GetInvolved></GetInvolved>
       <section className='page-container my-20'>
         <LatestUpdates posts={latestPosts}></LatestUpdates>
       </section>

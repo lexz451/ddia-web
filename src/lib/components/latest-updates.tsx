@@ -12,26 +12,25 @@ export default function LatestUpdates({
   
   return (
     <section className="flex flex-col">
-      <div className="flex w-full">
+      <div className="flex items-center w-full">
         <h2 className="text-5xl font-avenir tracking-tighter text-design-dark-green">
           Latest Updates
         </h2>
         <Link
           href={"/latest"}
-          className="ml-auto text-sm r-btn border-design-green text-design-green"
+          className="hidden md:block ml-auto text-sm r-btn border-design-green text-design-green"
         >
           See all
         </Link>
       </div>
 
-      <div className="grid grid-cols-3 gap-10 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
         {posts.map((upd) => {
           return (
             <div key={upd.slug} className={`flex flex-col`}>
-              <Link href={`/${upd.slug}`} className="relative w-full mb-2 group rounded-2xl overflow-hidden">
-                {upd.feature_media && <ServerImage {...upd.feature_media} sizes="33vw" className="transition-transform duration-700 group-hover:scale-110"/>}
+              <Link href={`/${upd.slug}`} className="relative w-full mb-4 group rounded-2xl overflow-hidden">
+                {upd.feature_media && <ServerImage {...upd.feature_media} sizes="33vw" className="aspect-[9/6] object-cover transition-transform duration-700 group-hover:scale-110"/>}
               </Link>
-
               <h4 className="text-sm tracking-tight text-gray-400 uppercase">
                 {upd.post_type?.name}
               </h4>
@@ -65,6 +64,13 @@ export default function LatestUpdates({
           );
         })}
       </div>
+
+      <Link
+          href={"/latest"}
+          className="md:hidden mt-10 mx-auto text-sm r-btn border-none bg-design-green text-design-light"
+        >
+          See all
+        </Link>
     </section>
   );
 }
