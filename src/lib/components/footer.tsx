@@ -2,6 +2,10 @@ import Logo from '@/lib/assets/logo.svg';
 import FacebookIcon from '@/lib/assets/facebook.svg';
 import InstagramIcon from '@/lib/assets/instagram.svg';
 import XIcon from '@/lib/assets/x-twitter.svg';
+import ArrowIcon from '../assets/arrow.svg';
+import LinkedInIcon from '@/lib/assets/linked-in.svg';
+import MediumIcon from '@/lib/assets/medium.svg';
+import YoutubeIcon from '@/lib/assets/yt.svg';
 import { Link } from '@lexz451/next-nprogress';
 
 export default function Footer() {
@@ -12,12 +16,28 @@ export default function Footer() {
                     <div className="mr-10">
                         <Logo className="w-24 h-16 -ml-1"></Logo>
                         <p className="IntroductoryText  mt-8 leading-snug text-sm text-white">
-                            Contact us at <a className="underline">info@ddia.org</a> <br /> to explore partnerships or to learn <br /> more about our work.
+                            The Digital Democracy Institute of the Americas (DDIA) is a fiscally sponsored project of Equis Institute, a 501(c)(3) organization.
                         </p>
-                        <div className="SocialIcons flex gap-6 mt-10">
-                            <FacebookIcon className="w-6 h-6"></FacebookIcon>
-                            <InstagramIcon className="w-6 h-6"></InstagramIcon>
-                            <XIcon className="w-6 h-6"></XIcon>
+                        <div className="SocialIcons flex gap-3 mt-10">
+                            <Link href="#" className='w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center'>
+                                <LinkedInIcon className="w-6 h-6 fill-black"></LinkedInIcon>
+                            </Link>
+                            <Link href="#" className='w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center'>
+                                <XIcon className="w-5 h-5 fill-black"></XIcon>
+                            </Link>
+                            <Link href="#" className='w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center'>
+                                <MediumIcon className="w-6 h-6 fill-black"></MediumIcon>
+                            </Link>
+                            <Link href="#" className='w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center'>
+                                <FacebookIcon className="w-6 h-6 fill-black"></FacebookIcon>
+                            </Link>
+                            <Link href="#" className='w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center'>
+                                <YoutubeIcon className="w-6 h-6 fill-black"></YoutubeIcon>
+                            </Link>
+                            <Link href="#" className='w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center'>
+                                <InstagramIcon className="w-6 h-6 fill-black"></InstagramIcon>
+                            </Link>
+
                         </div>
                     </div>
                     <div className="FootersColumn w-40 flex-col justify-start items-start gap-4 inline-flex mt-5">
@@ -61,19 +81,21 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="Subscribe border-y border-white border-opacity-20 mt-14">
-                    <div className="Content py-8 justify-between items-center inline-flex w-full">
+                    <div className="Content py-8 grid grid-cols-2 gap-8">
                         <div className="Cta flex-col justify-start items-start gap-2 inline-flex">
                             <div className="Heading self-stretch text-gray-400 text-sm font-semibold  uppercase leading-tight tracking-wide">Subscribe to our newsletter</div>
-                            <div className="SupportingText text-gray-300 text-base font-normal  leading-normal">The latest news, articles, and resources, sent to your inbox weekly.</div>
+                            <div className="SupportingText text-gray-300 text-base font-normal  leading-normal">
+                                Subscribe to receive updates and research from DDIA.
+                            </div>
                         </div>
-                        <div className="FootersSubscribeForm justify-start items-start gap-3 flex">
-                            {/* <div className="FootersTextInput h-10 px-3 py-2 bg-white rounded-md border border-white justify-start items-center flex">
-                                <input className="Placeholder text-gray-500 text-base font-normal  leading-normal">Enter your email</input>
-                            </div> */}
-                            <input className="h-10 rounded-md px-4 placeholder:text-gray-500  bg-white leading-normal" placeholder="Enter your email" />
-                            <button className="FootersSubmitButton btn bg-design-light-green text-design-dark-green">
-                                Subscribe
-                            </button>
+                        <div className="FootersSubscribeForm grid grid-cols-2 gap-4">
+                            <input placeholder='Name' className='rounded-3xl px-4 bg-transparent border border-design-light-green h-12 placeholder:text-design-light-green text-white text-sm'></input>
+                            <div className='block relative'>
+                                <input placeholder='Email' className='rounded-3xl px-4 bg-transparent border border-design-light-green h-12 w-full placeholder:text-design-light-green text-white text-sm'></input>
+                                <button className='absolute bg-white rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center'>
+                                    <ArrowIcon></ArrowIcon>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
