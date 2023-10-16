@@ -33,6 +33,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <ProgressBar
             color='#015C6B'
+            height='2px'
           />
         </Suspense>
       </body>
