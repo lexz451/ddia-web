@@ -10,6 +10,13 @@ import { Metadata } from "next"
 import { parsePostContent } from '@/lib/utils/helpers';
 import LatestUpdates from '@/lib/components/latest-updates';
 
+export async function generateStaticParams() {
+    const {data: posts} = await fetchLatestPosts({});
+    return posts.map((post: TPost) => ({
+        slug: post.slug
+    }));
+}
+
 export const metadata: Metadata = {};
 
 export default async function ArticlePage({
