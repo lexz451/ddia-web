@@ -9,16 +9,24 @@ export default function OurWork() {
     useGsapWithContext((gsap) => {
         const wrapper = document.querySelector(".our-work-container-wrapper") as HTMLDivElement;
         const container = document.querySelector(".our-work-container") as HTMLDivElement;
-        const scroller = document.querySelector(".scroller");
+        const containerOffset = container?.offsetLeft;
+        const scroller = document.querySelector(".scroller") as HTMLDivElement;
         gsap.to(scroller, {
-            x: () => -(wrapper?.scrollWidth - container?.offsetWidth),
+            x: () => (wrapper?.offsetWidth - scroller?.offsetWidth - (containerOffset * 2) - 32),
             scrollTrigger: {
                 trigger: ".our-work-container",
                 pin: true,
+                invalidateOnRefresh: true,
                 start: "center center",
                 end: "bottom top",
                 // markers: true,
                 scrub: true,
+                onUpdate: (self) => {
+                    console.log(self.progress);
+                    console.log(scroller.offsetWidth);
+                    console.log(wrapper.offsetWidth);
+                    console.log(containerOffset);
+                }
             }
         });
     })
@@ -64,6 +72,19 @@ export default function OurWork() {
                         <div className='max-w-[40rem] max-h-[40rem] h-full rounded-3xl bg-gradient-to-tr from-design-light-green to-white p-20'>
                             <SearchIcon className="mb-10"></SearchIcon>
                             <div className="mb-10 Headline text-design-dark-green text-4xl font-extrabold font-['Avenir'] leading-9">Capacity Building</div>
+                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">
+                                DDIA is working to strengthen a healthier internet by applying research to practical solutions and interventions that reflect and serve the needs of Latino communities.
+                            </div>
+                            <div className='flex items-center mt-4'>
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.97117 17.8052L17.9414 8.90234L8.97117 -0.000523186L0.000941627 8.90234L8.97117 17.8052Z" fill="#fafafa" />
+                                </svg>
+                                <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">Read more</div>
+                            </div>
+                        </div>
+                        <div className='max-w-[40rem] max-h-[40rem] h-full rounded-3xl bg-gradient-to-tr from-design-light-green to-white p-20'>
+                            <SearchIcon className="mb-10"></SearchIcon>
+                            <div className="mb-10 Headline text-design-dark-green text-4xl font-extrabold font-['Avenir'] leading-9">Policy</div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">
                                 DDIA is working to strengthen a healthier internet by applying research to practical solutions and interventions that reflect and serve the needs of Latino communities.
                             </div>
