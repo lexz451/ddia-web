@@ -3,12 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-  .btn {
-    @apply px-4 py-2 rounded-md text-white font-normal text-base leading-normal;
-  }
-
+  
   .r-btn {
-    @apply rounded-full border-[0.15em] px-[1.8em] py-[0.7em] font-semibold;
+    @apply min-w-[130px] text-center leading-normal rounded-full border-[0.15em] px-[1.8em] py-[0.7em] font-semibold;
   }
 
   .page-container {

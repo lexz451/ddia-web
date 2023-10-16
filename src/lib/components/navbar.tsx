@@ -44,7 +44,7 @@ export default function Navbar() {
     }, [scrollDirection, scrollPosition]);
 
     return (
-        <header className={`${bgColor} navbar fixed top-0 w-full z-50 ease-in-out transition-all duration-500 will-change-transform ${isScrolled ? '-translate-y-full' : ''} ${isScrolled && isVisible ? 'translate-y-0 bg-white bg-opacity-70 backdrop-blur-sm' : ''}`}>
+        <header className={`${bgColor} navbar fixed w-screen top-0 z-50 ease-in-out transition-all duration-500 will-change-transform ${isScrolled ? '-translate-y-full' : ''} ${isScrolled && isVisible ? 'translate-y-0 bg-white bg-opacity-70 backdrop-blur-sm' : ''}`}>
             <nav className="navbar-nav flex items-stretch page-container">
                 <div className={`navbar-brand transition-all duration-500 ease-in-out flex-1 ${isScrolled && isVisible ? 'py-2' : 'py-5'}`}>
                     <Link href="/" className={`brand-logo block relative transition-all duration-500 ease-in-out ${isScrolled && isVisible ? 'w-24 h-16' : 'w-32 h-20'}`}>
@@ -52,7 +52,7 @@ export default function Navbar() {
                         <Logo2 className={`absolute transition-all duration-500 ease-in-out brand-collapsed opacity-0 ${isScrolled && isVisible ? 'opacity-100' : ''}`}></Logo2>
                     </Link>
                 </div>
-                <ul className='navbar-menu inline-flex gap-5 mr-10'>
+                <ul className='navbar-menu hidden md:inline-flex gap-5 mr-10'>
                     <li className='flex'>
                         <Link href={'/about-us'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
