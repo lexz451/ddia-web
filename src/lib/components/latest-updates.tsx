@@ -66,6 +66,7 @@ export default function LatestUpdates({
       </div>
 
       <Link
+          prefetch={true}
           href={"/latest"}
           className="md:hidden mt-10 mx-auto text-sm r-btn border-none bg-design-green text-design-light"
         >
