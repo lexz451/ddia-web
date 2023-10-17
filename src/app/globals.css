@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components {
-  
+
   .r-btn {
     @apply min-w-[130px] text-center leading-normal rounded-full border-[0.15em] px-[1.8em] py-[0.7em] font-semibold;
   }
@@ -15,7 +16,28 @@
   .page-container {
     @apply container xl:max-w-6xl mx-auto px-5 md:px-4;
   }
-  
+
+  .gradient-green-page {
+    background: linear-gradient(180deg, #6AC2C7 0%, rgba(255, 255, 255, 0.00) 100%);
+  }
+
+  .gradient-green-section {
+    background: linear-gradient(180deg, rgba(106, 194, 199, 0.61) 0%, rgba(255, 255, 255, 0.00) 100%);
+  }
+
+  .gradient-green-container {
+    background: linear-gradient(180deg, rgba(106, 194, 199, 0.62) 20.31%, rgba(107, 195, 200, 0.15) 100%);
+  }
+
+  .gradient-green-container-horizontal {
+    background: linear-gradient(50deg, rgba(106, 194, 199, 0.80) 16.08%, rgba(198, 232, 233, 0.29) 90.67%);
+  }
+
+  .gradient-cyan-section {
+    background: linear-gradient(180deg, #0F8BA0 0%, rgba(255, 234, 216, 0.81) 100%);
+  }
+
+
   .navbar .navbar-menu li {
     &:hover {
       .indicator {
@@ -76,7 +98,6 @@
     }
   }
 }
-
 
 body {
   @apply flex flex-col min-h-screen antialiased relative bg-design-light;

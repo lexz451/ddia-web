@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <main>
-      <section className='bg-gradient-to-b from-design-light-green to-design-light pt-[150px] md:pt-[180px]'>
+      <section className='gradient-green-page pt-[150px] md:pt-[180px]'>
         <div className='page-container grid md:grid-cols-2'>
           <div className='flex flex-col items-start justify-center'>
             <h1 className="Headline text-design-green text-4xl md:text-6xl font-extrabold font-['Avenir']">

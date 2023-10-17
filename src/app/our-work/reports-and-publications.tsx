@@ -4,7 +4,7 @@ import TestImg from '@/lib/assets/tecnologia-fondo-toque-humano-nueva-version-mo
 
 export default function ReportsAndPublications() {
     return (
-        <section className="bg-gradient-to-b from-design-light-green to-white">
+        <section className="gradient-green-section">
             <div className="page-container py-20">
                 <div className="flex flex-col items-center">
                     <IndicatorIcon className="fill-white w-4 h-4"></IndicatorIcon>

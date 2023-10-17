@@ -11,10 +11,12 @@ const config: Config = {
     extend: {
       colors: {
         'design-green': '#015C6B',
+        'design-cyan': '#0F8BA0',
         'design-light-green': '#6AC2C7',
         'design-dark-green': '#012135',
         'design-yellow': '#EBB785',
         'design-light-yellow': '#FFEAD8',
+        'design-extralight-yellow': '#F2EFE8',
         'design-dark': '#1F1F24',
         'design-light': '#FAFAFA',
       },

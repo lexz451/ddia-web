@@ -7,7 +7,7 @@ export default function OurWorkPage() {
     return (
         <main className="bg-design-light pt-[150px]">
             <section className="page-container">
-                <div className="bg-design-green flex flex-col items-center px-10 py-20 bg-gradient-to-b from-design-light-green to-design-light rounded-3xl">
+                <div className="flex flex-col items-center px-10 py-20 gradient-green-container rounded-3xl">
                     <div className="Headline w-96 text-center text-design-green text-6xl font-extrabold font-['Avenir'] leading-10">Our work</div>
                     <div className="w-96 mt-10 text-center text-design-green text-lg font-normal font-['Avenir'] leading-relaxed">Our work is explicitly Latino, connects disciplines and regions (the U.S. and Latin America), and addresses the root causes of belief and behavior.</div>
                     <div className="grid grid-cols-3 gap-10 mt-10">

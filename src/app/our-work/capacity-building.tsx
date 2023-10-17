@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function CapacityBuilding() {
     return (
-        <section className='bg-gradient-to-b from-design-light-green to-design-yellow pb-footer'>
+        <section className='gradient-cyan-section pb-footer'>
             <div className="page-container py-20">
                 <div className='flex flex-col items-center'>
                     <IndicatorIcon className="fill-white w-4 h-4"></IndicatorIcon>

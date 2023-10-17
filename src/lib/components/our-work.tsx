@@ -50,7 +50,7 @@ export default function OurWork() {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl bg-gradient-to-tr from-design-light-green to-white py-20 px-10'>
+                        <div className='w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10'>
                             <SearchIcon className="mb-10"></SearchIcon>
                             <div className="md:mb-10 mb-5 Headline text-design-dark-green text-2xl md:text-4xl font-extrabold font-['Avenir'] leading-9">Research and Analysis</div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">DDIA uses narrative analysis, open source investigations, public opinion research, and information-sharing between disciplines across the Americas to deepen understanding of Latinos and information landscapes in the US and Latin America.</div>
@@ -61,7 +61,7 @@ export default function OurWork() {
                                 <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">Read more</div>
                             </div>
                         </div>
-                        <div className='w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl bg-gradient-to-tr from-design-light-green to-white py-20 px-10'>
+                        <div className='w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10'>
                             <SearchIcon className="mb-10"></SearchIcon>
                             <div className="md:mb-10 mb-5 Headline text-design-dark-green text-2xl md:text-4xl font-extrabold font-['Avenir'] leading-9">Reports and Publications</div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">
@@ -74,7 +74,7 @@ export default function OurWork() {
                                 <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">Read more</div>
                             </div>
                         </div>
-                        <div className='w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl bg-gradient-to-tr from-design-light-green to-white py-20 px-10'>
+                        <div className='w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10'>
                             <SearchIcon className="mb-10"></SearchIcon>
                             <div className="md:mb-10 mb-5 Headline text-design-dark-green text-2xl md:text-4xl font-extrabold font-['Avenir'] leading-9">Capacity Building</div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">
@@ -87,7 +87,7 @@ export default function OurWork() {
                                 <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">Read more</div>
                             </div>
                         </div>
-                        <div className='w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl bg-gradient-to-tr from-design-light-green to-white py-20 px-10'>
+                        <div className='w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10'>
                             <SearchIcon className="mb-10"></SearchIcon>
                             <div className="md:mb-10 mb-5 Headline text-design-dark-green text-2xl md:text-4xl font-extrabold font-['Avenir'] leading-9">Policy</div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">

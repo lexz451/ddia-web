@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function AboutUs() {
   return (
     <main className="">
-      <section className="bg-gradient-to-b from-design-light-green to-design-light pt-[120px]">
+      <section className="gradient-green-page pt-[120px]">
         <div className="page-container mt-10">
           <div className="grid grid-cols-[1fr_2fr] gap-6 pb-10">
             <Image

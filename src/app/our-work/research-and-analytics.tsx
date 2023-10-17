@@ -18,11 +18,11 @@ export default function ResearchAndAnalytics() {
                 </div>
                 <div className="IntroductoryText max-w-prose text-center text-design-green text-lg font-normal font-['Avenir'] leading-relaxed">DDIA conducts polls, surveys, focus groups and interviews to develop theories about what is unique to Latinos when it comes to information integrity and information disorder online.</div>
                 <div className="IntroductoryText my-10 text-center text-design-green text-xl font-extrabold font-['Avenir'] uppercase leading-7">We use public opinion research to:</div>
-                <div className="Rectangle247 border-none max-w-[80%] flex items-center justify-between p-10 gap-10 h-36 bg-design-light-yellow bg-opacity-25 rounded-2xl">
+                <div className="Rectangle247 border-none max-w-[80%] flex items-center justify-between p-10 gap-10 h-36 bg-design-extralight-yellow rounded-2xl">
                     <Search2Icon className="w-12 h-12 flex-shrink-0"></Search2Icon>
                     <div className="IntroductoryText text-neutral-800 text-2xl font-normal font-['Avenir'] leading-none">Shape understanding of the psychological, social, and systemic drivers of information and disinformation cycles.</div>
                 </div>
-                <div className="Rectangle247 border-none mt-5 max-w-[80%] flex items-center justify-between p-10 gap-10 h-36 bg-design-light-yellow bg-opacity-25  rounded-2xl">
+                <div className="Rectangle247 border-none mt-5 max-w-[80%] flex items-center justify-between p-10 gap-10 h-36 bg-design-extralight-yellow rounded-2xl">
                     <Search2Icon className="w-12 h-12 flex-shrink-0"></Search2Icon>
                     <div className="IntroductoryText text-neutral-800 text-2xl font-normal font-['Avenir'] leading-none">
                         Determine the extent to which disinformation, misinformation, propaganda and extremist content penetrate and impact Latinos’ beliefs, behaviors, and democratic engagement (and vice versa).
@@ -99,33 +99,33 @@ export default function ResearchAndAnalytics() {
                 <div className="IntroductoryText max-w-prose text-center text-neutral-800 text-lg font-normal font-['Avenir'] leading-relaxed">DDIA and U.S uses social listening, media monitoring, and OSINT techniques to shed light on how Latino communities are exposed to and targeted with information within platforms, messaging apps, and websites across the U.S. and Latin America.</div>
                 <div className="IntroductoryText mt-10 text-center text-design-green text-xl font-extrabold font-['Avenir'] uppercase leading-7">Issues and Narratives</div>
                 <div className='grid grid-cols-3 grid-rows-2 mt-10 gap-10'>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8">
                         <div className="Headline text-white text-3xl font-extrabold font-['Avenir']">Elections and Voting</div>
-                        <ArrowCircleIcon className="stroke-design-light-green ml-auto"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </div>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8">
                         <div className="Headline text-white text-3xl font-extrabold font-['Avenir']">Identity and Culture</div>
-                        <ArrowCircleIcon className="stroke-design-light-green ml-auto"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </div>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
-                        <div className="Headline text-white text-3xl font-extrabold font-['Avenir']">Public Health</div>
-                        <ArrowCircleIcon className="stroke-design-light-green ml-auto"></ArrowCircleIcon>
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8">
+                        <div className="Headline text-white text-3xl font-extrabold font-['Avenir']">Public <br></br> Health</div>
+                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </div>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8">
                         <div className="Headline text-white text-3xl font-extrabold font-['Avenir']">Migration</div>
-                        <ArrowCircleIcon className="stroke-design-light-green ml-auto"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </div>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8">
                         <div className="Headline text-white text-3xl font-extrabold font-['Avenir']">
                             Artificial Intelligence
                         </div>
-                        <ArrowCircleIcon className="stroke-design-light-green ml-auto"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </div>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8">
                         <div className="Headline text-white text-3xl font-extrabold font-['Avenir']">
                             Conspiracy Networks
                         </div>
-                        <ArrowCircleIcon className="stroke-design-light-green ml-auto"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </div>
                     <div className="BlogSectionsPost overflow-hidden bg-white rounded-lg grid grid-rows-2">
                         <Image src={TestImg} alt='' className='relative w-full h-full object-cover object-center'></Image>
@@ -185,42 +185,42 @@ export default function ResearchAndAnalytics() {
                 <div className='w-full my-20 h-[1px] bg-neutral-400 bg-opacity-50'></div>
                 <div className="IntroductoryText w-96 text-center text-design-green text-xl font-extrabold font-['Avenir'] uppercase leading-7">Platforms and Apps</div>
                 <div className='grid grid-cols-3 grid-rows-2 mt-10 gap-10'>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between aspect-[4/2] p-8">
                         <div className="Ellipse59 w-11 h-11 bg-white bg-opacity-30 rounded-full" />
                         <div className='flex items-end'>
                             <div className="Headline mt-5 text-white text-3xl font-extrabold font-['Avenir']">Facebook and Instagram</div>
                             <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </div>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between aspect-[4/2] p-8">
                         <div className="Ellipse59 w-11 h-11 bg-white bg-opacity-30 rounded-full" />
                         <div className='flex items-end'>
                             <div className="Headline mt-5 text-white text-3xl font-extrabold font-['Avenir']">Facebook and Instagram</div>
                             <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </div>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between aspect-[4/2] p-8">
                         <div className="Ellipse59 w-11 h-11 bg-white bg-opacity-30 rounded-full" />
                         <div className='flex items-end'>
                             <div className="Headline mt-5 text-white text-3xl font-extrabold font-['Avenir']">Facebook and Instagram</div>
                             <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </div>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between aspect-[4/2] p-8">
                         <div className="Ellipse59 w-11 h-11 bg-white bg-opacity-30 rounded-full" />
                         <div className='flex items-end'>
                             <div className="Headline mt-5 text-white text-3xl font-extrabold font-['Avenir']">Facebook and Instagram</div>
                             <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </div>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between aspect-[4/2] p-8">
                         <div className="Ellipse59 w-11 h-11 bg-white bg-opacity-30 rounded-full" />
                         <div className='flex items-end'>
                             <div className="Headline mt-5 text-white text-3xl font-extrabold font-['Avenir']">Facebook and Instagram</div>
                             <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </div>
-                    <div className="Rectangle17 bg-cyan-600 rounded-2xl flex flex-col justify-between p-5">
+                    <div className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between aspect-[4/2] p-8">
                         <div className="Ellipse59 w-11 h-11 bg-white bg-opacity-30 rounded-full" />
                         <div className='flex items-end'>
                             <div className="Headline mt-5 text-white text-3xl font-extrabold font-['Avenir']">Facebook and Instagram</div>
@@ -230,7 +230,7 @@ export default function ResearchAndAnalytics() {
 
                 </div>
                 <div className='flex flex-col w-full gap-5 mt-10'>
-                    <div className="flex items-center w-full p-10 bg-design-light-yellow bg-opacity-25 rounded-2xl">
+                    <div className="flex items-center w-full p-10 bg-design-extralight-yellow rounded-2xl">
                         <div className='flex flex-col flex-1'>
                             <div className='flex items-center'>
                                 <div className="Headline w-24 h-6 text-cyan-600 text-base font-normal  uppercase">WhatsApp </div>
@@ -240,7 +240,7 @@ export default function ResearchAndAnalytics() {
                         </div>
                         <ArrowCircleIcon className="stroke-black flex-shrink-0"></ArrowCircleIcon>
                     </div>
-                    <div className="flex items-center w-full p-10 bg-design-light-yellow bg-opacity-25 rounded-2xl">
+                    <div className="flex items-center w-full p-10 bg-design-extralight-yellow rounded-2xl">
                         <div className='flex flex-col flex-1'>
                             <div className='flex items-center'>
                                 <div className="Headline w-24 h-6 text-cyan-600 text-base font-normal  uppercase">WhatsApp </div>
@@ -250,7 +250,7 @@ export default function ResearchAndAnalytics() {
                         </div>
                         <ArrowCircleIcon className="stroke-black flex-shrink-0"></ArrowCircleIcon>
                     </div>
-                    <div className="flex items-center w-full p-10 bg-design-light-yellow bg-opacity-25 rounded-2xl">
+                    <div className="flex items-center w-full p-10 bg-design-extralight-yellow rounded-2xl">
                         <div className='flex flex-col flex-1'>
                             <div className='flex items-center'>
                                 <div className="Headline w-24 h-6 text-cyan-600 text-base font-normal  uppercase">WhatsApp </div>
