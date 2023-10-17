@@ -1,7 +1,6 @@
 import Accordion from "@/lib/components/accordion";
 import LatestUpdates from "@/lib/components/latest-updates";
 import { fetchLatestPosts } from "@/lib/data/posts";
-import { getApi } from "@/lib/utils/api";
 import { Link } from "@lexz451/next-nprogress";
 
 
@@ -51,7 +50,7 @@ export default async function FAQ() {
         </div>
       </section>
 
-      <section className="px-11 page-container">
+      <section className="page-container">
         <div className="bg-design-green flex rounded-xl h-[20rem]">
           <h1 className="text-design-light block text-5xl font-medium m-auto">
             Banner
@@ -59,7 +58,7 @@ export default async function FAQ() {
         </div>
       </section>
 
-      <section className="my-20 p-11 page-container">
+      <section className="my-20 pb-footer page-container">
         <LatestUpdates posts={latestPosts} />
       </section>
     </main>

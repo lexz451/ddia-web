@@ -9,7 +9,7 @@ async function fetchLatestUpdates(
   type: number | undefined = undefined,
   query: string | undefined = undefined) {
 
-  const posts = await fetchLatestPosts({limit, start, type, query});
+  const posts = await fetchLatestPosts({ limit, start, type, query });
   const postTypes = await fetchPostTypes();
 
   return {
@@ -30,9 +30,9 @@ export default async function LatestUpdates({
   const query = paramQuery as string;
 
   const {
-    posts: { 
+    posts: {
       data: latestPosts,
-      meta: { pagination: { total } } 
+      meta: { pagination: { total } }
     },
     postTypes: { data: postTypes }
   } = await fetchLatestUpdates(
@@ -76,20 +76,22 @@ export default async function LatestUpdates({
       </section>
 
       <section className="border-b border-b-gray-500">
-        <Posts 
-          posts={latestPosts} 
+        <Posts
+          posts={latestPosts}
           limit={limit}
           type={type}
           query={query}
           total={total}
-          ></Posts>
+        ></Posts>
       </section>
 
-      <div className="flex w-full my-10 h-80 rounded-3xl bg-gradient-to-b from-design-light-green to-gray-100">
-        <h1 className="m-auto font-[Inter] font-semibold text-5xl text-gray-500">
-          Banner
-        </h1>
-      </div>
+      <section className="pb-footer">
+        <div className="flex w-full my-10 h-80 rounded-3xl bg-gradient-to-b from-design-light-green to-gray-100">
+          <h1 className="m-auto font-[Inter] font-semibold text-5xl text-gray-500">
+            Banner
+          </h1>
+        </div>
+      </section>
     </main>
   );
 }

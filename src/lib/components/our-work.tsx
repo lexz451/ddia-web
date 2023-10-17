@@ -1,6 +1,6 @@
 "use client";
 import SearchIcon from '@/lib/assets/search-2.svg';
-import { useGsapWithContext } from '@/hooks/useGsap';
+import { useGsapWithContext } from '@/lib/hooks/useGsap';
 
 
 

@@ -8,8 +8,12 @@
     @apply min-w-[130px] text-center leading-normal rounded-full border-[0.15em] px-[1.8em] py-[0.7em] font-semibold;
   }
 
+  .pb-footer {
+    padding-bottom: calc(630px + 2.5rem);
+  }
+
   .page-container {
-    @apply container xl:max-w-6xl mx-auto px-4;
+    @apply container xl:max-w-6xl mx-auto px-5 md:px-4;
   }
   
   .navbar .navbar-menu li {
@@ -37,5 +41,46 @@
     .pdf-doc {
       @apply w-full h-auto aspect-[8.5/11];
     }
+  }
+
+  .menu-icon {
+    @apply w-6 h-6 relative block;
+    &::after,
+    &::before {
+      @apply absolute block w-full h-[3px] bg-design-green rounded-sm;
+      transition: transform 0.2s ease 0s, top 0.2s ease 0.2s, bottom 0.2s ease 0.2s;
+      content: "";
+    }
+    &::before {
+      top: 25%;
+      transform: rotate(0);
+    }
+    &::after {
+      bottom: 25%;
+      transform: rotate(0);
+    }
+    &.active {
+      &::after,
+      &::before {
+        transition: transform 0.2s ease 0.2s, top 0.2s ease 0s, bottom 0.2s ease 0s;
+      }
+
+      &::before {
+        top: calc(50% - 1.5px);
+        transform: rotate(45deg);
+      }
+      &::after {
+        bottom: calc(50% - 1.5px);
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+
+body {
+  @apply flex flex-col min-h-screen antialiased relative bg-design-light;
+  main {
+    @apply flex-1;
   }
 }

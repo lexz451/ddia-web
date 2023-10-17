@@ -95,7 +95,7 @@ export default async function ArticlePage({
                     </div>
                 </div>
             </main>
-            <footer className="page-container flex flex-col gap-10 mb-10">
+            <footer className="page-container flex flex-col gap-10 pb-footer mb-10">
                 <div className="flex w-full my-10 h-80 rounded-3xl bg-gradient-to-b from-design-light-green to-gray-100">
                     <h1 className="m-auto font-[Inter] font-semibold text-5xl text-gray-500">
                         Banner

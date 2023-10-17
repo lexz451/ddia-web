@@ -1,9 +1,9 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect } from 'react';
+import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 
 export const useGsapWithContext = (fn: (gsap: GSAP, ctx: gsap.Context) => void) => {
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         const ctx = gsap.context((_) => {
             fn(gsap, _);

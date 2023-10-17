@@ -6,31 +6,36 @@ import ArrowCircleIcon from '@/lib/assets/arrow-circle.svg';
 import IndicatorIcon from '@/lib/assets/indicator.svg';
 import GlobeIcon from '@/lib/assets/globe-alt.svg';
 import SearchIcon from '@/lib/assets/search.svg';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import useScroll from '../hooks/useScroll';
 import { Link } from '@lexz451/next-nprogress';
 import { usePathname } from 'next/navigation';
+import { useIsomorphicLayoutEffect } from '../hooks/useIsomorphicLayoutEffect';
+import { gsap } from 'gsap';
 
 export default function Navbar() {
 
+    const [isOpen, setIsOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
     const { scrollPosition, scrollDirection } = useScroll();
 
-    const [bgColor, setBgColor] = useState('bg-transparent' as 'bg-transparent' | 'bg-white' | 'bg-black');
+    const [bgColor, setBgColor] = useState('bg-transparent' as 'bg-transparent' | 'bg-design-light');
 
     const pathname = usePathname();
 
-    useEffect(() => {
-        if (pathname === '/') {
+    const transparentBg = ['/', '/about-us', '/our-work', '/faq'];
+
+    useIsomorphicLayoutEffect(() => {
+        if (transparentBg.includes(pathname)) {
             setBgColor('bg-transparent');
         } else {
-            setBgColor('bg-white');
+            setBgColor('bg-design-light');
         }
     }, [pathname]);
 
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
         if (scrollDirection === 'up' || scrollPosition < 50) {
             setIsVisible(true);
         } else {
@@ -43,10 +48,21 @@ export default function Navbar() {
         }
     }, [scrollDirection, scrollPosition]);
 
+    useIsomorphicLayoutEffect(() => {
+        const mm = gsap.matchMedia();
+        mm.add('(max-width: 767px)', () => {
+            gsap.to('#menu-icon', {
+                duration: 1,
+                rotation: isOpen ? 180 : 0,
+            });
+        })
+    }, [isOpen]);
+
+
     return (
-        <header className={`${bgColor} navbar fixed w-screen top-0 z-50 ease-in-out transition-all duration-500 will-change-transform ${isScrolled ? '-translate-y-full' : ''} ${isScrolled && isVisible ? 'translate-y-0 bg-white bg-opacity-70 backdrop-blur-sm' : ''}`}>
-            <nav className="navbar-nav flex items-stretch page-container">
-                <div className={`navbar-brand transition-all duration-500 ease-in-out flex-1 ${isScrolled && isVisible ? 'py-2' : 'py-5'}`}>
+        <header className={`navbar fixed top-0 w-screen z-50 ease-in-out transition-all duration-500 will-change-transform ${isScrolled ? '-translate-y-full' : ''} ${isScrolled && isVisible ? `translate-y-0 bg-design-light bg-opacity-70 backdrop-blur-sm` : `${bgColor}`}`}>
+            <nav className="navbar-nav flex items-center md:items-stretch page-container">
+                <div className={`navbar-brand transition-all duration-500 ease-in-out flex-1 ${isScrolled && isVisible ? 'py-2' : 'py-3'}`}>
                     <Link href="/" className={`brand-logo block relative transition-all duration-500 ease-in-out ${isScrolled && isVisible ? 'w-24 h-16' : 'w-32 h-20'}`}>
                         <Logo className={`absolute transition-all duration-500 ease-in-out brand-expanded ${isScrolled && isVisible ? 'opacity-0' : ''}`}></Logo>
                         <Logo2 className={`absolute transition-all duration-500 ease-in-out brand-collapsed opacity-0 ${isScrolled && isVisible ? 'opacity-100' : ''}`}></Logo2>
@@ -63,7 +79,7 @@ export default function Navbar() {
                         <div></div>
                     </li>
                     <li className='flex'>
-                        <Link href={'/about-us'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
+                        <Link href={'/our-work'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className='text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out'>
                                 <span>Our work</span>
@@ -134,7 +150,10 @@ export default function Navbar() {
                         </Link>
                     </li>
                 </ul>
-                <div className='flex items-center gap-4'>
+                <button onClick={() => setIsOpen(!isOpen)} className='md:hidden flex-shrink-0 p-2'>
+                    <i className={`menu-icon ${isOpen ? 'active': ''}`}></i>
+                </button>
+                <div className='hidden md:flex items-center gap-4'>
                     <SearchIcon className="w-6 h-6"></SearchIcon>
                     <GlobeIcon className="w-6 h-6"></GlobeIcon>
                 </div>
