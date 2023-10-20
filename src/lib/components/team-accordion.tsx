@@ -1,39 +1,37 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
+import { TServerImage } from "../utils/types";
+import ServerImage from "./server-image";
 
 export default function TeamAccordion({
-  img,
+  avatar,
   prime,
-  member,
+  name,
   role,
   description,
 }: {
-  img: StaticImageData;
-  member: string;
+  avatar: TServerImage;
+  name: string;
   role: string;
   prime?: string;
   description: string;
 }) {
   const [expanded, setExpanded] = useState<boolean>(false);
 
+  console.log(avatar);
+
   return (
     <div
-      className={`grid mb-6 rounded-2xl transition-colors ease-out duration-300 ${
+      className={`grid grid-cols-[1fr_5fr] gap-10 mb-6 py-4 px-10 rounded-2xl transition-colors ease-out duration-300 ${
         expanded
           ? "text-white bg-design-green"
           : "text-design-green bg-design-light"
       }`}
-      style={{
-        gridTemplateColumns: "1fr 5fr",
-        padding: `1.2rem 2.5rem`,
-      }}
     >
       <div
-        className="block transition duration-300 relative ml-auto mr-10 aspect-square"
-        style={{ height: expanded ? "160px" : "90px" }}
+        className="self-start relative flex items-center justify-end ml-auto w-full"
       >
-        <Image fill src={img} sizes="100vw" alt="" />
+        {avatar && (<ServerImage {...avatar} sizes="160px" className={`rounded-full transition-all duration-300 aspect-square object-cover h-auto ${expanded ? 'w-40' : 'w-24'}`} />)}
       </div>
 
       <div className="flex flex-col relative">
@@ -43,10 +41,10 @@ export default function TeamAccordion({
               className="text-3xl font-extrabold font-avenir cursor-pointer"
               onClick={() => setExpanded(!expanded)}
             >
-              {member}
+              {name}
             </h3>
             <div className="flex text-base font-avenir mt-1">
-              <h4 className="uppercase ">{role}</h4>
+              <h4 className="uppercase text-sm">{role}</h4>
               <h4 className="font-semibold">{prime}</h4>
             </div>
           </div>
@@ -56,7 +54,7 @@ export default function TeamAccordion({
             onClick={() => setExpanded(!expanded)}
           >
             <svg
-              className="transition duration-300 ease-out"
+              className="transition-all duration-300 ease-out"
               style={expanded ? {} : { rotate: "90deg" }}
               xmlns="http://www.w3.org/2000/svg"
               width="45"
@@ -85,9 +83,12 @@ export default function TeamAccordion({
         <div
           className={`grid grid-rows-[${
             expanded ? "1fr" : "0fr"
-          }] col-[2] transition-all ease-out duration-300 mt-3`}
+          }] col-[2] transition-all ease-out duration-200`}
         >
-          <p className="overflow-y-hidden font-avenir text-lg">{description}</p>
+          <p className={`overflow-y-hidden font-avenir text-white text-lg prose ${expanded ? 'pb-2': 'pb-0'}`}
+            dangerouslySetInnerHTML={{
+              __html: description,
+            }}></p>
         </div>
       </div>
     </div>
