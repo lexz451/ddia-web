@@ -134,7 +134,7 @@ export default function Navbar() {
                         </div>
                     </li>
                     <li className='flex'>
-                        <Link href={'/about-us'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
+                        <Link href={'/team'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className='text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out'>
                                 <span>Meet the team</span>
