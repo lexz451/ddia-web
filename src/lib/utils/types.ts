@@ -17,6 +17,15 @@ export type TServerImage = {
     className: string;
 }
 
+export type TMember = {
+    id: number;
+    name: string;
+    role: string;
+    description: string;
+    avatar: TServerImage;
+    slug: string;
+}
+
 export type TPostType = {
     id: number;
     name: string;

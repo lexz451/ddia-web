@@ -5,6 +5,7 @@
 @layer components {
   
   .r-btn {
+    /* @apply block w-fit rounded-full border-[0.15em] px-[1.8em] py-[0.7em] font-semibold; */
     @apply min-w-[130px] text-center leading-normal rounded-full border-[0.15em] px-[1.8em] py-[0.7em] font-semibold;
   }
 
