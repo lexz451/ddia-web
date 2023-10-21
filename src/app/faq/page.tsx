@@ -4,12 +4,12 @@ import { fetchLatestPosts } from "@/lib/data/posts";
 import { getApi } from "@/lib/utils/api";
 import { Link } from "@lexz451/next-nprogress";
 
-
 export default async function FAQ() {
-
   const { data: latestPosts } = await fetchLatestPosts({
     limit: 3,
   });
+
+  const { data: faqs } = await getApi("/faqs");
 
   return (
     <main className="bg-design-light">
@@ -29,25 +29,13 @@ export default async function FAQ() {
 
       <section className="bg-design-light pt-[4rem] translate-y-[-3rem]">
         <div className="max-w-[57rem] p-11 mx-auto">
-          <Accordion title="What’s the best thing about Switzerland?">
-            {`I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.`}
-          </Accordion>
-          <Accordion title="How do you make holy water?">
-            {"You gotta call Jesus first"}
-          </Accordion>
-          <Accordion title="What do you call someone with no body and no nose?">
-            {"Nobody Nose. bdmptsss"}
-          </Accordion>
-          <Accordion title="Why do you never see elephants hiding in trees?">
-            {"They are hiding so well, that you are not able to see them."}
-          </Accordion>
-          <Accordion title="Why can’t you hear a pterodactyl go to the bathroom?">
-            {'Because the "P" is silent!'}
-          </Accordion>
-          <Accordion title="Why did the invisible man turn down the job offer?">
-            {"Because he just couldn't see himself doing it."}
-          </Accordion>
+          {faqs.map((value) => {
+            return (
+              <Accordion title={value.question} key={value.id}>
+                {<div dangerouslySetInnerHTML={{ __html: value.answer }}></div>}
+              </Accordion>
+            );
+          })}
         </div>
       </section>
 
