@@ -29,7 +29,7 @@ export default async function FAQ() {
 
       <section className="bg-design-light pt-[4rem] translate-y-[-3rem]">
         <div className="max-w-[57rem] p-11 mx-auto">
-          {faqs.map((value) => {
+          {faqs.map((value: any) => {
             return (
               <Accordion title={value.question} key={value.id}>
                 {<div dangerouslySetInnerHTML={{ __html: value.answer }}></div>}
