@@ -21,8 +21,8 @@ const config: Config = {
         'design-light': '#FAFAFA',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        avenir: ['Avenir', 'sans-serif'],
+        sans: ['var(--font-avenir)'],
+        condensed: ['var(--font-avenir-condensed)'],
       },
     },
   },

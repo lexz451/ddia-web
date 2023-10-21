@@ -70,7 +70,7 @@ export default function Navbar() {
                 </div>
                 <ul className='navbar-menu hidden md:inline-flex gap-5 mr-10'>
                     <li className='flex'>
-                        <Link href={'/about-us'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
+                        <Link href={'/about-us'} className="flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className='text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out'>
                                 <span>About us</span>
@@ -79,7 +79,7 @@ export default function Navbar() {
                         <div></div>
                     </li>
                     <li className='flex'>
-                        <Link href={'/our-work'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
+                        <Link href={'/our-work'} className="flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className='text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out'>
                                 <span>Our work</span>
@@ -95,11 +95,11 @@ export default function Navbar() {
                                                 <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
                                             </div>
                                         </div>
-                                        <div className="mt-5 text-white text-sm font-normal font-['Avenir'] uppercase leading-normal">Public Opinion Research</div>
-                                        <div className="mt-2 text-white text-sm font-normal font-['Avenir'] uppercase leading-normal">Social Listening and OSINT Investigations</div>
+                                        <div className="mt-5 text-white text-sm font-normal  uppercase leading-normal">Public Opinion Research</div>
+                                        <div className="mt-2 text-white text-sm font-normal  uppercase leading-normal">Social Listening and OSINT Investigations</div>
                                         <ul className='list-disc ml-4 mt-2'>
-                                            <li className="text-white text-sm font-normal font-['Avenir'] leading-normal">Issues and Narratives</li>
-                                            <li className="text-white text-sm font-normal font-['Avenir'] leading-normal">Platforms and Apps</li>
+                                            <li className="text-white text-sm font-normal  leading-normal">Issues and Narratives</li>
+                                            <li className="text-white text-sm font-normal  leading-normal">Platforms and Apps</li>
                                         </ul>
                                     </div>
                                     <div className='flex flex-col'>
@@ -110,8 +110,8 @@ export default function Navbar() {
                                             </div>
                                         </div>
                                         <ul className='list-disc ml-4 mt-5'>
-                                            <li className="text-white text-sm font-normal font-['Avenir'] leading-normal">Reports</li>
-                                            <li className="text-white text-sm font-normal font-['Avenir'] leading-normal">Resource types</li>
+                                            <li className="text-white text-sm font-normal  leading-normal">Reports</li>
+                                            <li className="text-white text-sm font-normal  leading-normal">Resource types</li>
                                         </ul>
                                     </div>
                                     <div className='flex flex-col'>
@@ -121,11 +121,11 @@ export default function Navbar() {
                                                 <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
                                             </div>
                                         </div>
-                                        <div className="mt-5 text-white text-sm font-normal font-['Avenir'] uppercase leading-normal">Reports and Publications</div>
-                                        <div className="mt-2 text-white text-sm font-normal font-['Avenir'] uppercase leading-normal">Resources & Tools</div>
+                                        <div className="mt-5 text-white text-sm font-normal  uppercase leading-normal">Reports and Publications</div>
+                                        <div className="mt-2 text-white text-sm font-normal  uppercase leading-normal">Resources & Tools</div>
                                         <ul className='list-disc ml-4 mt-2'>
-                                            <li className="text-white text-sm font-normal font-['Avenir'] leading-normal">What We Are Reading</li>
-                                            <li className="text-white text-sm font-normal font-['Avenir'] leading-normal">Additional Resources</li>
+                                            <li className="text-white text-sm font-normal  leading-normal">What We Are Reading</li>
+                                            <li className="text-white text-sm font-normal  leading-normal">Additional Resources</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@ export default function Navbar() {
                         </div>
                     </li>
                     <li className='flex'>
-                        <Link href={'/team'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
+                        <Link href={'/team'} className="flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className='text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out'>
                                 <span>Meet the team</span>
@@ -142,7 +142,7 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li className='flex'>
-                        <Link href={'/latest'} className="flex items-start my-auto text-center text-design-green text-sm font-medium font-['Avenir'] uppercase">
+                        <Link href={'/latest'} className="flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className='text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out'>
                                 <span>Latest updates</span>

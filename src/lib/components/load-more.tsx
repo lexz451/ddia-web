@@ -1,5 +1,6 @@
 'use client'
 
+import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react"
 
 type LoadMoreType = {
@@ -19,6 +20,8 @@ export default function LoadMore(
         renderComponent
     }: LoadMoreType
 ) {
+
+    const searchParams = useSearchParams();
 
     const [canFetchMore, setCanFetchMore] = useState(false)
     const [isLoading, setIsLoading] = useState(false)

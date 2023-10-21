@@ -16,7 +16,7 @@ export default function ContactUs() {
                 <div className="flex flex-col items-center justify-center my-20">
                     <div className="Headline w-80 text-center text-sky-900 text-6xl font-extrabold font-avenir leading-10">Contact us</div>
                     <div className="IntroductoryText w-96 text-center my-10">
-                        <span className="text-design-green text-lg font-medium font-avenir leading-7">Contact us at </span><span className="text-design-green text-lg font-extrabold font-['Avenir'] underline leading-7">info@ddia.org</span>
+                        <span className="text-design-green text-lg font-medium font-avenir leading-7">Contact us at </span><span className="text-design-green text-lg font-extrabold  underline leading-7">info@ddia.org</span>
                         <span className="text-design-green text-lg font-medium font-avenir leading-7"> to explore partnerships or to learn more about our work.</span>
                     </div>
                     <div className="Headline w-28 h-7 text-center text-gray-900 text-base font-medium leading-10">Follow us:</div>

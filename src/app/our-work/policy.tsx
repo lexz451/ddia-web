@@ -8,8 +8,8 @@ export default function Policy() {
             <div className="page-container  py-20">
                 <div className='flex flex-col items-center'>
                     <IndicatorIcon className="fill-white w-4 h-4"></IndicatorIcon>
-                    <div className="Headline mt-10 text-center text-design-green text-6xl font-extrabold font-['Avenir'] leading-10">Policy</div>
-                    <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal font-['Avenir'] leading-relaxed">
+                    <div className="Headline mt-10 text-center text-design-green text-6xl font-extrabold  leading-10">Policy</div>
+                    <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-relaxed">
                         <p className='mb-4'>DdIA is working to <b>improve institutional decision-making by anchoring policies to the needs of Latinos and by centering US Latino and Latin American voices in discussions</b> that have been traditionally siloed or dominated by the US and Europe.</p>
                         <p>Many policymakers are at the cusp of implementing regulations and navigating the risks - with limited discussion across disciplines and borders. We inform policy by convening and working with organizations and governments to connect efforts, share best practices and collaborate on joint initiatives.</p>
                     </div>
@@ -18,14 +18,14 @@ export default function Policy() {
                             <iframe className='w-full h-full object-cover object-center' src="https://www.youtube.com/embed/SNDGgJXNwCA?frameborder=0" title="Whirlwind: What to Expect for Digital Democracy in 2024" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                             <div className="Content px-10 py-8 bg-white bg-opacity-40 flex-col justify-center items-start gap-9 inline-flex">
                                 <IndicatorIcon className="fill-design-green w-4 h-4"></IndicatorIcon>
-                                <div className="IntroductoryText w-80 text-neutral-800 text-2xl font-normal font-['Avenir'] leading-7">Shape understanding of the systemic, social and behavioral factors that contribute to the spread of false, misleading, and hate-fueled information in Latino spaces online</div>
+                                <div className="IntroductoryText w-80 text-neutral-800 text-2xl font-normal  leading-7">Shape understanding of the systemic, social and behavioral factors that contribute to the spread of false, misleading, and hate-fueled information in Latino spaces online</div>
                             </div>
                         </div>
                         <div className="BlogSectionsPost h-[310px] grid grid-cols-2 relative rounded-2xl overflow-hidden">
                             <iframe className='w-full h-full object-cover object-center' src="https://www.youtube.com/embed/SNDGgJXNwCA?frameborder=0" title="Whirlwind: What to Expect for Digital Democracy in 2024" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                             <div className="Content px-10 py-8 bg-white bg-opacity-40 flex-col justify-center items-start gap-9 inline-flex">
                                 <IndicatorIcon className="fill-design-green w-4 h-4"></IndicatorIcon>
-                                <div className="IntroductoryText w-80 text-neutral-800 text-2xl font-normal font-['Avenir'] leading-7">
+                                <div className="IntroductoryText w-80 text-neutral-800 text-2xl font-normal  leading-7">
                                     Incubate and adapt proven-effective interventions and approaches in service of Latino communities
                                 </div>
                             </div>

@@ -1,6 +1,4 @@
-import { Link } from "@lexz451/next-nprogress";
 import Posts from "./posts";
-import { fetchLatestPosts, fetchPostTypes } from "@/lib/data/posts";
 import Filters from "@/lib/components/filters";
 import { getApi } from "@/lib/utils/api";
 import { TPost } from "@/lib/utils/types";

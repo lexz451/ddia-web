@@ -9,32 +9,32 @@ export default function CapacityBuilding() {
             <div className="page-container py-20">
                 <div className='flex flex-col items-center'>
                     <IndicatorIcon className="fill-white w-4 h-4"></IndicatorIcon>
-                    <div className="Headline mt-10 text-center text-design-light-yellow text-6xl font-extrabold font-['Avenir'] leading-10">Capacity Building</div>
-                    <div className="IntroductoryText mt-8 max-w-prose text-center text-stone-50 text-lg font-normal font-['Avenir'] leading-relaxed">DDIA is working to strengthen a healthier internet by applying research to practical solutions and interventions that reflect and serve the needs of Latino communities. <br /><br />We use our research to guide those working directly with communities on framing of narratives, inoculation exercises, depolarization workshops, media and digital literacy training, or other interventions. We also connect what has worked in one context to other contexts.</div>
+                    <div className="Headline mt-10 text-center text-design-light-yellow text-6xl font-extrabold  leading-10">Capacity Building</div>
+                    <div className="IntroductoryText mt-8 max-w-prose text-center text-stone-50 text-lg font-normal  leading-relaxed">DDIA is working to strengthen a healthier internet by applying research to practical solutions and interventions that reflect and serve the needs of Latino communities. <br /><br />We use our research to guide those working directly with communities on framing of narratives, inoculation exercises, depolarization workshops, media and digital literacy training, or other interventions. We also connect what has worked in one context to other contexts.</div>
                     <div className='flex items-center gap-10 my-20 w-full'>
                         <div className='flex-1 h-[1px] bg-design-light bg-opacity-50'></div>
-                        <div className="IntroductoryText text-center text-design-light text-3xl font-extrabold font-['Avenir'] leading-7">Workshops & Events</div>
+                        <div className="IntroductoryText text-center text-design-light text-3xl font-extrabold  leading-7">Workshops & Events</div>
                         <div className='flex-1 h-[1px] bg-design-light bg-opacity-50'></div>
                     </div>
                     <div className='w-full flex flex-col gap-5'>
                         <div className="Rectangle267 p-10 gap-10 w-full bg-white bg-opacity-40 rounded-2xl flex items-center">
                             <div className='flex-1'>
                                 <div className="SupportingText text-sky-900 text-base font-normal leading-tight">Mar 16, 2020</div>
-                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold font-['Avenir']">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                             </div>
                             <ArrowCircleIcon className="stroke-black"></ArrowCircleIcon>
                         </div>
                         <div className="Rectangle267 p-10 gap-10 w-full bg-white bg-opacity-40 rounded-2xl flex items-center">
                             <div className='flex-1'>
                                 <div className="SupportingText text-sky-900 text-base font-normal leading-tight">Mar 16, 2020</div>
-                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold font-['Avenir']">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                             </div>
                             <ArrowCircleIcon className="stroke-black"></ArrowCircleIcon>
                         </div>
                         <div className="Rectangle267 p-10 gap-10 w-full bg-white bg-opacity-40 rounded-2xl flex items-center">
                             <div className='flex-1'>
                                 <div className="SupportingText text-sky-900 text-base font-normal leading-tight">Mar 16, 2020</div>
-                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold font-['Avenir']">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                             </div>
                             <ArrowCircleIcon className="stroke-black"></ArrowCircleIcon>
                         </div>
@@ -42,12 +42,12 @@ export default function CapacityBuilding() {
                     <button className='r-btn border-none text-white bg-design-green mt-10'>See all</button>
                     <div className='flex items-center gap-10 my-20 w-full'>
                         <div className='flex-1 h-[1px] bg-design-green bg-opacity-50'></div>
-                        <div className="IntroductoryText text-center text-design-green text-3xl font-extrabold font-['Avenir'] leading-7">
+                        <div className="IntroductoryText text-center text-design-green text-3xl font-extrabold  leading-7">
                             Resources & Tools
                         </div>
                         <div className='flex-1 h-[1px] bg-design-green bg-opacity-50'></div>
                     </div>
-                    <div className="IntroductoryText w-96 text-center text-sky-900 text-xl font-extrabold font-['Avenir'] uppercase leading-7">What We Are Reading</div>
+                    <div className="IntroductoryText w-96 text-center text-sky-900 text-xl font-extrabold  uppercase leading-7">What We Are Reading</div>
                     <div className="grid grid-cols-3 mt-10 gap-5">
                         <div className="BlogSectionsPost h-auto overflow-hidden bg-white rounded-lg grid grid-rows-2">
                             {/* <img className="Image w-80 h-48 relative" src="https://via.placeholder.com/339x192" /> */}
@@ -107,26 +107,26 @@ export default function CapacityBuilding() {
                             </div>
                         </div>
                     </div>
-                    <div className="IntroductoryText mt-20 w-96 text-center text-gray-900 text-xl font-extrabold font-['Avenir'] uppercase leading-7">Additional Resources</div>
+                    <div className="IntroductoryText mt-20 w-96 text-center text-gray-900 text-xl font-extrabold  uppercase leading-7">Additional Resources</div>
                     <div className='flex flex-col gap-5 w-full mt-10'>
                         <div className="Rectangle267  p-10 gap-10 w-full bg-white bg-opacity-40 rounded-2xl flex items-center justify-between">
                             <div>
                                 <div className="SupportingText text-sky-900 text-base font-normal leading-tight">Mar 16, 2020</div>
-                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold font-['Avenir']">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                             </div>
                             <ArrowCircleIcon className="stroke-black"></ArrowCircleIcon>
                         </div>
                         <div className="Rectangle267 p-10 gap-10 w-full bg-white bg-opacity-40 rounded-2xl flex items-center justify-between">
                             <div>
                                 <div className="SupportingText text-sky-900 text-base font-normal leading-tight">Mar 16, 2020</div>
-                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold font-['Avenir']">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                             </div>
                             <ArrowCircleIcon className="stroke-black"></ArrowCircleIcon>
                         </div>
                         <div className="Rectangle267  p-10 gap-10 w-full bg-white bg-opacity-40 rounded-2xl flex items-center justify-between">
                             <div>
                                 <div className="SupportingText text-sky-900 text-base font-normal leading-tight">Mar 16, 2020</div>
-                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold font-['Avenir']">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+                                <div className="Headline mt-1 text-gray-900 text-2xl font-extrabold ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                             </div>
                             <ArrowCircleIcon className="stroke-black"></ArrowCircleIcon>
                         </div>
