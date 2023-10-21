@@ -2,7 +2,7 @@
 
 import ServerImage from "@/lib/components/server-image";
 import { TPost } from "@/lib/utils/types";
-import { Link } from "next-nprogress";
+import { Link } from "@lexz451/next-nprogress";
 import { useEffect, useState } from "react";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 

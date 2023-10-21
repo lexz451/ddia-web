@@ -1,5 +1,5 @@
 import SearchBar from "./search-bar";
-import { Link } from "next-nprogress";
+import { Link } from "@lexz451/next-nprogress";
 import Posts from "./posts";
 import { fetchLatestPosts, fetchPostTypes } from "@/lib/data/posts";
 

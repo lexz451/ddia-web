@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import Footer from '@/lib/components/footer'
-import { ProgressBar } from 'next-nprogress'
+import { ProgressBar } from '@lexz451/next-nprogress'
 
 import './globals.css'
 import { Suspense } from 'react'
@@ -26,16 +26,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#015C6B"></link>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
+      </head>
       <body>
         <Navbar />
         {children}
         <Footer />
         <Suspense fallback={null}>
           <ProgressBar
-            color='#333'
+            color='#015C6B'
             height='2px'
-            options={{}}
-            delay={0}
           />
         </Suspense>
       </body>

@@ -1,8 +1,8 @@
-"use client";
-import SearchIcon from "@/lib/assets/search.svg";
-import { useRouter } from "next-nprogress";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+'use client';
+import SearchIcon from '@/lib/assets/search.svg';
+import { useRouter } from '@lexz451/next-nprogress';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function SearchBar() {
   const router = useRouter();

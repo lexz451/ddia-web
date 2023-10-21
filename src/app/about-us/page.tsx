@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function AboutUs() {
   return (
     <main className="Rectangle198 min-h-screen bg-gradient-to-b from-[#a8dadc] via-design-light to-white pt-[120px]">
-      <div className="container mx-auto mt-14">
+      <div className="page-container mt-14">
         <section>
           <div className="grid grid-cols-[1fr_2fr] gap-6 pb-10">
             <Image
