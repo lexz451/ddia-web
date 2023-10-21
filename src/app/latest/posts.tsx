@@ -61,9 +61,9 @@ export default function Posts({
           return (
             <div
               key={post.slug}
-              className="sm:grid sm:grid-cols-[320px_1fr] gap-14 py-5 sm:py-10 sm:border-t sm:border-t-gray-500"
+              className="lg:grid lg:grid-cols-[320px_1fr] gap-14 py-5 lg:py-10 lg:border-t lg:border-t-gray-500"
             >
-              <div className="mb-2 sm:mb-0">
+              <div className="mb-2 lg:mb-0">
                 {post.feature_media && (
                   <ServerImage
                     {...post.feature_media}
@@ -72,7 +72,7 @@ export default function Posts({
                   ></ServerImage>
                 )}
               </div>
-              <div className="sm:flex sm:items-center">
+              <div className="lg:flex lg:items-center">
                 <div className="flex-1 self-stretch">
                   <span className="block mb-3 uppercase text-gray-900 text-opacity-60 text-sm">
                     {post.post_type.name}
@@ -101,8 +101,8 @@ export default function Posts({
                   </p>
                 </div>
                 <Link className="my-auto ml-20" href="#">
-                  <ArrowCircleIcon className="hidden sm:block stroke-design-green stroke-[1.5]"></ArrowCircleIcon>
-                  <div className="flex sm:hidden">
+                  <ArrowCircleIcon className="hidden lg:block stroke-design-green stroke-[1.5]"></ArrowCircleIcon>
+                  <div className="flex lg:hidden">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -127,14 +127,14 @@ export default function Posts({
       </div>
       {canFetchMore && (
         <div className="flex w-full my-20">
-          <div className="sm:hidden my-auto basis-full h-[1px] bg-gray-400"></div>
+          <div className="lg:hidden my-auto basis-full h-[1px] bg-gray-400"></div>
           <button
-            className="mx-2 sm:mx-auto flex-shrink-0 text-white bg-design-green border-none font-normal r-btn"
+            className="mx-2 lg:mx-auto flex-shrink-0 text-white bg-design-green border-none font-normal r-btn"
             onClick={fetchMore}
           >
             Load more
           </button>
-          <div className="sm:hidden my-auto basis-full h-[1px] bg-gray-400"></div>
+          <div className="lg:hidden my-auto basis-full h-[1px] bg-gray-400"></div>
         </div>
       )}
     </div>

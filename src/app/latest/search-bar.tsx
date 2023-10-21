@@ -24,10 +24,10 @@ export default function SearchBar() {
   return (
     <div className="min-w-[250px] mb-4">
       <div
-        className={`group flex overflow-hidden relative  rounded-full bg-design-light transition-[width] duration-500 ease-out outline-design-green outline-[1.5px] w-full sm:max-w-[14rem] sm:ml-auto sm:w-11 ${
+        className={`group flex overflow-hidden relative  rounded-full bg-design-light transition-[width] duration-500 ease-out outline-design-green outline-[1.5px] w-full lg:max-w-[14rem] lg:ml-auto lg:w-11 ${
           !!searchQuery
-            ? "sm:w-full outline"
-            : "sm:focus-within:w-full focus-within:outline"
+            ? "lg:w-full outline"
+            : "lg:focus-within:w-full focus-within:outline"
         } `}
       >
         <div className="absolute flex h-full w-[80%] ">

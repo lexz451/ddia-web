@@ -47,7 +47,7 @@ export default async function LatestUpdates({
 
   return (
     <main className="container px-5 mx-auto mt-[12rem] max-w-6xl">
-      <section className="sm:flex sm:flex-row-reverse sm:items-start gap-10 mb-8">
+      <section className="lg:flex lg:flex-row-reverse lg:items-start gap-10 mb-8">
         <SearchBar />
         <div className="flex items-center flex-wrap flex-1 gap-2">
           <Link
@@ -75,7 +75,7 @@ export default async function LatestUpdates({
         </div>
       </section>
 
-      <section className="sm:border-b sm:border-b-gray-500">
+      <section className="lg:border-b lg:border-b-gray-500">
         <Posts
           posts={latestPosts}
           limit={limit}
