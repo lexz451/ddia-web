@@ -37,6 +37,7 @@ export type TAuthor = {
     name: string;
     slug: string;
     bio?: string;
+    avatar?: TServerImage;
     deleted: boolean;
     createdAt: string;
     updatedAt: string;
@@ -56,4 +57,6 @@ export type TPost = {
     post_type: TPostType;
     authors: TAuthor[];
     content: string;
+    tags: any[];
+    categories: any[];
 };

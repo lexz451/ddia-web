@@ -1,12 +1,15 @@
 "use client";
 import SearchIcon from '@/lib/assets/search-2.svg';
 import { useGsapWithContext } from '@/lib/hooks/useGsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
 
 export default function OurWork() {
 
     useGsapWithContext((gsap) => {
+        gsap.registerPlugin(ScrollTrigger);
+        
         const wrapper = document.querySelector(".our-work-container-wrapper") as HTMLDivElement;
         const container = document.querySelector(".our-work-container") as HTMLDivElement;
         const containerOffset = container?.offsetLeft;

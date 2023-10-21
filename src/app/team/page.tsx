@@ -61,7 +61,7 @@ export default async function MeetTheTeam() {
             <TeamAccordion {...member} key={member.slug} />
           ))}
         </section>
-        <section>
+        <section className="pb-footer mb-10">
           <div
             className="block w-full"
             style={{

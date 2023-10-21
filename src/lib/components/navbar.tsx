@@ -25,7 +25,7 @@ export default function Navbar() {
 
     const pathname = usePathname();
 
-    const transparentBg = ['/', '/about-us', '/our-work', '/faq'];
+    const transparentBg = ['/', '/about-us', '/our-work', '/faq', '/team'];
 
     useIsomorphicLayoutEffect(() => {
         if (transparentBg.includes(pathname)) {
@@ -85,7 +85,7 @@ export default function Navbar() {
                                 <span>Our work</span>
                             </div>
                         </Link>
-                        <div className={`overflow-menu bg-design-green absolute left-0 right-0 opacity-0 h-0 overflow-hidden transition-all duration-200 ease-in-out ${isScrolled && isVisible ? 'top-[80px]' : 'top-[120px]'}`}>
+                        <div className={`overflow-menu bg-design-green absolute left-0 right-0 opacity-0 h-0 overflow-hidden transition-all duration-200 ease-in-out ${isScrolled && isVisible ? 'top-[80px]' : 'top-[104px]'}`}>
                             <div className='page-container py-10'>
                                 <div className='grid grid-cols-3 gap-20'>
                                     <div className='flex flex-col'>

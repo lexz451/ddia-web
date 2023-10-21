@@ -1,20 +1,71 @@
-import SearchBar from "./search-bar";
 import { Link } from "@lexz451/next-nprogress";
 import Posts from "./posts";
 import { fetchLatestPosts, fetchPostTypes } from "@/lib/data/posts";
+import Filters from "@/lib/components/filters";
+import { getApi } from "@/lib/utils/api";
+import { TPost } from "@/lib/utils/types";
 
-async function fetchLatestUpdates(
-  limit: number,
-  start: number,
-  type: number | undefined = undefined,
-  query: string | undefined = undefined) {
+async function fetchData(params: any) {
 
-  const posts = await fetchLatestPosts({ limit, start, type, query });
-  const postTypes = await fetchPostTypes();
+  const tag = params.tag;
+  const query = params.q;
 
+  const { data: [categoryData] } = await getApi<any>('/categories', {
+    filters: {
+      slug: {
+        $eq: 'latest-updates'
+      }
+    },
+    populate: {
+      tags: {
+        fields: ['slug', 'title']
+      }
+    }
+  })
+
+  const tags = categoryData.tags;
+
+  let filters: any = {
+    categories: {
+      slug: {
+        $eq: 'latest-updates'
+      }
+    }
+  };
+  if (tag) {
+    filters.tags = {
+      slug: {
+        $eq: tag
+      }
+    }
+  }
+  if (query) {
+    filters = {
+      ...filters,
+      $or: [
+        {
+          title: {
+            $containsi: query
+          }
+        },
+        {
+          description: {
+            $containsi: query
+          }
+        }
+      ],
+    }
+  }
+  const posts = await getApi<TPost[]>(`/posts`, {
+    filters,
+    populate: ["feature_media", "post_type", "authors"],
+    pagination: {
+      limit: 6,
+    },
+  });
   return {
     posts,
-    postTypes
+    tags
   };
 }
 
@@ -22,66 +73,20 @@ export default async function LatestUpdates({
   searchParams
 }: { searchParams: { [key: string]: string | string[] | undefined } }) {
 
-  const { limit: paramLimit, start: paramStart, type: paramType, q: paramQuery } = searchParams;
-
-  const limit = paramLimit ? parseInt(paramLimit as string) : 5;
-  const start = paramStart ? parseInt(paramStart as string) : 0;
-  const type = paramType ? parseInt(paramType as string) : undefined;
-  const query = paramQuery as string;
-
-  const {
-    posts: {
-      data: latestPosts,
-      meta: { pagination: { total } }
-    },
-    postTypes: { data: postTypes }
-  } = await fetchLatestUpdates(
-    limit,
-    start,
-    type,
-    query
-  );
+  const { posts: {
+    data: posts,
+    meta: { pagination: { total } }
+  }, tags } = await fetchData(searchParams);
 
   return (
     <main className="page-container mt-[12rem]">
-      <section className="flex items-start gap-10 mb-8">
-        <div className="flex items-center flex-wrap flex-1 gap-2">
-          <Link
-            className={`min-w-[80px] text-center rounded-full border-[1.5px] px-5 py-2 font-avenir flex-shrink-0 border-design-green font-extrabold text-sm 
-          ${!paramType
-                ? "bg-design-green text-white"
-                : "text-design-green"
-              }`}
-            href={`/latest`}
-          >
-            All
-          </Link>
-          {postTypes.map((type: any) => {
-            return (
-              <Link
-                key={type.id}
-                className={`min-w-[80px] text-center rounded-full border-[1.5px] px-5 py-2 font-avenir flex-shrink-0 border-design-green font-extrabold text-sm ${paramType == type.id
-                  ? "bg-design-green text-white"
-                  : "text-design-green"
-                  }`}
-                href={`/latest?type=${type.id}`}
-              >
-                {type.name}
-              </Link>
-            );
-          })}
-        </div>
+      <Filters tags={tags}></Filters>
 
-        <SearchBar />
-      </section>
-
-      <section className="border-b border-b-gray-500">
+      <section className="pt-10">
         <Posts
-          posts={latestPosts}
-          limit={limit}
-          type={type}
-          query={query}
+          posts={posts}
           total={total}
+          className="flex flex-col gap-10"
         ></Posts>
       </section>
 
