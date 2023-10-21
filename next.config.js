@@ -2,6 +2,7 @@
 const nextConfig = {
     images: {
         formats: ['image/avif', 'image/webp'],
+        domains: ['api-ddla.datalis.dev'],
     },
     webpack: (config, { isServer }) => {
         // Add SVGR Loader
@@ -21,7 +22,7 @@ const nextConfig = {
                                             removeViewBox: false,
                                         },
                                     },
-                                },
+                                }
                             ]
                         },
                     },
