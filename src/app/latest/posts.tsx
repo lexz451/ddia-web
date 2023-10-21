@@ -63,7 +63,7 @@ export default function Posts({
               key={post.slug}
               className="sm:grid sm:grid-cols-[320px_1fr] gap-14 py-5 sm:py-10 sm:border-t sm:border-t-gray-500"
             >
-              <div className="">
+              <div className="mb-2 sm:mb-0">
                 {post.feature_media && (
                   <ServerImage
                     {...post.feature_media}
@@ -115,7 +115,7 @@ export default function Posts({
                         fill="#EBB785"
                       />
                     </svg>
-                    <p className="ml-1 my-auto font-avenir font-bold text-sm text-design-green underline">
+                    <p className="ml-2 font-avenir font-bold text-sm text-design-green underline">
                       Read more
                     </p>
                   </div>
@@ -127,12 +127,14 @@ export default function Posts({
       </div>
       {canFetchMore && (
         <div className="flex w-full my-20">
+          <div className="sm:hidden my-auto basis-full h-[1px] bg-gray-400"></div>
           <button
-            className="mx-auto text-white bg-design-green border-none font-normal r-btn"
+            className="mx-2 sm:mx-auto flex-shrink-0 text-white bg-design-green border-none font-normal r-btn"
             onClick={fetchMore}
           >
             Load more
           </button>
+          <div className="sm:hidden my-auto basis-full h-[1px] bg-gray-400"></div>
         </div>
       )}
     </div>
