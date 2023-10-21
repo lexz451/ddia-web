@@ -59,7 +59,7 @@ export default function LatestUpdates() {
         </Link>
       </div>
 
-      <div className="flex flex-row justify-between gap-10 mt-10">
+      <div className="flex flex-col lg:flex-row justify-between gap-10 mt-10">
         {updatesInfo.map((upd) => {
           return (
             <div key={upd.link} className={`flex flex-col`}>
