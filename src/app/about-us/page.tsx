@@ -11,16 +11,16 @@ export default function AboutUs() {
     <main className="Rectangle198 min-h-screen bg-gradient-to-b from-[#a8dadc] via-design-light to-white pt-[120px]">
       <div className="page-container mt-14">
         <section>
-          <div className="grid grid-cols-[1fr_2fr] gap-6 pb-10">
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-[1fr_2fr] gap-6 pb-10">
             <Image
               className="object-cover w-full object-left-top rounded-2xl"
               src={imgvision1}
               alt=""
               width={0}
               height={0}
-              sizes="20vmax"
+              //sizes="20vmax"
             />
-            <div className="flex w-full h-full p-8 bg-design-light rounded-2xl">
+            <div className="flex w-full h-full lg:p-8 lg:bg-design-light rounded-2xl">
               <div className="m-auto">
                 <h1 className="text-5xl text-design-green font-[Inter] font-semibold pb-8">
                   Our mission
@@ -38,8 +38,8 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-[2fr_1fr] gap-6 pb-10">
-            <div className="flex w-full h-full p-8 bg-design-light rounded-2xl">
+          <div className="flex flex-col lg:grid lg:grid-cols-[2fr_1fr] gap-6 pb-10">
+            <div className="flex w-full h-full lg:p-8 lg:bg-design-light rounded-2xl">
               <div className="m-auto">
                 <h1 className="text-5xl text-design-green font-[Inter] font-semibold pb-8">
                   Our vision
@@ -60,12 +60,12 @@ export default function AboutUs() {
               alt=""
               width={0}
               height={0}
-              sizes="20vmax"
+              //sizes="20vmax"
             />
           </div>
         </section>
 
-        <section className="flex items-center justify-center gap-8 my-20 p-12 bg-[#fee9d7] rounded-2xl">
+        <section className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8 my-20 p-12 bg-[#fee9d7] rounded-2xl">
           <Image
             className="object-cover object-center max-w-[50%] grow-0 shrink-[3]"
             src={imgapproach}
@@ -100,7 +100,7 @@ export default function AboutUs() {
             societies, we are moving beyond a focus on content to:
           </p>
 
-          <div className="grid grid-cols-2 h-[16.4rem] mb-12 bg-[#fee9d7] rounded-2xl">
+          <div className="lg:grid lg:grid-cols-2 lg:h-[16.4rem] mb-12 bg-[#fee9d7] rounded-2xl">
             <div className="relative">
               <Image
                 className="object-cover h-full object-center rounded-2xl"
@@ -115,7 +115,7 @@ export default function AboutUs() {
               </h1>
             </div>
 
-            <div className="flex relative ml-12 h-full">
+            <div className="flex relative ml-12 h-64 lg:h-full">
               <svg
                 className="absolute top-[1.9rem]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +137,7 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 h-[16.4rem] mb-12 bg-[#fee9d7] rounded-2xl">
+          <div className="lg:grid lg:grid-cols-2 lg:h-[16.4rem] mb-12 bg-[#fee9d7] rounded-2xl">
             <Image
               className="object-cover h-full object-center rounded-2xl"
               src={imghandsCircle}
@@ -146,7 +146,7 @@ export default function AboutUs() {
               height={0}
               sizes="30rem"
             />
-            <div className="flex relative ml-12 h-full">
+            <div className="flex relative ml-12 h-64 lg:h-full">
               <svg
                 className="absolute top-[1.9rem]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -167,7 +167,7 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 h-[16.4rem] mb-12 bg-[#fee9d7] rounded-2xl">
+          <div className="lg:grid lg:grid-cols-2 lg:h-[16.4rem] mb-12 bg-[#fee9d7] rounded-2xl">
             <Image
               className="object-cover h-full object-center rounded-2xl"
               src={imgholdingWorld}
@@ -176,7 +176,7 @@ export default function AboutUs() {
               height={0}
               sizes="30rem"
             />
-            <div className="flex relative ml-12 h-full">
+            <div className="flex relative ml-12 h-64 lg:h-full">
               <svg
                 className="absolute top-[1.9rem]"
                 xmlns="http://www.w3.org/2000/svg"
