@@ -1,4 +1,9 @@
-import { type } from "os";
+export type TStrapiQueryParams = {
+    filters: any;
+    populate?: any;
+    pagination?: { limit?: number, start?: number };
+    sort?: any;
+}
 
 export type TServerImage = {
     id: number;

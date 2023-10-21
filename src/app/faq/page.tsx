@@ -1,14 +1,23 @@
 import Accordion from "@/lib/components/accordion";
 import LatestUpdates from "@/lib/components/latest-updates";
-import { fetchLatestPosts } from "@/lib/data/posts";
+import { getApi } from "@/lib/utils/api";
+import { TPost } from "@/lib/utils/types";
 import { Link } from "@lexz451/next-nprogress";
 
+async function fetchData() {
+  const { data: posts } = await getApi<TPost[]>('/posts', {
+    pagination: {
+      limit: 3
+    },
+    populate: ["feature_media", "post_type", "authors"],
+    sort: ['publish_date:desc']
+  });
+  return posts
+}
 
 export default async function FAQ() {
 
-  const { data: latestPosts } = await fetchLatestPosts({
-    limit: 3,
-  });
+  const latestPosts = await fetchData();
 
   return (
     <main className="bg-design-light">

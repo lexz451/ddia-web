@@ -1,6 +1,6 @@
 'use client'
 
-import { useSearchParams } from "next/navigation";
+import QueryString from "qs";
 import React, { useEffect, useState } from "react"
 
 type LoadMoreType = {
@@ -21,7 +21,6 @@ export default function LoadMore(
     }: LoadMoreType
 ) {
 
-    const searchParams = useSearchParams();
 
     const [canFetchMore, setCanFetchMore] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
@@ -32,10 +31,21 @@ export default function LoadMore(
 
     const fetchMore = () => {
         const start = results.length;
-        const params = new URLSearchParams(defaultParams);
-        params.append('start', start.toString());
+        // const params = new URLSearchParams();
+        // params.append('start', start.toString());
+
+        const qs = QueryString.stringify({
+            ...defaultParams,
+            pagination: {
+                ...defaultParams.pagination,
+                start
+            }
+        }, {
+            encodeValuesOnly: true
+        });
+
         setIsLoading(true);
-        fetch(`/api/posts?${params.toString()}`)
+        fetch(`/api/posts?${qs.toString()}`)
             .then(response => response.json())
             .then(data => {
                 setResults([...results, ...data.data]);

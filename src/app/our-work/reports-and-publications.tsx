@@ -69,8 +69,6 @@ export default function ReportsAndPublications({
     reportsAndPublications
 }: { reportsAndPublications: { data: TPost[], total: number } }) {
 
-    console.log(reportsAndPublications)
-
     return (
         <section id="reports-and-publications" className="our-work-section gradient-green-section">
             <div className="page-container py-20">

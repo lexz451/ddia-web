@@ -1,5 +1,6 @@
 'use client';
 import SearchIcon from '@/lib/assets/search.svg';
+import CloseIcon from '@/lib/assets/close.svg';
 import { useRouter } from '@lexz451/next-nprogress';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -10,19 +11,30 @@ export default function SearchBar() {
     const pathname = usePathname();
     const params = useSearchParams();
 
-    const searchParam = params.get('q') || '';
+    const searchParam = params.get('search') || '';
 
     const [searchQuery, setSearchQuery] = useState(searchParam);
 
     useEffect(() => {
-        setSearchQuery(params.get('q') || '');
+        setSearchQuery(params.get('search') || '');
     }, [params]);
 
     function search(query: string) {
         console.log('searching...');
         const params = new URLSearchParams();
-        params.set('q', query);
+        params.set('search', query);
         router.push(`${pathname}?${params.toString()}`);
+    }
+
+    function clearSearch() {
+        setSearchQuery('');
+        const params = new URLSearchParams();
+        params.delete('search');
+        router.push(`${pathname}?${params.toString()}`);
+    }
+    
+    function onAction() {
+        clearSearch();
     }
 
     return (
@@ -45,8 +57,12 @@ export default function SearchBar() {
                     />
                 </div>
 
-                <button className="flex ml-auto rounded-full h-11 w-11">
-                    <SearchIcon className="stroke-design-green m-auto"></SearchIcon>
+                <button onClick={onAction} className="flex ml-auto rounded-full h-11 w-11">
+                    {
+                        searchQuery
+                            ? <CloseIcon className="m-auto w-5 h-5 fill-design-green"></CloseIcon>
+                            : <SearchIcon className="m-auto w-5 h-5 "></SearchIcon>
+                    }
                 </button>
             </div>
         </div>

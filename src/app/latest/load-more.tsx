@@ -5,6 +5,8 @@ import { TPost } from "@/lib/utils/types";
 import { Link } from "@lexz451/next-nprogress";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 import LoadMore from "@/lib/components/load-more";
+import { buildPostsQuery } from "./data";
+import { forwardRef } from "react";
 
 function PostItem({ post }: { post: TPost }) {
     return (
@@ -51,20 +53,27 @@ function PostItem({ post }: { post: TPost }) {
     )
 }
 
-export default function Posts({
+export default function LoadMoreWrapper({
     posts,
     total,
+    tag,
+    query,
     className
 }: {
     posts: any[],
     total: number,
-    className?: string
+    className?: string,
+    tag?: string,
+    query?: string
 }) {
 
-    return <LoadMore 
-            renderComponent={(item, key) => <PostItem post={item} key={key}></PostItem>}
-            items={posts}
-            total={total}
-            className={className}
-        />
+    const postsQuery = buildPostsQuery(tag, query);
+
+    return <LoadMore
+        renderComponent={(item, key) => <PostItem post={item} key={key}></PostItem>}
+        items={posts}
+        total={total}
+        params={postsQuery}
+        className={className}
+    />
 }

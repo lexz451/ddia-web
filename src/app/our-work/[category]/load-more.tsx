@@ -2,6 +2,7 @@
 
 import LoadMore from "@/lib/components/load-more";
 import ServerImage from "@/lib/components/server-image";
+import { buildPostsQuery } from "./data";
 
 function PostItem({ post }: { post?: any }) {
 
@@ -37,18 +38,28 @@ function PostItem({ post }: { post?: any }) {
     )
 }
 
-export default function Posts({
+export default function LoadMoreWrapper({
     posts,
     total,
-    className
+    className,
+    category,
+    tag,
+    query
 }: {
     posts: any[],
     total: number,
-    className?: string
+    category: string,
+    className?: string,
+    tag?: string,
+    query?: string,
 }) {
+
+    const params = buildPostsQuery(category, tag, query);
+
     return (
         <LoadMore
             renderComponent={(item, key) => <PostItem post={item} key={key}></PostItem>}
+            params={params}
             items={posts}
             total={total}
             className={className} />
