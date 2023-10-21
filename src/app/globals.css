@@ -3,26 +3,40 @@
 @tailwind utilities;
 
 @layer components {
-  .btn {
-    @apply px-4 py-2 rounded-md text-white font-normal text-base leading-normal;
+  
+  .r-btn {
+    /* @apply block w-fit rounded-full border-[0.15em] px-[1.8em] py-[0.7em] font-semibold; */
+    @apply min-w-[130px] text-center leading-normal rounded-full border-[0.15em] px-[1.8em] py-[0.7em] font-semibold;
   }
 
-  .r-btn {
-    @apply rounded-full border-[0.15em] px-[1.8em] py-[0.8em] font-semibold;
+  .page-container {
+    @apply container xl:max-w-6xl mx-auto px-4;
   }
   
   .navbar .navbar-menu li {
-      &:hover {
-        .indicator {
-          @apply opacity-100;
-        }
-        .text {
-          @apply border-design-green;
-        }
-        .overflow-menu {
-          @apply opacity-100 z-50 h-auto;
-        }
+    &:hover {
+      .indicator {
+        @apply opacity-100;
+      }
+      .text {
+        @apply border-design-green;
+      }
+      .overflow-menu {
+        @apply opacity-100 z-50 h-auto;
       }
     }
-  
+  }
+
+  .post-content {
+    @apply prose prose-lg max-w-none;
+    :first-child {
+      @apply mt-0;
+    }
+    [data-youtube-video] {
+      @apply w-full aspect-video;
+    }
+    .pdf-doc {
+      @apply w-full h-auto aspect-[8.5/11];
+    }
+  }
 }

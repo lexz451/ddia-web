@@ -23,7 +23,7 @@ async function fetchApi(url: string, params: { [key: string]: any } = {}, option
     }, {
         encodeValuesOnly: true,
     });
-    const apiUrl = `${process.env.API_URL}/api${url}${queryParams ? `?${queryParams}` : ''}`;
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api${url}${queryParams ? `?${queryParams}` : ''}`;
     const headers = {
         'Content-Type': 'application/json',
         'Authorization': `bearer ${process.env.API_TOKEN}`,
