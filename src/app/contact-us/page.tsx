@@ -14,10 +14,10 @@ export default function ContactUs() {
         <main>
             <section className="pt-[150px] gradient-green-page">
                 <div className="flex flex-col items-center justify-center my-20">
-                    <div className="Headline w-80 text-center text-sky-900 text-6xl font-extrabold font-avenir leading-10">Contact us</div>
+                    <div className="Headline w-80 text-center text-sky-900 text-4xl lg:text-6xl font-extrabold font-avenir leading-10">Contact us</div>
                     <div className="IntroductoryText w-96 text-center my-10">
-                        <span className="text-design-green text-lg font-medium font-avenir leading-7">Contact us at </span><span className="text-design-green text-lg font-extrabold  underline leading-7">info@ddia.org</span>
-                        <span className="text-design-green text-lg font-medium font-avenir leading-7"> to explore partnerships or to learn more about our work.</span>
+                        <span className="text-design-green lg:text-lg font-medium font-avenir leading-7">Contact us at </span><span className="text-design-green lg:text-lg font-extrabold  underline leading-7">info@ddia.org</span>
+                        <span className="text-design-green lg:text-lg font-medium font-avenir leading-7"> to explore partnerships or to learn more about our work.</span>
                     </div>
                     <div className="Headline w-28 h-7 text-center text-gray-900 text-base font-medium leading-10">Follow us:</div>
                     <div className="SocialIcons flex gap-3 mt-5">
@@ -46,8 +46,8 @@ export default function ContactUs() {
                 <div className='page-container lg:bg-design-green lg:rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 lg:px-10 py-10 lg:py-20'>
                     <Image src={MailImg} alt='' className='order-2 lg:order-1'></Image>
                     <div className='flex flex-col justify-center order-1 lg:order-2'>
-                        <div className="Headline w-96 text-design-light-green text-5xl font-extrabold font-avenir leading-10">Our Newsletter</div>
-                        <div className="IntroductoryText w-96 text-neutral-100 text-lg font-normal leading-normal my-5">Sign up  to receive our latest research, narrative analysis reports, and event updates.</div>
+                        <div className="Headline w-96 text-design-light-green text-3xl lg:text-5xl font-extrabold font-avenir leading-10">Our Newsletter</div>
+                        <div className="IntroductoryText w-96 text-neutral-100 lg:text-lg font-normal leading-normal my-5">Sign up  to receive our latest research, narrative analysis reports, and event updates.</div>
                         <input placeholder='Name' className='mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm'></input>
                         <input placeholder='Organization' className='mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm'></input>
                         <input placeholder='Title' className='mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm'></input>
