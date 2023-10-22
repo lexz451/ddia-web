@@ -29,7 +29,7 @@ export default async function MeetTheTeam() {
     <main className="bg-gradient-to-b from-design-light-green via-white to-white pt-[150px]">
       <div className="page-container">
         <section className="flex flex-col items-center mt-10">
-          <h1 className="font-avenir w-fit mx-auto font-extrabold text-6xl text-design-green mb-4">
+          <h1 className="w-fit mx-auto font-extrabold text-4xl lg:text-6xl text-design-green mb-4">
             Meet the Team
           </h1>
           <Link

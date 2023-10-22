@@ -21,16 +21,16 @@ export default function TeamAccordion({
 
   return (
     <div
-      className={`grid grid-cols-[1fr_5fr] gap-10 mb-6 py-4 px-10 rounded-2xl transition-colors ease-out duration-300 ${
+      className={`grid lg:grid-cols-[1fr_5fr] lg:gap-10 mb-6 py-4 px-5 lg:px-10 rounded-2xl transition-colors ease-out duration-300 ${
         expanded
           ? "text-white bg-design-green"
           : "text-design-green bg-design-light"
       }`}
     >
       <div
-        className="self-start relative flex items-center justify-end ml-auto w-full"
+        className="self-start relative flex items-center lg:justify-end ml-auto w-full"
       >
-        {avatar && (<ServerImage {...avatar} sizes="160px" className={`rounded-full transition-all duration-300 aspect-square object-cover h-auto ${expanded ? 'w-40' : 'w-24'}`} />)}
+        {avatar && (<ServerImage {...avatar} sizes="160px" className={`rounded-full transition-[opacity] lg:transition-all duration-500 lg:duration-300 aspect-square object-cover h-auto ${expanded ? 'opacity-100 w-40' : 'opacity-0 lg:opacity-100 w-0 lg:w-24'}`} />)}
       </div>
 
       <div className="flex flex-col relative">
