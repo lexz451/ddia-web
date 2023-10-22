@@ -11,7 +11,8 @@
   }
 
   .pb-footer {
-    padding-bottom: calc(630px + 2.5rem);
+    --footer-height: calc(630px + 2.5rem);
+    @apply lg:pb-[var(--footer-height)];
   }
 
   .page-container {

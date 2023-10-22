@@ -6,13 +6,13 @@ import { Link } from "@lexz451/next-nprogress";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 import LoadMore from "@/lib/components/load-more";
 import { buildPostsQuery } from "./data";
-import { forwardRef } from "react";
+import IndicatorIcon from "@/lib/assets/indicator.svg";
 
 function PostItem({ post }: { post: TPost }) {
     return (
         <div
             key={post.slug}
-            className="grid grid-cols-[320px_1fr] border-b border-neutral-400 gap-14 pb-10"
+            className="grid lg:grid-cols-[320px_1fr] border-b border-neutral-400 gap-5 lg:gap-14 pb-10"
         >
             <div className="">
                 {post.feature_media && <ServerImage {...post.feature_media} sizes="320px" className="rounded-2xl aspect-[9/6] object-cover"></ServerImage>}
@@ -44,8 +44,12 @@ function PostItem({ post }: { post: TPost }) {
                     <p className="text-gray-500 font-avenir line-clamp-3 leading-snug">
                         {post.description}
                     </p>
+
+                    <Link href={`/${post.slug}`} className="lg:hidden flex items-center mt-4">
+                        <IndicatorIcon className="fill-design-yellow mr-2"></IndicatorIcon> <span className="leading-none text-design-green underline text-sm font-bold">Read More</span>
+                    </Link>
                 </div>
-                <Link className="my-auto ml-20" href={`/${post.slug}`}>
+                <Link className="hidden lg:block my-auto ml-20" href={`/${post.slug}`}>
                     <ArrowCircleIcon className="stroke-design-green stroke-[1.5]"></ArrowCircleIcon>
                 </Link>
             </div>

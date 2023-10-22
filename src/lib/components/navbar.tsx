@@ -61,14 +61,14 @@ export default function Navbar() {
 
     return (
         <header className={`navbar fixed top-0 w-screen z-50 ease-in-out transition-all duration-500 will-change-transform ${isScrolled ? '-translate-y-full' : ''} ${isScrolled && isVisible ? `translate-y-0 bg-design-light bg-opacity-70 backdrop-blur-sm` : `${bgColor}`}`}>
-            <nav className="navbar-nav flex items-center md:items-stretch page-container">
+            <nav className="navbar-nav flex items-center lg:items-stretch page-container">
                 <div className={`navbar-brand transition-all duration-500 ease-in-out flex-1 ${isScrolled && isVisible ? 'py-2' : 'py-3'}`}>
                     <Link href="/" className={`brand-logo block relative transition-all duration-500 ease-in-out ${isScrolled && isVisible ? 'w-24 h-16' : 'w-32 h-20'}`}>
                         <Logo className={`absolute transition-all duration-500 ease-in-out brand-expanded ${isScrolled && isVisible ? 'opacity-0' : ''}`}></Logo>
                         <Logo2 className={`absolute transition-all duration-500 ease-in-out brand-collapsed opacity-0 ${isScrolled && isVisible ? 'opacity-100' : ''}`}></Logo2>
                     </Link>
                 </div>
-                <ul className='navbar-menu hidden md:inline-flex gap-5 mr-10'>
+                <ul className='navbar-menu hidden lg:inline-flex gap-5 mr-10'>
                     <li className='flex'>
                         <Link href={'/about-us'} className="flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase">
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
@@ -150,10 +150,10 @@ export default function Navbar() {
                         </Link>
                     </li>
                 </ul>
-                <button onClick={() => setIsOpen(!isOpen)} className='md:hidden flex-shrink-0 p-2'>
+                <button onClick={() => setIsOpen(!isOpen)} className='lg:hidden flex-shrink-0 p-2'>
                     <i className={`menu-icon ${isOpen ? 'active': ''}`}></i>
                 </button>
-                <div className='hidden md:flex items-center gap-4'>
+                <div className='hidden lg:flex items-center gap-4'>
                     <SearchIcon className="w-6 h-6"></SearchIcon>
                     <GlobeIcon className="w-6 h-6"></GlobeIcon>
                 </div>

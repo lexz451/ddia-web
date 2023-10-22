@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { TServerImage } from "../utils/types";
 import ServerImage from "./server-image";
+import parse from 'html-react-parser';
 
 export default function TeamAccordion({
   avatar,
@@ -83,10 +84,9 @@ export default function TeamAccordion({
             expanded ? "1fr" : "0fr"
           }] col-[2] transition-all ease-out duration-200`}
         >
-          <p className={`overflow-y-hidden font-avenir text-white text-lg prose ${expanded ? 'pb-2': 'pb-0'}`}
-            dangerouslySetInnerHTML={{
-              __html: description,
-            }}></p>
+          <div className={`overflow-y-hidden font-avenir text-white text-lg prose ${expanded ? 'pb-2': 'pb-0'}`}>{
+            parse(description)
+          }</div>
         </div>
       </div>
     </div>

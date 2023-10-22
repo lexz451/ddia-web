@@ -33,8 +33,8 @@ export default function Filters({
     }
 
     return (
-        <div className="flex items-start gap-10 mb-8 border-b border-neutral-400 pb-5">
-            <div className="flex items-center flex-wrap flex-1 gap-2">
+        <div className="flex flex-col lg:flex-row items-center gap-10 mb-8 border-b border-neutral-400 pb-5">
+            <div className="order-2 lg:order-1 flex items-center flex-wrap flex-1 gap-2">
                 <button
                     className={`min-w-[80px] text-center rounded-full border-[1.5px] px-5 py-2 font-avenir flex-shrink-0 border-design-green font-extrabold text-sm 
                 ${!searchParams.get("tag")
@@ -60,7 +60,9 @@ export default function Filters({
                     );
                 })}
             </div>
-            <SearchBar />
+            <div className="order-1 lg:order-2 w-full lg:w-auto">
+                <SearchBar />
+            </div>
         </div>
     )
 }
