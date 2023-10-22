@@ -61,7 +61,7 @@ export default async function ArticlePage({
     return (
         <article className="">
             <header className="flex flex-col">
-                {post.feature_media && (<ServerImage {...post.feature_media} className="h-[75vh] object-cover"></ServerImage>)}
+                {post.feature_media && (<ServerImage {...post.feature_media} className="h-[80vh] w-full object-cover"></ServerImage>)}
                 <div className="page-container">
                     <div className="flex items-center justify-center my-10">
                         <div className="Title text-center text-neutral-800 text-5xl font-semibold leading-10">How to use search engine optimization to drive sales how to use search engine sales.</div>
