@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function AboutUs() {
   return (
     <main className="">
-      <section className="gradient-green-page pt-[120px]">
+      <section id="our-mission" className="gradient-green-page pt-[120px]">
         <div className="page-container mt-10">
           <div className="flex flex-col-reverse lg:grid lg:grid-cols-[1fr_2fr] gap-6 pb-10">
             <Image
@@ -61,7 +61,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="bg-design-light-yellow lg:bg-transparent">
+      <section id="our-approach" className="bg-design-light-yellow lg:bg-transparent">
         <div className="lg:page-container my-20">
           <div className="page-container flex flex-col-reverse lg:flex-row items-center justify-center gap-8 py-14 lg:px-10 lg:bg-design-light-yellow rounded-2xl">
             <Image
@@ -89,7 +89,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="">
+      <section id="core-strategies" className="">
         <div className="page-container">
           <div className="flex flex-col lg:items-center mx-auto pb-footer mb-12 lg:max-w-[80%]">
             <h1 className="text-4xl lg:text-5xl text-design-green font-semibold pb-8">

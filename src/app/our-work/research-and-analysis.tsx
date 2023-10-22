@@ -28,7 +28,7 @@ export default function ResearchAndAnalysis({
                 <IndicatorIcon className="fill-design-yellow w-4 h-4"></IndicatorIcon>
                 <div className="Headline mt-10 text-center text-design-green text-6xl font-extrabold  leading-10">Research and Analysis</div>
                 <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-relaxed">DDIA uses narrative analysis, open source investigations, public opinion research, and information-sharing between disciplines across the Americas to deepen understanding of Latinos and information landscapes in the U.S. and Latin America.</div>
-                <div className='flex items-center gap-10 my-20 w-full'>
+                <div id='public-opinion-research' className='flex items-center gap-10 my-20 w-full'>
                     <div className='flex-1 h-[1px] bg-neutral-400 bg-opacity-50'></div>
                     <div className="IntroductoryText text-center text-design-green text-3xl font-extrabold  leading-7">Public Opinion Research</div>
                     <div className='flex-1 h-[1px] bg-neutral-400 bg-opacity-50'></div>
@@ -105,7 +105,7 @@ export default function ResearchAndAnalysis({
                         See all
                     </Link>
                 </div>
-                <div className='flex items-center gap-10 my-20 w-full'>
+                <div id='social-listening-and-osint-investigations' className='flex items-center gap-10 my-20 w-full'>
                     <div className='flex-1 h-[1px] bg-neutral-400 bg-opacity-50'></div>
                     <div className="IntroductoryText text-center text-design-green text-3xl font-extrabold  leading-7">
                         Social Listening and OSINT Investigations
