@@ -5,7 +5,7 @@ import ArrowIcon from '../assets/arrow.svg';
 
 export default function GetInvolved() {
     return (
-        <section className='lg:page-container bg-design-green lg:bg-transparent my-20'>
+        <section id='get-involved' className='lg:page-container bg-design-green lg:bg-transparent my-20'>
             <div className="Rectangle157 page-container lg:bg-design-green lg:rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 lg:px-10 py-14 lg:py-20">
                 <Image alt='mail' src={MailImg} quality={80} className='order-2 lg:order-1'></Image>
                 <div className='flex flex-col justify-center order-1 lg:order-2'>

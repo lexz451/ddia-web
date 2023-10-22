@@ -11,7 +11,7 @@ export default function CapacityBuilding() {
                     <IndicatorIcon className="fill-white w-4 h-4"></IndicatorIcon>
                     <div className="Headline mt-10 text-center text-design-light-yellow text-6xl font-extrabold  leading-10">Capacity Building</div>
                     <div className="IntroductoryText mt-8 max-w-prose text-center text-stone-50 text-lg font-normal  leading-relaxed">DDIA is working to strengthen a healthier internet by applying research to practical solutions and interventions that reflect and serve the needs of Latino communities. <br /><br />We use our research to guide those working directly with communities on framing of narratives, inoculation exercises, depolarization workshops, media and digital literacy training, or other interventions. We also connect what has worked in one context to other contexts.</div>
-                    <div className='flex items-center gap-10 my-20 w-full'>
+                    <div id='workshops-and-events' className='flex items-center gap-10 my-20 w-full'>
                         <div className='flex-1 h-[1px] bg-design-light bg-opacity-50'></div>
                         <div className="IntroductoryText text-center text-design-light text-3xl font-extrabold  leading-7">Workshops & Events</div>
                         <div className='flex-1 h-[1px] bg-design-light bg-opacity-50'></div>
@@ -40,7 +40,7 @@ export default function CapacityBuilding() {
                         </div>
                     </div>
                     <button className='r-btn border-none text-white bg-design-green mt-10'>See all</button>
-                    <div className='flex items-center gap-10 my-20 w-full'>
+                    <div id='resources-and-tools' className='flex items-center gap-10 my-20 w-full'>
                         <div className='flex-1 h-[1px] bg-design-green bg-opacity-50'></div>
                         <div className="IntroductoryText text-center text-design-green text-3xl font-extrabold  leading-7">
                             Resources & Tools
