@@ -25,7 +25,7 @@ export default function Navbar() {
 
     const pathname = usePathname();
 
-    const transparentBg = ['/', '/about-us', '/our-work', '/faq', '/team'];
+    const transparentBg = ['/', '/about-us', '/our-work', '/faq', '/team', '/contact-us'];
 
     useIsomorphicLayoutEffect(() => {
         if (transparentBg.includes(pathname)) {

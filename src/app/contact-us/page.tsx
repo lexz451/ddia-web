@@ -12,7 +12,7 @@ import Image from 'next/image';
 export default function ContactUs() {
     return (
         <main>
-            <section className="pt-[150px]">
+            <section className="pt-[150px] gradient-green-page">
                 <div className="flex flex-col items-center justify-center my-20">
                     <div className="Headline w-80 text-center text-sky-900 text-6xl font-extrabold font-avenir leading-10">Contact us</div>
                     <div className="IntroductoryText w-96 text-center my-10">
@@ -42,10 +42,10 @@ export default function ContactUs() {
                     </div>
                 </div>
             </section>
-            <section className='page-container my-10'>
-                <div className='bg-design-green md:rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-10 px-5 md:px-10 py-10 md:py-20'>
-                    <Image src={MailImg} alt='' className='order-2 md:order-1'></Image>
-                    <div className='flex flex-col justify-center order-1 md:order-2'>
+            <section className='lg:page-container bg-design-green lg:bg-transparent my-10 pb-footer'>
+                <div className='page-container lg:bg-design-green lg:rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 lg:px-10 py-10 lg:py-20'>
+                    <Image src={MailImg} alt='' className='order-2 lg:order-1'></Image>
+                    <div className='flex flex-col justify-center order-1 lg:order-2'>
                         <div className="Headline w-96 text-design-light-green text-5xl font-extrabold font-avenir leading-10">Our Newsletter</div>
                         <div className="IntroductoryText w-96 text-neutral-100 text-lg font-normal leading-normal my-5">Sign up  to receive our latest research, narrative analysis reports, and event updates.</div>
                         <input placeholder='Name' className='mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm'></input>
