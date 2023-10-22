@@ -5,10 +5,11 @@ import WAIcon from '@/lib/assets/whatsapp.svg';
 
 import ServerImage from "@/lib/components/server-image";
 import { TPost } from "@/lib/utils/types";
-import { parsePostContent } from '@/lib/utils/helpers';
+import { parsePostContent, parsePostDate } from '@/lib/utils/helpers';
 import LatestUpdates from '@/lib/components/latest-updates';
 import { getApi } from '@/lib/utils/api';
 import { notFound } from 'next/navigation';
+import { Link } from '@lexz451/next-nprogress';
 
 // export async function generateStaticParams() {
 //     const {data: posts} = await fetchLatestPosts({});
@@ -20,6 +21,9 @@ import { notFound } from 'next/navigation';
 // export const metadata: Metadata = {};
 
 async function fetchData(slug: string) {
+
+
+
     const { data: [post] } = await getApi<TPost[]>(`/posts`, {
         filters: {
             slug: {
@@ -28,7 +32,45 @@ async function fetchData(slug: string) {
         },
         populate: ["feature_media", "post_type", "authors"]
     });
-    const { data: posts } = await getApi<TPost[]>('/posts', {
+
+    const { data: whatAreWeReading } = await getApi<TPost[]>('/posts', {
+        filters: {
+            id: {
+                $ne: post?.id
+            },
+            tags: {
+                slug: {
+                    $eq: 'what-we-are-reading'
+                }
+            },
+        },
+        pagination: {
+            limit: 3
+        },
+        populate: ["feature_media", "authors"]
+    });
+
+    const { data: inTheNews } = await getApi<TPost[]>('/posts', {
+        filters: {
+            id: {
+                $ne: post?.id
+            },
+            tags: {
+                slug: {
+                    $eq: 'in-the-news'
+                }
+            },
+        },
+        pagination: {
+            limit: 3
+        },
+        fields: ["title", "slug"]
+        // populate: ["feature_media", "authors"]
+    });
+
+
+
+    const { data: latestPosts } = await getApi<TPost[]>('/posts', {
         filters: {
             id: {
                 $ne: post?.id
@@ -42,7 +84,9 @@ async function fetchData(slug: string) {
     });
     return {
         post,
-        posts
+        latestPosts,
+        whatAreWeReading,
+        inTheNews
     };
 }
 
@@ -50,7 +94,7 @@ export default async function ArticlePage({
     params: { slug }
 }: { params: { slug: string } }) {
 
-    const { post, posts: latestPosts } = await fetchData(slug);
+    const { post, latestPosts, whatAreWeReading, inTheNews } = await fetchData(slug);
 
     if (!post) {
         return notFound();
@@ -61,16 +105,27 @@ export default async function ArticlePage({
     return (
         <article className="">
             <header className="flex flex-col">
-                {post.feature_media && (<ServerImage {...post.feature_media} className="h-[80vh] w-full object-cover"></ServerImage>)}
+                {post.feature_media && (<ServerImage {...post.feature_media} className="h-[70vh] lg:h-[80vh] w-full object-cover"></ServerImage>)}
                 <div className="page-container">
                     <div className="flex items-center justify-center my-10">
-                        <div className="Title text-center text-neutral-800 text-5xl font-semibold leading-10">How to use search engine optimization to drive sales how to use search engine sales.</div>
+                        <div className="Title text-center text-neutral-800 text-5xl font-semibold leading-10">
+                            {post.title}
+                        </div>
                     </div>
                     <div className="grid grid-cols-[1fr_250px] border-y border-neutral-300">
                         <div className="py-4">
                             <div className="IntroductoryText leading-none">
-                                <span className="text-neutral-800 text-xs font-semibold">Mariano García </span>
-                                <span className="text-neutral-400 text-xs font-semibold">- June 2, 2023</span>
+                                <span className="text-neutral-800 text-xs font-semibold">
+                                    {
+                                        post.authors?.map(a => a.name).join(', ')
+                                    }
+                                </span>
+                                <span className='mx-2'>-</span>
+                                <span className="text-neutral-400 text-xs font-semibold">
+                                    {
+                                        parsePostDate(post.publish_date)
+                                    }
+                                </span>
                             </div>
                         </div>
                         <div className="flex gap-4 items-center justify-center border-l border-neutral-300">
@@ -94,38 +149,58 @@ export default async function ArticlePage({
                 </div>
             </header>
             <main className="page-container">
-                <div className="grid grid-cols-[2fr_1fr] mt-10 gap-10">
+                <div className="grid lg:grid-cols-[2fr_1fr] mt-10 gap-10">
                     <div className='post-content' dangerouslySetInnerHTML={{
                         __html: content
                     }}>
                     </div>
-                    <div className='flex flex-col gap-10'>
+                    <aside className='flex flex-col gap-10'>
                         <div className="Rectangle204 h-96 bg-gradient-to-b from-emerald-300 to-emerald-300 rounded-2xl flex flex-col items-center justify-center">
-                            <div className="Headline text-center text-black text-opacity-60 text-3xl font-semibold leading-9">Newsletter subscription banner</div>
+                            <div className="Headline text-center text-black text-opacity-60 text-3xl font-semibold font-['Inter'] leading-9">Newsletter subscription banner</div>
                         </div>
                         <div>
                             <div className="IntroductoryText border-b border-neutral-800 mb-5 pb-5 text-neutral-800 text-xl font-semibold leading-3">What We Are Reading</div>
-                            <div>
+                            {whatAreWeReading.map((post) => (
+                                <div key={post.slug}>
+                                    <div className='overflow-hidden'>
+                                        {post.feature_media && (<ServerImage {...post.feature_media} sizes="160px" className={`rounded-2xl aspect-[9/6] object-cover h-auto`}></ServerImage>)}
+                                    </div>
+                                    <Link href={`/${post.slug}`} className="Title block my-2 text-neutral-800 text-lg font-semibold leading-snug">
+                                        {post.title}
+                                    </Link>
+                                    <div className="IntroductoryText">
+                                        <span className="text-neutral-800 text-xs font-semibold leading-3">
+                                            { post.authors?.map(a => a.name).join(', ') }
+                                        </span>
+                                        <span className='mx-2'>-</span>
+                                        <span className="text-neutral-400 text-xs font-semibold leading-3"> 
+                                            {parsePostDate(post.publish_date)}
+                                        </span>
+                                    </div>
+                                </div>
+                            ))}
+                            {/* <div>
                                 <div className='aspect-[4/2.5] bg-design-green'></div>
                                 <h5 className="Title my-2 text-neutral-800 text-lg font-semibold leading-snug">How to use search engine optimization to drive sales how to use search engine sales.</h5>
                                 <div className="IntroductoryText"><span className="text-neutral-800 text-xs font-semibold leading-3">Mariano García </span><span className="text-neutral-400 text-xs font-semibold leading-3">- June 2, 2023</span></div>
-                            </div>
+                            </div> */}
                         </div>
                         <div>
                             <div className="IntroductoryText border-b border-neutral-800 mb-5 pb-5 text-neutral-800 text-xl font-semibold leading-3">DIA in the news</div>
                             <div className='flex flex-col'>
-                                <div className="Title border-b border-neutral-500 pb-2 text-neutral-800 text-base font-semibold leading-snug">How to use search engine optimization to drive sales how to use search engine sales.</div>
-                                <div className="Title border-b border-neutral-500 text-neutral-800 text-base  py-2 font-semibold leading-snug">How to use search engine optimization to drive sales how to use search engine sales.</div>
-                                <div className="Title text-neutral-800 text-base  py-2 font-semibold leading-snug">How to use search engine optimization to drive sales how to use search engine sales.</div>
+                                {inTheNews.map((post) => (
+                                        <Link href={`/${post.slug}`} key={post.slug} className="Title border-b border-neutral-500 pb-2 text-neutral-800 text-base font-semibold leading-snug">
+                                            {post.title}
+                                        </Link>
+                                ))}
                             </div>
-
                         </div>
-                    </div>
+                    </aside>
                 </div>
             </main>
-            <footer className="page-container flex flex-col gap-10 pb-footer mb-10">
+            <footer className="page-container flex flex-col gap-10 mb-10">
                 <div className="flex w-full my-10 h-80 rounded-3xl bg-gradient-to-b from-design-light-green to-gray-100">
-                    <h1 className="m-auto font-semibold text-5xl text-gray-500">
+                    <h1 className="m-auto font-[Inter] font-semibold text-5xl text-gray-500">
                         Banner
                     </h1>
                 </div>
