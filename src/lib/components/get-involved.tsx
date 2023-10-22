@@ -5,12 +5,12 @@ import ArrowIcon from '../assets/arrow.svg';
 
 export default function GetInvolved() {
     return (
-        <section className='md:page-container my-20'>
-            <div className="Rectangle157 bg-design-green md:rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-10 px-5 md:px-10 py-10 md:py-20">
-                <Image alt='mail' src={MailImg} quality={80} className='order-2 md:order-1'></Image>
-                <div className='flex flex-col justify-center order-1 md:order-2'>
-                    <div className="Headline text-design-light-green text-4xl md:text-5xl font-extrabold font-avenir leading-10">Get Involved</div>
-                    <p className="IntroductoryText mt-5 md:mt-10 text-neutral-100 md:text-lg font-light font-inter leading-relaxed">
+        <section className='lg:page-container bg-design-green lg:bg-transparent my-20'>
+            <div className="Rectangle157 page-container lg:bg-design-green lg:rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 lg:px-10 py-14 lg:py-20">
+                <Image alt='mail' src={MailImg} quality={80} className='order-2 lg:order-1'></Image>
+                <div className='flex flex-col justify-center order-1 lg:order-2'>
+                    <div className="Headline text-design-light-green text-4xl lg:text-5xl font-extrabold font-avenir leading-10">Get Involved</div>
+                    <p className="IntroductoryText mt-5 lg:mt-10 text-neutral-100 lg:text-lg font-light font-inter leading-relaxed">
                         Are you working to strengthen a healthy Internet for democracy? Do you want to learn more about narratives circulating in Latino spaces online? Have an interest in U.S. Latinos or Latin America and where the two intersect? Are you a policymaker working on tech policy?
                     </p>
                     {/* <div className='flex items-center mt-4'>
@@ -19,7 +19,7 @@ export default function GetInvolved() {
                     </svg>
                     <div className="Heading ml-2 text-white underline text-sm font-bold font-avenir leading-loose">Read more</div>
                 </div> */}
-                    <p className='my-4 text-neutral-100 font-light md:text-lg'>Sign up to receive our latest updates.</p>
+                    <p className='my-4 text-neutral-100 font-light lg:text-lg'>Sign up to receive our latest updates.</p>
 
                     <input placeholder='Name' className='mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm'></input>
                     <input placeholder='Organization' className='mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm'></input>
@@ -30,7 +30,7 @@ export default function GetInvolved() {
                             <ArrowIcon></ArrowIcon>
                         </button>
                     </div>
-                    <p className='mt-10 text-neutral-100 font-light md:text-lg'>
+                    <p className='mt-10 text-neutral-100 font-light lg:text-lg'>
                         Contact us at <a className='underline' href='mailto:info@ddia.org'>info@ddia.org</a> to explore partnerships or to learn more about our work.
                     </p>
                 </div>

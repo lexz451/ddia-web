@@ -26,13 +26,13 @@ export default async function Home() {
 
   return (
     <main>
-      <section className='gradient-green-page pt-[150px] md:pt-[180px]'>
-        <div className='page-container grid md:grid-cols-2'>
+      <section className='gradient-green-page pt-[150px] lg:pt-[180px]'>
+        <div className='page-container grid lg:grid-cols-2'>
           <div className='flex flex-col items-start justify-center'>
-            <h1 className="Headline text-design-green text-4xl md:text-6xl font-extrabold ">
+            <h1 className="Headline text-design-green text-4xl lg:text-6xl font-extrabold ">
               Digital Democracy Institute of the Americas (DDIA)
             </h1>
-            <p className="IntroductoryText max-w-prose text-design-dark md:text-xl font-normal  leading-7 mt-5">
+            <p className="IntroductoryText max-w-prose text-design-dark lg:text-xl font-normal  leading-7 mt-5">
               The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.
             </p>
             <button className="Rectangle129 r-btn font-normal border-none bg-design-yellow rounded-3xl mt-10 text-design-green">
