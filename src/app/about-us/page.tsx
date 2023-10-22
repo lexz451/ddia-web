@@ -18,9 +18,9 @@ export default function AboutUs() {
               alt=""
               width={0}
               height={0}
-              sizes="20vmax"
+              //sizes="20vmax"
             />
-            <div className="flex w-full h-full p-8 bg-design-light rounded-2xl">
+            <div className="flex w-full h-full lg:p-8 lg:bg-design-light rounded-2xl">
               <div className="m-auto">
                 <h1 className="text-5xl text-design-green font-avenir font-semibold pb-8">
                   Our mission
@@ -38,8 +38,8 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-[2fr_1fr] gap-6 pb-10">
-            <div className="flex w-full h-full p-8 bg-design-light rounded-2xl">
+          <div className="flex flex-col lg:grid lg:grid-cols-[2fr_1fr] gap-6 pb-10">
+            <div className="flex w-full h-full lg:p-8 lg:bg-design-light rounded-2xl">
               <div className="m-auto">
                 <h1 className="text-5xl text-design-green font-avenir font-semibold pb-8">
                   Our vision
@@ -60,7 +60,7 @@ export default function AboutUs() {
               alt=""
               width={0}
               height={0}
-              sizes="20vmax"
+              //sizes="20vmax"
             />
           </div>
         </div>

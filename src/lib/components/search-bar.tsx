@@ -7,37 +7,41 @@ import { useEffect, useState } from 'react';
 
 export default function SearchBar() {
 
-    const router = useRouter();
-    const pathname = usePathname();
-    const params = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useSearchParams();
 
-    const searchParam = params.get('search') || '';
+  const searchParam = params.get('search') || '';
 
-    const [searchQuery, setSearchQuery] = useState(searchParam);
+  const [searchQuery, setSearchQuery] = useState(searchParam);
 
-    useEffect(() => {
-        setSearchQuery(params.get('search') || '');
-    }, [params]);
+  useEffect(() => {
+    setSearchQuery(params.get("q") || "");
+  }, [params]);
 
-    function search(query: string) {
-        console.log('searching...');
-        const params = new URLSearchParams();
-        params.set('search', query);
-        router.push(`${pathname}?${params.toString()}`);
-    }
+  useEffect(() => {
+    setSearchQuery(params.get('search') || '');
+  }, [params]);
 
-    function clearSearch() {
-        setSearchQuery('');
-        const params = new URLSearchParams();
-        params.delete('search');
-        router.push(`${pathname}?${params.toString()}`);
-    }
-    
-    function onAction() {
-        clearSearch();
-    }
+  function search(query: string) {
+    console.log('searching...');
+    const params = new URLSearchParams();
+    params.set('search', query);
+    router.push(`${pathname}?${params.toString()}`);
+  }
 
-    return (
+  function clearSearch() {
+    setSearchQuery('');
+    const params = new URLSearchParams();
+    params.delete('search');
+    router.push(`${pathname}?${params.toString()}`);
+  }
+
+  function onAction() {
+    clearSearch();
+  }
+
+  return (
         <div className='min-w-[250px]'>
             <div className={`group flex overflow-hidden relative w-11 max-w-[14rem] ml-auto rounded-full bg-design-light transition-[width] duration-500 ease-out outline-design-green outline-[1.5px] ${!!searchQuery ? 'w-full outline' : 'focus-within:w-full focus-within:outline'} `}>
                 <div className="absolute flex h-full w-[80%] ">
@@ -66,6 +70,5 @@ export default function SearchBar() {
                 </button>
             </div>
         </div>
-
-    )
+  );
 }
