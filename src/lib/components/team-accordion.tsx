@@ -18,8 +18,6 @@ export default function TeamAccordion({
 }) {
   const [expanded, setExpanded] = useState<boolean>(false);
 
-  console.log(avatar);
-
   return (
     <div
       className={`grid grid-cols-[1fr_5fr] gap-10 mb-6 py-4 px-10 rounded-2xl transition-colors ease-out duration-300 ${

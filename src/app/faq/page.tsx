@@ -19,7 +19,7 @@ export default async function FAQ() {
 
   const latestPosts = await fetchData();
 
-  const { data: faqs } = await getApi("/faqs");
+  const { data: faqs } = await getApi<any[]>("/faqs");
 
   return (
     <main className="bg-design-light">
