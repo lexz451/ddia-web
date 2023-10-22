@@ -18,13 +18,13 @@ export default function LatestUpdates({
         </h2>
         <Link
           href={"/latest"}
-          className="hidden md:block ml-auto text-sm r-btn border-design-green text-design-green"
+          className="hidden lg:block ml-auto text-sm r-btn border-design-green text-design-green"
         >
           See all
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-10">
         {posts.map((upd) => {
           return (
             <div key={upd.slug} className={`flex flex-col`}>
@@ -68,7 +68,7 @@ export default function LatestUpdates({
       <Link
           prefetch={true}
           href={"/latest"}
-          className="md:hidden mt-10 mx-auto text-sm r-btn border-none bg-design-green text-design-light"
+          className="lg:hidden mt-10 mx-auto text-sm r-btn border-none bg-design-green text-design-light"
         >
           See all
         </Link>

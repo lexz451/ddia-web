@@ -1,5 +1,20 @@
 import { parse, HTMLElement } from 'node-html-parser';
 
+export function parsePostDate(date: string): string {
+    return new Date(date).toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+    });
+}
+
+export function parseReadTime(content: string): string {
+    const wordsPerMinute = 238 // https://scholarwithin.com/average-reading-speed#:~:text=read%2020%20pages.-,Adult%20Average%20Reading%20Speed,of%20300%20words%20per%20minute.;
+    const textLength = content.split(' ').length;
+    const value = Math.ceil(textLength / wordsPerMinute);
+    return `${value} min read`;
+}
+
 export function parsePostContent(content: string): string {
     const root = parse(content);
 
@@ -15,8 +30,6 @@ export function parsePostContent(content: string): string {
                 </a>`    
             )
         }
-
-        
 
     });
 
