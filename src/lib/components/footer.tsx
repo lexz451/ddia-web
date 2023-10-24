@@ -10,11 +10,11 @@ import { Link } from '@lexz451/next-nprogress';
 
 export default function Footer() {
     return (
-        <footer className='lg:absolute bottom-0 lg:bottom-10 left-0 right-0'>
+        <footer className='lg:absolute bottom-0 lg:bottom-10 left-0 right-0 overflow-hidden'>
             <div className="lg:page-container">
                 <div className="pt-12 lg:pb-12 lg:px-16 bg-design-dark-green lg:rounded-3xl flex flex-col">
                     <div className="page-container grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 px-5 lg:px-0">
-                        <div className="mr-10">
+                        <div className="lg:mr-10">
                             <Logo className="w-24 h-16 -ml-1"></Logo>
                             <p className="IntroductoryText  mt-8 leading-normal text-sm text-white">
                                 The Digital Democracy Institute of the Americas (DDIA) is a fiscally sponsored project of Equis Institute, a 501(c)(3) organization.
@@ -41,7 +41,7 @@ export default function Footer() {
 
                             </div>
                         </div>
-                        <div className='grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr] gap-x-5 gap-y-5'>
+                        <div className='grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr] lg:gap-x-5 lg:gap-y-5 w-full'>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
                                 <Link href={'/about-us'} className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2">About Us</Link>
                                 <Link href={'/about-us#our-mission'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Mission / Vision</Link>
@@ -51,7 +51,7 @@ export default function Footer() {
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
                                 <Link href={'/our-work'} className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2">Our Work</Link>
                                 <Link href={'/our-work#research-and-analysis'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Research and Analysis</Link>
-                                <ul className="list-disc ml-6 text-design-light-green w-full">
+                                <ul className="list-disc pl-6 text-design-light-green w-full">
                                     <li>
                                         <div className="Text text-design-light-green text-sm font-normal font-avenir leading-normal">Public Opinion Research</div>
                                     </li>
@@ -61,7 +61,7 @@ export default function Footer() {
                                 </ul>
                                 <Link href={'/our-work#reports-and-publications'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Reports and Publications</Link>
                                 <Link href={'/our-work#capacity-building'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Capacity Building</Link>
-                                <ul className="list-disc ml-6 text-design-light-green w-full">
+                                <ul className="list-disc pl-6 text-design-light-green w-full">
                                     <li>
                                         <div className="Text text-design-light-green text-sm font-normal font-avenir leading-normal">Workshops & Events</div>
                                     </li>

@@ -32,6 +32,7 @@ export default function RootLayout({
           <ProgressBar
             color='#015C6B'
             height='2px'
+            options={{ showSpinner: false }}
           />
         </Suspense>
       </body>
