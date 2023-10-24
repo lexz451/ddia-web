@@ -89,40 +89,44 @@ export default function Navbar() {
                             <div className='page-container py-10'>
                                 <div className='grid grid-cols-3 gap-20'>
                                     <div className='flex flex-col'>
-                                        <div className='inline-flex items-center border-b border-white border-opacity-50 pb-2'>
+                                        <Link href={'/our-work#research-and-analysis'} className='inline-flex items-center border-b border-white border-opacity-50 pb-2'>
                                             <div className="flex-1 text-white text-xl font-semibold leading-10">Research and Analysis</div>
                                             <div className='flex items-center justify-center'>
                                                 <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
                                             </div>
-                                        </div>
-                                        <div className="mt-5 text-white text-sm font-normal  uppercase leading-normal">Public Opinion Research</div>
-                                        <div className="mt-2 text-white text-sm font-normal  uppercase leading-normal">Social Listening and OSINT Investigations</div>
+                                        </Link>
+                                        <Link href={'/our-work#public-opinion-research'} className="mt-5 text-white text-sm font-normal  uppercase leading-normal">Public Opinion Research</Link>
+                                        <Link href={'/our-work#social-listening-and-osint-investigations'} className="mt-2 text-white text-sm font-normal  uppercase leading-normal">Social Listening and OSINT Investigations</Link>
                                         <ul className='list-disc ml-4 mt-2'>
-                                            <li className="text-white text-sm font-normal  leading-normal">Issues and Narratives</li>
-                                            <li className="text-white text-sm font-normal  leading-normal">Platforms and Apps</li>
+                                            <li className="text-white text-sm font-normal  leading-normal">
+                                                Issues and Narratives
+                                            </li>
+                                            <li className="text-white text-sm font-normal  leading-normal">
+                                                Platforms and Apps
+                                            </li>
                                         </ul>
                                     </div>
                                     <div className='flex flex-col'>
-                                        <div className='inline-flex items-center border-b border-white border-opacity-50 pb-2'>
+                                        <Link href={'/our-work#reports-and-publications'} className='inline-flex items-center border-b border-white border-opacity-50 pb-2'>
                                             <div className="flex-1 text-white text-xl font-semibold leading-10">Reports and Publications</div>
                                             <div className='flex items-center justify-center'>
                                                 <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
                                             </div>
-                                        </div>
+                                        </Link>
                                         <ul className='list-disc ml-4 mt-5'>
                                             <li className="text-white text-sm font-normal  leading-normal">Reports</li>
                                             <li className="text-white text-sm font-normal  leading-normal">Resource types</li>
                                         </ul>
                                     </div>
                                     <div className='flex flex-col'>
-                                        <div className='inline-flex items-center border-b border-white border-opacity-50 pb-2'>
+                                        <Link href={'/our-work#capacity-building'} className='inline-flex items-center border-b border-white border-opacity-50 pb-2'>
                                             <div className="flex-1 text-white text-xl font-semibold leading-10">Capacity Building</div>
                                             <div className='flex items-center justify-center'>
                                                 <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
                                             </div>
-                                        </div>
-                                        <div className="mt-5 text-white text-sm font-normal  uppercase leading-normal">Reports and Publications</div>
-                                        <div className="mt-2 text-white text-sm font-normal  uppercase leading-normal">Resources & Tools</div>
+                                        </Link>
+                                        <Link href={'/our-work#workshops-and-events'} className="mt-5 text-white text-sm font-normal  uppercase leading-normal">Workshops & Events</Link>
+                                        <Link href={'/our-work#resources-and-tools'} className="mt-2 text-white text-sm font-normal  uppercase leading-normal">Resources & Tools</Link>
                                         <ul className='list-disc ml-4 mt-2'>
                                             <li className="text-white text-sm font-normal  leading-normal">What We Are Reading</li>
                                             <li className="text-white text-sm font-normal  leading-normal">Additional Resources</li>

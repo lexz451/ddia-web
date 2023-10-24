@@ -43,14 +43,14 @@ export default function Footer() {
                         </div>
                         <div className='grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr] gap-x-5 gap-y-5'>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
-                                <div className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2">About Us</div>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Mission / Vision</div>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Our Approach</div>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Core Strategies</div>
+                                <Link href={'/about-us'} className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2">About Us</Link>
+                                <Link href={'/about-us#our-mission'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Mission / Vision</Link>
+                                <Link href={'/about-us#our-approach'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Our Approach</Link>
+                                <Link href={'/about-us#core-strategies'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Core Strategies</Link>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
-                                <div className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2">Our Work</div>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Research and Analysis</div>
+                                <Link href={'/our-work'} className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2">Our Work</Link>
+                                <Link href={'/our-work#research-and-analysis'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Research and Analysis</Link>
                                 <ul className="list-disc ml-6 text-design-light-green w-full">
                                     <li>
                                         <div className="Text text-design-light-green text-sm font-normal font-avenir leading-normal">Public Opinion Research</div>
@@ -59,8 +59,8 @@ export default function Footer() {
                                         <div className="Text w-44 text-design-light-green text-sm font-normal font-avenir leading-normal">Social Listening and <br /> OSINT Investigations</div>
                                     </li>
                                 </ul>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Reports and Publications</div>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Capacity Building</div>
+                                <Link href={'/our-work#reports-and-publications'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Reports and Publications</Link>
+                                <Link href={'/our-work#capacity-building'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Capacity Building</Link>
                                 <ul className="list-disc ml-6 text-design-light-green w-full">
                                     <li>
                                         <div className="Text text-design-light-green text-sm font-normal font-avenir leading-normal">Workshops & Events</div>
@@ -68,18 +68,18 @@ export default function Footer() {
                                 </ul>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
-                                <div className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2">Latest Updates</div>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Announcements</div>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Blog</div>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">In the News</div>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Resources</div>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Events</div>
+                                <Link href={'/latest'} className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2">Latest Updates</Link>
+                                <Link href="/latest?tag=announcements" className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Announcements</Link>
+                                <Link href="/latest?tag=blog" className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Blog</Link>
+                                <Link href="/latest?tag=in-the-news" className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">In the News</Link>
+                                <Link href="/latest?tag=resources" className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Resources</Link>
+                                <Link href="/latest?tag=events" className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Events</Link>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
-                                <div className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2">DIA</div>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Get involved</div>
+                                <Link href={'/'} className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2">DIA</Link>
+                                {/* <Link href={'/#get-involved'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Get involved</Link> */}
                                 <Link href={'/faq'} className="Text text-gray-300 text-sm font-normal  leading-normal">FAQs</Link>
-                                <div className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Meet the team</div>
+                                <Link href={'/team'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Meet the team</Link>
                             </div>
                         </div>
                     </div>
