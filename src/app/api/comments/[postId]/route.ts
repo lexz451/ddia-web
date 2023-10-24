@@ -7,7 +7,6 @@ export async function GET(req: Request, {
     const { postId } = params;
 
     const query = QueryString.stringify({
-        
     }, {
         encodeValuesOnly: true,
     })
