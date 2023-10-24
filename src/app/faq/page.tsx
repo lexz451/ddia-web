@@ -25,7 +25,7 @@ export default async function FAQ() {
     <main className="bg-design-light">
       <section className="Rectangle198 bg-gradient-to-b from-design-light-green to-design-light pt-[180px] pb-[8rem]">
         <div className="flex flex-col justify-center">
-          <h1 className="text-6xl text-design-green font-semibold mx-auto my-4">
+          <h1 className="text-6xl text-center text-design-green font-semibold mx-auto my-4">
             Frequently asked questions
           </h1>
           <Link
