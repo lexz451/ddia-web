@@ -33,6 +33,13 @@ export function parsePostContent(content: string): string {
 
     });
 
+    const images = root.querySelectorAll('img');
+    images.forEach((image: HTMLElement) => {
+        image.classList.add('w-full');
+        image.classList.add('h-auto');
+        image.setAttribute('loading', 'lazy');
+    });
+
     // fixes
     return root.toString();
 }
