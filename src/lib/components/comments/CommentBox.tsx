@@ -32,7 +32,6 @@ export default function CommentBox({
         fetch(`/api/comments/${postId}`)
             .then(response => response.json())
             .then(json => {
-                console.log(json);
                 setComments(json);
                 setIsLoading(false);
             })

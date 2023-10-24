@@ -7,14 +7,9 @@ export async function GET(req: Request, {
     const { postId } = params;
 
     const query = QueryString.stringify({
-        filters: {
-            removed: {
-                $ne: true
-            },
-            blocked: {
-                $ne: true
-            }
-        }
+        
+    }, {
+        encodeValuesOnly: true,
     })
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/comments/api::post.post:${postId}?${query.toString()}`, {
