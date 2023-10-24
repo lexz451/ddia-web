@@ -4,7 +4,7 @@ export async function GET(
     request: NextRequest
   ) {
     const searchParams = request.nextUrl.searchParams
-    const res = await fetch(`${process.env.API_URL}/api/posts?${searchParams}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts?${searchParams}`, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `bearer ${process.env.API_TOKEN}`,

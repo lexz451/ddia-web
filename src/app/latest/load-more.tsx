@@ -22,9 +22,11 @@ function PostItem({ post }: { post: TPost }) {
                     <span className="block mb-3 uppercase text-design-green text-sm">
                         {post.post_type.name}
                     </span>
-                    <h3 className="mb-2 text-lg font-semibold font-avenir text-design-dark leading-relaxed">
-                        {post.title}
-                    </h3>
+                    <Link href={`/${post.slug}`}>
+                        <h3 className="mb-2 text-lg font-semibold font-avenir text-design-dark leading-relaxed">
+                            {post.title}
+                        </h3>
+                    </Link>
                     <div className="mb-4 flex text-xs">
                         <h5 className="font-medium text-xs text-neutral-800 leading-3">
                             {
