@@ -28,7 +28,7 @@ export const Comment = ({
                 <div>
                     <div className="Title text-neutral-800 text-base font-semibold leading-snug">{comment.author.name}</div>
                     <div className="Preview prose prose-sm text-neutral-800 text-base font-normal leading-normal my-1">
-                        {comment.content}
+                        {comment.content == '/** -- REMOVED -- **/' ? <span className="italic text-sm text-gray-500">This comment has been removed.</span> : <span className="text-sm italic">{comment.content}</span>}
                     </div>
                     <button onClick={() => setShowReplyForm(true)} className="IntroductoryText text-neutral-800 text-sm font-bold leading-loose">Reply</button>
                 </div>
