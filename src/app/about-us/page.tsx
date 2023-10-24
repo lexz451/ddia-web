@@ -61,7 +61,10 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section id="our-approach" className="bg-design-light-yellow lg:bg-transparent">
+      <section
+        id="our-approach"
+        className="bg-design-light-yellow lg:bg-transparent"
+      >
         <div className="lg:page-container my-20">
           <div className="page-container flex flex-col-reverse lg:flex-row items-center justify-center gap-8 py-14 lg:px-10 lg:bg-design-light-yellow rounded-2xl">
             <Image
@@ -75,17 +78,14 @@ export default function AboutUs() {
                 Our Approach
               </h1>
               <p className="text-base text-design-dark font-avenir max-w-prose">
-                DIA is bringing together public opinion research, narrative
-                analysis, capacity building and policy to help Latinos live a
-                healthy digital life. We foster research and an exchange of ideas
-                across disciplines, leaders, and countries; guide interventions
-                that serve our communities in the US and across the Americas; and
-                center Latinos and Latin Americans in policy conversations about
-                the future of the digital information ecosystem.
+                We foster research and an exchange of ideas across disciplines,
+                leaders, and countries; guide interventions that serve our
+                communities in the U.S. and across the Americas; and center
+                Latinos and Latin Americans in policy conversations about the
+                future of the digital information ecosystem.
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -101,13 +101,12 @@ export default function AboutUs() {
               societies, we are moving beyond a focus on content to:
             </p>
 
-            <div className="grid grid-rows-[1fr_2fr] lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
+            <div className="grid grid-rows-2 lg:grid lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
               <div className="relative order-2 lg:order-1">
                 <Image
                   className="object-cover h-full w-full object-center rounded-2xl"
                   src={imgfakeNews}
                   alt=""
-                  sizes="30vw"
                 />
                 <h1 className="block absolute text-white right-[15%] top-[40%] text-5xl w-[4ch] rotate-[-15deg] font-[Bakbak One]">
                   Fake news
@@ -130,13 +129,13 @@ export default function AboutUs() {
                 </svg>
                 <p className="text-xl text-design-dark font-avenir max-w-prose mt-5">
                   Shape understanding of the systemic, social and behavioral
-                  factors that contribute to the spread of false, misleading, and
-                  hate-fueled information in Latino spaces online
+                  factors that contribute to the spread of false, misleading,
+                  and hate-fueled information in Latino spaces online
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-rows-[1fr_2fr] lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
+            <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
               <div className="relative order-2 lg:order-1">
                 <Image
                   className="object-cover h-full w-full object-center rounded-2xl aspect-[9/6]"
@@ -161,12 +160,13 @@ export default function AboutUs() {
                   />
                 </svg>
                 <p className="text-xl text-design-dark font-avenir max-w-prose mt-5">
-                Incubate and adapt proven-effective interventions and approaches in service of Latino communities
+                  Incubate and adapt proven-effective interventions and
+                  approaches in service of Latino communities
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-rows-[1fr_2fr] lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
+            <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
               <div className="relative order-2 lg:order-1">
                 <Image
                   className="object-cover h-full w-full object-center rounded-2xl aspect-[9/6]"
@@ -191,11 +191,12 @@ export default function AboutUs() {
                   />
                 </svg>
                 <p className="text-xl text-design-dark font-avenir max-w-prose mt-5">
-                Center Latinos’ perspectives and experiences in policy discussions and decisions made about the future of the Internet and online world.
+                  Center Latinos’ perspectives and experiences in policy
+                  discussions and decisions made about the future of the
+                  Internet and online world.
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
