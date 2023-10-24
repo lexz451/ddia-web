@@ -40,6 +40,16 @@ export function parsePostContent(content: string): string {
         image.setAttribute('loading', 'lazy');
     });
 
+    const p = root.querySelectorAll('p');
+    p.forEach((paragraph: HTMLElement) => {
+        // remove empty paragraphs
+        if (paragraph.innerHTML === '') {
+            paragraph.remove();
+        }
+        // remove style attributes
+        paragraph.removeAttribute('style');
+    });
+
     // fixes
     return root.toString();
 }
