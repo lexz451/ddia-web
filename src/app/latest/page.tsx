@@ -1,95 +1,37 @@
-import SearchBar from "./search-bar";
-import { Link } from "@lexz451/next-nprogress";
-import Posts from "./posts";
-import { fetchLatestPosts, fetchPostTypes } from "@/lib/data/posts";
+import Filters from "@/lib/components/filters";
+import { fetchData } from "./data";
+import LoadMoreWrapper from "./load-more";
 
-async function fetchLatestUpdates(
-  limit: number,
-  start: number,
-  type: number | undefined = undefined,
-  query: string | undefined = undefined
-) {
-  const posts = await fetchLatestPosts({ limit, start, type, query });
-  const postTypes = await fetchPostTypes();
-
-  return {
-    posts,
-    postTypes,
-  };
-}
 
 export default async function LatestUpdates({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-  const {
-    limit: paramLimit,
-    start: paramStart,
-    type: paramType,
-    q: paramQuery,
-  } = searchParams;
+  searchParams
+}: { searchParams: { [key: string]: string | undefined } }) {
 
-  const limit = paramLimit ? parseInt(paramLimit as string) : 5;
-  const start = paramStart ? parseInt(paramStart as string) : 0;
-  const type = paramType ? parseInt(paramType as string) : undefined;
-  const query = paramQuery as string;
+  const { search, tag } = searchParams;
 
-  const {
-    posts: {
-      data: latestPosts,
-      meta: {
-        pagination: { total },
-      },
-    },
-    postTypes: { data: postTypes },
-  } = await fetchLatestUpdates(limit, start, type, query);
+  const { posts, tags } = await fetchData({ tag, query: search });
 
   return (
-    <main className="container px-5 mx-auto mt-[12rem] max-w-6xl">
-      <section className="lg:flex lg:flex-row-reverse lg:items-start gap-10 mb-8">
-        <SearchBar />
-        <div className="flex items-center flex-wrap flex-1 gap-2">
-          <Link
-            className={`min-w-[80px] text-center rounded-full border-[1.5px] px-5 py-2 font-avenir flex-shrink-0 border-design-green font-extrabold text-sm 
-          ${!paramType ? "bg-design-green text-white" : "text-design-green"}`}
-            href={`/latest`}
-          >
-            All
-          </Link>
-          {postTypes.map((type: any) => {
-            return (
-              <Link
-                key={type.id}
-                className={`min-w-[80px] text-center rounded-full border-[1.5px] px-5 py-2 font-avenir flex-shrink-0 border-design-green font-extrabold text-sm ${
-                  paramType == type.id
-                    ? "bg-design-green text-white"
-                    : "text-design-green"
-                }`}
-                href={`/latest?type=${type.id}`}
-              >
-                {type.name}
-              </Link>
-            );
-          })}
+    <main className="page-container mt-[12rem]">
+      <Filters tags={tags}></Filters>
+
+      <section className="pt-10">
+        <LoadMoreWrapper
+          tag={tag}
+          query={search}
+          posts={posts?.data || []}
+          total={posts?.total || 0}
+          className="flex flex-col gap-10"
+        ></LoadMoreWrapper>
+      </section>
+
+      <section className="pb-footer">
+        <div className="flex w-full my-10 h-80 rounded-3xl bg-gradient-to-b from-design-light-green to-gray-100">
+          <h1 className="m-auto font-[Inter] font-semibold text-5xl text-gray-500">
+            Banner
+          </h1>
         </div>
       </section>
-
-      <section className="lg:border-b lg:border-b-gray-500">
-        <Posts
-          posts={latestPosts}
-          limit={limit}
-          type={type}
-          query={query}
-          total={total}
-        ></Posts>
-      </section>
-
-      <div className="flex w-full my-10 h-80 rounded-3xl bg-gradient-to-b from-design-light-green to-gray-100">
-        <h1 className="m-auto font-[Inter] font-semibold text-5xl text-gray-500">
-          Banner
-        </h1>
-      </div>
     </main>
   );
 }

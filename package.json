@@ -11,10 +11,12 @@
   "dependencies": {
     "@lexz451/next-nprogress": "^0.1.6",
     "gsap": "^3.12.2",
+    "html-react-parser": "^4.2.8",
     "next": "latest",
     "node-html-parser": "^6.1.10",
     "qs": "^6.11.2",
     "react": "latest",
+    "react-avatar": "^5.0.3",
     "react-dom": "latest",
     "sharp": "^0.32.6"
   },

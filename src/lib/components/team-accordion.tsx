@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { TServerImage } from "../utils/types";
 import ServerImage from "./server-image";
+import parse from 'html-react-parser';
 
 export default function TeamAccordion({
   avatar,
@@ -18,20 +19,18 @@ export default function TeamAccordion({
 }) {
   const [expanded, setExpanded] = useState<boolean>(false);
 
-  console.log(avatar);
-
   return (
     <div
-      className={`grid grid-cols-[1fr_5fr] gap-10 mb-6 py-4 px-10 rounded-2xl transition-colors ease-out duration-300 ${
+      className={`grid lg:grid-cols-[1fr_5fr] lg:gap-10 mb-6 py-4 px-5 lg:px-10 rounded-2xl transition-colors ease-out duration-300 ${
         expanded
           ? "text-white bg-design-green"
           : "text-design-green bg-design-light"
       }`}
     >
       <div
-        className="self-start relative flex items-center justify-end ml-auto w-full"
+        className="self-start relative flex items-center lg:justify-end ml-auto w-full"
       >
-        {avatar && (<ServerImage {...avatar} sizes="160px" className={`rounded-full transition-all duration-300 aspect-square object-cover h-auto ${expanded ? 'w-40' : 'w-24'}`} />)}
+        {avatar && (<ServerImage {...avatar} sizes="160px" className={`rounded-full transition-[opacity] lg:transition-all duration-500 lg:duration-300 aspect-square object-cover h-auto ${expanded ? 'opacity-100 w-40' : 'opacity-0 lg:opacity-100 w-0 lg:w-24'}`} />)}
       </div>
 
       <div className="flex flex-col relative">
@@ -85,10 +84,9 @@ export default function TeamAccordion({
             expanded ? "1fr" : "0fr"
           }] col-[2] transition-all ease-out duration-200`}
         >
-          <p className={`overflow-y-hidden font-avenir text-white text-lg prose ${expanded ? 'pb-2': 'pb-0'}`}
-            dangerouslySetInnerHTML={{
-              __html: description,
-            }}></p>
+          <div className={`overflow-y-hidden font-avenir text-white text-lg prose ${expanded ? 'pb-2': 'pb-0'}`}>{
+            parse(description)
+          }</div>
         </div>
       </div>
     </div>
