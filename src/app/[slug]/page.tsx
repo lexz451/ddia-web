@@ -14,18 +14,18 @@ import { Link } from '@lexz451/next-nprogress';
 import CommentBox from '@/lib/components/comments/CommentBox';
 import { fetchData } from './data';
 
-// export async function generateStaticParams() {
-//     const { data: posts } = await getApi<TPost[]>(`/posts`, {
-//         filters: {
-//             content: {
-//                 $ne: null
-//             }
-//         }
-//     });
-//     return posts.map((post: TPost) => ({
-//         slug: post.slug
-//     }));
-// }
+export async function generateStaticParams() {
+    const { data: posts } = await getApi<TPost[]>(`/posts`, {
+        filters: {
+            content: {
+                $ne: null
+            }
+        }
+    });
+    return posts.map((post: TPost) => ({
+        slug: post.slug
+    }));
+}
 
 export default async function ArticlePage({
     params: { slug }
