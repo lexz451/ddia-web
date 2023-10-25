@@ -6,12 +6,18 @@ import { TMember } from "@/lib/utils/types";
 async function fetchData() {
   const ourTeam = await getApi("/our-teams", {
     populate: ["avatar"],
+  }, {
+    next: { tags: ["our-team"] },
   });
   const board = await getApi("/boards", {
     populate: ["avatar"],
+  }, {
+    next: { tags: ["board"] },
   });
   const advisory = await getApi("/advisories", {
     populate: ["avatar"],
+  }, {
+    next: { tags: ["advisory"] },
   });
   return {
     ourTeam: ourTeam.data as TMember[],

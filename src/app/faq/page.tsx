@@ -5,21 +5,27 @@ import { TPost } from "@/lib/utils/types";
 import { Link } from "@lexz451/next-nprogress";
 
 async function fetchData() {
-  const { data: posts } = await getApi<TPost[]>('/posts', {
+  const { data: faqs } = await getApi<any[]>(
+    "/faqs",
+    {},
+    {
+      next: { tags: ["faq"] },
+    }
+  );
+  const { data: posts } = await getApi<TPost[]>("/posts", {
     pagination: {
-      limit: 3
+      limit: 3,
     },
     populate: ["feature_media", "post_type", "authors"],
-    sort: ['publish_date:desc']
+    sort: ["publish_date:desc"],
+  }, {
+    next: { tags: ["post"] },
   });
-  return posts
+  return { posts, faqs };
 }
 
 export default async function FAQ() {
-
-  const latestPosts = await fetchData();
-
-  const { data: faqs } = await getApi<any[]>("/faqs");
+  const { posts: latestPosts, faqs } = await fetchData();
 
   return (
     <main className="bg-design-light">

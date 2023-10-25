@@ -13,6 +13,8 @@ async function fetchData() {
     },
     populate: ["feature_media", "post_type", "authors"],
     sort: ['publish_date:desc']
+  }, {
+    next: { tags: ["post"] }
   });
   return {
     posts
