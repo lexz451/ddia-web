@@ -1,5 +1,6 @@
 import FacebookIcon from '@/lib/assets/facebook.svg';
 import InstagramIcon from '@/lib/assets/instagram.svg';
+import TelegramIcon from '@/lib/assets/telegram.svg';
 import XIcon from '@/lib/assets/x-twitter.svg';
 import WAIcon from '@/lib/assets/whatsapp.svg';
 
@@ -38,6 +39,8 @@ export default async function ArticlePage({
 
     const content = parsePostContent(post.content);
 
+    const shareUrl = encodeURI(`${process.env.SITE_HOST}/${post.slug}`);
+
     return (
         <article className="pt-[104px]">
             <header className="flex flex-col">
@@ -67,18 +70,18 @@ export default async function ArticlePage({
                         <div className="flex gap-4 items-center justify-center border-l border-neutral-300">
                             <div className="IntroductoryText w-12 text-neutral-800 text-xs font-semibold leading-3">Share</div>
                             <div className='flex items-center gap-2'>
-                                <div className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                <Link href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
                                     <FacebookIcon className="fill-white w-6 h-6"></FacebookIcon>
-                                </div>
-                                <div className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
-                                    <InstagramIcon className="fill-white w-6 h-6"></InstagramIcon>
-                                </div>
-                                <div className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                </Link>
+                                <Link href={`https://twitter.com/share?url=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
                                     <XIcon className="fill-white w-5 h-5"></XIcon>
-                                </div>
-                                <div className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                </Link>
+                                <Link href={`https://telegram.me/share/url?url=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                    <TelegramIcon className="fill-white w-6 h-6"></TelegramIcon>
+                                </Link>
+                                <Link data-action="share/whatsapp/share" href={`https://web.whatsapp.com/send?text=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
                                     <WAIcon className="fill-white w-6 h-6"></WAIcon>
-                                </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
