@@ -104,9 +104,9 @@ export default async function ArticlePage({
     const content = parsePostContent(post.content);
 
     return (
-        <article className="">
+        <article className="pt-[104px]">
             <header className="flex flex-col">
-                {post.feature_media && (<ServerImage {...post.feature_media} className="h-[70vh] lg:h-[80vh] w-full object-cover"></ServerImage>)}
+                {post.feature_media && (<ServerImage {...post.feature_media} className="h-[40vh] lg:h-[60vh] w-full object-cover"></ServerImage>)}
                 <div className="page-container">
                     <div className="flex items-center justify-center my-10">
                         <div className="Title text-center text-neutral-800 text-5xl font-semibold leading-10">

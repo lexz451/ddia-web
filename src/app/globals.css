@@ -40,16 +40,18 @@
   }
 
 
-  .navbar .navbar-menu li {
-    &:hover {
-      .indicator {
-        @apply opacity-100;
-      }
-      .text {
-        @apply border-design-green;
-      }
-      .overflow-menu {
-        @apply opacity-100 z-50 h-auto;
+  .navbar {
+    .navbar-menu li {
+      &:hover {
+        .indicator {
+          @apply opacity-100 fill-design-green;
+        }
+        .text {
+          @apply border-design-green;
+        }
+        .overflow-menu {
+          @apply opacity-100 z-50 h-auto;
+        }
       }
     }
   }
@@ -106,5 +108,20 @@ body {
   font-family: var(--font-avenir);
   main {
     @apply flex-1;
+  }
+
+  .swiper .swiper-pagination {
+    @apply flex items-center justify-center gap-2 mt-5;
+    .swiper-pagination-bullet {
+        svg {
+            stroke: #6AC2C7;
+            stroke-width: 1px;
+        }
+        &-active {
+            svg {
+                fill: #6AC2C7;
+            }
+        }
+    }
   }
 }
