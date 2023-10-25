@@ -17,11 +17,19 @@ export default function Navigation() {
         if (!navigationContainer) return;
 
         if (scrollDirection == 'down') {
-            navigationContainer.classList.add('top-0');
-            navigationContainer.classList.remove('top-20');
+            // navigationContainer.classList.add('top-0');
+            // navigationContainer.classList.remove('top-20');
+            gsap.to(navigationContainer, {
+                top: 0,
+                duration: 0.3
+            })
         } else {
-            navigationContainer.classList.add('top-20');
-            navigationContainer.classList.remove('top-0');
+            // navigationContainer.classList.add('top-20');
+            // navigationContainer.classList.remove('top-0');
+            gsap.to(navigationContainer, {
+                top: 80,
+                duration: 0.3
+            })
         }
 
     }, [scrollDirection, scrollPosition]);
@@ -61,7 +69,7 @@ export default function Navigation() {
     }
 
     return (
-        <section id="navigation-container" className='bg-design-light bg-opacity-70 backdrop-blur-sm transition-all ease-in-out z-10 duration-500 sticky py-5 my-10'>
+        <section id="navigation-container" className='bg-design-light bg-opacity-70 backdrop-blur-sm sticky z-10 py-5 my-10'>
             <div className='flex items-center justify-center'>
                 <button onClick={scrollToSection} data-id="research-and-analysis" className='transition-colors duration-150 min-w-[200px] text-sm border-design-green text-design-green r-btn'>
                     Research and Analysis

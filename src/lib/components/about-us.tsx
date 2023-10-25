@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AbtImg from '@/lib/assets/research.png';
+import { Link } from "@lexz451/next-nprogress";
 
 export default function AboutUs() {
   return (
@@ -10,9 +11,9 @@ export default function AboutUs() {
         <div className="IntroductoryText mb-10 text-neutral-800 lg:text-lg font-normal  leading-relaxed">
           DDIA – operated by and for Latinos and Latin Americans – is a hub for research and interventions geared at strengthening trust and connection between communities and democracy. In an era of tech solutions to tech problems, we center the human experience in research, capacity-building and policy solutions that contribute to healthy information ecosystems necessary for vibrant digital democracies.
         </div>
-        <div className="Rectangle129 r-btn border-none bg-design-green text-white rounded-3xl">
+        <Link href={'/about-us'} className="Rectangle129 r-btn border-none bg-design-green text-white rounded-3xl">
           More details
-        </div>
+        </Link>
       </div>
     </div>
   )
