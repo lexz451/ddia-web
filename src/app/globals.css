@@ -54,6 +54,11 @@
         }
       }
     }
+    .navbar-menu li a.active {
+      .indicator {
+        @apply opacity-100 fill-design-yellow;
+      }
+    }
   }
 
   .post-content {

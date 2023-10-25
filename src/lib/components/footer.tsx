@@ -53,17 +53,17 @@ export default function Footer() {
                                 <Link href={'/our-work#research-and-analysis'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Research and Analysis</Link>
                                 <ul className="list-disc pl-6 text-design-light-green w-full">
                                     <li>
-                                        <div className="Text text-design-light-green text-sm font-normal font-avenir leading-normal">Public Opinion Research</div>
+                                        <Link href={'/our-work#public-opinion-research'} className="Text block text-design-light-green text-sm font-normal font-avenir leading-normal">Public Opinion Research</Link>
                                     </li>
                                     <li className='mt-3'>
-                                        <div className="Text w-44 text-design-light-green text-sm font-normal font-avenir leading-normal">Social Listening and <br /> OSINT Investigations</div>
+                                        <Link href={'/our-work#social-listening-and-osint-investigations'} className="Text block whitespace-nowrap text-design-light-green text-sm font-normal font-avenir leading-normal">Social Listening and <br /> OSINT Investigations</Link>
                                     </li>
                                 </ul>
                                 <Link href={'/our-work#reports-and-publications'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Reports and Publications</Link>
                                 <Link href={'/our-work#capacity-building'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Capacity Building</Link>
                                 <ul className="list-disc pl-6 text-design-light-green w-full">
                                     <li>
-                                        <div className="Text text-design-light-green text-sm font-normal font-avenir leading-normal">Workshops & Events</div>
+                                        <Link href={'/our-work#workshops-and-events'} className="block Text text-design-light-green text-sm font-normal font-avenir leading-normal">Workshops & Events</Link>
                                     </li>
                                 </ul>
                             </div>

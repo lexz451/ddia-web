@@ -125,9 +125,9 @@ export default function OurWork() {
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                    <Link href={'/our-work#research-and-analysis'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
                                         Read more
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -157,9 +157,9 @@ export default function OurWork() {
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                    <Link href={'/our-work#reports-and-publications'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
                                         Read more
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -188,9 +188,9 @@ export default function OurWork() {
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                    <Link href={'/our-work#capacity-building'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
                                         Read more
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -219,9 +219,9 @@ export default function OurWork() {
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                    <Link href={'/our-work#policy'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
                                         Read more
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -282,9 +282,9 @@ export default function OurWork() {
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                <Link href={'/our-work#research-and-analysis'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
                                     Read more
-                                </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
@@ -311,9 +311,9 @@ export default function OurWork() {
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                <Link href={'/our-work#reports-and-publications'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
                                     Read more
-                                </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
@@ -340,9 +340,9 @@ export default function OurWork() {
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                <Link href={'/our-work#capacity-building'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
                                     Read more
-                                </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
@@ -369,9 +369,9 @@ export default function OurWork() {
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <div className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                <Link href={'/our-work#policy'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
                                     Read more
-                                </div>
+                                </Link>
                             </div>
                         </div>
                     </div>

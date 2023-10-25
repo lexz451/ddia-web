@@ -1,16 +1,8 @@
-'use client';
-
 import Image from "next/image";
 import HeroImg from '@/lib/assets/hero-1.png';
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { Link } from "@lexz451/next-nprogress";
 
 export default function Hero() {
-
-  const scrollToForm = () => {
-    gsap.registerPlugin(ScrollToPlugin)
-    gsap.to(window, { scrollTo: { y: "section#get-involved" } });
-  }
 
   return (
     <section className='gradient-green-page pt-[150px] lg:pt-[180px]'>
@@ -22,9 +14,9 @@ export default function Hero() {
           <p className="IntroductoryText max-w-prose text-design-dark lg:text-xl font-normal  leading-7 mt-5">
             The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.
           </p>
-          <button onClick={scrollToForm} className="Rectangle129 r-btn border-none bg-design-yellow rounded-3xl mt-10 text-design-green">
+          <Link href={'/get-involved'} className="Rectangle129 r-btn border-none bg-design-yellow rounded-3xl mt-10 text-design-green">
             Get involved
-          </button>
+          </Link>
         </div>
         <div>
           <Image priority={true} alt='hero' src={HeroImg} />

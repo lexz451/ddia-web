@@ -18,7 +18,13 @@ export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     const { scrollPosition, scrollDirection } = useScroll();
+    const pathname = usePathname();
 
+    const isHome = pathname == "/";
+    const isAboutUs = pathname == "/about-us";
+    const isOurWork = pathname == "/our-work";
+    const isTeam = pathname == "/team";
+    const isLatest = pathname == "/latest";
 
     useEffect(() => {
         const navbar = document.getElementById("navbar") as HTMLElement;
@@ -80,7 +86,7 @@ export default function Navbar() {
                         href="/"
                         className={`brand-logo block relative transition-all duration-300 ease-in-out ${
                             isScrolled ? "w-24 h-16" : "w-32 h-20"
-                        }`}
+                        } ${isHome ? "active" : ""}`}
                     >
                         <Logo
                             className={`absolute transition-all duration-300 ease-in-out brand-expanded ${
@@ -98,7 +104,9 @@ export default function Navbar() {
                     <li className="flex">
                         <Link
                             href={"/about-us"}
-                            className="flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4"
+                            className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
+                                isAboutUs ? "active" : ""
+                            }`}
                         >
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
@@ -110,7 +118,9 @@ export default function Navbar() {
                     <li className="flex">
                         <Link
                             href={"/our-work"}
-                            className="flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4"
+                            className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
+                                isOurWork ? "active" : ""
+                            }`}
                         >
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
@@ -231,7 +241,9 @@ export default function Navbar() {
                     <li className="flex">
                         <Link
                             href={"/team"}
-                            className="flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4"
+                            className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
+                                isTeam ? "active" : ""
+                            }`}
                         >
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
@@ -242,7 +254,7 @@ export default function Navbar() {
                     <li className="flex">
                         <Link
                             href={"/latest"}
-                            className="flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4"
+                            className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${isLatest ? "active" : ""}`}
                         >
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
