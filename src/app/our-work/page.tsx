@@ -26,6 +26,8 @@ async function fetchData() {
             limit: 3,
         },
         sort: ['publish_date:desc']
+    }, {
+        next: { tags: ["post"] }
     });
 
     const { data: platformsAndApps } = await getApi<TPost[]>(`/posts`, {
@@ -46,6 +48,8 @@ async function fetchData() {
             limit: 3,
         },
         sort: ['publish_date:desc']
+    }, {
+        next: { tags: ["post"] },
     });
 
     const reportsAndPublications = await getApi<TPost[]>(`/posts`, {
@@ -66,28 +70,9 @@ async function fetchData() {
             limit: 6,
         },
         sort: ['publish_date:desc']
+    }, {
+        next: { tags: ["post"] },
     });
-
-    // const { data: reportsAndNarratives } = await getApi('/posts', {
-    //     filters: {
-    //         categories: {
-    //             slug: {
-    //                 $eq: 'reports-and-publications'
-    //             }
-    //         }
-    //     },
-    //     populate: [
-    //         "feature_media",
-    //         "post_type",
-    //         "authors",
-    //         "authors.avatar",
-    //         "categories",
-    //         "tags"],
-    //     pagination: {
-    //         limit: 3,
-    //     },
-    //     sort: ['publish_date:desc']
-    // });
 
     return {
         issuesAndNarratives,

@@ -58,10 +58,14 @@ export async function fetchData(
                 fields: ['slug', 'title']
             }
         }
+    }, {
+        next: { tags: ["category"] }
     })
 
     
-    const posts = await getApi<TPost[]>(`/posts`, buildPostsQuery(category, tag, query));
+    const posts = await getApi<TPost[]>(`/posts`, buildPostsQuery(category, tag, query), {
+        next: { tags: ["post"] },
+    });
 
     return {
         posts: {
