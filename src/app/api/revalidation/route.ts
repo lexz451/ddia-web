@@ -3,6 +3,11 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(
     req: NextRequest) {
+    const { headers } = req
+    const TOKEN = headers.get('authorization')
+    if (TOKEN !== process.env.REVALIDATION_TOKEN) {
+        return NextResponse.next()
+    }
     const data = await req.json()
     const { event, model, entry } = data
     switch (event) {
