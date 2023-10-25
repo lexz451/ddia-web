@@ -11,84 +11,19 @@ import { getApi } from '@/lib/utils/api';
 import { notFound } from 'next/navigation';
 import { Link } from '@lexz451/next-nprogress';
 import CommentBox from '@/lib/components/comments/CommentBox';
+import { fetchData } from './data';
 
-// export async function generateStaticParams() {
-//     const {data: posts} = await fetchLatestPosts({});
-//     return posts.map((post: TPost) => ({
-//         slug: post.slug
-//     }));
-// }
-
-// export const metadata: Metadata = {};
-
-async function fetchData(slug: string) {
-
-
-
-    const { data: [post] } = await getApi<TPost[]>(`/posts`, {
+export async function generateStaticParams() {
+    const { data: posts } = await getApi<TPost[]>(`/posts`, {
         filters: {
-            slug: {
-                $eq: slug
+            content: {
+                $ne: null
             }
-        },
-        populate: ["feature_media", "post_type", "authors"]
+        }
     });
-
-    const { data: whatAreWeReading } = await getApi<TPost[]>('/posts', {
-        filters: {
-            id: {
-                $ne: post?.id
-            },
-            tags: {
-                slug: {
-                    $eq: 'what-we-are-reading'
-                }
-            },
-        },
-        pagination: {
-            limit: 3
-        },
-        populate: ["feature_media", "authors"]
-    });
-
-    const { data: inTheNews } = await getApi<TPost[]>('/posts', {
-        filters: {
-            id: {
-                $ne: post?.id
-            },
-            tags: {
-                slug: {
-                    $eq: 'in-the-news'
-                }
-            },
-        },
-        pagination: {
-            limit: 3
-        },
-        fields: ["title", "slug"]
-        // populate: ["feature_media", "authors"]
-    });
-
-
-
-    const { data: latestPosts } = await getApi<TPost[]>('/posts', {
-        filters: {
-            id: {
-                $ne: post?.id
-            }
-        },
-        pagination: {
-            limit: 3
-        },
-        populate: ["feature_media", "post_type", "authors"],
-        sort: ['publish_date:desc']
-    });
-    return {
-        post,
-        latestPosts,
-        whatAreWeReading,
-        inTheNews
-    };
+    return posts.map((post: TPost) => ({
+        slug: post.slug
+    }));
 }
 
 export default async function ArticlePage({

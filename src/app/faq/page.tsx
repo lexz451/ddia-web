@@ -5,15 +5,21 @@ import { TPost } from "@/lib/utils/types";
 import { Link } from "@lexz451/next-nprogress";
 
 async function fetchData() {
-  const { data: faqs } = await getApi<any[]>("/faqs", {
-    next: { tags: ['faqs'] }
-  });
+  const { data: faqs } = await getApi<any[]>(
+    "/faqs",
+    {},
+    {
+      next: { tags: ["faq"] },
+    }
+  );
   const { data: posts } = await getApi<TPost[]>("/posts", {
     pagination: {
       limit: 3,
     },
     populate: ["feature_media", "post_type", "authors"],
     sort: ["publish_date:desc"],
+  }, {
+    next: { tags: ["post"] },
   });
   return { posts, faqs };
 }
