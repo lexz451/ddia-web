@@ -77,7 +77,7 @@ export default function Footer() {
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
                                 <Link href={'/'} className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2">DIA</Link>
-                                {/* <Link href={'/#get-involved'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Get involved</Link> */}
+                                <Link href={'/get-involved'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Get involved</Link>
                                 <Link href={'/faq'} className="Text text-gray-300 text-sm font-normal  leading-normal">FAQs</Link>
                                 <Link href={'/team'} className="Text text-gray-300 text-sm font-normal font-avenir leading-normal">Meet the team</Link>
                             </div>

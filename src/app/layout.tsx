@@ -5,7 +5,7 @@ import { ProgressBar } from '@lexz451/next-nprogress'
 
 import './globals.css'
 import { Suspense } from 'react'
-import { avenir, avenirCondensed } from '@/lib/utils/fonts'
+import { avenir } from '@/lib/utils/fonts'
 
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#015C6B"></link>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
       </head>
-      <body className={`${avenir.variable} ${avenirCondensed.variable}`}>
+      <body className={`${avenir.variable}`}>
         <Navbar />
         {children}
         <Footer />
