@@ -1,5 +1,4 @@
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 
 export const useGsapWithContext = (fn: (gsap: GSAP, ctx: gsap.Context) => void) => {

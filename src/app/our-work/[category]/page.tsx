@@ -2,6 +2,10 @@ import Filters from "@/lib/components/filters";
 import { fetchData } from "./data";
 import LoadMoreWrapper from "./load-more";
 
+// export async function generateStaticPaths() {   
+    
+// }
+
 export default async function OurWorkPage({
     params: { category },
     searchParams

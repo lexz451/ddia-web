@@ -29,7 +29,7 @@ export async function fetchData(slug: string) {
             },
         },
         pagination: {
-            limit: 3
+            limit: 1
         },
         populate: ["feature_media", "authors"]
     }, {
