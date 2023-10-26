@@ -193,7 +193,7 @@ export default function ResearchAndAnalysis({
                     messaging apps, and websites across the U.S. and Latin
                     America.
                 </div>
-                <div className="IntroductoryText mt-10 text-center text-design-green text-xl font-extrabold  uppercase leading-7">
+                <div id="issues-and-narratives" className="IntroductoryText mt-10 text-center text-design-green text-xl font-extrabold  uppercase leading-7">
                     Issues and Narratives
                 </div>
                 <div className="grid grid-cols-3 grid-rows-2 mt-10 gap-10">
@@ -309,7 +309,7 @@ export default function ResearchAndAnalysis({
                     ))}
                 </div>
                 <div className="w-full my-20 h-[1px] bg-neutral-400 bg-opacity-50"></div>
-                <div className="IntroductoryText w-96 text-center text-design-green text-xl font-extrabold  uppercase leading-7">
+                <div id="platforms-and-apps" className="IntroductoryText w-96 text-center text-design-green text-xl font-extrabold  uppercase leading-7">
                     Platforms and Apps
                 </div>
                 <div className="grid grid-cols-3 grid-rows-2 mt-10 gap-10">

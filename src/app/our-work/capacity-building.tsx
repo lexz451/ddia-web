@@ -88,7 +88,7 @@ export default function CapacityBuilding({
                         </div>
                         <div className="flex-1 h-[1px] bg-design-green bg-opacity-50"></div>
                     </div>
-                    <div className="IntroductoryText w-96 text-center text-design-green text-xl font-extrabold  uppercase leading-7">
+                    <div id="what-we-are-reading" className="IntroductoryText w-96 text-center text-design-green text-xl font-extrabold  uppercase leading-7">
                         What We Are Reading
                     </div>
                     <div className="grid grid-cols-3 mt-10 gap-5">
@@ -134,7 +134,7 @@ export default function CapacityBuilding({
                             </div>
                         ))}
                     </div>
-                    <div className="IntroductoryText mt-20 w-96 text-center text-gray-900 text-xl font-extrabold  uppercase leading-7">
+                    <div id="additional-resources" className="IntroductoryText mt-20 w-96 text-center text-gray-900 text-xl font-extrabold  uppercase leading-7">
                         Additional Resources
                     </div>
                     <div className="flex flex-col gap-5 w-full mt-10">

@@ -13,7 +13,7 @@ export default function Policy({ policy }: { policy: TPost[] }) {
         >
             <div className="page-container  py-20">
                 <div className="flex flex-col items-center">
-                    <IndicatorIcon className="fill-white w-4 h-4"></IndicatorIcon>
+                    <IndicatorIcon className="fill-design-green w-4 h-4"></IndicatorIcon>
                     <div className="Headline mt-10 text-center text-design-green text-6xl font-extrabold  leading-10">
                         Policy
                     </div>
