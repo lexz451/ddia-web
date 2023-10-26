@@ -43,7 +43,7 @@ export default function SearchBar() {
 
   return (
         <div className='min-w-[250px]'>
-            <div className={`group flex overflow-hidden relative lg:w-11 ml-auto rounded-full bg-stone-100 transition-[width] duration-500 ease-out outline-design-green outline-[1.5px] ${!!searchQuery ? 'lg:w-full outline' : 'focus-within:w-full focus-within:outline'} `}>
+            <div className={`group flex overflow-hidden relative ml-auto rounded-full bg-stone-100  outline-design-green outline-[1.5px] ${!!searchQuery ? 'outline' : 'focus-within:outline'} `}>
                 <div className="absolute flex h-full w-[80%] ">
                     <input
                         className={`w-full px-5 my-auto transition-opacity duration-300 bg-transparent outline-none opacity-100 cursor-pointer placeholder:italic group-focus-within:cursor-auto`}

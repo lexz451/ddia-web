@@ -15,7 +15,8 @@ export default function AboutUs() {
             <Image
               className="object-cover w-full object-left-top rounded-2xl"
               src={imgvision1}
-              alt=""
+              placeholder="blur"
+              alt="vision-img"
               sizes="50vw"
             />
             <div className="flex w-full h-full lg:p-8 lg:bg-design-light rounded-2xl">
@@ -70,8 +71,9 @@ export default function AboutUs() {
             <Image
               className="object-cover basis-1/2 object-center grow-0 shrink-[3]"
               src={imgapproach}
-              alt=""
+              alt="approach"
               sizes="50vw"
+              placeholder="blur"
             />
             <div className="basis-1/2 grow shrink-0 w-full">
               <h1 className="text-4xl lg:text-5xl text-design-green font-semibold pb-8">
@@ -101,12 +103,15 @@ export default function AboutUs() {
               societies, we are moving beyond a focus on content to:
             </p>
 
-            <div className="grid grid-rows-2 lg:grid lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
+            <div className="lg:h-[300px] grid grid-rows-2 lg:grid lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
               <div className="relative order-2 lg:order-1">
                 <Image
-                  className="object-cover h-full w-full object-center rounded-2xl"
+                  className="object-cover object-center rounded-2xl"
                   src={imgfakeNews}
-                  alt=""
+                  alt="fake-news"
+                  sizes="30vw"
+                  fill={true}
+                  placeholder="blur"
                 />
                 <h1 className="block absolute text-white right-[15%] top-[40%] text-5xl w-[4ch] rotate-[-15deg] font-[Bakbak One]">
                   Fake news
@@ -135,13 +140,15 @@ export default function AboutUs() {
               </div>
             </div>
 
-            <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
+            <div className="lg:h-[300px] grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
               <div className="relative order-2 lg:order-1">
                 <Image
-                  className="object-cover h-full w-full object-center rounded-2xl aspect-[9/6]"
+                  className="object-cover object-center rounded-2xl aspect-[9/6]"
                   src={imghandsCircle}
                   alt=""
                   sizes="30vw"
+                  fill={true}
+                  placeholder="blur"
                 />
               </div>
 
@@ -166,13 +173,15 @@ export default function AboutUs() {
               </div>
             </div>
 
-            <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
+            <div className="lg:h-[300px] grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
               <div className="relative order-2 lg:order-1">
                 <Image
-                  className="object-cover h-full w-full object-center rounded-2xl aspect-[9/6]"
+                  className="object-cover object-center rounded-2xl aspect-[9/6]"
                   src={imgholdingWorld}
-                  alt=""
+                  alt="holding-world"
                   sizes="30vw"
+                  fill={true}
+                  placeholder="blur"
                 />
               </div>
 
