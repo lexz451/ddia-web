@@ -1,11 +1,11 @@
 import localFont from "next/font/local";
 
 
-export const avenirCondensed = localFont({
-    display: 'fallback',
-    variable: '--font-avenir-condensed',
-    src: "../assets/fonts/Avenir-Condensed/AvenirNextLTPro-Condensed.otf"
-});
+// export const avenirCondensed = localFont({
+//     display: 'fallback',
+//     variable: '--font-avenir-condensed',
+//     src: "../assets/fonts/Avenir-Condensed/AvenirNextLTPro-Condensed.otf"
+// });
 export const avenir = localFont({
     display: 'fallback',
     variable: '--font-avenir',

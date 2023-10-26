@@ -17,9 +17,9 @@ function PostItem({ post }: { post?: any }) {
                         {post?.tags?.map((category: any) => category.title).join(', ')}    
                     </div>
                     <div className="self-stretch flex-col justify-start items-start gap-3 flex">
-                        <div className="self-stretch text-gray-900 text-xl font-semibold leading-7">
+                        <h3 className="self-stretch text-gray-900 text-xl font-semibold leading-7">
                             {post?.title}
-                        </div>
+                        </h3>
                     </div>
                 </div>
                 <div className="justify-start items-center gap-3 inline-flex">

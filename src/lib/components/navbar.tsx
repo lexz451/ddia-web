@@ -167,10 +167,22 @@ export default function Navbar() {
                                         </Link>
                                         <ul className="list-disc ml-4 mt-2">
                                             <li className="text-white text-sm font-normal  leading-normal">
-                                                Issues and Narratives
+                                                <Link
+                                                    href={
+                                                        "/our-work#issues-and-narratives"
+                                                    }
+                                                >
+                                                    Issues and Narratives
+                                                </Link>
                                             </li>
                                             <li className="text-white text-sm font-normal  leading-normal">
-                                                Platforms and Apps
+                                                <Link
+                                                    href={
+                                                        "/our-work#platforms-and-apps"
+                                                    }
+                                                >
+                                                    Platforms and Apps
+                                                </Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -188,14 +200,17 @@ export default function Navbar() {
                                                 <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
                                             </div>
                                         </Link>
-                                        <ul className="list-disc ml-4 mt-5">
-                                            <li className="text-white text-sm font-normal  leading-normal">
-                                                Reports
-                                            </li>
-                                            <li className="text-white text-sm font-normal  leading-normal">
-                                                Resource types
-                                            </li>
-                                        </ul>
+                                        <Link
+                                            href={"/our-work#policy"}
+                                            className="mt-4 inline-flex items-center border-b border-white border-opacity-50 pb-2"
+                                        >
+                                            <div className="flex-1 text-white text-xl font-semibold leading-10">
+                                                Policy
+                                            </div>
+                                            <div className="flex items-center justify-center">
+                                                <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
+                                            </div>
+                                        </Link>
                                     </div>
                                     <div className="flex flex-col">
                                         <Link
@@ -227,10 +242,14 @@ export default function Navbar() {
                                         </Link>
                                         <ul className="list-disc ml-4 mt-2">
                                             <li className="text-white text-sm font-normal  leading-normal">
-                                                What We Are Reading
+                                                <Link href={"/our-work#what-we-are-reading"}>
+                                                    What We Are Reading
+                                                </Link>
                                             </li>
                                             <li className="text-white text-sm font-normal  leading-normal">
-                                                Additional Resources
+                                                <Link href={"/our-work#additional-resources"}>
+                                                    Additional Resources
+                                                </Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -254,7 +273,9 @@ export default function Navbar() {
                     <li className="flex">
                         <Link
                             href={"/latest"}
-                            className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${isLatest ? "active" : ""}`}
+                            className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
+                                isLatest ? "active" : ""
+                            }`}
                         >
                             <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                             <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
