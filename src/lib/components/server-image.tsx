@@ -4,7 +4,7 @@ import { TServerImage } from '../utils/types';
 
 const ServerImage = (props: TServerImage) => {
     
-    const { width, height, alternativeText, name, url, priority, sizes, placeholder, className } = props;
+    const { width, height, alternativeText, name, url, priority, sizes, placeholder, className, fill } = props;
 
     const alt = alternativeText || name;
     const imageUrl = `${process.env.NEXT_PUBLIC_API_URL}${url}`;
@@ -20,6 +20,7 @@ const ServerImage = (props: TServerImage) => {
             height={height || 0}
             sizes={sizes}
             className={className}
+            fill={fill}
         />
     );
 };

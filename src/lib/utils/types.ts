@@ -20,6 +20,7 @@ export type TServerImage = {
     sizes: string;
     placeholder: string;
     className: string;
+    fill: boolean;
 }
 
 export type TMember = {
@@ -64,4 +65,5 @@ export type TPost = {
     content: string;
     tags: any[];
     categories: any[];
+    platform_url: string;
 };
