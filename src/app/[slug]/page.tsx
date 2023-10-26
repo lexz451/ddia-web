@@ -88,7 +88,7 @@ export default async function ArticlePage({
                 </div>
             </header>
             <main className="page-container">
-                <div className="grid lg:grid-cols-[2fr_1fr] mt-10 gap-10">
+                <div className="grid lg:grid-cols-[1fr_300px] mt-10 gap-10">
                     <div>
                         <div className='post-content' dangerouslySetInnerHTML={{
                             __html: content

@@ -23,7 +23,7 @@ function PostItem({ post }: { post: TPost }) {
                         {post.post_type.name}
                     </span>
                     <Link href={`/${post.slug}`}>
-                        <h3 className="mb-2 text-lg font-semibold font-avenir text-design-dark leading-relaxed">
+                        <h3 className="mb-2 text-lg font-semibold font-condensed text-design-dark leading-relaxed">
                             {post.title}
                         </h3>
                     </Link>
