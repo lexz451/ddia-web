@@ -38,8 +38,8 @@ export default function ContactUs() {
 
   return (
     <main className="bg-gradient-to-b from-design-light-green via-design-light to-white pt-[150px]">
-      <div className="page-container">
-        <section className="w-full items-center mt-10 mb-20">
+      <div className="page-container px-0">
+        <section className="w-full items-center mt-10 mb-20 px-4">
           <h1 className="font-avenir text-center w-fit mx-auto font-extrabold text-6xl text-design-green mb-4">
             Contact Us
           </h1>
@@ -133,30 +133,28 @@ export default function ContactUs() {
           </div>
         </section>
 
-        <section>
+        <section className="mb-32 px-4">
           <h1 className="font-avenir text-center w-fit mx-auto font-semibold text-5xl text-design-green mb-4">
             Career Oportunities
           </h1>
 
-          <p className="text-design-green max-w-lg text-center font-avenir mb-14 mx-auto">
+          <p className="text-design-green max-w-lg text-center font-avenir lg:mb-14 mx-auto">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
             nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
             volutpat. Ut wisi enim ad minim veniam.
           </p>
-        </section>
 
-        <section className="mb-32">
           {jobPositions.map((job) => {
             return (
               <div
-                className="my-4 grid grid-cols-2 grid-rows-2 bg-design-light-gray rounded-xl px-10 py-4"
+                className="my-4 grid grid-cols-2 grid-rows-[auto_1fr] gap-2 bg-design-light-gray rounded-xl px-10 py-4"
                 key={job.id}
               >
-                <h2 className="col-start-1 text-2xl font-medium">
+                <h2 className="col-start-1 text-2xl font-medium my-auto">
                   {job.position}
                 </h2>
-                <ul className="col-start-1 row-start-2 flex gap-6 ">
-                  <li className="flex gap-3 items-center">
+                <ul className="flex flex-wrap col-start-1 h-auto row-start-2 col-span-2 lg:col-end-1 gap-2">
+                  <li className="flex mr-4 gap-3 items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="13"
@@ -174,7 +172,7 @@ export default function ContactUs() {
                     </svg>
                     {job.department}
                   </li>
-                  <li className="flex gap-3 items-center">
+                  <li className="flex mr-4 gap-3 items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="13"
@@ -192,7 +190,7 @@ export default function ContactUs() {
                     </svg>
                     {job.location}
                   </li>
-                  <li className="flex gap-3 items-center">
+                  <li className="flex mr-4 gap-3 items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="13"
@@ -212,7 +210,7 @@ export default function ContactUs() {
                   </li>
                 </ul>
 
-                <button className="r-btn bg-design-green text-white font-normal row-start-1 row-span-2 col-start-2 ml-auto my-auto">
+                <button className="r-btn bg-design-green text-white font-normal row-end-1 md:row-start-1 md:row-span-2 col-start-2 ml-auto my-auto">
                   Apply
                 </button>
               </div>
