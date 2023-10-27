@@ -37,7 +37,7 @@ export default function ContactUs() {
   ];
 
   return (
-    <main className="bg-gradient-to-b from-design-light-green via-design-light to-design-light pt-[150px]">
+    <main className="bg-gradient-to-b from-design-light-green via-design-light to-white pt-[150px]">
       <div className="page-container">
         <section className="w-full items-center mt-10 mb-20">
           <h1 className="font-avenir text-center w-fit mx-auto font-extrabold text-6xl text-design-green mb-4">
@@ -145,78 +145,80 @@ export default function ContactUs() {
           </p>
         </section>
 
-        {jobPositions.map((job) => {
-          return (
-            <div
-              className="my-4 grid grid-cols-2 grid-rows-2 bg-design-light-yellow rounded-xl px-10 py-4"
-              key={job.id}
-            >
-              <h2 className="col-start-1 text-2xl font-medium">
-                {job.position}
-              </h2>
-              <ul className="col-start-1 row-start-2 flex gap-6">
-                <li className="flex gap-3 items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="13"
-                    height="13"
-                    viewBox="0 0 13 13"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6.5"
-                      cy="6.5"
-                      r="5.5"
-                      stroke="#0F8BA0"
-                      stroke-width="2"
-                    />
-                  </svg>
-                  {job.department}
-                </li>
-                <li className="flex gap-3 items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="13"
-                    height="13"
-                    viewBox="0 0 13 13"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6.5"
-                      cy="6.5"
-                      r="5.5"
-                      stroke="#0F8BA0"
-                      stroke-width="2"
-                    />
-                  </svg>
-                  {job.location}
-                </li>
-                <li className="flex gap-3 items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="13"
-                    height="13"
-                    viewBox="0 0 13 13"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6.5"
-                      cy="6.5"
-                      r="5.5"
-                      stroke="#0F8BA0"
-                      stroke-width="2"
-                    />
-                  </svg>
-                  {job.date}
-                </li>
-              </ul>
+        <section className="mb-32">
+          {jobPositions.map((job) => {
+            return (
+              <div
+                className="my-4 grid grid-cols-2 grid-rows-2 bg-design-light-gray rounded-xl px-10 py-4"
+                key={job.id}
+              >
+                <h2 className="col-start-1 text-2xl font-medium">
+                  {job.position}
+                </h2>
+                <ul className="col-start-1 row-start-2 flex gap-6 ">
+                  <li className="flex gap-3 items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 13 13"
+                      fill="none"
+                    >
+                      <circle
+                        cx="6.5"
+                        cy="6.5"
+                        r="5.5"
+                        stroke="#0F8BA0"
+                        stroke-width="2"
+                      />
+                    </svg>
+                    {job.department}
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 13 13"
+                      fill="none"
+                    >
+                      <circle
+                        cx="6.5"
+                        cy="6.5"
+                        r="5.5"
+                        stroke="#0F8BA0"
+                        stroke-width="2"
+                      />
+                    </svg>
+                    {job.location}
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 13 13"
+                      fill="none"
+                    >
+                      <circle
+                        cx="6.5"
+                        cy="6.5"
+                        r="5.5"
+                        stroke="#0F8BA0"
+                        stroke-width="2"
+                      />
+                    </svg>
+                    {job.date}
+                  </li>
+                </ul>
 
-              <button className="r-btn bg-design-green text-white font-normal row-start-1 row-span-2 col-start-2 ml-auto my-auto">
-                Apply
-              </button>
-            </div>
-          );
-        })}
+                <button className="r-btn bg-design-green text-white font-normal row-start-1 row-span-2 col-start-2 ml-auto my-auto">
+                  Apply
+                </button>
+              </div>
+            );
+          })}
+        </section>
       </div>
     </main>
   );
