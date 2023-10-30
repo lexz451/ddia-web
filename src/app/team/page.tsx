@@ -6,12 +6,18 @@ import { TMember } from "@/lib/utils/types";
 async function fetchData() {
   const ourTeam = await getApi("/our-teams", {
     populate: ["avatar"],
+  }, {
+    next: { tags: ["our-team"] },
   });
   const board = await getApi("/boards", {
     populate: ["avatar"],
+  }, {
+    next: { tags: ["board"] },
   });
   const advisory = await getApi("/advisories", {
     populate: ["avatar"],
+  }, {
+    next: { tags: ["advisory"] },
   });
   return {
     ourTeam: ourTeam.data as TMember[],
@@ -29,7 +35,7 @@ export default async function MeetTheTeam() {
     <main className="bg-gradient-to-b from-design-light-green via-white to-white pt-[150px]">
       <div className="page-container">
         <section className="flex flex-col items-center mt-10">
-          <h1 className="font-avenir w-fit mx-auto font-extrabold text-6xl text-design-green mb-4">
+          <h1 className="w-fit mx-auto font-extrabold text-4xl lg:text-6xl text-design-green mb-4">
             Meet the Team
           </h1>
           <Link
@@ -61,7 +67,7 @@ export default async function MeetTheTeam() {
             <TeamAccordion {...member} key={member.slug} />
           ))}
         </section>
-        <section>
+        <section className="pb-footer mb-10">
           <div
             className="block w-full"
             style={{

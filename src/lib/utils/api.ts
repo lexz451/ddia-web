@@ -1,8 +1,8 @@
 import qs from 'qs';
 
-interface ApiResponse {
+interface ApiResponse<T> {
     // Define the shape of the response data here
-    data: any[] | any;
+    data: T;
     meta: {
         pagination: {
             page: number;
@@ -17,7 +17,7 @@ interface ApiOptions extends RequestInit {
     cache?: 'default' | 'no-cache' | 'reload' | 'force-cache' | 'only-if-cached';
 }
 
-async function fetchApi(url: string, params: { [key: string]: any } = {}, options?: ApiOptions): Promise<ApiResponse> {
+async function fetchApi<T>(url: string, params: { [key: string]: any } = {}, options?: ApiOptions): Promise<ApiResponse<T>> {
     const queryParams = qs.stringify({
         ...params,
     }, {
@@ -35,21 +35,21 @@ async function fetchApi(url: string, params: { [key: string]: any } = {}, option
         throw new Error(`Failed to fetch API: ${response.status} ${response.statusText}`);
     }
     const data = await response.json();
-    return data;
+    return data as ApiResponse<T>;
 }
 
-export async function getApi(url: string, params: { [key: string]: any } = {}, options?: ApiOptions): Promise<ApiResponse> {
-    return fetchApi(url, params, { ...options, method: 'GET' });
+export async function getApi<T>(url: string, params: { [key: string]: any } = {}, options?: ApiOptions): Promise<ApiResponse<T>> {
+    return fetchApi<T>(url, params, { ...options, method: 'GET' });
 }
 
-export async function postApi(url: string, body?: any, options?: ApiOptions): Promise<ApiResponse> {
+export async function postApi<T>(url: string, body?: any, options?: ApiOptions): Promise<ApiResponse<T>> {
     return fetchApi(url, {}, { ...options, method: 'POST', body: JSON.stringify(body) });
 }
 
-export async function putApi(url: string, body?: any, options?: ApiOptions): Promise<ApiResponse> {
+export async function putApi<T>(url: string, body?: any, options?: ApiOptions): Promise<ApiResponse<T>> {
     return fetchApi(url, {}, { ...options, method: 'PUT', body: JSON.stringify(body) });
 }
 
-export async function deleteApi(url: string, options?: ApiOptions): Promise<ApiResponse> {
+export async function deleteApi<T>(url: string, options?: ApiOptions): Promise<ApiResponse<T>> {
     return fetchApi(url, {}, { ...options, method: 'DELETE' });
 }

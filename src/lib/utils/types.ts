@@ -1,4 +1,9 @@
-import { type } from "os";
+export type TStrapiQueryParams = {
+    filters: any;
+    populate?: any;
+    pagination?: { limit?: number, start?: number };
+    sort?: any;
+}
 
 export type TServerImage = {
     id: number;
@@ -15,6 +20,7 @@ export type TServerImage = {
     sizes: string;
     placeholder: string;
     className: string;
+    fill: boolean;
 }
 
 export type TMember = {
@@ -37,6 +43,7 @@ export type TAuthor = {
     name: string;
     slug: string;
     bio?: string;
+    avatar?: TServerImage;
     deleted: boolean;
     createdAt: string;
     updatedAt: string;
@@ -56,4 +63,7 @@ export type TPost = {
     post_type: TPostType;
     authors: TAuthor[];
     content: string;
+    tags: any[];
+    categories: any[];
+    platform_url: string;
 };

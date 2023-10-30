@@ -1,98 +1,140 @@
 import FacebookIcon from '@/lib/assets/facebook.svg';
 import InstagramIcon from '@/lib/assets/instagram.svg';
+import TelegramIcon from '@/lib/assets/telegram.svg';
 import XIcon from '@/lib/assets/x-twitter.svg';
 import WAIcon from '@/lib/assets/whatsapp.svg';
 
 import ServerImage from "@/lib/components/server-image";
-import { fetchLatestPosts, fetchPostBySlug } from "@/lib/data/posts"
 import { TPost } from "@/lib/utils/types";
-import { Metadata } from "next"
-import { parsePostContent } from '@/lib/utils/helpers';
+import { parsePostContent, parsePostDate } from '@/lib/utils/helpers';
 import LatestUpdates from '@/lib/components/latest-updates';
+import { getApi } from '@/lib/utils/api';
+import { notFound } from 'next/navigation';
+import { Link } from '@lexz451/next-nprogress';
+import CommentBox from '@/lib/components/comments/CommentBox';
+import { fetchData } from './data';
 
-// export async function generateStaticParams() {
-//     const {data: posts} = await fetchLatestPosts({});
-//     return posts.map((post: TPost) => ({
-//         slug: post.slug
-//     }));
-// }
-
-// export const metadata: Metadata = {};
+export async function generateStaticParams() {
+    const { data: posts } = await getApi<TPost[]>(`/posts`, {
+        filters: {
+            content: {
+                $ne: null
+            }
+        }
+    });
+    return posts.map((post: TPost) => ({
+        slug: post.slug
+    }));
+}
 
 export default async function ArticlePage({
     params: { slug }
 }: { params: { slug: string } }) {
 
-    const { data: [post] }: { data: TPost[] } = await fetchPostBySlug(slug);
-    const { data: latestPosts } = await fetchLatestPosts({
-        limit: 3,
-    });
+    const { post, latestPosts, whatAreWeReading, inTheNews } = await fetchData(slug);
+
+    if (!post) {
+        return notFound();
+    }
 
     const content = parsePostContent(post.content);
 
+    const shareUrl = encodeURI(`${process.env.SITE_HOST}/${post.slug}`);
+
     return (
-        <article className="">
+        <article className="pt-[104px]">
             <header className="flex flex-col">
-                {post.feature_media && (<ServerImage {...post.feature_media} className="h-[75vh] object-cover"></ServerImage>)}
+                {post.feature_media && (<ServerImage {...post.feature_media} className="h-[40vh] lg:h-[60vh] w-full object-cover"></ServerImage>)}
                 <div className="page-container">
                     <div className="flex items-center justify-center my-10">
-                        <div className="Title text-center text-neutral-800 text-5xl font-semibold leading-10">How to use search engine optimization to drive sales how to use search engine sales.</div>
+                        <div className="Title text-center text-neutral-800 text-5xl font-semibold leading-10">
+                            {post.title}
+                        </div>
                     </div>
                     <div className="grid grid-cols-[1fr_250px] border-y border-neutral-300">
                         <div className="py-4">
                             <div className="IntroductoryText leading-none">
-                                <span className="text-neutral-800 text-xs font-semibold">Mariano García </span>
-                                <span className="text-neutral-400 text-xs font-semibold">- June 2, 2023</span>
+                                <span className="text-neutral-800 text-xs font-semibold">
+                                    {
+                                        post.authors?.map(a => a.name).join(', ')
+                                    }
+                                </span>
+                                <span className='mx-2'>-</span>
+                                <span className="text-neutral-400 text-xs font-semibold">
+                                    {
+                                        parsePostDate(post.publish_date)
+                                    }
+                                </span>
                             </div>
                         </div>
                         <div className="flex gap-4 items-center justify-center border-l border-neutral-300">
                             <div className="IntroductoryText w-12 text-neutral-800 text-xs font-semibold leading-3">Share</div>
                             <div className='flex items-center gap-2'>
-                                <div className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                <Link href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
                                     <FacebookIcon className="fill-white w-6 h-6"></FacebookIcon>
-                                </div>
-                                <div className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
-                                    <InstagramIcon className="fill-white w-6 h-6"></InstagramIcon>
-                                </div>
-                                <div className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                </Link>
+                                <Link href={`https://twitter.com/share?url=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
                                     <XIcon className="fill-white w-5 h-5"></XIcon>
-                                </div>
-                                <div className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                </Link>
+                                <Link href={`https://telegram.me/share/url?url=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                    <TelegramIcon className="fill-white w-6 h-6"></TelegramIcon>
+                                </Link>
+                                <Link data-action="share/whatsapp/share" href={`https://web.whatsapp.com/send?text=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
                                     <WAIcon className="fill-white w-6 h-6"></WAIcon>
-                                </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
             <main className="page-container">
-                <div className="grid grid-cols-[2fr_1fr] mt-10 gap-10">
-                    <div className='post-content' dangerouslySetInnerHTML={{
-                        __html: content
-                    }}>
+                <div className="grid lg:grid-cols-[1fr_300px] mt-10 gap-10">
+                    <div>
+                        <div className='post-content' dangerouslySetInnerHTML={{
+                            __html: content
+                        }}>
+                        </div>
+                        <CommentBox postId={post.id}></CommentBox>
                     </div>
-                    <div className='flex flex-col gap-10'>
+                    <aside className='flex flex-col gap-10'>
                         <div className="Rectangle204 h-96 bg-gradient-to-b from-emerald-300 to-emerald-300 rounded-2xl flex flex-col items-center justify-center">
                             <div className="Headline text-center text-black text-opacity-60 text-3xl font-semibold font-['Inter'] leading-9">Newsletter subscription banner</div>
                         </div>
-                        <div>
-                            <div className="IntroductoryText border-b border-neutral-800 mb-5 pb-5 text-neutral-800 text-xl font-semibold leading-3">What We Are Reading</div>
+                        <div className='sticky top-24 flex flex-col'>
                             <div>
-                                <div className='aspect-[4/2.5] bg-design-green'></div>
-                                <h5 className="Title my-2 text-neutral-800 text-lg font-semibold leading-snug">How to use search engine optimization to drive sales how to use search engine sales.</h5>
-                                <div className="IntroductoryText"><span className="text-neutral-800 text-xs font-semibold leading-3">Mariano García </span><span className="text-neutral-400 text-xs font-semibold leading-3">- June 2, 2023</span></div>
+                                <div className="IntroductoryText border-b border-neutral-800 mb-5 pb-5 text-neutral-800 text-xl font-semibold leading-3">What We Are Reading</div>
+                                {whatAreWeReading.map((post) => (
+                                    <div key={post.slug}>
+                                        <div className='overflow-hidden'>
+                                            {post.feature_media && (<ServerImage {...post.feature_media} sizes="160px" className={`rounded-2xl aspect-[9/6] object-cover h-auto`}></ServerImage>)}
+                                        </div>
+                                        <Link href={`/${post.slug}`} className="Title block my-2 text-neutral-800 text-lg font-semibold leading-snug">
+                                            {post.title}
+                                        </Link>
+                                        <div className="IntroductoryText">
+                                            <span className="text-neutral-800 text-xs font-semibold leading-3">
+                                                {post.authors?.map(a => a.name).join(', ')}
+                                            </span>
+                                            <span className='mx-2'>-</span>
+                                            <span className="text-neutral-400 text-xs font-semibold leading-3">
+                                                {parsePostDate(post.publish_date)}
+                                            </span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className='mt-8'>
+                                <div className="IntroductoryText border-b border-neutral-800 pb-5 text-neutral-800 text-xl font-semibold leading-3">DIA in the news</div>
+                                <div className='flex flex-col'>
+                                    {inTheNews.map((post) => (
+                                        <Link href={`/${post.slug}`} key={post.slug} className="Title border-b border-neutral-500 py-2 text-neutral-800 text-base font-semibold leading-snug">
+                                            {post.title}
+                                        </Link>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <div className="IntroductoryText border-b border-neutral-800 mb-5 pb-5 text-neutral-800 text-xl font-semibold leading-3">DIA in the news</div>
-                            <div className='flex flex-col'>
-                                <div className="Title border-b border-neutral-500 pb-2 text-neutral-800 text-base font-semibold leading-snug">How to use search engine optimization to drive sales how to use search engine sales.</div>
-                                <div className="Title border-b border-neutral-500 text-neutral-800 text-base  py-2 font-semibold leading-snug">How to use search engine optimization to drive sales how to use search engine sales.</div>
-                                <div className="Title text-neutral-800 text-base  py-2 font-semibold leading-snug">How to use search engine optimization to drive sales how to use search engine sales.</div>
-                            </div>
-
-                        </div>
-                    </div>
+                    </aside>
                 </div>
             </main>
             <footer className="page-container flex flex-col gap-10 mb-10">
