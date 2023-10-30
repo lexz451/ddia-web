@@ -44,7 +44,7 @@ export default async function ArticlePage({
     return (
         <article className="pt-[104px]">
             <header className="flex flex-col">
-                {post.feature_media && (<ServerImage {...post.feature_media} className="h-[40vh] lg:h-[60vh] w-full object-cover"></ServerImage>)}
+                {post.feature_media && (<ServerImage {...post.feature_media} priority={true} className="h-[40vh] lg:h-[60vh] w-full object-cover"></ServerImage>)}
                 <div className="page-container">
                     <div className="flex items-center justify-center my-10">
                         <div className="Title text-center text-neutral-800 text-5xl font-semibold leading-10">
@@ -137,7 +137,7 @@ export default async function ArticlePage({
                     </aside>
                 </div>
             </main>
-            <footer className="page-container flex flex-col gap-10 mb-10">
+            <footer className="page-container flex flex-col gap-10 mb-10 pb-footer">
                 <div className="flex w-full my-10 h-80 rounded-3xl bg-gradient-to-b from-design-light-green to-gray-100">
                     <h1 className="m-auto font-[Inter] font-semibold text-5xl text-gray-500">
                         Banner
