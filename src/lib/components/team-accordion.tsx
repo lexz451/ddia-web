@@ -88,7 +88,7 @@ export default function TeamAccordion({
                     }] col-[2] transition-all ease-out duration-200`}
                 >
                     <div
-                        className={`overflow-y-hidden font-avenir text-white text-lg ${
+                        className={`overflow-y-hidden font-avenir text-white text-lg leading-normal ${
                             expanded ? "pb-4" : "pb-0"
                         }`}
                     >

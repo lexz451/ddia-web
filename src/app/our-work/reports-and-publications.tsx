@@ -50,7 +50,10 @@ function PostItem({ post }: { post: TPost }) {
                         Report
                     </div>
                     <div className="TitleAndPreview self-stretch flex-col justify-start items-start gap-3 flex">
-                        <Link href={`/${post.slug}`} className="Title self-stretch text-gray-900 text-xl font-semibold font-avenir leading-7">
+                        <Link
+                            href={`/${post.slug}`}
+                            className="Title self-stretch text-gray-900 text-xl font-semibold font-avenir leading-7"
+                        >
                             {post.title}
                         </Link>
                         <p className="Preview self-stretch text-gray-500 text-base font-normal leading-normal line-clamp-3">
@@ -59,16 +62,14 @@ function PostItem({ post }: { post: TPost }) {
                     </div>
                 </div>
                 <div className="BlogSectionsAvatarWithText justify-start items-center gap-3 inline-flex">
-                    <div className="Avatar w-10 h-10 flex items-center justify-center bg-stone-100 rounded-full">
-                        {post.authors?.[0]?.avatar ? (
+                    {post.authors?.[0]?.avatar && (
+                        <div className="Avatar w-10 h-10 flex items-center justify-center bg-stone-100 rounded-full">
                             <ServerImage
                                 {...post.authors?.[0]?.avatar}
                                 className="w-full h-full object-cover object-center rounded-full"
                             ></ServerImage>
-                        ) : (
-                            <UserIcon className="w-8 h-8 fill-design-green"></UserIcon>
-                        )}
-                    </div>
+                        </div>
+                    )}
                     <div className="Text flex-col justify-start items-start inline-flex">
                         <div className="Title text-gray-900 text-sm font-medium  leading-tight">
                             {post.authors?.[0]?.name}
@@ -95,7 +96,7 @@ export default function ReportsAndPublications({
             id="reports-and-publications"
             className="our-work-section gradient-green-section"
         >
-            <div className="page-container py-20">
+            <div className="page-container pt-20 pb-28">
                 <div className="flex flex-col items-center">
                     <IndicatorIcon className="fill-white w-4 h-4"></IndicatorIcon>
                     <div className="Headline mt-10 text-center text-design-green text-6xl font-extrabold  leading-10">
