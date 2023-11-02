@@ -6,7 +6,7 @@ import ArrowIcon from '../assets/arrow.svg';
 export default function GetInvolved() {
     return (
         <section id='get-involved' className='lg:page-container bg-design-green lg:bg-transparent my-20'>
-            <div className="Rectangle157 page-container lg:bg-design-green lg:rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 lg:px-10 py-14 lg:py-20">
+            <div className="Rectangle157 page-container lg:bg-design-green lg:rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 lg:px-10 py-14">
                 <Image alt='mail' src={MailImg} quality={80} className='order-2 lg:order-1'></Image>
                 <div className='flex flex-col justify-center order-1 lg:order-2'>
                     <div className="Headline text-design-light-green text-4xl lg:text-5xl font-extrabold font-avenir leading-10">Get Involved</div>
@@ -26,7 +26,7 @@ export default function GetInvolved() {
                     <input placeholder='Title' className='mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm'></input>
                     <div className='block relative w-full mt-4'>
                         <input placeholder='Email' className='rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm'></input>
-                        <button className='absolute bg-white rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center'>
+                        <button className='absolute hover:bg-design-light-green transition-colors duration-300 bg-white rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center'>
                             <ArrowIcon></ArrowIcon>
                         </button>
                     </div>

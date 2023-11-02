@@ -100,7 +100,7 @@ export default function ContactUs() {
                 </section>
 
                 <section className="md:page-container my-20">
-                    <div className="Rectangle157 bg-design-green md:rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-10 px-5 md:px-10 py-10 md:py-20">
+                    <div className="Rectangle157 bg-design-green md:rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-10 px-5 md:px-10 py-14">
                         <Image
                             alt="mail"
                             src={MailImg}
@@ -111,25 +111,30 @@ export default function ContactUs() {
                             <div className="Headline text-design-light-green text-4xl md:text-5xl font-extrabold font-avenir leading-10">
                                 Our Newsletter
                             </div>
-                            <p className="IntroductoryText mt-5 md:mt-10 text-neutral-100 md:text-lg font-light font-inter leading-relaxed">
+                            <p className="IntroductoryText mt-10 text-neutral-100 md:text-lg font-light font-inter leading-relaxed">
                                 Sign up to recieve our latest research,
                                 narrative analysis reports, and even updates
                             </p>
 
                             <input
-                                placeholder="First name"
+                                placeholder="Name"
+                                className="mt-10 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
+                            ></input>
+                            <input
+                                placeholder="Organization"
                                 className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                             ></input>
                             <input
-                                placeholder="Last name"
+                                placeholder="Title"
                                 className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                             ></input>
+                           
                             <div className="block relative w-full mt-4">
                                 <input
                                     placeholder="Email"
                                     className="rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                                 ></input>
-                                <button className="absolute bg-white rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center">
+                                <button className="absolute bg-white hover:bg-design-light-green duration-300 transition-colors rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center">
                                     <ArrowIcon></ArrowIcon>
                                 </button>
                             </div>
