@@ -3,14 +3,14 @@ import { FormEvent, useEffect, useState } from "react";
 import { CommentForm } from "./CommentForm";
 import { Comment } from "./Comment";
 
-const renderComment = (comment: any, postComment: (e: FormEvent) => Promise<void>) => {
+const renderComment = (comment: any, postComment: (e: FormEvent) => Promise<void>, isChild = false) => {
     return (
         <div key={comment.id} className="">
-            <Comment comment={comment} postComment={postComment}></Comment>
+            <Comment isChild={isChild} comment={comment} postComment={postComment}></Comment>
             {
                 comment.children && comment.children.map((child: any) => (
                     <div key={child.id} className="ml-10">
-                        {renderComment(child, postComment)}
+                        {renderComment(child, postComment, true)}
                     </div>
                 ))
             }
