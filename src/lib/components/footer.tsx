@@ -197,7 +197,7 @@ export default function Footer() {
                                     href={"/"}
                                     className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2"
                                 >
-                                    DIA
+                                    DDIA
                                 </Link>
                                 <Link
                                     href={"/get-involved"}

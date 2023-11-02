@@ -47,6 +47,8 @@ export default function OurWork() {
 
         const mm = gsap.matchMedia();
         mm.add("(min-width: 1024px)", () => {
+            scroller.style.gridAutoColumns = (container?.offsetWidth / 2) - 40 - 10 + "px";
+
             gsap.to(scroller, {
                 x: () =>
                     wrapper?.offsetWidth -
@@ -244,7 +246,7 @@ export default function OurWork() {
                         </SwiperSlide>
                     </Swiper>
                     <div
-                        className={`scroller hidden lg:grid grid-flow-col auto-cols-[90vw] lg:auto-cols-[35vw] gap-10 lg:gap-20`}
+                        className={`scroller hidden lg:grid grid-flow-col auto-cols-[90vw] lg:auto-cols-[512px] gap-10 lg:gap-20`}
                     >
                         <div className="self-center">
                             <div className="flex flex-col items-start">
