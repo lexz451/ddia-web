@@ -75,7 +75,7 @@ export default function AboutUs() {
               sizes="50vw"
               placeholder="blur"
             />
-            <div className="basis-1/2 grow shrink-0 w-full">
+            <div className="basis-1/2 grow shrink-0 w-full px-12">
               <h1 className="text-4xl lg:text-5xl text-design-green font-semibold pb-8">
                 Our Approach
               </h1>
