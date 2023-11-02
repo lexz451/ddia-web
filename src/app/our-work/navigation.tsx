@@ -64,19 +64,19 @@ export default function Navigation() {
     return (
         <section id="navigation-container" className='bg-design-light bg-opacity-70 backdrop-blur-sm sticky z-10 py-5 my-10'>
             <div className='flex items-center justify-center'>
-                <button onClick={scrollToSection} data-id="research-and-analysis" className='transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn'>
+                <button onClick={scrollToSection} data-id="research-and-analysis" className='hover:bg-design-green hover:text-white transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn'>
                     Research and Analysis
                 </button>
                 <div className='w-8 h-[2px] bg-design-green'></div>
-                <button onClick={scrollToSection} data-id="reports-and-publications" className='transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn'>
+                <button onClick={scrollToSection} data-id="reports-and-publications" className='hover:bg-design-green hover:text-white transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn'>
                     Reports and Publications
                 </button>
                 <div className='w-8 h-[2px] bg-design-green'></div>
-                <button onClick={scrollToSection} data-id="capacity-building" className='transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn'>
+                <button onClick={scrollToSection} data-id="capacity-building" className='hover:bg-design-green hover:text-white transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn'>
                     Capacity-Building
                 </button>
                 <div className='w-8 h-[2px] bg-design-green'></div>
-                <button onClick={scrollToSection} data-id="policy" className='transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn'>
+                <button onClick={scrollToSection} data-id="policy" className='hover:bg-design-green hover:text-white transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn'>
                     Policy
                 </button>
             </div>

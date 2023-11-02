@@ -72,6 +72,12 @@
     .pdf-doc {
       @apply w-full h-auto aspect-[8.5/11];
     }
+    p {
+        @apply leading-normal;
+    }
+    li::marker {
+        @apply text-design-light-green;
+    }
   }
 
   .menu-icon {

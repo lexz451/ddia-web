@@ -13,6 +13,14 @@ import TikTokIcon from "@/lib/assets/tiktok.svg";
 import YoutubeIcon from "@/lib/assets/yt.svg";
 import WhatsappIcon from "@/lib/assets/whatsapp.svg";
 import TelegramIcon from "@/lib/assets/telegram.svg";
+import ConspiracyImg from "@/lib/assets/issues-and-narratives/conspiracy.png";
+import DiversityImg from "@/lib/assets/issues-and-narratives/diversity.png";
+import ElectionsImg from "@/lib/assets/issues-and-narratives/elections.png";
+import IAImg from "@/lib/assets/issues-and-narratives/IA.png";
+import MigrationImg from "@/lib/assets/issues-and-narratives/migration.png";
+import PHealthImg from "@/lib/assets/issues-and-narratives/public-health.png";
+import ShapeIcon from "@/lib/assets/shape-understanding.svg";
+import DetermineIcon from "@/lib/assets/determine-the-extent.svg";
 
 export default function ResearchAndAnalysis({
     issuesAndNarratives,
@@ -58,7 +66,7 @@ export default function ResearchAndAnalysis({
                     We use public opinion research to:
                 </div>
                 <div className="Rectangle247 border-none max-w-[80%] flex items-center justify-between p-10 gap-10 h-36 bg-design-extralight-yellow rounded-2xl">
-                    <Search2Icon className="w-12 h-12 flex-shrink-0"></Search2Icon>
+                    <ShapeIcon className="w-12 h-12 flex-shrink-0"></ShapeIcon>
                     <div className="IntroductoryText text-neutral-800 text-2xl font-normal  leading-none">
                         Shape understanding of the psychological, social, and
                         systemic drivers of information and disinformation
@@ -66,7 +74,7 @@ export default function ResearchAndAnalysis({
                     </div>
                 </div>
                 <div className="Rectangle247 border-none mt-5 max-w-[80%] flex items-center justify-between p-10 gap-10 h-36 bg-design-extralight-yellow rounded-2xl">
-                    <Search2Icon className="w-12 h-12 flex-shrink-0"></Search2Icon>
+                    <DetermineIcon className="w-12 h-12 flex-shrink-0"></DetermineIcon>
                     <div className="IntroductoryText text-neutral-800 text-2xl font-normal  leading-none">
                         Determine the extent to which disinformation,
                         misinformation, propaganda and extremist content
@@ -193,70 +201,114 @@ export default function ResearchAndAnalysis({
                     messaging apps, and websites across the U.S. and Latin
                     America.
                 </div>
-                <div id="issues-and-narratives" className="IntroductoryText mt-10 text-center text-design-green text-xl font-extrabold  uppercase leading-7">
+                <div
+                    id="issues-and-narratives"
+                    className="IntroductoryText mt-10 text-center text-design-green text-xl font-extrabold  uppercase leading-7"
+                >
                     Issues and Narratives
                 </div>
                 <div className="grid grid-cols-3 grid-rows-2 mt-10 gap-10">
                     <Link
                         href={`/our-work/issues-and-narratives?tag=elections-and-voting`}
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
                     >
-                        <div className="Headline text-white text-3xl font-extrabold ">
+                        <Image
+                            src={ElectionsImg}
+                            alt=""
+                            className="absolute left-0 top-0 w-full h-full"
+                        ></Image>
+                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
+                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
                             Elections and Voting
                         </div>
-                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
                     <Link
                         href={`/our-work/issues-and-narratives?tag=identity-and-culture`}
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
                     >
-                        <div className="Headline text-white text-3xl font-extrabold ">
+                        <Image
+                            src={DiversityImg}
+                            alt=""
+                            className="absolute left-0 top-0 w-full h-full"
+                        ></Image>
+                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
+                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
                             Identity and Culture
                         </div>
-                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
+                   
                     <Link
                         href={`/our-work/issues-and-narratives?tag=public-health`}
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
                     >
-                        <div className="Headline text-white text-3xl font-extrabold ">
+                        <Image
+                            src={PHealthImg}
+                            alt=""
+                            className="absolute left-0 top-0 w-full h-full"
+                        ></Image>
+                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
+                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
                             Public <br></br> Health
                         </div>
-                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
+
                     <Link
                         href={`/our-work/issues-and-narratives?tag=migration`}
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
                     >
-                        <div className="Headline text-white text-3xl font-extrabold ">
+                        <Image
+                            src={MigrationImg}
+                            alt=""
+                            className="absolute left-0 top-0 w-full h-full"
+                        ></Image>
+                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
+                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
                             Migration
                         </div>
-                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
+
                     <Link
                         href={`/our-work/issues-and-narratives?tag=artificial-intelligence`}
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
                     >
-                        <div className="Headline text-white text-3xl font-extrabold ">
+                        <Image
+                            src={IAImg}
+                            alt=""
+                            className="absolute left-0 top-0 w-full h-full"
+                        ></Image>
+                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
+                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
                             Artificial Intelligence
                         </div>
-                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
+
                     <Link
                         href={`/our-work/issues-and-narratives?tag=conspiracy-networks`}
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
                     >
-                        <div className="Headline text-white text-3xl font-extrabold ">
+                        <Image
+                            src={ConspiracyImg}
+                            alt=""
+                            className="absolute left-0 top-0 w-full h-full"
+                        ></Image>
+                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
+                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
                             Conspiracy Networks
                         </div>
-                        <ArrowCircleIcon className="stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
+
                     {issuesAndNarratives?.map((post: TPost) => (
                         <div
                             key={post.slug}
                             className="BlogSectionsPost overflow-hidden bg-white rounded-2xl flex flex-col justify-stretch"
                         >
-                            <Link href={`/${post.slug}`} >
+                            <Link href={`/${post.slug}`}>
                                 {post?.feature_media && (
                                     <ServerImage
                                         {...post.feature_media}
@@ -309,7 +361,10 @@ export default function ResearchAndAnalysis({
                     ))}
                 </div>
                 <div className="w-full my-20 h-[1px] bg-neutral-400 bg-opacity-50"></div>
-                <div id="platforms-and-apps" className="IntroductoryText w-96 text-center text-design-green text-xl font-extrabold  uppercase leading-7">
+                <div
+                    id="platforms-and-apps"
+                    className="IntroductoryText w-96 text-center text-design-green text-xl font-extrabold  uppercase leading-7"
+                >
                     Platforms and Apps
                 </div>
                 <div className="grid grid-cols-3 grid-rows-2 mt-10 gap-10">
@@ -317,7 +372,7 @@ export default function ResearchAndAnalysis({
                         href={
                             "/our-work/platforms-and-apps?tag=facebook-and-instagram"
                         }
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
                     >
                         <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <FacebookIcon className=" fill-white"></FacebookIcon>
@@ -333,7 +388,7 @@ export default function ResearchAndAnalysis({
                         href={
                             "/our-work/platforms-and-apps?tag=x-formerly-twitter"
                         }
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
                     >
                         <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <XIcon className="w-5 h-5 fill-white"></XIcon>
@@ -347,7 +402,7 @@ export default function ResearchAndAnalysis({
                     </Link>
                     <Link
                         href={"/our-work/platforms-and-apps?tag=tiktok"}
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
                     >
                         <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <TikTokIcon className=" fill-white"></TikTokIcon>
@@ -361,7 +416,7 @@ export default function ResearchAndAnalysis({
                     </Link>
                     <Link
                         href={"/our-work/platforms-and-apps?tag=whatsapp"}
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
                     >
                         <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <WhatsappIcon className=" fill-white"></WhatsappIcon>
@@ -375,7 +430,7 @@ export default function ResearchAndAnalysis({
                     </Link>
                     <Link
                         href={"/our-work/platforms-and-apps?tag=youtube"}
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
                     >
                         <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <YoutubeIcon className="fill-white"></YoutubeIcon>
@@ -389,7 +444,7 @@ export default function ResearchAndAnalysis({
                     </Link>
                     <Link
                         href={"/our-work/platforms-and-apps?tag=telegram"}
-                        className="Rectangle17 bg-design-cyan rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
                     >
                         <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <TelegramIcon className="w-5 h-5 fill-white"></TelegramIcon>
@@ -406,7 +461,7 @@ export default function ResearchAndAnalysis({
                     {platformsAndApps?.map((post: TPost) => (
                         <div
                             key={post.slug}
-                            className="flex items-center w-full p-10 bg-design-extralight-yellow rounded-2xl"
+                            className="cursor-pointer flex items-center w-full p-10 bg-design-extralight-yellow hover:bg-[#E7DFCE] duration-300 transition-colors rounded-2xl"
                         >
                             <div className="flex flex-col flex-1">
                                 <div className="flex items-center">
@@ -420,7 +475,10 @@ export default function ResearchAndAnalysis({
                                         {parsePostDate(post?.publish_date)}
                                     </div>
                                 </div>
-                                <Link href={`/${post.slug}`} className="Headline text-gray-900 text-2xl font-extrabold  leading-loose">
+                                <Link
+                                    href={`/${post.slug}`}
+                                    className="Headline text-gray-900 text-2xl font-extrabold  leading-loose"
+                                >
                                     {post?.title}
                                 </Link>
                             </div>

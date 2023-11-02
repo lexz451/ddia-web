@@ -52,7 +52,7 @@ export default function CapacityBuilding({
                         {workshopsAndEvents.map((post) => (
                             <div
                                 key={post.slug}
-                                className="Rectangle267 p-10 gap-10 w-full bg-white bg-opacity-40 rounded-2xl flex items-center"
+                                className="Rectangle267 cursor-pointer p-10 gap-10 w-full duration-300 transition-colors bg-white hover:bg-[#F2EFE8] bg-opacity-40 rounded-2xl flex items-center"
                             >
                                 <div className="flex-1">
                                     <div className="SupportingText text-sky-900 text-base font-normal leading-tight">
@@ -141,7 +141,7 @@ export default function CapacityBuilding({
                         {additionalResources.map((post) => (
                             <div
                                 key={post.slug}
-                                className="Rectangle267  p-10 gap-10 w-full bg-white bg-opacity-40 rounded-2xl flex items-center justify-between"
+                                className="Rectangle267 cursor-pointer  p-10 gap-10 w-full transition-colors duration-300 bg-white bg-opacity-40 hover:bg-opacity-70 rounded-2xl flex items-center justify-between"
                             >
                                 <div>
                                     <div className="SupportingText text-sky-900 text-base font-normal leading-tight">

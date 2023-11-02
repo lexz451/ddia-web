@@ -139,20 +139,20 @@ export default function Navbar() {
                                             href={
                                                 "/our-work#research-and-analysis"
                                             }
-                                            className="inline-flex items-center border-b border-white border-opacity-50 pb-2"
+                                            className="group inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 pb-2"
                                         >
-                                            <div className="flex-1 text-white text-xl font-semibold leading-10">
+                                            <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
                                                 Research and Analysis
                                             </div>
                                             <div className="flex items-center justify-center">
-                                                <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
+                                                <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
                                             </div>
                                         </Link>
                                         <Link
                                             href={
                                                 "/our-work#public-opinion-research"
                                             }
-                                            className="mt-5 text-white text-sm font-normal  uppercase leading-normal"
+                                            className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                         >
                                             Public Opinion Research
                                         </Link>
@@ -160,13 +160,13 @@ export default function Navbar() {
                                             href={
                                                 "/our-work#social-listening-and-osint-investigations"
                                             }
-                                            className="mt-2 text-white text-sm font-normal  uppercase leading-normal"
+                                            className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                         >
                                             Social Listening and OSINT
                                             Investigations
                                         </Link>
                                         <ul className="list-disc ml-4 mt-2">
-                                            <li className="text-white text-sm font-normal  leading-normal">
+                                            <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
                                                 <Link
                                                     href={
                                                         "/our-work#issues-and-narratives"
@@ -175,7 +175,7 @@ export default function Navbar() {
                                                     Issues and Narratives
                                                 </Link>
                                             </li>
-                                            <li className="text-white text-sm font-normal  leading-normal">
+                                            <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
                                                 <Link
                                                     href={
                                                         "/our-work#platforms-and-apps"
@@ -191,44 +191,44 @@ export default function Navbar() {
                                             href={
                                                 "/our-work#reports-and-publications"
                                             }
-                                            className="inline-flex items-center border-b border-white border-opacity-50 pb-2"
+                                            className="group inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 pb-2"
                                         >
-                                            <div className="flex-1 text-white text-xl font-semibold leading-10">
+                                            <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
                                                 Reports and Publications
                                             </div>
                                             <div className="flex items-center justify-center">
-                                                <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
+                                                <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
                                             </div>
                                         </Link>
                                         <Link
                                             href={"/our-work#policy"}
-                                            className="mt-4 inline-flex items-center border-b border-white border-opacity-50 pb-2"
+                                            className="group mt-4 inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 pb-2"
                                         >
-                                            <div className="flex-1 text-white text-xl font-semibold leading-10">
+                                            <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
                                                 Policy
                                             </div>
                                             <div className="flex items-center justify-center">
-                                                <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
+                                                <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
                                             </div>
                                         </Link>
                                     </div>
                                     <div className="flex flex-col">
                                         <Link
                                             href={"/our-work#capacity-building"}
-                                            className="inline-flex items-center border-b border-white border-opacity-50 pb-2"
+                                            className="group inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 pb-2"
                                         >
-                                            <div className="flex-1 text-white text-xl font-semibold leading-10">
+                                            <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
                                                 Capacity Building
                                             </div>
                                             <div className="flex items-center justify-center">
-                                                <ArrowCircleIcon className="w-8 h-8 stroke-white"></ArrowCircleIcon>
+                                                <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
                                             </div>
                                         </Link>
                                         <Link
                                             href={
                                                 "/our-work#workshops-and-events"
                                             }
-                                            className="mt-5 text-white text-sm font-normal  uppercase leading-normal"
+                                            className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                         >
                                             Workshops & Events
                                         </Link>
@@ -236,17 +236,17 @@ export default function Navbar() {
                                             href={
                                                 "/our-work#resources-and-tools"
                                             }
-                                            className="mt-2 text-white text-sm font-normal  uppercase leading-normal"
+                                            className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                         >
                                             Resources & Tools
                                         </Link>
                                         <ul className="list-disc ml-4 mt-2">
-                                            <li className="text-white text-sm font-normal  leading-normal">
+                                            <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
                                                 <Link href={"/our-work#what-we-are-reading"}>
                                                     What We Are Reading
                                                 </Link>
                                             </li>
-                                            <li className="text-white text-sm font-normal  leading-normal">
+                                            <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
                                                 <Link href={"/our-work#additional-resources"}>
                                                     Additional Resources
                                                 </Link>

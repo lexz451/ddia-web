@@ -4,13 +4,16 @@ import { CommentForm } from "./CommentForm";
 import Avatar from "react-avatar";
 
 export const Comment = ({
-    comment, postComment
+    comment, postComment, isChild = false
 }: {
     comment: any;
+    isChild?: boolean;
     postComment: (e: FormEvent) => Promise<void>;
 }) => {
     const [showReplyForm, setShowReplyForm] = useState(false);
     const [busy, setBusy] = useState(false);
+
+    console.log(comment);
 
     const onSubmitForm = async (event: any) => {
         setBusy(true);
@@ -20,7 +23,7 @@ export const Comment = ({
     };
 
     return (
-        <div key={comment.id} className={`flex flex-col bg-white px-4 my-4 rounded-lg`}>
+        <div key={comment.id} className={`flex flex-col ${!isChild ? 'bg-white' : 'bg-design-extralight-yellow'} px-4 my-4 rounded-lg`}>
             <div className="flex gap-5 py-4">
                 <div className="flex-shrink-0 w-10 h-10">
                     <Avatar maxInitials={2} name={comment.author.name} size="40" round={true}></Avatar>

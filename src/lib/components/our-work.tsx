@@ -1,5 +1,8 @@
 "use client";
 import SearchIcon from "@/lib/assets/search-2.svg";
+import ReportsIcon from "@/lib/assets/reports-and-publications.svg";
+import CapacityIcon from "@/lib/assets/capacity-building.svg";
+import PolicyIcon from "@/lib/assets/policy.svg";
 import { useGsapWithContext } from "@/lib/hooks/useGsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Import Swiper React components
@@ -125,7 +128,10 @@ export default function OurWork() {
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <Link href={'/our-work#research-and-analysis'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                    <Link
+                                        href={"/our-work#research-and-analysis"}
+                                        className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
+                                    >
                                         Read more
                                     </Link>
                                 </div>
@@ -133,7 +139,7 @@ export default function OurWork() {
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="w-fit max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
-                                <SearchIcon className="mb-10"></SearchIcon>
+                                <ReportsIcon className="mb-10"></ReportsIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
                                     Reports and Publications
                                 </div>
@@ -157,7 +163,12 @@ export default function OurWork() {
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <Link href={'/our-work#reports-and-publications'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                    <Link
+                                        href={
+                                            "/our-work#reports-and-publications"
+                                        }
+                                        className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
+                                    >
                                         Read more
                                     </Link>
                                 </div>
@@ -188,7 +199,10 @@ export default function OurWork() {
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <Link href={'/our-work#capacity-building'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                    <Link
+                                        href={"/our-work#capacity-building"}
+                                        className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
+                                    >
                                         Read more
                                     </Link>
                                 </div>
@@ -219,7 +233,10 @@ export default function OurWork() {
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <Link href={'/our-work#policy'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                    <Link
+                                        href={"/our-work#policy"}
+                                        className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
+                                    >
                                         Read more
                                     </Link>
                                 </div>
@@ -234,7 +251,7 @@ export default function OurWork() {
                                 <div className="Headline text-design-green text-5xl font-extrabold  leading-10 mb-10">
                                     Our work
                                 </div>
-                                <div className="IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed mb-10">
+                                <div className="IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal mb-10">
                                     DDIA is using every tool in our toolbox
                                     (public opinion research, narrative
                                     analysis, testing, capacity building and
@@ -261,7 +278,7 @@ export default function OurWork() {
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
                                 Research and Analysis
                             </div>
-                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
+                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
                                 DDIA uses narrative analysis, open source
                                 investigations, public opinion research, and
                                 information-sharing between disciplines across
@@ -282,17 +299,20 @@ export default function OurWork() {
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <Link href={'/our-work#research-and-analysis'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                <Link
+                                    href={"/our-work#research-and-analysis"}
+                                    className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
+                                >
                                     Read more
                                 </Link>
                             </div>
                         </div>
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
-                            <SearchIcon className="mb-10"></SearchIcon>
+                            <ReportsIcon className="mb-10 w-14 h-14"></ReportsIcon>
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
                                 Reports and Publications
                             </div>
-                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
+                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
                                 DDIA&apos;s reports and publications contribute
                                 to the development of a set of theories on what
                                 is unique to Latinos and Latin Americans when it
@@ -311,17 +331,20 @@ export default function OurWork() {
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <Link href={'/our-work#reports-and-publications'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                <Link
+                                    href={"/our-work#reports-and-publications"}
+                                    className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
+                                >
                                     Read more
                                 </Link>
                             </div>
                         </div>
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
-                            <SearchIcon className="mb-10"></SearchIcon>
+                            <CapacityIcon className="mb-10 w-14 h-14"></CapacityIcon>
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
                                 Capacity Building
                             </div>
-                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
+                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
                                 DDIA is working to strengthen a healthier
                                 internet by applying research to practical
                                 solutions and interventions that reflect and
@@ -340,17 +363,20 @@ export default function OurWork() {
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <Link href={'/our-work#capacity-building'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                <Link
+                                    href={"/our-work#capacity-building"}
+                                    className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
+                                >
                                     Read more
                                 </Link>
                             </div>
                         </div>
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
-                            <SearchIcon className="mb-10"></SearchIcon>
+                            <PolicyIcon className="mb-10 w-14 h-14"></PolicyIcon>
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
                                 Policy
                             </div>
-                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
+                            <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
                                 DDIA is working to strengthen a healthier
                                 internet by applying research to practical
                                 solutions and interventions that reflect and
@@ -369,7 +395,10 @@ export default function OurWork() {
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <Link href={'/our-work#policy'} className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose">
+                                <Link
+                                    href={"/our-work#policy"}
+                                    className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
+                                >
                                     Read more
                                 </Link>
                             </div>

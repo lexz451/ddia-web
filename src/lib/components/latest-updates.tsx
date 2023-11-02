@@ -18,7 +18,7 @@ export default function LatestUpdates({
         </h2>
         <Link
           href={"/latest"}
-          className="hidden lg:block ml-auto text-sm r-btn border-design-green text-design-green"
+          className="hidden lg:block ml-auto text-sm r-btn border-none bg-design-green text-white"
         >
           See all
         </Link>
