@@ -302,63 +302,6 @@ export default function ResearchAndAnalysis({
                         </div>
                         <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
-
-                    {issuesAndNarratives?.map((post: TPost) => (
-                        <div
-                            key={post.slug}
-                            className="BlogSectionsPost overflow-hidden bg-white rounded-2xl flex flex-col justify-stretch"
-                        >
-                            <Link href={`/${post.slug}`}>
-                                {post?.feature_media && (
-                                    <ServerImage
-                                        {...post.feature_media}
-                                        className="aspect-[9/6] object-center object-cover"
-                                    ></ServerImage>
-                                )}
-                            </Link>
-                            <div className="Content p-6 bg-white flex-col justify-between h-full items-start gap-8 inline-flex">
-                                <div className="LeadingContent self-stretch flex-col justify-start items-start gap-2 inline-flex">
-                                    <div className="Category self-stretch text-cyan-600 text-sm font-medium leading-tight">
-                                        {post?.tags
-                                            ?.map(
-                                                (category: any) =>
-                                                    category.title
-                                            )
-                                            .join(", ")}
-                                    </div>
-                                    <div className="TitleAndPreview self-stretch flex-col justify-start items-start gap-3 flex">
-                                        <Link
-                                            href={`/${post.slug}`}
-                                            className="Title self-stretch text-gray-900 text-xl font-semibold leading-7"
-                                        >
-                                            {post?.title}
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div className="BlogSectionsAvatarWithText justify-start items-center gap-3 inline-flex mt-auto">
-                                    <div className="Avatar w-10 h-10 bg-stone-100 rounded-full overflow-hidden">
-                                        {post?.authors?.[0]?.avatar && (
-                                            <ServerImage
-                                                {...post?.authors?.[0]?.avatar}
-                                                width={40}
-                                                height={40}
-                                                className="rounded-full"
-                                            ></ServerImage>
-                                        )}
-                                    </div>
-                                    <div className="Text flex-col justify-start items-start inline-flex">
-                                        <div className="Title text-gray-900 text-sm font-medium leading-tight">
-                                            {post?.authors?.[0]?.name}
-                                        </div>
-                                        <div className="SupportingText text-gray-500 text-sm font-normal leading-tight">
-                                            {parsePostDate(post?.publish_date)}{" "}
-                                            · {parseReadTime(post?.content)}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
                 </div>
                 <div className="w-full my-20 h-[1px] bg-neutral-400 bg-opacity-50"></div>
                 <div
@@ -458,35 +401,7 @@ export default function ResearchAndAnalysis({
                     </Link>
                 </div>
                 <div className="flex flex-col w-full gap-5 mt-10">
-                    {platformsAndApps?.map((post: TPost) => (
-                        <div
-                            key={post.slug}
-                            className="cursor-pointer flex items-center w-full p-10 bg-design-extralight-yellow hover:bg-[#E7DFCE] duration-300 transition-colors rounded-2xl"
-                        >
-                            <div className="flex flex-col flex-1">
-                                <div className="flex items-center">
-                                    <div className="Headline h-6 text-cyan-600 text-base font-normal  uppercase">
-                                        {post?.tags
-                                            ?.map((tag: any) => tag.title)
-                                            .join(", ")}
-                                    </div>
-                                    <span className="mx-2">·</span>
-                                    <div className="SupportingText text-gray-500 text-base font-normal ">
-                                        {parsePostDate(post?.publish_date)}
-                                    </div>
-                                </div>
-                                <Link
-                                    href={`/${post.slug}`}
-                                    className="Headline text-gray-900 text-2xl font-extrabold  leading-loose"
-                                >
-                                    {post?.title}
-                                </Link>
-                            </div>
-                            <Link href={`/${post.slug}`}>
-                                <ArrowCircleIcon className="stroke-black flex-shrink-0"></ArrowCircleIcon>
-                            </Link>
-                        </div>
-                    ))}
+                    
                 </div>
             </div>
         </section>
