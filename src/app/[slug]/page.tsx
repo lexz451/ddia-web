@@ -46,8 +46,8 @@ export default async function ArticlePage({
             <header className="flex flex-col">
                 {post.feature_media && (<ServerImage {...post.feature_media} priority={true} className="h-[40vh] lg:h-[60vh] w-full object-cover"></ServerImage>)}
                 <div className="page-container">
-                    <div className="flex items-center justify-center my-10">
-                        <div className="Title text-center text-neutral-800 text-5xl font-semibold leading-10">
+                    <div className="flex items-center justify-center my-12">
+                        <div className="Title text-center text-neutral-800 text-[45px] font-semibold leading-[3.5rem]">
                             {post.title}
                         </div>
                     </div>
@@ -88,7 +88,7 @@ export default async function ArticlePage({
                 </div>
             </header>
             <main className="page-container">
-                <div className="grid lg:grid-cols-[1fr_300px] mt-10 gap-10">
+                <div className="grid lg:grid-cols-[1fr_300px] mt-10 gap-14">
                     <div>
                         <div className='post-content' dangerouslySetInnerHTML={{
                             __html: content
@@ -124,10 +124,10 @@ export default async function ArticlePage({
                                 ))}
                             </div>
                             <div className='mt-8'>
-                                <div className="IntroductoryText border-b border-neutral-800 pb-5 text-neutral-800 text-xl font-semibold leading-3">DIA in the news</div>
+                                <div className="IntroductoryText border-b border-neutral-800 pb-5 text-neutral-800 text-xl font-semibold leading-3">DDIA in the news</div>
                                 <div className='flex flex-col'>
                                     {inTheNews.map((post) => (
-                                        <Link href={`/${post.slug}`} key={post.slug} className="Title border-b border-neutral-500 py-2 text-neutral-800 text-base font-semibold leading-snug">
+                                        <Link href={`/${post.slug}`} key={post.slug} className="Title border-b border-neutral-500 py-4 text-neutral-800 text-base font-semibold leading-snug">
                                             {post.title}
                                         </Link>
                                     ))}

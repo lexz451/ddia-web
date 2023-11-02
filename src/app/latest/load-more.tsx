@@ -31,7 +31,7 @@ function PostItem({ post }: { post: TPost }) {
                     </span>
                     <Link
                         href={post.platform_url || `/${post.slug}`}
-                        className="block mb-2 text-lg font-semibold text-design-dark leading-relaxed"
+                        className="block mb-2 text-xl font-semibold text-design-dark leading-normal"
                     >
                         {post.title}
                     </Link>

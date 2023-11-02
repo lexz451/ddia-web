@@ -50,6 +50,12 @@ export function parsePostContent(content: string): string {
         paragraph.removeAttribute('style');
     });
 
+    const h3 = root.querySelectorAll('h3');
+    h3.forEach((heading: HTMLElement) => {
+        // remove style attributes
+        heading.removeAttribute('style');
+    });
+
     // fixes
     return root.toString();
 }
