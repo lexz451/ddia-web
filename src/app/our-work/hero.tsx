@@ -37,7 +37,7 @@ export default function Hero() {
                     regions (the U.S. and Latin America), and addresses the root
                     causes of belief and behavior.
                 </div>
-                <div className="grid grid-cols-2 gap-5 mt-10 w-full px-10">
+                <div className="grid grid-cols-2 gap-8 mt-14 w-full px-16">
                     <button
                         aria-label="Research and Analysis"
                         onClick={() =>
