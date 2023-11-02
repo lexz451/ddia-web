@@ -19,7 +19,7 @@ export default function AboutUs() {
               alt="vision-img"
               sizes="50vw"
             />
-            <div className="flex w-full h-full lg:p-8 lg:bg-design-light rounded-2xl">
+            <div className="flex w-full h-full lg:py-8 lg:px-12 lg:bg-design-light rounded-2xl">
               <div className="m-auto">
                 <h1 className="text-4xl lg:text-5xl text-design-green font-avenir font-semibold pb-8">
                   Our mission
@@ -38,7 +38,7 @@ export default function AboutUs() {
             </div>
           </div>
           <div className="flex flex-col lg:grid lg:grid-cols-[2fr_1fr] gap-6 pb-10">
-            <div className="flex w-full h-full lg:p-8 lg:bg-design-light rounded-2xl">
+            <div className="flex w-full h-full lg:py-8 lg:px-12 lg:bg-design-light rounded-2xl">
               <div className="m-auto">
                 <h1 className="text-4xl lg:text-5xl text-design-green font-avenir font-semibold pb-8">
                   Our vision
