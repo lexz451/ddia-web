@@ -11,7 +11,7 @@ export default function Policy({ policy }: { policy: TPost[] }) {
             id="policy"
             className="our-work-section bg-design-light pb-footer"
         >
-            <div className="page-container  py-20">
+            <div className="page-container py-20 mb-10">
                 <div className="flex flex-col items-center">
                     <IndicatorIcon className="fill-design-green w-4 h-4"></IndicatorIcon>
                     <div className="Headline mt-10 text-center text-design-green text-6xl font-extrabold  leading-10">

@@ -203,7 +203,7 @@ export default function ResearchAndAnalysis({
                 </div>
                 <div
                     id="issues-and-narratives"
-                    className="IntroductoryText mt-10 text-center text-design-green text-xl font-extrabold  uppercase leading-7"
+                    className="IntroductoryText mt-20 text-center text-design-green text-xl font-extrabold  uppercase leading-7"
                 >
                     Issues and Narratives
                 </div>
@@ -303,10 +303,10 @@ export default function ResearchAndAnalysis({
                         <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
                 </div>
-                <div className="w-full my-20 h-[1px] bg-neutral-400 bg-opacity-50"></div>
+               
                 <div
                     id="platforms-and-apps"
-                    className="IntroductoryText w-96 text-center text-design-green text-xl font-extrabold  uppercase leading-7"
+                    className="IntroductoryText text-center mt-20 text-design-green text-xl font-extrabold  uppercase leading-7"
                 >
                     Platforms and Apps
                 </div>
@@ -399,9 +399,6 @@ export default function ResearchAndAnalysis({
                             <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </Link>
-                </div>
-                <div className="flex flex-col w-full gap-5 mt-10">
-                    
                 </div>
             </div>
         </section>
