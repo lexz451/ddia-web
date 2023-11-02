@@ -33,10 +33,10 @@ export default function Filters({
     }
 
     return (
-        <div className="flex flex-col lg:flex-row items-center gap-10 mb-8 border-b border-neutral-400 pb-5">
+        <div className="relative flex flex-col lg:flex-row items-center gap-10 mb-8 border-b border-neutral-400 pb-5">
             <div className="order-2 lg:order-1 flex items-center flex-wrap flex-1 gap-2">
                 <button
-                    className={`min-w-[80px] text-center rounded-full border-[1.5px] px-5 py-2 font-avenir flex-shrink-0 border-design-green font-extrabold text-sm 
+                    className={`min-w-[80px] text-center rounded-full border-[1.5px] px-4 py-2 font-avenir flex-shrink-0 border-design-green font-extrabold text-sm 
                 ${!searchParams.get("tag")
                             ? "bg-design-green text-white"
                             : "text-design-green"
@@ -49,7 +49,7 @@ export default function Filters({
                     return (
                         <button
                             key={tag.slug}
-                            className={`min-w-[80px] text-center rounded-full border-[1.5px] px-5 py-2 font-avenir flex-shrink-0 border-design-green font-extrabold text-sm ${searchParams.get('tag') == tag.slug
+                            className={`min-w-[80px] text-center rounded-full border-[1.5px] px-4 py-2 font-avenir flex-shrink-0 border-design-green font-extrabold text-sm ${searchParams.get('tag') == tag.slug
                                 ? "bg-design-green text-white"
                                 : "text-design-green"
                                 }`}

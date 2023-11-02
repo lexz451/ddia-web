@@ -131,7 +131,7 @@ export async function fetchData() {
             },
             tags: {
                 slug: {
-                    $eq: 'additional-resources'
+                    $eq: 'resources'
                 }
             }
         },

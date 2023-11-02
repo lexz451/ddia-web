@@ -22,7 +22,7 @@ export default function TeamAccordion({
     return (
         <div
             onClick={() => setExpanded(!expanded)}
-            className={`grid cursor-pointer hover:py-5 lg:grid-cols-[1fr_5fr] lg:gap-10 py-4 px-5 lg:px-10 rounded-2xl transition-all ease-out duration-300 ${
+            className={`grid cursor-pointer lg:grid-cols-[1fr_5fr] lg:gap-10 py-4 px-5 lg:px-10 rounded-2xl transition-all ease-out duration-300 ${
                 expanded
                     ? "text-white bg-design-green"
                     : "text-design-green bg-[#F2EFE8]"
