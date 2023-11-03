@@ -41,7 +41,7 @@ export default function ContactUs() {
         <main className="bg-gradient-to-b from-design-light-green via-design-light to-white pt-[150px]">
             <div className="page-container px-0">
                 <section className="w-full items-center mt-10 mb-20 px-4">
-                    <h1 className="font-avenir text-center w-fit mx-auto font-extrabold text-6xl text-design-green mb-4">
+                    <h1 className="font-avenir text-center w-fit mx-auto font-extrabold text-4xl lg:text-6xl text-design-green mb-4">
                         Contact Us
                     </h1>
 
@@ -146,7 +146,7 @@ export default function ContactUs() {
 
                     <LogoCircle className="w-20 h-20 mx-auto"></LogoCircle>
 
-                    <h1 className="font-avenir text-center w-fit mt-10 mx-auto font-semibold text-5xl text-design-green mb-4">
+                    <h1 className="font-avenir text-center w-fit mt-10 mx-auto font-semibold text-2xl lg:text-5xl text-design-green mb-4">
                         Career Oportunities
                     </h1>
 
