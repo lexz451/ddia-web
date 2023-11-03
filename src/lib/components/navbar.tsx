@@ -70,7 +70,7 @@ export default function Navbar() {
     return (
         <header
             id="navbar"
-            className={`navbar absolute transition-colors duration-300 will-change-transform left-0 right-0 w-screen z-50 ${
+            className={`navbar absolute transition-colors duration-300 will-change-transform left-0 right-0 mx-auto z-50 ${
                 isScrolled
                     ? "bg-design-light bg-opacity-70 backdrop-blur-sm"
                     : `bg-transparent`
