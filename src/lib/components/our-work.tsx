@@ -69,7 +69,7 @@ export default function OurWork() {
     });
 
     return (
-        <div className="our-work-container-wrapper w-screen overflow-hidden">
+        <div className="our-work-container-wrapper overflow-hidden">
             <div className="lg:hidden page-container mb-10">
                 <div className="flex flex-col items-start">
                     <div className="Headline text-design-green text-3xl lg:text-5xl font-extrabold  leading-10 mb-5 lg:mb-10">
