@@ -312,7 +312,7 @@ export default function ResearchAndAnalysis() {
                         </div>
                         <div className="flex items-end">
                             <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
-                                Facebook and <br></br> Instagram
+                                Facebook / Instagram
                             </div>
                             <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>

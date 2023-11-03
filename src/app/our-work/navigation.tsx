@@ -67,7 +67,7 @@ export default function Navigation() {
     return (
         <section
             id="navigation-container"
-            className="bg-design-light bg-opacity-70 backdrop-blur-sm sticky max-w-full flex items-center overflow-x-scroll snap-x scroll-px-5 gap-1 z-20 py-5 px-5 lg:my-10"
+            className="bg-design-light bg-opacity-70 backdrop-blur-sm sticky max-w-full flex items-center lg:justify-center lg:overflow-x-scroll snap-x scroll-px-5 gap-1 lg:gap-0 z-20 py-5 px-5 lg:my-10"
         >
             <button
                 onClick={scrollToSection}

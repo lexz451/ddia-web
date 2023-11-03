@@ -27,7 +27,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="page-container gradient-green-page pt-[80px] lg:pt-0">
+        <section className="page-container gradient-green-page lg:bg-none pt-[80px] lg:pt-0">
             <div className="flex flex-col items-center lg:px-10 py-20 lg:gradient-green-container rounded-3xl">
                 <div className="text-center text-design-green text-4xl lg:text-6xl font-extrabold  leading-10">
                     Our work
