@@ -1,11 +1,7 @@
 import IndicatorIcon from "@/lib/assets/indicator.svg";
-import Search2Icon from "@/lib/assets/search-2.svg";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 import Image from "next/image";
 import TestImg from "@/lib/assets/tecnologia-fondo-toque-humano-nueva-version-moderna-creacion-adan-11.png";
-import { TPost } from "@/lib/utils/types";
-import ServerImage from "@/lib/components/server-image";
-import { parsePostDate, parseReadTime } from "@/lib/utils/helpers";
 import { Link } from "@lexz451/next-nprogress";
 import FacebookIcon from "@/lib/assets/facebook.svg";
 import XIcon from "@/lib/assets/x-twitter.svg";
@@ -22,21 +18,15 @@ import PHealthImg from "@/lib/assets/issues-and-narratives/public-health.png";
 import ShapeIcon from "@/lib/assets/shape-understanding.svg";
 import DetermineIcon from "@/lib/assets/determine-the-extent.svg";
 
-export default function ResearchAndAnalysis({
-    issuesAndNarratives,
-    platformsAndApps,
-}: {
-    issuesAndNarratives: TPost[];
-    platformsAndApps: TPost[];
-}) {
+export default function ResearchAndAnalysis() {
     return (
         <section
             id="research-and-analysis"
-            className="our-work-section page-container py-20"
+            className="our-work-section page-container py-10 lg:py-20"
         >
             <div className="flex flex-col items-center">
                 <IndicatorIcon className="fill-design-yellow w-4 h-4"></IndicatorIcon>
-                <div className="Headline mt-10 text-center text-design-green text-6xl font-extrabold  leading-10">
+                <div className="Headline mt-10 text-center text-design-green text-4xl lg:text-6xl font-extrabold  leading-10">
                     Research and Analysis
                 </div>
                 <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-relaxed">
@@ -48,13 +38,13 @@ export default function ResearchAndAnalysis({
                 </div>
                 <div
                     id="public-opinion-research"
-                    className="flex items-center gap-10 my-20 w-full"
+                    className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 my-10 lg:my-20 w-full"
                 >
-                    <div className="flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
-                    <div className="IntroductoryText text-center text-design-green text-3xl font-extrabold  leading-7">
+                    <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
+                    <div className="IntroductoryText text-center text-design-green text-2xl lg:text-3xl font-extrabold  leading-7">
                         Public Opinion Research
                     </div>
-                    <div className="flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
+                    <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
                 </div>
                 <div className="IntroductoryText max-w-prose text-center text-design-green text-lg font-normal  leading-relaxed">
                     DDIA conducts polls, surveys, focus groups and interviews to
@@ -65,17 +55,17 @@ export default function ResearchAndAnalysis({
                 <div className="IntroductoryText my-10 text-center text-design-green text-xl font-extrabold  uppercase leading-7">
                     We use public opinion research to:
                 </div>
-                <div className="Rectangle247 border-none max-w-[80%] flex items-center justify-between p-10 gap-10 h-36 bg-design-extralight-yellow rounded-2xl">
+                <div className="Rectangle247 border-none lg:max-w-[80%] flex flex-col lg:flex-row lg:items-center justify-between p-10 gap-10 lg:h-36 bg-design-extralight-yellow rounded-2xl">
                     <ShapeIcon className="w-12 h-12 flex-shrink-0"></ShapeIcon>
-                    <div className="IntroductoryText text-neutral-800 text-2xl font-normal  leading-none">
+                    <div className="IntroductoryText text-neutral-800 text-xl lg:text-2xl font-normal  leading-none">
                         Shape understanding of the psychological, social, and
                         systemic drivers of information and disinformation
                         cycles.
                     </div>
                 </div>
-                <div className="Rectangle247 border-none mt-5 max-w-[80%] flex items-center justify-between p-10 gap-10 h-36 bg-design-extralight-yellow rounded-2xl">
+                <div className="Rectangle247 border-none mt-5 lg:max-w-[80%] flex flex-col lg:flex-row lg:items-center justify-between p-10 gap-10 lg:h-36 bg-design-extralight-yellow rounded-2xl">
                     <DetermineIcon className="w-12 h-12 flex-shrink-0"></DetermineIcon>
-                    <div className="IntroductoryText text-neutral-800 text-2xl font-normal  leading-none">
+                    <div className="IntroductoryText text-neutral-800 text-xl lg:text-2xl font-normal  leading-none">
                         Determine the extent to which disinformation,
                         misinformation, propaganda and extremist content
                         penetrate and impact Latinos’ beliefs, behaviors, and
@@ -90,7 +80,7 @@ export default function ResearchAndAnalysis({
                     impact Latino and Latin American communities.
                 </div>
 
-                <div className="grid grid-cols-3 gap-10 my-20">
+                <div className="grid lg:grid-cols-3 gap-10 my-20">
                     <div className="BlogSectionsPost overflow-hidden bg-white rounded-xl grid grid-rows-2">
                         <Image
                             src={TestImg}
@@ -186,15 +176,15 @@ export default function ResearchAndAnalysis({
                 </div>
                 <div
                     id="social-listening-and-osint-investigations"
-                    className="flex items-center gap-10 my-20 w-full"
+                    className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 my-20 w-full"
                 >
-                    <div className="flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
-                    <div className="IntroductoryText text-center text-design-green text-3xl font-extrabold  leading-7">
+                    <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
+                    <div className="IntroductoryText text-center text-design-green text-2xl lg:text-3xl font-extrabold  leading-7">
                         Social Listening and OSINT Investigations
                     </div>
-                    <div className="flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
+                    <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
                 </div>
-                <div className="IntroductoryText max-w-prose text-center text-neutral-800 text-lg font-normal  leading-relaxed">
+                <div className="IntroductoryText max-w-prose text-center text-neutral-800 text-lg font-normal leading-relaxed">
                     DDIA and U.S uses social listening, media monitoring, and
                     OSINT techniques to shed light on how Latino communities are
                     exposed to and targeted with information within platforms,
@@ -207,10 +197,10 @@ export default function ResearchAndAnalysis({
                 >
                     Issues and Narratives
                 </div>
-                <div className="grid grid-cols-3 grid-rows-2 mt-10 gap-10">
+                <div className="grid lg:grid-cols-3 lg:grid-rows-2 mt-10 gap-5 lg:gap-10 w-full">
                     <Link
                         href={`/our-work/issues-and-narratives?tag=elections-and-voting`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
                         <Image
                             src={ElectionsImg}
@@ -218,14 +208,14 @@ export default function ResearchAndAnalysis({
                             className="absolute left-0 top-0 w-full h-full"
                         ></Image>
                         <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
+                        <div className="relative z-10 Headline text-white text-xl lg:text-3xl font-extrabold ">
                             Elections and Voting
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
                     <Link
                         href={`/our-work/issues-and-narratives?tag=identity-and-culture`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
                         <Image
                             src={DiversityImg}
@@ -233,15 +223,15 @@ export default function ResearchAndAnalysis({
                             className="absolute left-0 top-0 w-full h-full"
                         ></Image>
                         <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
+                        <div className="relative z-10 Headline text-white text-xl lg:text-3xl font-extrabold ">
                             Identity and Culture
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
-                   
+
                     <Link
                         href={`/our-work/issues-and-narratives?tag=public-health`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
                         <Image
                             src={PHealthImg}
@@ -249,15 +239,15 @@ export default function ResearchAndAnalysis({
                             className="absolute left-0 top-0 w-full h-full"
                         ></Image>
                         <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
-                            Public <br></br> Health
+                        <div className="relative z-10 whitespace-nowrap lg:whitespace-normal Headline text-white text-xl lg:text-3xl font-extrabold ">
+                            Public&nbsp;Health
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
 
                     <Link
                         href={`/our-work/issues-and-narratives?tag=migration`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
                         <Image
                             src={MigrationImg}
@@ -265,15 +255,15 @@ export default function ResearchAndAnalysis({
                             className="absolute left-0 top-0 w-full h-full"
                         ></Image>
                         <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
+                        <div className="relative z-10 Headline text-white text-xl lg:text-3xl font-extrabold">
                             Migration
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
 
                     <Link
                         href={`/our-work/issues-and-narratives?tag=artificial-intelligence`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
                         <Image
                             src={IAImg}
@@ -281,15 +271,15 @@ export default function ResearchAndAnalysis({
                             className="absolute left-0 top-0 w-full h-full"
                         ></Image>
                         <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
+                        <div className="relative z-10 Headline text-white text-xl lg:text-3xl font-extrabold">
                             Artificial Intelligence
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
 
                     <Link
                         href={`/our-work/issues-and-narratives?tag=conspiracy-networks`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-2xl flex justify-between aspect-[4/2] p-8"
+                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
                         <Image
                             src={ConspiracyImg}
@@ -297,106 +287,106 @@ export default function ResearchAndAnalysis({
                             className="absolute left-0 top-0 w-full h-full"
                         ></Image>
                         <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 Headline text-white text-3xl font-extrabold ">
+                        <div className="relative z-10 Headline text-white text-xl lg:text-3xl font-extrabold">
                             Conspiracy Networks
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
                     </Link>
                 </div>
-               
+
                 <div
                     id="platforms-and-apps"
                     className="IntroductoryText text-center mt-20 text-design-green text-xl font-extrabold  uppercase leading-7"
                 >
                     Platforms and Apps
                 </div>
-                <div className="grid grid-cols-3 grid-rows-2 mt-10 gap-10">
+                <div className="grid w-full lg:grid-cols-3 lg:grid-rows-2 mt-10 gap-5 lg:gap-10">
                     <Link
                         href={
                             "/our-work/platforms-and-apps?tag=facebook-and-instagram"
                         }
-                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
                     >
                         <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <FacebookIcon className=" fill-white"></FacebookIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-3xl font-extrabold ">
-                                Facebook and <br></br> Instagram
+                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
+                                Facebook / Instagram
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </Link>
                     <Link
                         href={
                             "/our-work/platforms-and-apps?tag=x-formerly-twitter"
                         }
-                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
                     >
-                        <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
+                        <div className=" w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <XIcon className="w-5 h-5 fill-white"></XIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-3xl font-extrabold ">
+                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
                                 X (formerly Twitter)
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </Link>
                     <Link
                         href={"/our-work/platforms-and-apps?tag=tiktok"}
-                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
                     >
                         <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <TikTokIcon className=" fill-white"></TikTokIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-3xl font-extrabold ">
+                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
                                 TikTok
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </Link>
                     <Link
                         href={"/our-work/platforms-and-apps?tag=whatsapp"}
-                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
                     >
-                        <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
+                        <div className="w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <WhatsappIcon className=" fill-white"></WhatsappIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-3xl font-extrabold ">
+                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
                                 Whatsapp
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </Link>
                     <Link
                         href={"/our-work/platforms-and-apps?tag=youtube"}
-                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
+                        className=" bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
                     >
                         <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <YoutubeIcon className="fill-white"></YoutubeIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-3xl font-extrabold ">
+                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
                                 Youtube
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </Link>
                     <Link
                         href={"/our-work/platforms-and-apps?tag=telegram"}
-                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-2xl flex flex-col justify-between h-full p-8"
+                        className=" bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
                     >
                         <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
                             <TelegramIcon className="w-5 h-5 fill-white"></TelegramIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-3xl font-extrabold ">
+                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
                                 Telegram
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
                     </Link>
                 </div>
