@@ -6,16 +6,20 @@ import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 import IndicatorIcon from "@/lib/assets/indicator.svg";
 import GlobeIcon from "@/lib/assets/globe-alt.svg";
 import SearchIcon from "@/lib/assets/search.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useScroll from "../hooks/useScroll";
-import { Link } from "@lexz451/next-nprogress";
 import { usePathname } from "next/navigation";
 import { useIsomorphicLayoutEffect } from "../hooks/useIsomorphicLayoutEffect";
 import { gsap } from "gsap";
+import I18nSwitcher from "./I18nSwitcher";
+import I18nLink from "./I18nLink";
+import useClickOutside from "../hooks/useClickOutside";
 
-export default function Navbar() {
+export default function Navbar({ locale }: { locale: string }) {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [showLocaleSwitch, setShowLocaleSwitch] = useState(false);
+    const langDialog = useRef<HTMLDivElement>(null);
 
     const { scrollPosition, scrollDirection } = useScroll();
     const pathname = usePathname();
@@ -25,6 +29,10 @@ export default function Navbar() {
     const isOurWork = pathname == "/our-work";
     const isTeam = pathname == "/team";
     const isLatest = pathname == "/latest";
+
+    useClickOutside(langDialog, () => {
+        setShowLocaleSwitch(false);
+    });
 
     useEffect(() => {
         const navbar = document.getElementById("navbar") as HTMLElement;
@@ -82,7 +90,7 @@ export default function Navbar() {
                         isScrolled ? "py-2" : "py-3"
                     }`}
                 >
-                    <Link
+                    <I18nLink
                         href="/"
                         className={`brand-logo block relative transition-all duration-300 ease-in-out ${
                             isScrolled ? "w-24 h-16" : "w-32 h-20"
@@ -98,11 +106,11 @@ export default function Navbar() {
                                 isScrolled ? "opacity-100" : "opacity-0"
                             }`}
                         ></LogoPinned>
-                    </Link>
+                    </I18nLink>
                 </div>
                 <ul className="navbar-menu hidden lg:inline-flex mr-10">
                     <li className="flex">
-                        <Link
+                        <I18nLink
                             href={"/about-us"}
                             className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
                                 isAboutUs ? "active" : ""
@@ -112,11 +120,11 @@ export default function Navbar() {
                             <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
                                 <span>About us</span>
                             </div>
-                        </Link>
+                        </I18nLink>
                         <div></div>
                     </li>
                     <li className="flex">
-                        <Link
+                        <I18nLink
                             href={"/our-work"}
                             className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
                                 isOurWork ? "active" : ""
@@ -126,7 +134,7 @@ export default function Navbar() {
                             <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
                                 <span>Our work</span>
                             </div>
-                        </Link>
+                        </I18nLink>
                         <div
                             className={`overflow-menu bg-design-green absolute left-0 right-0 opacity-0 h-0 overflow-hidden transition-all duration-200 ease-in-out ${
                                 isScrolled ? "top-[80px]" : "top-[104px]"
@@ -135,7 +143,7 @@ export default function Navbar() {
                             <div className="page-container py-10">
                                 <div className="grid grid-cols-3 gap-20">
                                     <div className="flex flex-col">
-                                        <Link
+                                        <I18nLink
                                             href={
                                                 "/our-work#research-and-analysis"
                                             }
@@ -147,16 +155,16 @@ export default function Navbar() {
                                             <div className="flex items-center justify-center">
                                                 <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
                                             </div>
-                                        </Link>
-                                        <Link
+                                        </I18nLink>
+                                        <I18nLink
                                             href={
                                                 "/our-work#public-opinion-research"
                                             }
                                             className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                         >
                                             Public Opinion Research
-                                        </Link>
-                                        <Link
+                                        </I18nLink>
+                                        <I18nLink
                                             href={
                                                 "/our-work#social-listening-and-osint-investigations"
                                             }
@@ -164,30 +172,30 @@ export default function Navbar() {
                                         >
                                             Social Listening and OSINT
                                             Investigations
-                                        </Link>
+                                        </I18nLink>
                                         <ul className="list-disc ml-4 mt-2">
                                             <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
-                                                <Link
+                                                <I18nLink
                                                     href={
                                                         "/our-work#issues-and-narratives"
                                                     }
                                                 >
                                                     Issues and Narratives
-                                                </Link>
+                                                </I18nLink>
                                             </li>
                                             <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
-                                                <Link
+                                                <I18nLink
                                                     href={
                                                         "/our-work#platforms-and-apps"
                                                     }
                                                 >
                                                     Platforms and Apps
-                                                </Link>
+                                                </I18nLink>
                                             </li>
                                         </ul>
                                     </div>
                                     <div className="flex flex-col">
-                                        <Link
+                                        <I18nLink
                                             href={
                                                 "/our-work#reports-and-publications"
                                             }
@@ -199,8 +207,8 @@ export default function Navbar() {
                                             <div className="flex items-center justify-center">
                                                 <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
                                             </div>
-                                        </Link>
-                                        <Link
+                                        </I18nLink>
+                                        <I18nLink
                                             href={"/our-work#policy"}
                                             className="group mt-4 inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 pb-2"
                                         >
@@ -210,10 +218,10 @@ export default function Navbar() {
                                             <div className="flex items-center justify-center">
                                                 <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
                                             </div>
-                                        </Link>
+                                        </I18nLink>
                                     </div>
                                     <div className="flex flex-col">
-                                        <Link
+                                        <I18nLink
                                             href={"/our-work#capacity-building"}
                                             className="group inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 pb-2"
                                         >
@@ -223,33 +231,41 @@ export default function Navbar() {
                                             <div className="flex items-center justify-center">
                                                 <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
                                             </div>
-                                        </Link>
-                                        <Link
+                                        </I18nLink>
+                                        <I18nLink
                                             href={
                                                 "/our-work#workshops-and-events"
                                             }
                                             className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                         >
                                             Workshops & Events
-                                        </Link>
-                                        <Link
+                                        </I18nLink>
+                                        <I18nLink
                                             href={
                                                 "/our-work#resources-and-tools"
                                             }
                                             className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                         >
                                             Resources & Tools
-                                        </Link>
+                                        </I18nLink>
                                         <ul className="list-disc ml-4 mt-2">
                                             <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
-                                                <Link href={"/our-work#what-we-are-reading"}>
+                                                <I18nLink
+                                                    href={
+                                                        "/our-work#what-we-are-reading"
+                                                    }
+                                                >
                                                     What We Are Reading
-                                                </Link>
+                                                </I18nLink>
                                             </li>
                                             <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
-                                                <Link href={"/our-work#additional-resources"}>
+                                                <I18nLink
+                                                    href={
+                                                        "/our-work#additional-resources"
+                                                    }
+                                                >
                                                     Additional Resources
-                                                </Link>
+                                                </I18nLink>
                                             </li>
                                         </ul>
                                     </div>
@@ -258,7 +274,7 @@ export default function Navbar() {
                         </div>
                     </li>
                     <li className="flex">
-                        <Link
+                        <I18nLink
                             href={"/team"}
                             className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
                                 isTeam ? "active" : ""
@@ -268,10 +284,10 @@ export default function Navbar() {
                             <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
                                 <span>Meet the team</span>
                             </div>
-                        </Link>
+                        </I18nLink>
                     </li>
                     <li className="flex">
-                        <Link
+                        <I18nLink
                             href={"/latest"}
                             className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
                                 isLatest ? "active" : ""
@@ -281,7 +297,7 @@ export default function Navbar() {
                             <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
                                 <span>Latest updates</span>
                             </div>
-                        </Link>
+                        </I18nLink>
                     </li>
                 </ul>
                 <button
@@ -292,7 +308,26 @@ export default function Navbar() {
                 </button>
                 <div className="hidden lg:flex items-center gap-4">
                     <SearchIcon className="w-6 h-6"></SearchIcon>
-                    <GlobeIcon className="w-6 h-6"></GlobeIcon>
+                    <div className="relative h-6">
+                        <button
+                            onClick={() =>
+                                setShowLocaleSwitch(!showLocaleSwitch)
+                            }
+                        >
+                            <GlobeIcon className="w-6 h-6"></GlobeIcon>
+                        </button>
+
+                        <div
+                            ref={langDialog}
+                            className={`absolute right-0 mt-2 px-5 py-2 rounded-lg shadow-lg transition-all duration-300 bg-white ${
+                                showLocaleSwitch
+                                    ? "opacity-100 visible"
+                                    : "opacity-0 collapse"
+                            }`}
+                        >
+                            <I18nSwitcher currentLocale={locale}></I18nSwitcher>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </header>
