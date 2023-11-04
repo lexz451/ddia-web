@@ -11,13 +11,13 @@ export default function Policy({ policy }: { policy: TPost[] }) {
             id="policy"
             className="our-work-section bg-design-light pb-footer"
         >
-            <div className="page-container py-20 mb-10">
+            <div className="page-container py-10 lg:py-20 mb-10">
                 <div className="flex flex-col items-center">
                     <IndicatorIcon className="fill-design-green w-4 h-4"></IndicatorIcon>
-                    <div className="Headline mt-10 text-center text-design-green text-6xl font-extrabold  leading-10">
+                    <div className="Headline mt-10 text-center text-design-green text-4xl lg:text-6xl font-extrabold  leading-10">
                         Policy
                     </div>
-                    <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-relaxed">
+                    <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-normal">
                         <p className="mb-4">
                             DdIA is working to{" "}
                             <b>
@@ -39,7 +39,7 @@ export default function Policy({ policy }: { policy: TPost[] }) {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-3 mt-20 gap-10">
+                    <div className="grid lg:grid-cols-3 mt-20 gap-10">
                         {policy.map((upd) => (
                             <div key={upd.slug} className={`flex flex-col`}>
                                 <Link

@@ -25,7 +25,7 @@ export default async function OurWorkPage({
                     <Filters tags={tags}></Filters>
                 </div>
             </section>
-            <section className="mt-20">
+            <section className="mt-10 lg:mt-20">
                 <div className="page-container">
                     <LoadMoreWrapper
                         category={category}
@@ -33,7 +33,7 @@ export default async function OurWorkPage({
                         query={search}
                         posts={posts.data} 
                         total={posts.total} 
-                        className="grid grid-cols-3 gap-10"></LoadMoreWrapper>
+                        className="grid lg:grid-cols-3 gap-10"></LoadMoreWrapper>
                 </div>
             </section>
             <section className="pb-footer my-10"></section>

@@ -2,52 +2,6 @@ import { getApi } from "@/lib/utils/api";
 import { TPost } from "@/lib/utils/types";
 
 export async function fetchData() {
-    const { data: issuesAndNarratives } = await getApi<TPost[]>(`/posts`, {
-        filters: {
-            categories: {
-                slug: {
-                    $eq: 'issues-and-narratives'
-                }
-            }
-        },
-        populate: [
-            "feature_media",
-            "authors",
-            "authors.avatar",
-            "categories",
-            "tags"
-        ],
-        pagination: {
-            limit: 3,
-        },
-        sort: ['publish_date:desc']
-    }, {
-        next: { tags: ["post"] }
-    });
-
-    const { data: platformsAndApps } = await getApi<TPost[]>(`/posts`, {
-        filters: {
-            categories: {
-                slug: {
-                    $eq: 'platforms-and-apps'
-                }
-            }
-        },
-        populate: [
-            "feature_media",
-            "authors",
-            "authors.avatar",
-            "categories",
-            "tags"
-        ],
-        pagination: {
-            limit: 3,
-        },
-        sort: ['publish_date:desc']
-    }, {
-        next: { tags: ["post"] },
-    });
-
     const reportsAndPublications = await getApi<TPost[]>(`/posts`, {
         filters: {
             post_type: {
@@ -175,8 +129,6 @@ export async function fetchData() {
 
 
     return {
-        issuesAndNarratives,
-        platformsAndApps,
         reportsAndPublications: {
             data: reportsAndPublications.data,
             total: reportsAndPublications.meta.pagination.total,
