@@ -3,21 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "i18nexus pull && next dev",
+    "build": "i18nexus pull && next build",
+    "start": "i18nexus pull && next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@lexz451/next-nprogress": "^0.1.6",
+    "accept-language": "^3.0.18",
     "gsap": "^3.12.2",
     "html-react-parser": "^4.2.8",
+    "i18next": "^23.6.0",
+    "i18next-resources-to-backend": "^1.1.4",
     "next": "latest",
+    "next-i18n-router": "^5.0.1",
     "node-html-parser": "^6.1.10",
     "qs": "^6.11.2",
     "react": "latest",
     "react-avatar": "^5.0.3",
     "react-dom": "latest",
+    "react-i18next": "^13.3.1",
     "sharp": "^0.32.6",
     "swiper": "^11.0.1"
   },
@@ -31,6 +36,7 @@
     "autoprefixer": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "i18nexus-cli": "^3.3.0",
     "postcss": "latest",
     "tailwindcss": "latest",
     "typescript": "latest"

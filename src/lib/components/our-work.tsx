@@ -12,8 +12,16 @@ import { Pagination } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import { Link } from "@lexz451/next-nprogress";
+import useI18n from "../hooks/useI18n";
 
-export default function OurWork() {
+export default function OurWork({
+    locale
+}: {
+    locale: string;
+}) {
+
+    const { t } = useI18n(locale)
+
     const swiperPagination = {
         clickable: true,
         renderBullet: function (index: number, className: string) {
@@ -73,18 +81,10 @@ export default function OurWork() {
             <div className="lg:hidden page-container mb-10">
                 <div className="flex flex-col items-start">
                     <div className="Headline text-design-green text-3xl lg:text-5xl font-extrabold  leading-10 mb-5 lg:mb-10">
-                        Our work
+                        {t('home.our-work.title')}
                     </div>
                     <div className="IntroductoryText lg:max-w-prose text-neutral-800 lg:text-lg font-normal  leading-relaxed mb-10">
-                        DDIA is using every tool in our toolbox (public opinion
-                        research, narrative analysis, testing, capacity building
-                        and policy) to help Latinos live a healthy digital life.
-                        We do so by fostering research and an exchange of ideas
-                        across disciplines, leaders, and countries; by guiding
-                        interventions that serve our communities in the U.S. and
-                        across the Americas; and by centering Latinos and Latin
-                        Americans in policy conversations about the future of
-                        the digital information ecosystem.
+                        {t('home.our-work.subtitle')}
                     </div>
                     <Link
                         href={"/our-work"}
@@ -107,15 +107,10 @@ export default function OurWork() {
                             <div className="w-fit max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                                 <SearchIcon className="mb-10"></SearchIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                    Research and Analysis
+                                    {t('home.our-work.research.title')}
                                 </div>
                                 <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
-                                    DDIA uses narrative analysis, open source
-                                    investigations, public opinion research, and
-                                    information-sharing between disciplines
-                                    across the Americas to deepen understanding
-                                    of Latinos and information landscapes in the
-                                    US and Latin America.
+                                    {t('home.our-work.research.subtitle')}
                                 </div>
                                 <div className="flex items-center mt-4">
                                     <svg
@@ -143,14 +138,10 @@ export default function OurWork() {
                             <div className="w-fit max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                                 <ReportsIcon className="mb-10"></ReportsIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                    Reports and Publications
+                                    {t('home.our-work.reports.title')}
                                 </div>
                                 <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
-                                    DDIA&apos;s reports and publications
-                                    contribute to the development of a set of
-                                    theories on what is unique to Latinos and
-                                    Latin Americans when it comes to information
-                                    disorder online.
+                                    {t('home.our-work.reports.subtitle')}
                                 </div>
                                 <div className="flex items-center mt-4">
                                     <svg
@@ -180,13 +171,10 @@ export default function OurWork() {
                             <div className="w-fit max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                                 <SearchIcon className="mb-10"></SearchIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                    Capacity Building
+                                    {t('home.our-work.capacity.title')}
                                 </div>
                                 <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
-                                    DDIA is working to strengthen a healthier
-                                    internet by applying research to practical
-                                    solutions and interventions that reflect and
-                                    serve the needs of Latino communities.
+                                    {t('home.our-work.capacity.subtitle')}
                                 </div>
                                 <div className="flex items-center mt-4">
                                     <svg
@@ -214,13 +202,10 @@ export default function OurWork() {
                             <div className="w-fit max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                                 <SearchIcon className="mb-10"></SearchIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                    Policy
+                                    {t('home.our-work.policy.title')}
                                 </div>
                                 <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
-                                    DDIA is working to strengthen a healthier
-                                    internet by applying research to practical
-                                    solutions and interventions that reflect and
-                                    serve the needs of Latino communities.
+                                    {t('home.our-work.policy.subtitle')}
                                 </div>
                                 <div className="flex items-center mt-4">
                                     <svg
@@ -251,21 +236,10 @@ export default function OurWork() {
                         <div className="self-center">
                             <div className="flex flex-col items-start">
                                 <div className="Headline text-design-green text-5xl font-extrabold  leading-10 mb-10">
-                                    Our work
+                                {t('home.our-work.title')}
                                 </div>
                                 <div className="IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal mb-10">
-                                    DDIA is using every tool in our toolbox
-                                    (public opinion research, narrative
-                                    analysis, testing, capacity building and
-                                    policy) to help Latinos live a healthy
-                                    digital life. We do so by fostering research
-                                    and an exchange of ideas across disciplines,
-                                    leaders, and countries; by guiding
-                                    interventions that serve our communities in
-                                    the U.S. and across the Americas; and by
-                                    centering Latinos and Latin Americans in
-                                    policy conversations about the future of the
-                                    digital information ecosystem.
+                                    {t('home.our-work.subtitle')}
                                 </div>
                                 <Link
                                     href={"/our-work"}
@@ -278,15 +252,10 @@ export default function OurWork() {
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                             <SearchIcon className="mb-10"></SearchIcon>
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                Research and Analysis
+                                {t('home.our-work.research.title')}
                             </div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
-                                DDIA uses narrative analysis, open source
-                                investigations, public opinion research, and
-                                information-sharing between disciplines across
-                                the Americas to deepen understanding of Latinos
-                                and information landscapes in the US and Latin
-                                America.
+                                {t('home.our-work.research.subtitle')}
                             </div>
                             <div className="flex items-center mt-4">
                                 <svg
@@ -312,13 +281,10 @@ export default function OurWork() {
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                             <ReportsIcon className="mb-10 w-14 h-14"></ReportsIcon>
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                Reports and Publications
+                                {t('home.our-work.reports.title')}
                             </div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
-                                DDIA&apos;s reports and publications contribute
-                                to the development of a set of theories on what
-                                is unique to Latinos and Latin Americans when it
-                                comes to information disorder online.
+                                {t('home.our-work.reports.subtitle')}
                             </div>
                             <div className="flex items-center mt-4">
                                 <svg
@@ -344,13 +310,10 @@ export default function OurWork() {
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                             <CapacityIcon className="mb-10 w-14 h-14"></CapacityIcon>
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                Capacity Building
+                                {t('home.our-work.capacity.title')}
                             </div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
-                                DDIA is working to strengthen a healthier
-                                internet by applying research to practical
-                                solutions and interventions that reflect and
-                                serve the needs of Latino communities.
+                                {t('home.our-work.capacity.subtitle')}
                             </div>
                             <div className="flex items-center mt-4">
                                 <svg
@@ -376,13 +339,10 @@ export default function OurWork() {
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                             <PolicyIcon className="mb-10 w-14 h-14"></PolicyIcon>
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                Policy
+                                {t('home.our-work.policy.title')}
                             </div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
-                                DDIA is working to strengthen a healthier
-                                internet by applying research to practical
-                                solutions and interventions that reflect and
-                                serve the needs of Latino communities.
+                                {t('home.our-work.policy.subtitle')}
                             </div>
                             <div className="flex items-center mt-4">
                                 <svg
