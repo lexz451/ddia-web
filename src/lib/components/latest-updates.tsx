@@ -1,8 +1,7 @@
 
 import ServerImage from "./server-image";
 import { TPost } from "../utils/types";
-import { Link } from "@lexz451/next-nprogress";
-
+import I18nLink from "./I18nLink";
 
 export default function LatestUpdates({
   posts,
@@ -16,29 +15,29 @@ export default function LatestUpdates({
         <h2 className="text-5xl font-avenir tracking-tighter text-design-dark-green">
           Latest Updates
         </h2>
-        <Link
+        <I18nLink
           href={"/latest"}
           className="hidden lg:block ml-auto text-sm r-btn border-none bg-design-green text-white"
         >
           See all
-        </Link>
+        </I18nLink>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-10">
         {posts.map((upd) => {
           return (
             <div key={upd.slug} className={`flex flex-col`}>
-              <Link href={`${upd.platform_url ? upd.platform_url : `/${upd.slug}`}`} className="relative w-full mb-4 group rounded-2xl overflow-hidden">
+              <I18nLink href={`${upd.platform_url ? upd.platform_url : `/${upd.slug}`}`} className="relative w-full mb-4 group rounded-2xl overflow-hidden">
                 {upd.feature_media && <ServerImage {...upd.feature_media} sizes="33vw" className="aspect-[9/6] object-cover transition-transform duration-700 group-hover:scale-110" />}
-              </Link>
+              </I18nLink>
               <h4 className="text-sm tracking-tight text-gray-400 uppercase">
                 {upd.post_type?.name}
               </h4>
-              <Link href={`${upd.platform_url ? upd.platform_url : `/${upd.slug}`}`}>
+              <I18nLink href={`${upd.platform_url ? upd.platform_url : `/${upd.slug}`}`}>
                 <h3 className="mt-2 mb-4 text-xl font-semibold tracking-tight text-design-dark-green">
                   {upd.title}
                 </h3>
-              </Link>
+              </I18nLink>
               <h4 className="tracking-tighter text-gray-500 line-clamp-3">
                 {upd.description}
               </h4>
@@ -55,25 +54,25 @@ export default function LatestUpdates({
                     fill="#EBB785"
                   />
                 </svg>
-                <Link
+                <I18nLink
                   className="pl-2 text-sm font-bold underline text-design-green"
                   href={`${upd.platform_url ? upd.platform_url : `/${upd.slug}`}`}
                 >
                   Read more
-                </Link>
+                </I18nLink>
               </div>
             </div>
           );
         })}
       </div>
 
-      <Link
+      <I18nLink
         prefetch={true}
         href={"/latest"}
         className="lg:hidden mt-10 mx-auto text-sm r-btn border-none bg-design-green text-design-light"
       >
         See all
-      </Link>
+      </I18nLink>
     </section>
   );
 }

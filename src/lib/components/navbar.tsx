@@ -307,7 +307,7 @@ export default function Navbar({ locale }: { locale: string }) {
                     <i className={`menu-icon ${isOpen ? "active" : ""}`}></i>
                 </button>
                 <div className="hidden lg:flex items-center gap-4">
-                    <SearchIcon className="w-6 h-6"></SearchIcon>
+                    {/* <SearchIcon className="w-6 h-6"></SearchIcon> */}
                     <div className="relative h-6">
                         <button
                             onClick={() =>

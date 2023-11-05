@@ -6,7 +6,8 @@ import ArrowIcon from "../assets/arrow.svg";
 import LinkedInIcon from "@/lib/assets/linked-in.svg";
 import MediumIcon from "@/lib/assets/medium.svg";
 import YoutubeIcon from "@/lib/assets/yt.svg";
-import { Link } from "@lexz451/next-nprogress";
+import I18nLink from "./I18nLink";
+
 
 export default function Footer() {
     return (
@@ -22,97 +23,97 @@ export default function Footer() {
                                 Institute, a 501(c)(3) organization.
                             </p>
                             <div className="SocialIcons flex gap-3 mt-10">
-                                <Link
+                                <I18nLink
                                     href="#"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <LinkedInIcon className="w-6 h-6 fill-black"></LinkedInIcon>
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href="#"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <XIcon className="w-5 h-5 fill-black"></XIcon>
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href="#"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <MediumIcon className="w-6 h-6 fill-black"></MediumIcon>
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href="#"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <FacebookIcon className="w-6 h-6 fill-black"></FacebookIcon>
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href="#"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <YoutubeIcon className="w-6 h-6 fill-black"></YoutubeIcon>
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href="#"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <InstagramIcon className="w-6 h-6 fill-black"></InstagramIcon>
-                                </Link>
+                                </I18nLink>
                             </div>
                         </div>
                         <div className="grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr] lg:gap-x-5 lg:gap-y-5 w-full">
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
-                                <Link
+                                <I18nLink
                                     href={"/about-us"}
                                     className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2"
                                 >
                                     About Us
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href={"/about-us#our-mission"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Mission / Vision
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href={"/about-us#our-approach"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Our Approach
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href={"/about-us#core-strategies"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Core Strategies
-                                </Link>
+                                </I18nLink>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
-                                <Link
+                                <I18nLink
                                     href={"/our-work"}
                                     className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2"
                                 >
                                     Our Work
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href={"/our-work#research-and-analysis"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Research and Analysis
-                                </Link>
+                                </I18nLink>
                                 <ul className="list-disc pl-6 text-design-light-green w-full">
                                     <li>
-                                        <Link
+                                        <I18nLink
                                             href={
                                                 "/our-work#public-opinion-research"
                                             }
                                             className="Text block text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                         >
                                             Public Opinion Research
-                                        </Link>
+                                        </I18nLink>
                                     </li>
                                     <li className="mt-3">
-                                        <Link
+                                        <I18nLink
                                             href={
                                                 "/our-work#social-listening-and-osint-investigations"
                                             }
@@ -120,103 +121,103 @@ export default function Footer() {
                                         >
                                             Social Listening and <br /> OSINT
                                             Investigations
-                                        </Link>
+                                        </I18nLink>
                                     </li>
                                 </ul>
-                                <Link
+                                <I18nLink
                                     href={"/our-work#reports-and-publications"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Reports and Publications
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href={"/our-work#capacity-building"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Capacity Building
-                                </Link>
+                                </I18nLink>
                                 <ul className="list-disc pl-6 text-design-light-green w-full">
                                     <li>
-                                        <Link
+                                        <I18nLink
                                             href={
                                                 "/our-work#workshops-and-events"
                                             }
                                             className="block Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                         >
                                             Workshops & Events
-                                        </Link>
+                                        </I18nLink>
                                     </li>
                                 </ul>
-                                <Link
+                                <I18nLink
                                     href={"/our-work#policy"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Policy
-                                </Link>
+                                </I18nLink>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
-                                <Link
+                                <I18nLink
                                     href={"/latest"}
                                     className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2"
                                 >
                                     Latest Updates
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href="/latest?tag=announcements"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Announcements
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href="/latest?tag=blog"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Blog
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href="/latest?tag=in-the-news"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     In the News
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href="/latest?tag=resources"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Resources
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href="/latest?tag=events"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Events
-                                </Link>
+                                </I18nLink>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
-                                <Link
+                                <I18nLink
                                     href={"/"}
                                     className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2"
                                 >
                                     DDIA
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href={"/get-involved"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Get involved
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href={"/faq"}
                                     className="Text text-gray-300 hover:text-design-light-green  text-sm font-normal  leading-normal"
                                 >
                                     FAQs
-                                </Link>
-                                <Link
+                                </I18nLink>
+                                <I18nLink
                                     href={"/team"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
                                     Meet the team
-                                </Link>
+                                </I18nLink>
                             </div>
                         </div>
                     </div>

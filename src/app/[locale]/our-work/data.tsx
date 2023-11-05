@@ -2,6 +2,30 @@ import { getApi } from "@/lib/utils/api";
 import { TPost } from "@/lib/utils/types";
 
 export async function fetchData() {
+
+    const {data: publicOpinionResearch} = await getApi<TPost[]>(`/posts`, {
+        filters: {
+            categories: {
+                slug: {
+                    $eq: 'public-opinion-research'
+                }
+            }
+        },
+        populate: [
+            "feature_media",
+            "authors",
+            "authors.avatar",
+            "categories",
+            "tags"
+        ],
+        pagination: {
+            limit: 3,
+        },
+        sort: ['publish_date:desc']
+    }, {
+        next: { tags: ["post"] },
+    });
+
     const reportsAndPublications = await getApi<TPost[]>(`/posts`, {
         filters: {
             post_type: {
@@ -27,6 +51,11 @@ export async function fetchData() {
 
     const { data: workshopsAndEvents } = await getApi<TPost[]>(`/posts`, {
         filters: {
+            post_type: {
+                id: {
+                    $eq: 4
+                }
+            },
             categories: {
                 slug: {
                     $eq: 'workshops-and-events'
@@ -50,6 +79,11 @@ export async function fetchData() {
 
     const { data: whatWeAreReading } = await getApi<TPost[]>(`/posts`, {
         filters: {
+            post_type: {
+                id: {
+                    $eq: 4
+                }
+            },
             categories: {
                 slug: {
                     $eq: 'resources-and-tools'
@@ -76,8 +110,13 @@ export async function fetchData() {
         next: { tags: ["post"] },
     })
 
-    const { data: additionalResources } = await getApi<TPost[]>(`/posts`, {
+    const { data: resources } = await getApi<TPost[]>(`/posts`, {
         filters: {
+            post_type: {
+                id: {
+                    $eq: 4
+                }
+            },
             categories: {
                 slug: {
                     $eq: 'resources-and-tools'
@@ -129,13 +168,23 @@ export async function fetchData() {
 
 
     return {
-        reportsAndPublications: {
+        research: {
+            publicOpinionResearch
+        },
+        reports: {
             data: reportsAndPublications.data,
             total: reportsAndPublications.meta.pagination.total,
         },
-        workshopsAndEvents,
-        whatWeAreReading,
-        additionalResources,
+        capacity: {
+            workshopsAndEvents,
+            resourcesAndTools: {
+                whatWeAreReading,
+                resources
+            }
+        },
+        // workshopsAndEvents,
+        // whatWeAreReading,
+        // additionalResources,
         policy
     };
 }

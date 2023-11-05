@@ -10,9 +10,10 @@ import { parsePostContent, parsePostDate } from '@/lib/utils/helpers';
 import LatestUpdates from '@/lib/components/latest-updates';
 import { getApi } from '@/lib/utils/api';
 import { notFound } from 'next/navigation';
-import { Link } from '@lexz451/next-nprogress';
+
 import CommentBox from '@/lib/components/comments/CommentBox';
 import { fetchData } from './data';
+import I18nLink from '@/lib/components/I18nLink';
 
 export async function generateStaticParams() {
     const { data: posts } = await getApi<TPost[]>(`/posts`, {
@@ -70,18 +71,18 @@ export default async function ArticlePage({
                         <div className="flex gap-4 items-center justify-center border-l border-neutral-300">
                             <div className="IntroductoryText w-12 text-neutral-800 text-xs font-semibold leading-3">Share</div>
                             <div className='flex items-center gap-2'>
-                                <Link href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                <I18nLink href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
                                     <FacebookIcon className="fill-white w-6 h-6"></FacebookIcon>
-                                </Link>
-                                <Link href={`https://twitter.com/share?url=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                </I18nLink>
+                                <I18nLink href={`https://twitter.com/share?url=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
                                     <XIcon className="fill-white w-5 h-5"></XIcon>
-                                </Link>
-                                <Link href={`https://telegram.me/share/url?url=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                </I18nLink>
+                                <I18nLink href={`https://telegram.me/share/url?url=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
                                     <TelegramIcon className="fill-white w-6 h-6"></TelegramIcon>
-                                </Link>
-                                <Link data-action="share/whatsapp/share" href={`https://web.whatsapp.com/send?text=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
+                                </I18nLink>
+                                <I18nLink data-action="share/whatsapp/share" href={`https://web.whatsapp.com/send?text=${shareUrl}`} className='w-8 h-8 rounded-full bg-design-dark flex items-center justify-center'>
                                     <WAIcon className="fill-white w-6 h-6"></WAIcon>
-                                </Link>
+                                </I18nLink>
                             </div>
                         </div>
                     </div>
@@ -108,9 +109,9 @@ export default async function ArticlePage({
                                         <div className='overflow-hidden'>
                                             {post.feature_media && (<ServerImage {...post.feature_media} sizes="160px" className={`rounded-2xl aspect-[9/6] object-cover h-auto`}></ServerImage>)}
                                         </div>
-                                        <Link href={`/${post.slug}`} className="Title block my-2 text-neutral-800 text-lg font-semibold leading-snug">
+                                        <I18nLink href={`/${post.slug}`} className="Title block my-2 text-neutral-800 text-lg font-semibold leading-snug">
                                             {post.title}
-                                        </Link>
+                                        </I18nLink>
                                         <div className="IntroductoryText">
                                             <span className="text-neutral-800 text-xs font-semibold leading-3">
                                                 {post.authors?.map(a => a.name).join(', ')}
@@ -127,9 +128,9 @@ export default async function ArticlePage({
                                 <div className="IntroductoryText border-b border-neutral-800 pb-5 text-neutral-800 text-xl font-semibold leading-3">DDIA in the news</div>
                                 <div className='flex flex-col'>
                                     {inTheNews.map((post) => (
-                                        <Link href={`/${post.slug}`} key={post.slug} className="Title border-b border-neutral-500 py-4 text-neutral-800 text-base font-semibold leading-snug">
+                                        <I18nLink href={`/${post.slug}`} key={post.slug} className="Title border-b border-neutral-500 py-4 text-neutral-800 text-base font-semibold leading-snug">
                                             {post.title}
-                                        </Link>
+                                        </I18nLink>
                                     ))}
                                 </div>
                             </div>

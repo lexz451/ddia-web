@@ -1,5 +1,5 @@
 import Filters from "@/lib/components/filters";
-import { fetchData } from "./data";
+import { TAGS, fetchData } from "./data";
 import LoadMoreWrapper from "./load-more";
 
 
@@ -9,11 +9,11 @@ export default async function LatestUpdates({
 
   const { search, tag } = searchParams;
 
-  const { posts, tags } = await fetchData({ tag, query: search });
+  const { posts } = await fetchData({ tag, query: search });
 
   return (
     <main className="page-container mt-[12rem]">
-      <Filters tags={tags}></Filters>
+      <Filters tags={TAGS}></Filters>
 
       <section className="pt-10">
         <LoadMoreWrapper

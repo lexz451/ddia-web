@@ -1,8 +1,9 @@
+import I18nLink from "@/lib/components/I18nLink";
 import Accordion from "@/lib/components/accordion";
 import LatestUpdates from "@/lib/components/latest-updates";
 import { getApi } from "@/lib/utils/api";
 import { TPost } from "@/lib/utils/types";
-import { Link } from "@lexz451/next-nprogress";
+
 
 async function fetchData() {
   const { data: faqs } = await getApi<any[]>(
@@ -34,12 +35,12 @@ export default async function FAQ() {
           <h1 className="text-6xl text-center text-design-green font-semibold mx-auto my-4">
             Frequently asked questions
           </h1>
-          <Link
+          <I18nLink
             href="#"
             className="text-sm mx-auto r-btn text-design-green border-design-green"
           >
             Contact us
-          </Link>
+          </I18nLink>
         </div>
       </section>
 
