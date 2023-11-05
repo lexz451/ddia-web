@@ -1,9 +1,8 @@
 import IndicatorIcon from "@/lib/assets/indicator.svg";
-import Image from "next/image";
-import TestImg from "@/lib/assets/tecnologia-fondo-toque-humano-nueva-version-moderna-creacion-adan-11.png";
 import { TPost } from "@/lib/utils/types";
 import ServerImage from "@/lib/components/server-image";
-import { Link } from "@lexz451/next-nprogress";
+import I18nLink from "@/lib/components/I18nLink";
+
 
 export default function Policy({ policy }: { policy: TPost[] }) {
     return (
@@ -42,7 +41,7 @@ export default function Policy({ policy }: { policy: TPost[] }) {
                     <div className="grid lg:grid-cols-3 mt-20 gap-10">
                         {policy.map((upd) => (
                             <div key={upd.slug} className={`flex flex-col`}>
-                                <Link
+                                <I18nLink
                                     href={`${upd.platform_url}`}
                                     className="relative w-full mb-4 group rounded-2xl overflow-hidden"
                                 >
@@ -53,10 +52,10 @@ export default function Policy({ policy }: { policy: TPost[] }) {
                                             className="aspect-[9/6] object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                     )}
-                                </Link>
-                                <Link href={`${upd.platform_url}`} className="mt-2 mb-4 text-xl font-semibold tracking-tight text-design-dark-green">
+                                </I18nLink>
+                                <I18nLink href={`${upd.platform_url}`} className="mt-2 mb-4 text-xl font-semibold tracking-tight text-design-dark-green">
                                     {upd.title}
-                                </Link>
+                                </I18nLink>
                                 <h4 className="tracking-tighter text-gray-500 line-clamp-3">
                                     {upd.description}
                                 </h4>
@@ -73,20 +72,20 @@ export default function Policy({ policy }: { policy: TPost[] }) {
                                             fill="#EBB785"
                                         />
                                     </svg>
-                                    <Link
+                                    <I18nLink
                                         className="pl-2 text-sm font-bold underline text-design-green"
                                         href={`/${upd.slug}`}
                                     >
                                         Read more
-                                    </Link>
+                                    </I18nLink>
                                 </div>
                             </div>
                         ))}
                     </div>
                     <div className="flex justify-center items-center mt-10">
-                        <Link href={`/latest?tag=policy`} className="r-btn border-none text-white bg-design-green mt-10">
+                        <I18nLink href={`/latest?tag=policy`} className="r-btn border-none text-white bg-design-green mt-10">
                             See all
-                        </Link>
+                        </I18nLink>
                     </div>
                 </div>
             </div>

@@ -2,17 +2,19 @@ import IndicatorIcon from "@/lib/assets/indicator.svg";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 import { TPost } from "@/lib/utils/types";
 import { parsePostDate } from "@/lib/utils/helpers";
-import { Link } from "@lexz451/next-nprogress";
 import ServerImage from "@/lib/components/server-image";
+import I18nLink from "@/lib/components/I18nLink";
 
 export default function CapacityBuilding({
-    workshopsAndEvents,
-    whatWeAreReading,
-    additionalResources,
+    capacity
 }: {
-    workshopsAndEvents: TPost[];
-    whatWeAreReading: TPost[];
-    additionalResources: TPost[];
+    capacity: {
+        workshopsAndEvents: TPost[];
+        resourcesAndTools: {
+            whatWeAreReading: TPost[];
+            resources: TPost[];
+        }
+    }
 }) {
     return (
         <section
@@ -49,8 +51,8 @@ export default function CapacityBuilding({
                         <div className="w-full lg:flex-1 h-[1px] bg-design-light bg-opacity-50"></div>
                     </div>
                     <div className="w-full flex flex-col gap-5">
-                        {workshopsAndEvents.map((post) => (
-                            <Link
+                        {capacity.workshopsAndEvents.map((post) => (
+                            <I18nLink
                                 href={`${post.platform_url}`}
                                 target="_blank"
                                 key={post.slug}
@@ -69,12 +71,12 @@ export default function CapacityBuilding({
                                 <div className="hidden lg:block">
                                     <ArrowCircleIcon className="stroke-black"></ArrowCircleIcon>
                                 </div>
-                            </Link>
+                            </I18nLink>
                         ))}
                     </div>
-                    <Link href={`/latest?tag=events`} className="r-btn border-none text-white bg-design-green mt-10">
+                    <I18nLink href={`/latest?tag=events`} className="r-btn border-none text-white bg-design-green mt-10">
                         See all
-                    </Link>
+                    </I18nLink>
                     <div
                         id="resources-and-tools"
                         className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 my-10 lg:my-20 w-full"
@@ -89,7 +91,7 @@ export default function CapacityBuilding({
                         What We Are Reading
                     </div>
                     <div className="grid lg:grid-cols-3 mt-10 gap-5">
-                        {whatWeAreReading.map((post) => (
+                        {capacity.resourcesAndTools.whatWeAreReading.map((post) => (
                             <div
                                 key={post.slug}
                                 className="BlogSectionsPost h-auto overflow-hidden bg-white rounded-lg grid grid-rows-2"
@@ -135,8 +137,8 @@ export default function CapacityBuilding({
                         Additional Resources
                     </div>
                     <div className="flex flex-col gap-5 w-full mt-10">
-                        {additionalResources.map((post) => (
-                            <Link
+                        {capacity.resourcesAndTools.resources.map((post) => (
+                            <I18nLink
                                 href={`${post.platform_url}`}
                                 target="_blank"
                                 key={post.slug}
@@ -155,12 +157,12 @@ export default function CapacityBuilding({
                                 <div className="hidden lg:block">
                                     <ArrowCircleIcon className="stroke-black"></ArrowCircleIcon>
                                 </div>
-                            </Link>
+                            </I18nLink>
                         ))}
                     </div>
-                    <Link href={`/latest?tag=resources`} className="r-btn border-none text-white bg-design-green mt-10">
+                    <I18nLink href={`/latest?tag=resources`} className="r-btn border-none text-white bg-design-green mt-10">
                         See all
-                    </Link>
+                    </I18nLink>
                 </div>
             </div>
         </section>

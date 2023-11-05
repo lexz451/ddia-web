@@ -1,8 +1,6 @@
 import IndicatorIcon from "@/lib/assets/indicator.svg";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 import Image from "next/image";
-import TestImg from "@/lib/assets/tecnologia-fondo-toque-humano-nueva-version-moderna-creacion-adan-11.png";
-import { Link } from "@lexz451/next-nprogress";
 import FacebookIcon from "@/lib/assets/facebook.svg";
 import XIcon from "@/lib/assets/x-twitter.svg";
 import TikTokIcon from "@/lib/assets/tiktok.svg";
@@ -17,8 +15,18 @@ import MigrationImg from "@/lib/assets/issues-and-narratives/migration.png";
 import PHealthImg from "@/lib/assets/issues-and-narratives/public-health.png";
 import ShapeIcon from "@/lib/assets/shape-understanding.svg";
 import DetermineIcon from "@/lib/assets/determine-the-extent.svg";
+import { TPost } from "@/lib/utils/types";
+import ServerImage from "@/lib/components/server-image";
+import { parsePostDate, parseReadTime } from "@/lib/utils/helpers";
+import I18nLink from "@/lib/components/I18nLink";
 
-export default function ResearchAndAnalysis() {
+export default function ResearchAndAnalysis({
+    research,
+}: {
+    research: {
+        publicOpinionResearch: TPost[];
+    };
+}) {
     return (
         <section
             id="research-and-analysis"
@@ -80,100 +88,65 @@ export default function ResearchAndAnalysis() {
                     impact Latino and Latin American communities.
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-10 my-20">
-                    <div className="BlogSectionsPost overflow-hidden bg-white rounded-xl grid grid-rows-2">
-                        <Image
-                            src={TestImg}
-                            alt=""
-                            className="relative w-full h-full object-cover object-center"
-                        ></Image>
-                        <div className="Content p-6 bg-white flex-col justify-center items-start gap-6 inline-flex">
-                            <div className="LeadingContent self-stretch flex-col justify-start items-start gap-2 inline-flex">
-                                <div className="TitleAndPreview self-stretch  flex-col justify-start items-start gap-3 flex">
-                                    <div className="Title self-stretch text-gray-900 text-xl font-semibold font-avenir leading-normal">
-                                        Decisions that impact Latin American
-                                        communities
+                <div className="grid lg:grid-cols-3 gap-10 mt-20">
+                    {research.publicOpinionResearch.map((post) => (
+                        <div key={post.slug} className="BlogSectionsPost overflow-hidden bg-white rounded-xl grid grid-rows-2">
+                            {
+                                post.feature_media && (
+                                    <ServerImage {...post.feature_media} className="relative"></ServerImage>
+                                )
+                            }
+                            <div className="Content p-6 bg-white flex-col justify-center items-start gap-6 inline-flex">
+                                <div className="LeadingContent self-stretch flex-col justify-start items-start gap-2 inline-flex">
+                                    <div className="TitleAndPreview self-stretch  flex-col justify-start items-start gap-3 flex">
+                                        <div className="Title self-stretch text-gray-900 text-xl font-semibold font-avenir leading-normal">
+                                            {post.title}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="BlogSectionsAvatarWithText justify-start items-center gap-3 inline-flex">
-                                <div className="Avatar w-10 h-10 bg-stone-100 rounded-full" />
-                                <div className="Text flex-col justify-start items-start inline-flex">
-                                    <div className="Title text-gray-900 text-sm font-medium leading-tight">
-                                        Brenna Goyette
+                                {
+                                    post.authors?.length > 0 && (
+                                        <div className="BlogSectionsAvatarWithText justify-start items-center gap-3 inline-flex">
+                                           {
+                                                  post.authors[0].avatar && (
+                                                    <ServerImage {...post.authors[0].avatar} className="Avatar w-10 h-10 bg-stone-100 rounded-full"></ServerImage>
+                                                  )
+                                           }
+                                            <div className="Text flex-col justify-start items-start inline-flex">
+                                                <div className="Title text-gray-900 text-sm font-medium leading-tight">
+                                                    {post.authors[0].name}
+                                                </div>
+                                                <div className="SupportingText text-gray-500 text-sm font-normal leading-tight">
+                                                    {parsePostDate(post.publish_date)} · {parseReadTime(post.content)}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                                {/* <div className="BlogSectionsAvatarWithText justify-start items-center gap-3 inline-flex">
+                                    <div className="Avatar w-10 h-10 bg-stone-100 rounded-full" />
+                                    <div className="Text flex-col justify-start items-start inline-flex">
+                                        <div className="Title text-gray-900 text-sm font-medium leading-tight">
+                                            Brenna Goyette
+                                        </div>
+                                        <div className="SupportingText text-gray-500 text-sm font-normal leading-tight">
+                                            Mar 10, 2020 · 4 min read
+                                        </div>
                                     </div>
-                                    <div className="SupportingText text-gray-500 text-sm font-normal leading-tight">
-                                        Mar 10, 2020 · 4 min read
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="BlogSectionsPost overflow-hidden bg-white rounded-xl grid grid-rows-2">
-                        <Image
-                            src={TestImg}
-                            alt=""
-                            className="relative w-full h-full object-cover object-center"
-                        ></Image>
-                        <div className="Content p-6 bg-white flex-col justify-center items-start gap-6 inline-flex">
-                            <div className="LeadingContent self-stretch flex-col justify-start items-start gap-2 inline-flex">
-                                <div className="TitleAndPreview self-stretch  flex-col justify-start items-start gap-3 flex">
-                                    <div className="Title self-stretch text-gray-900 text-xl font-semibold font-avenir leading-normal">
-                                        Decisions that impact Latin American
-                                        communities
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="BlogSectionsAvatarWithText justify-start items-center gap-3 inline-flex">
-                                <div className="Avatar w-10 h-10 bg-stone-100 rounded-full" />
-                                <div className="Text flex-col justify-start items-start inline-flex">
-                                    <div className="Title text-gray-900 text-sm font-medium leading-tight">
-                                        Brenna Goyette
-                                    </div>
-                                    <div className="SupportingText text-gray-500 text-sm font-normal leading-tight">
-                                        Mar 10, 2020 · 4 min read
-                                    </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
-                    </div>
-                    <div className="BlogSectionsPost overflow-hidden bg-white rounded-xl grid grid-rows-2">
-                        <Image
-                            src={TestImg}
-                            alt=""
-                            className="relative w-full h-full object-cover object-center"
-                        ></Image>
-                        <div className="Content p-6 bg-white flex-col justify-center items-start gap-6 inline-flex">
-                            <div className="LeadingContent self-stretch flex-col justify-start items-start gap-2 inline-flex">
-                                <div className="TitleAndPreview self-stretch  flex-col justify-start items-start gap-3 flex">
-                                    <div className="Title self-stretch text-gray-900 text-xl font-semibold font-avenir leading-normal">
-                                        Decisions that impact Latin American
-                                        communities
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="BlogSectionsAvatarWithText justify-start items-center gap-3 inline-flex">
-                                <div className="Avatar w-10 h-10 bg-stone-100 rounded-full" />
-                                <div className="Text flex-col justify-start items-start inline-flex">
-                                    <div className="Title text-gray-900 text-sm font-medium leading-tight">
-                                        Brenna Goyette
-                                    </div>
-                                    <div className="SupportingText text-gray-500 text-sm font-normal leading-tight">
-                                        Mar 10, 2020 · 4 min read
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
+                    
                 </div>
-                <div className="flex items-center justify-center w-full">
+                {/* <div className="flex items-center justify-center w-full">
                     <Link
                         href={`#`}
                         className="r-btn border-none text-white bg-design-green"
                     >
                         See all
                     </Link>
-                </div>
+                </div> */}
                 <div
                     id="social-listening-and-osint-investigations"
                     className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 my-20 w-full"
@@ -198,7 +171,7 @@ export default function ResearchAndAnalysis() {
                     Issues and Narratives
                 </div>
                 <div className="grid lg:grid-cols-3 lg:grid-rows-2 mt-10 gap-5 lg:gap-10 w-full">
-                    <Link
+                    <I18nLink
                         href={`/our-work/issues-and-narratives?tag=elections-and-voting`}
                         className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
@@ -212,8 +185,8 @@ export default function ResearchAndAnalysis() {
                             Elections and Voting
                         </div>
                         <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
-                    </Link>
-                    <Link
+                    </I18nLink>
+                    <I18nLink
                         href={`/our-work/issues-and-narratives?tag=identity-and-culture`}
                         className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
@@ -227,9 +200,9 @@ export default function ResearchAndAnalysis() {
                             Identity and Culture
                         </div>
                         <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
-                    </Link>
+                    </I18nLink>
 
-                    <Link
+                    <I18nLink
                         href={`/our-work/issues-and-narratives?tag=public-health`}
                         className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
@@ -243,9 +216,9 @@ export default function ResearchAndAnalysis() {
                             Public&nbsp;Health
                         </div>
                         <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
-                    </Link>
+                    </I18nLink>
 
-                    <Link
+                    <I18nLink
                         href={`/our-work/issues-and-narratives?tag=migration`}
                         className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
@@ -259,9 +232,9 @@ export default function ResearchAndAnalysis() {
                             Migration
                         </div>
                         <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
-                    </Link>
+                    </I18nLink>
 
-                    <Link
+                    <I18nLink
                         href={`/our-work/issues-and-narratives?tag=artificial-intelligence`}
                         className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
@@ -275,9 +248,9 @@ export default function ResearchAndAnalysis() {
                             Artificial Intelligence
                         </div>
                         <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
-                    </Link>
+                    </I18nLink>
 
-                    <Link
+                    <I18nLink
                         href={`/our-work/issues-and-narratives?tag=conspiracy-networks`}
                         className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
                     >
@@ -291,7 +264,7 @@ export default function ResearchAndAnalysis() {
                             Conspiracy Networks
                         </div>
                         <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
-                    </Link>
+                    </I18nLink>
                 </div>
 
                 <div
@@ -301,7 +274,7 @@ export default function ResearchAndAnalysis() {
                     Platforms and Apps
                 </div>
                 <div className="grid w-full lg:grid-cols-3 lg:grid-rows-2 mt-10 gap-5 lg:gap-10">
-                    <Link
+                    <I18nLink
                         href={
                             "/our-work/platforms-and-apps?tag=facebook-and-instagram"
                         }
@@ -316,8 +289,8 @@ export default function ResearchAndAnalysis() {
                             </div>
                             <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
-                    </Link>
-                    <Link
+                    </I18nLink>
+                    <I18nLink
                         href={
                             "/our-work/platforms-and-apps?tag=x-formerly-twitter"
                         }
@@ -332,8 +305,8 @@ export default function ResearchAndAnalysis() {
                             </div>
                             <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
-                    </Link>
-                    <Link
+                    </I18nLink>
+                    <I18nLink
                         href={"/our-work/platforms-and-apps?tag=tiktok"}
                         className="bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
                     >
@@ -346,8 +319,8 @@ export default function ResearchAndAnalysis() {
                             </div>
                             <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
-                    </Link>
-                    <Link
+                    </I18nLink>
+                    <I18nLink
                         href={"/our-work/platforms-and-apps?tag=whatsapp"}
                         className="bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
                     >
@@ -360,8 +333,8 @@ export default function ResearchAndAnalysis() {
                             </div>
                             <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
-                    </Link>
-                    <Link
+                    </I18nLink>
+                    <I18nLink
                         href={"/our-work/platforms-and-apps?tag=youtube"}
                         className=" bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
                     >
@@ -374,8 +347,8 @@ export default function ResearchAndAnalysis() {
                             </div>
                             <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
-                    </Link>
-                    <Link
+                    </I18nLink>
+                    <I18nLink
                         href={"/our-work/platforms-and-apps?tag=telegram"}
                         className=" bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
                     >
@@ -388,7 +361,7 @@ export default function ResearchAndAnalysis() {
                             </div>
                             <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
                         </div>
-                    </Link>
+                    </I18nLink>
                 </div>
             </div>
         </section>

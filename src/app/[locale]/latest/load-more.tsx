@@ -2,12 +2,12 @@
 
 import ServerImage from "@/lib/components/server-image";
 import { TPost } from "@/lib/utils/types";
-import { Link } from "@lexz451/next-nprogress";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 import LoadMore from "@/lib/components/load-more";
 import { buildPostsQuery } from "./data";
 import IndicatorIcon from "@/lib/assets/indicator.svg";
 import { parsePostDate } from "@/lib/utils/helpers";
+import I18nLink from "@/lib/components/I18nLink";
 
 function PostItem({ post }: { post: TPost }) {
     return (
@@ -15,7 +15,7 @@ function PostItem({ post }: { post: TPost }) {
             key={post.slug}
             className="grid lg:grid-cols-[320px_1fr] border-b border-neutral-400 gap-5 lg:gap-14 pb-10"
         >
-            <Link href={post.platform_url || `/${post.slug}`} className="">
+            <I18nLink href={post.platform_url || `/${post.slug}`} className="">
                 {post.feature_media && (
                     <ServerImage
                         {...post.feature_media}
@@ -23,18 +23,20 @@ function PostItem({ post }: { post: TPost }) {
                         className="rounded-2xl aspect-[9/6] object-cover"
                     ></ServerImage>
                 )}
-            </Link>
+            </I18nLink>
             <div className="flex items-center">
                 <div className="flex-1 self-stretch">
                     <span className="block mb-3 uppercase text-design-green text-sm">
-                        {post.tags?.map((t) => t.title).join(", ")}
+                        {
+                            post.post_type.name
+                        }
                     </span>
-                    <Link
+                    <I18nLink
                         href={post.platform_url || `/${post.slug}`}
                         className="block mb-2 text-xl font-semibold text-design-dark leading-normal"
                     >
                         {post.title}
-                    </Link>
+                    </I18nLink>
                     <div className="mb-4 flex text-xs">
                         <h5 className="font-medium text-xs text-neutral-800 leading-3">
                             {post.authors?.map((a) => a.name).join(", ")}
@@ -51,7 +53,7 @@ function PostItem({ post }: { post: TPost }) {
                         {post.description}
                     </p>
 
-                    <Link
+                    <I18nLink
                         href={post.platform_url || `/${post.slug}`}
                         className="lg:hidden flex items-center mt-4"
                     >
@@ -59,14 +61,14 @@ function PostItem({ post }: { post: TPost }) {
                         <span className="leading-none text-design-green underline text-sm font-bold">
                             Read More
                         </span>
-                    </Link>
+                    </I18nLink>
                 </div>
-                <Link
+                <I18nLink
                     className="hidden lg:block my-auto ml-20"
                     href={post.platform_url || `/${post.slug}`}
                 >
                     <ArrowCircleIcon className="stroke-design-green stroke-[1.5]"></ArrowCircleIcon>
-                </Link>
+                </I18nLink>
             </div>
         </div>
     );

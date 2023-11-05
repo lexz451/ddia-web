@@ -9,8 +9,7 @@ import Image from "next/image";
 import MailImg from "@/lib/assets/get-involved.png";
 import ArrowIcon from "@/lib/assets/arrow.svg";
 import LogoCircle from "@/lib/assets/logo-circle.svg";
-
-import Link from "next/link";
+import I18nLink from "@/lib/components/I18nLink";
 
 export default function ContactUs() {
     const jobPositions = [
@@ -47,54 +46,54 @@ export default function ContactUs() {
 
                     <p className="text-design-green font-avenir mb-10 font-medium max-w-md mx-auto text-center">
                         Contact us at{" "}
-                        <Link
+                        <I18nLink
                             className="underline font-semibold"
                             href={"info@ddia.org"}
                         >
                             info@ddia.org
-                        </Link>{" "}
+                        </I18nLink>{" "}
                         to explore partnerships or to learn more about our work.
                     </p>
 
                     <div className="flex flex-col items-center mx-auto w-fit">
                         <p>Follow us:</p>
                         <div className="SocialIcons flex gap-3 mt-4">
-                            <Link
+                            <I18nLink
                                 href="#"
                                 className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
                             >
                                 <LinkedInIcon className="w-6 h-6 fill-design-light"></LinkedInIcon>
-                            </Link>
-                            <Link
+                            </I18nLink>
+                            <I18nLink
                                 href="#"
                                 className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
                             >
                                 <XIcon className="w-5 h-5 fill-design-light"></XIcon>
-                            </Link>
-                            <Link
+                            </I18nLink>
+                            <I18nLink
                                 href="#"
                                 className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
                             >
                                 <MediumIcon className="w-6 h-6 fill-design-light"></MediumIcon>
-                            </Link>
-                            <Link
+                            </I18nLink>
+                            <I18nLink
                                 href="#"
                                 className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
                             >
                                 <FacebookIcon className="w-6 h-6 fill-design-light"></FacebookIcon>
-                            </Link>
-                            <Link
+                            </I18nLink>
+                            <I18nLink
                                 href="#"
                                 className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
                             >
                                 <YoutubeIcon className="w-6 h-6 fill-design-light"></YoutubeIcon>
-                            </Link>
-                            <Link
+                            </I18nLink>
+                            <I18nLink
                                 href="#"
                                 className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
                             >
                                 <InstagramIcon className="w-6 h-6 fill-design-light"></InstagramIcon>
-                            </Link>
+                            </I18nLink>
                         </div>
                     </div>
                 </section>

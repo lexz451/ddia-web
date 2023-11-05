@@ -1,4 +1,4 @@
-import Link from "next/link";
+import I18nLink from "@/lib/components/I18nLink";
 import TeamAccordion from "@/lib/components/team-accordion";
 import { getApi } from "@/lib/utils/api";
 import { TMember } from "@/lib/utils/types";
@@ -48,12 +48,12 @@ export default async function MeetTheTeam() {
                     <h1 className="w-fit mx-auto font-extrabold text-4xl lg:text-6xl text-design-green mb-4">
                         Meet the Team
                     </h1>
-                    <Link
+                    <I18nLink
                         className="r-btn border-design-green text-design-green mt-10 mx-auto"
                         href={"#"}
                     >
                         Work with us
-                    </Link>
+                    </I18nLink>
                 </section>
                 <section className="mt-20 flex flex-col gap-8">
                     {ourTeam.map((member) => (

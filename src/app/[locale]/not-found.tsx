@@ -1,4 +1,4 @@
-import Link from "next/link";
+import I18nLink from "@/lib/components/I18nLink";
 
 export default function NotFoundPage() {
     return (
@@ -7,7 +7,7 @@ export default function NotFoundPage() {
                 <div className="flex flex-col items-center justify-center h-[60vh]">
                     <h2>Not Found</h2>
                     <p>Could not find requested resource</p>
-                    <Link href="/">Return Home</Link>
+                    <I18nLink href="/">Return Home</I18nLink>
                 </div>
             </div>
 

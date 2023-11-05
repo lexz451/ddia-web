@@ -11,8 +11,8 @@ import { Pagination } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
-import { Link } from "@lexz451/next-nprogress";
 import useI18n from "../hooks/useI18n";
+import I18nLink from "./I18nLink";
 
 export default function OurWork({
     locale
@@ -86,12 +86,12 @@ export default function OurWork({
                     <div className="IntroductoryText lg:max-w-prose text-neutral-800 lg:text-lg font-normal  leading-relaxed mb-10">
                         {t('home.our-work.subtitle')}
                     </div>
-                    <Link
+                    <I18nLink
                         href={"/our-work"}
                         className="r-btn rounded-3xl border-none text-white bg-design-green"
                     >
                         More details
-                    </Link>
+                    </I18nLink>
                 </div>
             </div>
             <div className="our-work-container page-container">
@@ -125,12 +125,12 @@ export default function OurWork({
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <Link
+                                    <I18nLink
                                         href={"/our-work#research-and-analysis"}
                                         className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                     >
                                         Read more
-                                    </Link>
+                                    </I18nLink>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -156,14 +156,14 @@ export default function OurWork({
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <Link
+                                    <I18nLink
                                         href={
                                             "/our-work#reports-and-publications"
                                         }
                                         className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                     >
                                         Read more
-                                    </Link>
+                                    </I18nLink>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -189,12 +189,12 @@ export default function OurWork({
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <Link
+                                    <I18nLink
                                         href={"/our-work#capacity-building"}
                                         className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                     >
                                         Read more
-                                    </Link>
+                                    </I18nLink>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -220,12 +220,12 @@ export default function OurWork({
                                             fill="#fafafa"
                                         />
                                     </svg>
-                                    <Link
+                                    <I18nLink
                                         href={"/our-work#policy"}
                                         className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                     >
                                         Read more
-                                    </Link>
+                                    </I18nLink>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -241,12 +241,12 @@ export default function OurWork({
                                 <div className="IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal mb-10">
                                     {t('home.our-work.subtitle')}
                                 </div>
-                                <Link
+                                <I18nLink
                                     href={"/our-work"}
                                     className="text-white border-none r-btn rounded-3xl bg-design-green"
                                 >
                                     More details
-                                </Link>
+                                </I18nLink>
                             </div>
                         </div>
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
@@ -270,12 +270,12 @@ export default function OurWork({
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <Link
+                                <I18nLink
                                     href={"/our-work#research-and-analysis"}
                                     className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                 >
                                     Read more
-                                </Link>
+                                </I18nLink>
                             </div>
                         </div>
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
@@ -299,12 +299,12 @@ export default function OurWork({
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <Link
+                                <I18nLink
                                     href={"/our-work#reports-and-publications"}
                                     className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                 >
                                     Read more
-                                </Link>
+                                </I18nLink>
                             </div>
                         </div>
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
@@ -328,12 +328,12 @@ export default function OurWork({
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <Link
+                                <I18nLink
                                     href={"/our-work#capacity-building"}
                                     className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                 >
                                     Read more
-                                </Link>
+                                </I18nLink>
                             </div>
                         </div>
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
@@ -357,12 +357,12 @@ export default function OurWork({
                                         fill="#fafafa"
                                     />
                                 </svg>
-                                <Link
+                                <I18nLink
                                     href={"/our-work#policy"}
                                     className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                 >
                                     Read more
-                                </Link>
+                                </I18nLink>
                             </div>
                         </div>
                     </div>

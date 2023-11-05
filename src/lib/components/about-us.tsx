@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AbtImg from '@/lib/assets/research.png';
-import { Link } from "@lexz451/next-nprogress";
+import I18nLink from "./I18nLink";
+
 
 export default function AboutUs({
     t
@@ -17,9 +18,9 @@ export default function AboutUs({
         <div className="IntroductoryText mb-10 text-neutral-800 lg:text-lg font-normal  leading-relaxed">
             {t('home.about.subtitle')}
         </div>
-        <Link href={'/about-us'} className="Rectangle129 r-btn border-none bg-design-green text-white rounded-3xl">
+        <I18nLink href={'/about-us'} className="Rectangle129 r-btn border-none bg-design-green text-white rounded-3xl">
           More details
-        </Link>
+        </I18nLink>
       </div>
     </div>
   )

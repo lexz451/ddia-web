@@ -8,25 +8,22 @@ import { fetchData } from "./data";
 
 export default async function OurWorkPage() {
     const {
-        reportsAndPublications,
-        additionalResources,
+        research,
+        reports,
+        capacity,
         policy,
-        whatWeAreReading,
-        workshopsAndEvents,
     } = await fetchData();
 
     return (
         <main className="bg-design-light lg:pt-[150px]">
             <Hero></Hero>
             <Navigation></Navigation>
-            <ResearchAndAnalysis></ResearchAndAnalysis>
+            <ResearchAndAnalysis research={research}></ResearchAndAnalysis>
             <ReportsAndPublications
-                reportsAndPublications={reportsAndPublications}
+                reports={reports}
             ></ReportsAndPublications>
             <CapacityBuilding
-                workshopsAndEvents={workshopsAndEvents}
-                whatWeAreReading={whatWeAreReading}
-                additionalResources={additionalResources}
+                capacity={capacity}
             ></CapacityBuilding>
             <Policy policy={policy}></Policy>
         </main>

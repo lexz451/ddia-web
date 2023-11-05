@@ -6,7 +6,8 @@ import LoadMore from "@/lib/components/load-more";
 import QueryString from "qs";
 import ServerImage from "@/lib/components/server-image";
 import { parsePostDate, parseReadTime } from "@/lib/utils/helpers";
-import { Link } from "@lexz451/next-nprogress";
+import I18nLink from "@/lib/components/I18nLink";
+
 
 const postParams = QueryString.stringify({
     filters: {
@@ -35,26 +36,26 @@ function PostItem({ post }: { post: TPost }) {
             key={post.slug}
             className="BlogSectionsPost grid lg:grid-cols-2 relative bg-white rounded-2xl overflow-hidden"
         >
-            <Link href={`/${post.slug}`}>
+            <I18nLink href={`/${post.slug}`}>
                 {post.feature_media && (
                     <ServerImage
                         {...post.feature_media}
                         className="relative w-full h-full object-cover object-center"
                     ></ServerImage>
                 )}
-            </Link>
+            </I18nLink>
             <div className="Content p-10  bg-white flex-col justify-center items-start gap-9 inline-flex">
                 <div className="LeadingContent self-stretch h-40 flex-col justify-start items-start gap-2 inline-flex">
                     <div className="Category self-stretch text-design-light-green text-sm font-medium  uppercase leading-tight">
                         Report
                     </div>
                     <div className="TitleAndPreview self-stretch flex-col justify-start items-start gap-3 flex">
-                        <Link
+                        <I18nLink
                             href={`/${post.slug}`}
                             className="Title self-stretch text-gray-900 text-xl font-semibold font-avenir leading-7"
                         >
                             {post.title}
-                        </Link>
+                        </I18nLink>
                         <p className="Preview self-stretch text-gray-500 text-base font-normal leading-normal line-clamp-3">
                             {post.description}
                         </p>
@@ -86,9 +87,9 @@ function PostItem({ post }: { post: TPost }) {
 }
 
 export default function ReportsAndPublications({
-    reportsAndPublications,
+    reports,
 }: {
-    reportsAndPublications: { data: TPost[]; total: number };
+    reports: { data: TPost[]; total: number };
 }) {
     return (
         <section
@@ -112,8 +113,8 @@ export default function ReportsAndPublications({
                             renderComponent={(item, key) => (
                                 <PostItem post={item} key={key}></PostItem>
                             )}
-                            items={reportsAndPublications.data}
-                            total={reportsAndPublications.total}
+                            items={reports.data}
+                            total={reports.total}
                             params={postParams}
                             className={
                                 "flex flex-col gap-10 lg:max-w-[80%] mx-auto"
