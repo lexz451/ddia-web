@@ -1,19 +1,57 @@
 import { getApi } from "@/lib/utils/api";
 import { TPost } from "@/lib/utils/types";
 
+export const TAGS = [
+    {
+        title: "Announcements",
+        slug: "announcements",
+    },
+    {
+        title: "Blog",
+        slug: "blog",
+    },
+    {
+        title: "In the News",
+        slug: "in-the-news",
+    },
+    {
+        title: "Resources",
+        slug: "resources",
+    },
+    {
+        title: "Events",
+        slug: "events",
+    },
+    {
+        title: "Policy",
+        slug: "policy",
+    },{
+        title: "Reports",
+        slug: "reports",
+    }
+]
+
 export function buildPostsQuery(tag?: string, query?: string) {
+
+    const filters: any = {}
+
+    if (tag) {
+        filters['tags'] = {
+            slug: {
+                $eq: tag
+            }
+        }
+    } else {
+        filters['tags'] = {
+            slug: {
+                $in: TAGS.map(t => t.slug)
+            }
+        }
+    }
+
     return {
         filters: {
-            categories: {
-                slug: {
-                    $eq: 'latest-updates'
-                }
-            },
-            tags: {
-                slug: {
-                    $eq: tag
-                }
-            },
+            ...filters,
             $or: [
                 {
                   title: {
@@ -39,20 +77,6 @@ export async function fetchData({
     tag,
     query
 }: { tag?: string, query?: string }) {
-    const category = await getApi<any>('/categories', {
-        filters: {
-          slug: {
-            $eq: 'latest-updates'
-          }
-        },
-        populate: {
-          tags: {
-            fields: ['slug', 'title']
-          }
-        }
-    }, {
-        next: { tags: ["category"] },
-    });
 
     const posts = await getApi<TPost[]>(`/posts`, buildPostsQuery(tag, query), {
         next: { tags: ["post"] },
@@ -62,8 +86,7 @@ export async function fetchData({
         posts: {
             data: posts.data,
             total: posts.meta.pagination.total || 0,
-        },
-        tags: category.data?.[0].tags || [],
+        }
     }
 
 }
