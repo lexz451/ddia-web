@@ -5,7 +5,7 @@ import LogoPinned from "@/lib/assets/logo-simple.svg";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 import IndicatorIcon from "@/lib/assets/indicator.svg";
 import GlobeIcon from "@/lib/assets/globe-alt.svg";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import useScroll from "../hooks/useScroll";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
@@ -358,7 +358,9 @@ export default function Navbar({ locale }: { locale: string }) {
                 }`}
             >
                 <div className="page-container mt-10">
-                    <SearchBar onSearch={onSearch}></SearchBar>
+                    <Suspense fallback={null}>
+                        <SearchBar onSearch={onSearch}></SearchBar>
+                    </Suspense>
                     <div className="mt-5 flex flex-col divide-design-cyan border-y-design-cyan border-y divide-y">
                         <div className="w-full flex items-center py-4">
                             <IndicatorIcon className="fill-design-yellow mr-3"></IndicatorIcon>
