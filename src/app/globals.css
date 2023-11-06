@@ -117,6 +117,9 @@
 body {
   @apply flex flex-col min-h-screen antialiased relative bg-design-light;
   font-family: var(--font-avenir);
+
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
   main {
     @apply flex-1;
   }

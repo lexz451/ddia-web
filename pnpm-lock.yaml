@@ -7,6 +7,9 @@ dependencies:
   accept-language:
     specifier: ^3.0.18
     version: 3.0.18
+  body-scroll-lock-upgrade:
+    specifier: ^1.0.4
+    version: 1.0.4
   gsap:
     specifier: ^3.12.2
     version: 3.12.2
@@ -65,7 +68,7 @@ devDependencies:
     version: 6.9.8
   '@types/react':
     specifier: latest
-    version: 18.2.34
+    version: 18.2.35
   '@types/react-dom':
     specifier: latest
     version: 18.2.14
@@ -1774,11 +1777,11 @@ packages:
   /@types/react-dom@18.2.14:
     resolution: {integrity: sha512-V835xgdSVmyQmI1KLV2BEIUgqEuinxp9O4G6g3FqO/SqLac049E53aysv0oEFD2kHfejeKU+ZqL2bcFWj9gLAQ==}
     dependencies:
-      '@types/react': 18.2.34
+      '@types/react': 18.2.35
     dev: true
 
-  /@types/react@18.2.34:
-    resolution: {integrity: sha512-U6eW/alrRk37FU/MS2RYMjx0Va2JGIVXELTODaTIYgvWGCV4Y4TfTUzG8DdmpDNIT0Xpj/R7GfyHOJJrDttcvg==}
+  /@types/react@18.2.35:
+    resolution: {integrity: sha512-LG3xpFZ++rTndV+/XFyX5vUP7NI9yxyk+MQvBDq+CVs8I9DLSc3Ymwb1Vmw5YDoeNeHN4PDZa3HylMKJYT9PNQ==}
     dependencies:
       '@types/prop-types': 15.7.8
       '@types/scheduler': 0.16.4
@@ -2122,6 +2125,10 @@ packages:
       buffer: 5.7.1
       inherits: 2.0.4
       readable-stream: 3.6.2
+    dev: false
+
+  /body-scroll-lock-upgrade@1.0.4:
+    resolution: {integrity: sha512-Wo3kbzr2yO/c9KFHo/HQ+lRYsBs0DsR0krUtk/R4KWPwaoDwv1sjOYFc3F3vh+7pw4k437R9XiDdHRg1uoOYEA==}
     dev: false
 
   /boolbase@1.0.0:
