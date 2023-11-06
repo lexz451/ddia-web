@@ -4,7 +4,7 @@ import i18nConfig from "@/i18nConfig";
 import { Link } from "@lexz451/next-nprogress";
 import { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
-import { AnchorHTMLAttributes, use } from "react";
+import { AnchorHTMLAttributes } from "react";
 
 type I18nLinkProps = LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>;
 
