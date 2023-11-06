@@ -92,7 +92,7 @@ export default function Navbar({ locale }: { locale: string }) {
         <header
             ref={scrollLockTarget}
             id="navbar"
-            className={`navbar overflow-hidden h-auto absolute transition-colors duration-100 lg:duration-300 will-change-transform left-0 right-0 mx-auto z-50 ${
+            className={`navbar overflow-hidden lg:overflow-visible h-auto absolute transition-colors duration-100 lg:duration-300 will-change-transform left-0 right-0 mx-auto z-50 ${
                 isOpen
                     ? "bg-design-light h-screen overflow-y-auto"
                     : "bg-transparent duration-0"
