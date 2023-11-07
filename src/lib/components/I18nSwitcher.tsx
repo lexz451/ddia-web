@@ -40,8 +40,8 @@ export default function I18nSwitcher({
             <span className="whitespace-nowrap mr-2">
                 {t("i18nSwitcher.label")}
             </span>
-            {availableLocales.map((locale) => (
-                <>
+            {availableLocales.map((locale, i) => (
+                <span key={i}>
                     <button
                         key={locale}
                         className={`underline mr-2`}
@@ -53,7 +53,7 @@ export default function I18nSwitcher({
                         availableLocales[availableLocales.length - 1] && (
                         <span className="mr-2">|</span>
                     )}
-                </>
+                </span>
             ))}
         </div>
     );
