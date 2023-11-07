@@ -213,7 +213,7 @@ export default function Footer({
                         </div>
                     </div>
                     <div className="Subscribe border-y border-white border-opacity-20 mt-10 lg:mt-14 px-5 lg:px-0">
-                        <div className="page-container lg:px-0 Content py-8 grid lg:grid-cols-2 gap-8">
+                        <div className="page-container lg:px-0 Content py-8 flex flex-col gap-8">
                             <div className="Cta flex-col justify-start items-start gap-2 inline-flex">
                                 <div className="Heading self-stretch text-gray-400 text-sm font-semibold  uppercase leading-tight tracking-wide">
                                     Subscribe to our newsletter
@@ -223,9 +223,17 @@ export default function Footer({
                                     from DDIA.
                                 </div>
                             </div>
-                            <div className="FootersSubscribeForm grid lg:grid-cols-2 gap-4">
+                            <div className="FootersSubscribeForm grid lg:grid-cols-4 w-full gap-4">
                                 <input
                                     placeholder="Name"
+                                    className="rounded-3xl px-4 bg-transparent border border-design-light-green h-12 placeholder:text-design-light-green text-white text-sm"
+                                ></input>
+                                <input
+                                    placeholder="Title"
+                                    className="rounded-3xl px-4 bg-transparent border border-design-light-green h-12 placeholder:text-design-light-green text-white text-sm"
+                                ></input>
+                                <input
+                                    placeholder="Organization"
                                     className="rounded-3xl px-4 bg-transparent border border-design-light-green h-12 placeholder:text-design-light-green text-white text-sm"
                                 ></input>
                                 <div className="block relative">
