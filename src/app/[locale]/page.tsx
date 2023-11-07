@@ -11,6 +11,11 @@ async function fetchData() {
     const { data: posts } = await getApi<TPost[]>(
         "/posts",
         {
+            filters: {
+                front_page: {
+                    $eq: true,
+                }
+            },
             pagination: {
                 limit: 3,
             },

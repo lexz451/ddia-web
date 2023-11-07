@@ -60,6 +60,9 @@ export async function fetchData(slug: string) {
         filters: {
             id: {
                 $ne: post?.id
+            },
+            front_page: {
+                $eq: true,
             }
         },
         pagination: {
