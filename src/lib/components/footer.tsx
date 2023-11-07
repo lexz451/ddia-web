@@ -32,41 +32,24 @@ export default function Footer({
                             </p>
                             <div className="SocialIcons flex gap-3 mt-10">
                                 <I18nLink
-                                    href="#"
+                                    href="https://www.linkedin.com/company/digital-democracy-institute-of-the-americas/?viewAsMember=true"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <LinkedInIcon className="w-6 h-6 fill-black"></LinkedInIcon>
                                 </I18nLink>
                                 <I18nLink
-                                    href="#"
+                                    href="https://twitter.com/DDIAmericas"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <XIcon className="w-5 h-5 fill-black"></XIcon>
                                 </I18nLink>
                                 <I18nLink
-                                    href="#"
-                                    className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
-                                >
-                                    <MediumIcon className="w-6 h-6 fill-black"></MediumIcon>
-                                </I18nLink>
-                                <I18nLink
-                                    href="#"
+                                    href="https://www.facebook.com/profile.php?id=61552925446237"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <FacebookIcon className="w-6 h-6 fill-black"></FacebookIcon>
                                 </I18nLink>
-                                <I18nLink
-                                    href="#"
-                                    className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
-                                >
-                                    <YoutubeIcon className="w-6 h-6 fill-black"></YoutubeIcon>
-                                </I18nLink>
-                                <I18nLink
-                                    href="#"
-                                    className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
-                                >
-                                    <InstagramIcon className="w-6 h-6 fill-black"></InstagramIcon>
-                                </I18nLink>
+
                             </div>
                         </div>
                         <div className="grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr] lg:gap-x-5 lg:gap-y-5 w-full">
