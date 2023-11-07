@@ -1,5 +1,5 @@
 import FacebookIcon from '@/lib/assets/facebook.svg';
-import InstagramIcon from '@/lib/assets/instagram.svg';
+// import InstagramIcon from '@/lib/assets/instagram.svg';
 import TelegramIcon from '@/lib/assets/telegram.svg';
 import XIcon from '@/lib/assets/x-twitter.svg';
 import WAIcon from '@/lib/assets/whatsapp.svg';
@@ -11,7 +11,7 @@ import LatestUpdates from '@/lib/components/latest-updates';
 import { getApi } from '@/lib/utils/api';
 import { notFound } from 'next/navigation';
 
-import CommentBox from '@/lib/components/comments/CommentBox';
+// import CommentBox from '@/lib/components/comments/CommentBox';
 import { fetchData } from './data';
 import I18nLink from '@/lib/components/I18nLink';
 
@@ -95,7 +95,7 @@ export default async function ArticlePage({
                             __html: content
                         }}>
                         </div>
-                        <CommentBox postId={post.id}></CommentBox>
+                        {/* <CommentBox postId={post.id}></CommentBox> */}
                     </div>
                     <aside className='flex flex-col gap-10'>
                         <div className="Rectangle204 h-96 bg-gradient-to-b from-emerald-300 to-emerald-300 rounded-2xl flex flex-col items-center justify-center">

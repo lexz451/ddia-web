@@ -10,7 +10,7 @@ import i18nConfig from "@/i18nConfig";
 import { dir } from "i18next";
 
 export const metadata: Metadata = {
-    title: "DdIA - Digital Democracy Institute of the Americas",
+    title: "DDIA - Digital Democracy Institute of the Americas",
     description: "Digital Democracy Institute of the Americas website",
 };
 
@@ -42,7 +42,7 @@ export default function RootLayout({
             <body className={`${avenir.variable}`}>
                 <Navbar locale={locale} />
                 {children}
-                <Footer />
+                <Footer locale={locale} />
                 <Suspense fallback={null}>
                     <ProgressBar
                         color="#015C6B"
