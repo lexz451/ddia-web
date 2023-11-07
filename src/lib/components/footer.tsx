@@ -214,16 +214,17 @@ export default function Footer({
                                 >
                                     Get involved
                                 </I18nLink>
-                                <I18nLink
+                                {/* <I18nLink
                                     href={"/faq"}
                                     className="Text text-gray-300 hover:text-design-light-green  text-sm font-normal  leading-normal"
                                 >
                                     FAQs
-                                </I18nLink>
+                                </I18nLink> */}
                                 <I18nLink
                                     href={"/team"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
+                                    Meet the team
                                 </I18nLink>
                             </div>
                         </div>
