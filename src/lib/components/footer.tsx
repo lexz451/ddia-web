@@ -212,7 +212,7 @@ export default function Footer({
                                     href={"/get-involved"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Get involved
+                                    Contact Us
                                 </I18nLink>
                                 {/* <I18nLink
                                     href={"/faq"}
