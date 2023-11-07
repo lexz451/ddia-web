@@ -8,6 +8,7 @@ async function fetchData() {
         "/our-teams",
         {
             populate: ["avatar"],
+            sort: ['order:asc']
         },
         {
             next: { tags: ["our-team"] },
@@ -17,6 +18,7 @@ async function fetchData() {
         "/boards",
         {
             populate: ["avatar"],
+            sort: ['order:asc']
         },
         {
             next: { tags: ["board"] },
@@ -26,6 +28,7 @@ async function fetchData() {
         "/advisories",
         {
             populate: ["avatar"],
+            sort: ['order:asc']
         },
         {
             next: { tags: ["advisory"] },
