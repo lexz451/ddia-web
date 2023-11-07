@@ -41,7 +41,7 @@ export default function I18nSwitcher({
                 {t("i18nSwitcher.label")}
             </span>
             {availableLocales.map((locale, i) => (
-                <span key={i}>
+                <span key={i} className="flex">
                     <button
                         key={locale}
                         className={`underline mr-2`}
