@@ -3,8 +3,8 @@ name: Production Build
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
 env:
     TAG: ${{ secrets.DOCKER_HUB_USER }}/ddia-web:latest
 jobs:
