@@ -10,8 +10,8 @@ export default function GetInvolved() {
     const [state, sendInfo] = useFormState(sendContactInfo, {
         message: "",
         error: false,
-        submitted: false
-    })
+        submitted: false,
+    });
 
     return (
         <section
@@ -39,10 +39,14 @@ export default function GetInvolved() {
                         U.S. Latinos or Latin America and where the two
                         intersect? Are you a policymaker working on tech policy?
                     </p>
-                    <p className="my-4 text-neutral-100 lg:text-lg">
-                        Sign up to receive our latest updates.
+                    <p className="mt-4 text-neutral-100 lg:text-lg">
+                        Contact us at{" "}
+                        <a className="underline" href="mailto:info@ddia.org">
+                            info@ddia.org
+                        </a>{" "}
+                        to explore partnerships, press inquiries or to learn
+                        more about our work.
                     </p>
-
                     <input
                         required
                         name="name"
@@ -87,13 +91,11 @@ export default function GetInvolved() {
                             {state?.message}
                         </p>
                     </div>
-                    <p className="mt-8 text-neutral-100 lg:text-lg">
-                        Contact us at{" "}
-                        <a className="underline" href="mailto:info@ddia.org">
-                            info@ddia.org
-                        </a>{" "}
-                        to explore partnerships or to learn more about our work.
+                    
+                    <p className="my-4 text-neutral-100 lg:text-lg">
+                        Sign up to receive our latest updates.
                     </p>
+
                 </form>
             </div>
         </section>
