@@ -57,8 +57,8 @@ dependencies:
     specifier: ^0.32.6
     version: 0.32.6
   swiper:
-    specifier: ^11.0.1
-    version: 11.0.1
+    specifier: ^11.0.3
+    version: 11.0.3
 
 devDependencies:
   '@svgr/webpack':
@@ -4632,8 +4632,8 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /swiper@11.0.1:
-    resolution: {integrity: sha512-pxVygCS5CVL2pRYSnv8RbjlOC/nN+JrAn5/JM0WBQzIWisv9FYe1s69KEB82TOeqh/T3zc9zks/gxctY6G/XMg==}
+  /swiper@11.0.3:
+    resolution: {integrity: sha512-MyV9ooQsriAe2EibeamqewLjgCfSvl2xoyratl6S3ln5BXDL4BzlO6mxcbLMCzQL6Z60b/u0AS/nKrepL0+TAg==}
     engines: {node: '>= 4.7.0'}
     dev: false
 
