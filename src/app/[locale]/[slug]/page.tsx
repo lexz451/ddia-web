@@ -3,6 +3,7 @@ import FacebookIcon from '@/lib/assets/facebook.svg';
 import TelegramIcon from '@/lib/assets/telegram.svg';
 import XIcon from '@/lib/assets/x-twitter.svg';
 import WAIcon from '@/lib/assets/whatsapp.svg';
+import NewsletterBanner from '@/lib/assets/banners/newsletter.png';
 
 import ServerImage from "@/lib/components/server-image";
 import { TPost } from "@/lib/utils/types";
@@ -14,6 +15,8 @@ import { notFound } from 'next/navigation';
 // import CommentBox from '@/lib/components/comments/CommentBox';
 import { fetchData } from './data';
 import I18nLink from '@/lib/components/I18nLink';
+import Image from 'next/image';
+import ContactUsBanner from '@/lib/components/ContactUsBanner';
 
 export async function generateStaticParams() {
     const { data: posts } = await getApi<TPost[]>(`/posts`, {
@@ -98,9 +101,9 @@ export default async function ArticlePage({
                         {/* <CommentBox postId={post.id}></CommentBox> */}
                     </div>
                     <aside className='flex flex-col gap-10'>
-                        <div className="Rectangle204 h-96 bg-gradient-to-b from-emerald-300 to-emerald-300 rounded-2xl flex flex-col items-center justify-center">
-                            <div className="Headline text-center text-black text-opacity-60 text-3xl font-semibold font-['Inter'] leading-9">Newsletter subscription banner</div>
-                        </div>
+                        <I18nLink href={'/'} className="Rectangle204 overflow-hidden bg-gradient-to-b from-emerald-300 to-emerald-300 rounded-2xl flex flex-col items-center justify-center">
+                            <Image src={NewsletterBanner} alt='Newsletter' className='hover:scale-105 transition-transform duration-300'></Image>
+                        </I18nLink>
                         <div className='sticky top-24 flex flex-col'>
                             <div>
                                 <div className="IntroductoryText border-b border-neutral-800 mb-5 pb-5 text-neutral-800 text-xl font-semibold leading-3">What We Are Reading</div>
@@ -138,12 +141,8 @@ export default async function ArticlePage({
                     </aside>
                 </div>
             </main>
-            <footer className="page-container flex flex-col gap-10 mb-10 pb-footer">
-                <div className="flex w-full my-10 h-80 rounded-3xl bg-gradient-to-b from-design-light-green to-gray-100">
-                    <h1 className="m-auto font-[Inter] font-semibold text-5xl text-gray-500">
-                        Banner
-                    </h1>
-                </div>
+            <footer className="page-container flex flex-col gap-10 mb-20 pb-footer">
+                <ContactUsBanner></ContactUsBanner>
                 <LatestUpdates posts={latestPosts}></LatestUpdates>
             </footer>
         </article>

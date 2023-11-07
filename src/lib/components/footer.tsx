@@ -125,7 +125,7 @@ export default function Footer({
                                     href={"/our-work#capacity-building"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Capacity Building
+                                    Capacity-Building
                                 </I18nLink>
                                 <ul className="list-disc pl-6 text-design-light-green w-full">
                                     <li>

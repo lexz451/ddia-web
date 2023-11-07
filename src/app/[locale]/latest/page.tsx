@@ -1,6 +1,7 @@
 import Filters from "@/lib/components/filters";
 import { TAGS, fetchData } from "./data";
 import LoadMoreWrapper from "./load-more";
+import ContactUsBanner from "@/lib/components/ContactUsBanner";
 
 
 export default async function LatestUpdates({
@@ -26,11 +27,7 @@ export default async function LatestUpdates({
       </section>
 
       <section className="pb-footer mb-20">
-        <div className="flex w-full my-10 h-80 rounded-3xl bg-gradient-to-b from-design-light-green to-gray-100">
-          <h1 className="m-auto font-[Inter] font-semibold text-5xl text-gray-500">
-            Banner
-          </h1>
-        </div>
+        <ContactUsBanner></ContactUsBanner>
       </section>
     </main>
   );

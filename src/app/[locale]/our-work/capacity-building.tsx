@@ -25,7 +25,7 @@ export default function CapacityBuilding({
                 <div className="flex flex-col items-center">
                     <IndicatorIcon className="fill-white w-4 h-4"></IndicatorIcon>
                     <div className="Headline mt-10 text-center text-design-light-yellow text-4xl lg:text-6xl font-extrabold  leading-10">
-                        Capacity Building
+                        Capacity-Building
                     </div>
                     <div className="IntroductoryText mt-8 max-w-prose text-center text-stone-50 text-lg font-normal  leading-normal">
                         DDIA is working to strengthen a healthier internet by
