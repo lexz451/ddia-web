@@ -15,6 +15,10 @@ interface ApiResponse<T> {
 
 interface ApiOptions extends RequestInit {
     cache?: 'default' | 'no-cache' | 'reload' | 'force-cache' | 'only-if-cached';
+    next?: {
+        revalidate?: number;
+        tags: string[];
+    }
 }
 
 async function fetchApi<T>(url: string, params: { [key: string]: any } = {}, options?: ApiOptions): Promise<ApiResponse<T>> {
@@ -29,8 +33,15 @@ async function fetchApi<T>(url: string, params: { [key: string]: any } = {}, opt
         'Authorization': `bearer ${process.env.API_TOKEN}`,
         ...(options?.headers || {}),
     }
-    const { cache, ...fetchOptions } = options || {};
-    const response = await fetch(apiUrl, { ...fetchOptions, cache, headers });
+    const { cache, next } = options || {};
+
+    const nextOptions = {
+        ...next,
+        revalidate: next?.revalidate || 60,
+    }
+
+    // @ts-ignore
+    const response = await fetch(apiUrl, { next: nextOptions, cache, headers });
     if (!response.ok) {
         throw new Error(`Failed to fetch API: ${response.status} ${response.statusText}`);
     }
