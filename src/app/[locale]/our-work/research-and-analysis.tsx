@@ -158,7 +158,7 @@ export default function ResearchAndAnalysis({
                     <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
                 </div>
                 <div className="IntroductoryText max-w-prose text-center text-neutral-800 text-lg font-normal leading-relaxed">
-                    DDIA and U.S uses social listening, media monitoring, and
+                    DDIA uses social listening, media monitoring, and
                     OSINT techniques to shed light on how Latino communities are
                     exposed to and targeted with information within platforms,
                     messaging apps, and websites across the U.S. and Latin

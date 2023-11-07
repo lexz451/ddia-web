@@ -8,6 +8,7 @@ import { buildPostsQuery } from "./data";
 import IndicatorIcon from "@/lib/assets/indicator.svg";
 import { parsePostDate } from "@/lib/utils/helpers";
 import I18nLink from "@/lib/components/I18nLink";
+import { t } from "i18next";
 
 function PostItem({ post }: { post: TPost }) {
     return (
@@ -59,7 +60,7 @@ function PostItem({ post }: { post: TPost }) {
                     >
                         <IndicatorIcon className="fill-design-yellow mr-2"></IndicatorIcon>{" "}
                         <span className="leading-none text-design-green underline text-sm font-bold">
-                            Read More
+                            {t("read-more")}
                         </span>
                     </I18nLink>
                 </div>

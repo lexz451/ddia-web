@@ -3,8 +3,7 @@ import { TPost } from "@/lib/utils/types";
 import ServerImage from "@/lib/components/server-image";
 import I18nLink from "@/lib/components/I18nLink";
 
-
-export default function Policy({ policy }: { policy: TPost[] }) {
+export default function Policy({ policy, t }: { policy: TPost[]; t: any }) {
     return (
         <section
             id="policy"
@@ -18,23 +17,18 @@ export default function Policy({ policy }: { policy: TPost[] }) {
                     </div>
                     <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-normal">
                         <p className="mb-4">
-                            DdIA is working to{" "}
-                            <b>
-                                improve institutional decision-making by
-                                anchoring policies to the needs of Latinos and
-                                by centering US Latino and Latin American voices
-                                in discussions
-                            </b>{" "}
-                            that have been traditionally siloed or dominated by
-                            the US and Europe.
+                            DDIA is working to improve institutional
+                            decision-making by anchoring policies to the needs
+                            of Latinos and by centering U.S. Latino and Latin
+                            American voices in discussions that have been
+                            traditionally siloed or dominated by the U.S. and
+                            Europe.
                         </p>
                         <p>
-                            Many policymakers are at the cusp of implementing
-                            regulations and navigating the risks - with limited
-                            discussion across disciplines and borders. We inform
-                            policy by convening and working with organizations
-                            and governments to connect efforts, share best
-                            practices and collaborate on joint initiatives.
+                            We inform policy by convening and working with
+                            organizations and governments to connect efforts,
+                            share best practices and collaborate on joint
+                            initiatives.
                         </p>
                     </div>
 
@@ -53,7 +47,10 @@ export default function Policy({ policy }: { policy: TPost[] }) {
                                         />
                                     )}
                                 </I18nLink>
-                                <I18nLink href={`${upd.platform_url}`} className="mt-2 mb-4 text-xl font-semibold tracking-tight text-design-dark-green">
+                                <I18nLink
+                                    href={`${upd.platform_url}`}
+                                    className="mt-2 mb-4 text-xl font-semibold tracking-tight text-design-dark-green"
+                                >
                                     {upd.title}
                                 </I18nLink>
                                 <h4 className="tracking-tighter text-gray-500 line-clamp-3">
@@ -76,14 +73,17 @@ export default function Policy({ policy }: { policy: TPost[] }) {
                                         className="pl-2 text-sm font-bold underline text-design-green"
                                         href={`/${upd.slug}`}
                                     >
-                                        Read more
+                                        {t("read-more")}
                                     </I18nLink>
                                 </div>
                             </div>
                         ))}
                     </div>
                     <div className="flex justify-center items-center mt-10">
-                        <I18nLink href={`/latest?tag=policy`} className="r-btn border-none text-white bg-design-green mt-10">
+                        <I18nLink
+                            href={`/latest?tag=policy`}
+                            className="r-btn border-none text-white bg-design-green mt-10"
+                        >
                             See all
                         </I18nLink>
                     </div>
