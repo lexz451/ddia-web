@@ -90,7 +90,7 @@ export default function OurWork({
                         href={"/our-work"}
                         className="r-btn rounded-3xl border-none text-white bg-design-green"
                     >
-                        More details
+                        {t('more-details')}
                     </I18nLink>
                 </div>
             </div>
@@ -129,7 +129,7 @@ export default function OurWork({
                                         href={"/our-work#research-and-analysis"}
                                         className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                     >
-                                        Read more
+                                        {t("read-more")}
                                     </I18nLink>
                                 </div>
                             </div>
@@ -162,7 +162,7 @@ export default function OurWork({
                                         }
                                         className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                     >
-                                        Read more
+                                        {t("read-more")}
                                     </I18nLink>
                                 </div>
                             </div>
@@ -193,7 +193,7 @@ export default function OurWork({
                                         href={"/our-work#capacity-building"}
                                         className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                     >
-                                        Read more
+                                        {t("read-more")}
                                     </I18nLink>
                                 </div>
                             </div>
@@ -224,7 +224,7 @@ export default function OurWork({
                                         href={"/our-work#policy"}
                                         className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                     >
-                                        Read more
+                                        {t("read-more")}
                                     </I18nLink>
                                 </div>
                             </div>
@@ -245,7 +245,7 @@ export default function OurWork({
                                     href={"/our-work"}
                                     className="text-white border-none r-btn rounded-3xl bg-design-green"
                                 >
-                                    More details
+                                    {t('more-details')}
                                 </I18nLink>
                             </div>
                         </div>
@@ -274,7 +274,7 @@ export default function OurWork({
                                     href={"/our-work#research-and-analysis"}
                                     className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                 >
-                                    Read more
+                                    {t("read-more")}
                                 </I18nLink>
                             </div>
                         </div>
@@ -303,7 +303,7 @@ export default function OurWork({
                                     href={"/our-work#reports-and-publications"}
                                     className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                 >
-                                    Read more
+                                    {t("read-more")}
                                 </I18nLink>
                             </div>
                         </div>
@@ -332,7 +332,7 @@ export default function OurWork({
                                     href={"/our-work#capacity-building"}
                                     className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                 >
-                                    Read more
+                                    {t("read-more")}
                                 </I18nLink>
                             </div>
                         </div>
@@ -361,7 +361,7 @@ export default function OurWork({
                                     href={"/our-work#policy"}
                                     className="Heading ml-2 text-design-green underline text-sm font-bold font-avenir leading-loose"
                                 >
-                                    Read more
+                                   {t("read-more")}
                                 </I18nLink>
                             </div>
                         </div>

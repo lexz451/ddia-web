@@ -249,7 +249,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                 className="group inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 pb-2"
                                             >
                                                 <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
-                                                    Capacity Building
+                                                    Capacity-Building
                                                 </div>
                                                 <div className="flex items-center justify-center">
                                                     <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
@@ -464,7 +464,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                         className="group inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 py-2"
                                     >
                                         <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
-                                            Capacity Building
+                                            Capacity-Building
                                         </div>
                                         <div className="flex items-center justify-center">
                                             <ArrowCircleIcon className="w-8 h-8 stroke-[#6ABDC2]"></ArrowCircleIcon>

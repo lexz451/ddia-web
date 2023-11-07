@@ -1,3 +1,5 @@
+'use client';
+
 import Logo from "@/lib/assets/logo.svg";
 import FacebookIcon from "@/lib/assets/facebook.svg";
 import InstagramIcon from "@/lib/assets/instagram.svg";
@@ -7,9 +9,17 @@ import LinkedInIcon from "@/lib/assets/linked-in.svg";
 import MediumIcon from "@/lib/assets/medium.svg";
 import YoutubeIcon from "@/lib/assets/yt.svg";
 import I18nLink from "./I18nLink";
+import useI18n from "../hooks/useI18n";
 
 
-export default function Footer() {
+export default function Footer({
+    locale
+}: {
+    locale: string;
+}) {
+
+    const { t } = useI18n(locale);
+
     return (
         <footer className="lg:absolute bottom-0 lg:bottom-10 left-0 right-0 overflow-hidden">
             <div className="lg:page-container">
@@ -18,47 +28,28 @@ export default function Footer() {
                         <div className="lg:mr-10">
                             <Logo className="w-24 h-16 -ml-1"></Logo>
                             <p className="IntroductoryText  mt-8 leading-normal text-sm text-white">
-                                The Digital Democracy Institute of the Americas
-                                (DDIA) is a fiscally sponsored project of Equis
-                                Institute, a 501(c)(3) organization.
+                                {t('footer.about')}
                             </p>
                             <div className="SocialIcons flex gap-3 mt-10">
                                 <I18nLink
-                                    href="#"
+                                    href="https://www.linkedin.com/company/digital-democracy-institute-of-the-americas/?viewAsMember=true"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <LinkedInIcon className="w-6 h-6 fill-black"></LinkedInIcon>
                                 </I18nLink>
                                 <I18nLink
-                                    href="#"
+                                    href="https://twitter.com/DDIAmericas"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <XIcon className="w-5 h-5 fill-black"></XIcon>
                                 </I18nLink>
                                 <I18nLink
-                                    href="#"
-                                    className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
-                                >
-                                    <MediumIcon className="w-6 h-6 fill-black"></MediumIcon>
-                                </I18nLink>
-                                <I18nLink
-                                    href="#"
+                                    href="https://www.facebook.com/profile.php?id=61552925446237"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <FacebookIcon className="w-6 h-6 fill-black"></FacebookIcon>
                                 </I18nLink>
-                                <I18nLink
-                                    href="#"
-                                    className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
-                                >
-                                    <YoutubeIcon className="w-6 h-6 fill-black"></YoutubeIcon>
-                                </I18nLink>
-                                <I18nLink
-                                    href="#"
-                                    className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
-                                >
-                                    <InstagramIcon className="w-6 h-6 fill-black"></InstagramIcon>
-                                </I18nLink>
+
                             </div>
                         </div>
                         <div className="grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr] lg:gap-x-5 lg:gap-y-5 w-full">
@@ -67,19 +58,19 @@ export default function Footer() {
                                     href={"/about-us"}
                                     className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2"
                                 >
-                                    About Us
+                                    {t('about-us')}
                                 </I18nLink>
                                 <I18nLink
                                     href={"/about-us#our-mission"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Mission / Vision
+                                    {t('mission-vision')}
                                 </I18nLink>
                                 <I18nLink
                                     href={"/about-us#our-approach"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Our Approach
+                                    {t('our-approach')}
                                 </I18nLink>
                                 <I18nLink
                                     href={"/about-us#core-strategies"}
@@ -134,7 +125,7 @@ export default function Footer() {
                                     href={"/our-work#capacity-building"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Capacity Building
+                                    Capacity-Building
                                 </I18nLink>
                                 <ul className="list-disc pl-6 text-design-light-green w-full">
                                     <li>
@@ -204,14 +195,14 @@ export default function Footer() {
                                     href={"/get-involved"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Get involved
+                                    Contact Us
                                 </I18nLink>
-                                <I18nLink
+                                {/* <I18nLink
                                     href={"/faq"}
                                     className="Text text-gray-300 hover:text-design-light-green  text-sm font-normal  leading-normal"
                                 >
                                     FAQs
-                                </I18nLink>
+                                </I18nLink> */}
                                 <I18nLink
                                     href={"/team"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"

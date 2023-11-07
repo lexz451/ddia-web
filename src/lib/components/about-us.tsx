@@ -19,7 +19,7 @@ export default function AboutUs({
             {t('home.about.subtitle')}
         </div>
         <I18nLink href={'/about-us'} className="Rectangle129 r-btn border-none bg-design-green text-white rounded-3xl">
-          More details
+          {t('more-details')}
         </I18nLink>
       </div>
     </div>

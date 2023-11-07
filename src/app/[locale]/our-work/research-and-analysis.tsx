@@ -90,26 +90,28 @@ export default function ResearchAndAnalysis({
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-20">
                     {research.publicOpinionResearch.map((post) => (
-                        <div key={post.slug} className="BlogSectionsPost overflow-hidden bg-white rounded-xl grid grid-rows-2">
+                        <div key={post.slug} className="BlogSectionsPost overflow-hidden bg-white rounded-xl h-auto grid grid-rows-2">
                             {
                                 post.feature_media && (
-                                    <ServerImage {...post.feature_media} className="relative"></ServerImage>
+                                   <I18nLink href={post.platform_url ? post.platform_url : `/${post.slug}`}>
+                                        <ServerImage {...post.feature_media} className="relative h-full w-full object-cover object-center"></ServerImage>
+                                   </I18nLink>
                                 )
                             }
-                            <div className="Content p-6 bg-white flex-col justify-center items-start gap-6 inline-flex">
+                            <div className="Content p-6 bg-white flex-col justify-start items-start gap-6 inline-flex">
                                 <div className="LeadingContent self-stretch flex-col justify-start items-start gap-2 inline-flex">
                                     <div className="TitleAndPreview self-stretch  flex-col justify-start items-start gap-3 flex">
-                                        <div className="Title self-stretch text-gray-900 text-xl font-semibold font-avenir leading-normal">
+                                        <I18nLink href={post.platform_url ? post.platform_url : `/${post.slug}`} className="Title self-stretch text-gray-900 text-xl font-semibold font-avenir leading-normal">
                                             {post.title}
-                                        </div>
+                                        </I18nLink>
                                     </div>
                                 </div>
                                 {
                                     post.authors?.length > 0 && (
-                                        <div className="BlogSectionsAvatarWithText justify-start items-center gap-3 inline-flex">
+                                        <div className="BlogSectionsAvatarWithText  mt-auto justify-start items-center gap-3 inline-flex">
                                            {
                                                   post.authors[0].avatar && (
-                                                    <ServerImage {...post.authors[0].avatar} className="Avatar w-10 h-10 bg-stone-100 rounded-full"></ServerImage>
+                                                    <ServerImage {...post.authors[0].avatar} className="Avatar w-10 h-10 bg-stone-100 rounded-full object-cover"></ServerImage>
                                                   )
                                            }
                                             <div className="Text flex-col justify-start items-start inline-flex">
@@ -123,17 +125,6 @@ export default function ResearchAndAnalysis({
                                         </div>
                                     )
                                 }
-                                {/* <div className="BlogSectionsAvatarWithText justify-start items-center gap-3 inline-flex">
-                                    <div className="Avatar w-10 h-10 bg-stone-100 rounded-full" />
-                                    <div className="Text flex-col justify-start items-start inline-flex">
-                                        <div className="Title text-gray-900 text-sm font-medium leading-tight">
-                                            Brenna Goyette
-                                        </div>
-                                        <div className="SupportingText text-gray-500 text-sm font-normal leading-tight">
-                                            Mar 10, 2020 · 4 min read
-                                        </div>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                     ))}
@@ -158,7 +149,7 @@ export default function ResearchAndAnalysis({
                     <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
                 </div>
                 <div className="IntroductoryText max-w-prose text-center text-neutral-800 text-lg font-normal leading-relaxed">
-                    DDIA and U.S uses social listening, media monitoring, and
+                    DDIA uses social listening, media monitoring, and
                     OSINT techniques to shed light on how Latino communities are
                     exposed to and targeted with information within platforms,
                     messaging apps, and websites across the U.S. and Latin

@@ -5,14 +5,21 @@ import Hero from "./hero";
 import Navigation from "./navigation";
 import Policy from "./policy";
 import { fetchData } from "./data";
+import initTranslations from "@/i18n";
 
-export default async function OurWorkPage() {
+export default async function OurWorkPage({
+    params: { locale },
+}: {
+    params: { locale: string };
+}) {
     const {
         research,
         reports,
         capacity,
         policy,
     } = await fetchData();
+
+    const { t } = await initTranslations(locale)
 
     return (
         <main className="bg-design-light lg:pt-[150px]">
@@ -25,7 +32,7 @@ export default async function OurWorkPage() {
             <CapacityBuilding
                 capacity={capacity}
             ></CapacityBuilding>
-            <Policy policy={policy}></Policy>
+            <Policy policy={policy} t={t}></Policy>
         </main>
     );
 }

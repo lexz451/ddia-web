@@ -2,6 +2,7 @@
 import { useRouter } from "@lexz451/next-nprogress";
 import { usePathname } from "next/navigation";
 import useI18n from "../hooks/useI18n";
+import i18nConfig from "@/i18nConfig";
 
 export default function I18nSwitcher({
     currentLocale,
@@ -11,6 +12,10 @@ export default function I18nSwitcher({
     const router = useRouter();
     const currentPathname = usePathname();
     const { t } = useI18n(currentLocale);
+
+    const availableLocales = i18nConfig.locales.filter(
+        (locale) => locale !== currentLocale
+    );
 
     const handleChange = (newLocale: string) => {
         // set cookie for next-i18n-router
@@ -35,14 +40,21 @@ export default function I18nSwitcher({
             <span className="whitespace-nowrap mr-2">
                 {t("i18nSwitcher.label")}
             </span>
-            <button
-                onClick={() =>
-                    handleChange(currentLocale == "en" ? "es" : "en")
-                }
-                className="underline"
-            >
-                {t(currentLocale == "en" ? "es" : "en")}
-            </button>
+            {availableLocales.map((locale, i) => (
+                <span key={i} className="flex">
+                    <button
+                        key={locale}
+                        className={`underline mr-2`}
+                        onClick={() => handleChange(locale)}
+                    >
+                        {t(`i18nSwitcher.${locale}`)}
+                    </button>
+                    {locale !==
+                        availableLocales[availableLocales.length - 1] && (
+                        <span className="mr-2">|</span>
+                    )}
+                </span>
+            ))}
         </div>
     );
 }

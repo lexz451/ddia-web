@@ -75,7 +75,7 @@ export default function Hero() {
                         <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] rotate-90"></ArrowCircleIcon>
                     </button>
                     <button
-                        aria-label="Capacity Building"
+                        aria-label="Capacity-Building"
                         onClick={() => scrollToSection("#capacity-building")}
                         className="bg-design-green group overflow-hidden relative px-8 py-2 lg:py-8 h-36 rounded-xl lg:rounded-3xl flex items-center"
                     >
