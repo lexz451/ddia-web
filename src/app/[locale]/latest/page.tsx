@@ -13,7 +13,7 @@ export default async function LatestUpdates({
   const { posts } = await fetchData({ tag, query: search });
 
   return (
-    <main className="page-container mt-[12rem]">
+    <main className="page-container mt-[150px]">
       <Filters tags={TAGS}></Filters>
 
       <section className="pt-10">

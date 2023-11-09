@@ -7,14 +7,20 @@ import { useEffect, useState } from "react";
 
 export default function SearchBar({
     onSearch,
+    queryParam,
+    placeholder,
+    autoFocus,
 }: {
     onSearch?: (query: string) => void;
+    queryParam?: string;
+    placeholder?: string;
+    autoFocus?: boolean;
 }) {
     const router = useRouter();
     const pathname = usePathname();
     const params = useSearchParams();
 
-    const searchParam = params.get("search") || "";
+    const searchParam = params.get(queryParam || "search") || "";
 
     const [searchQuery, setSearchQuery] = useState(searchParam);
 
@@ -23,8 +29,8 @@ export default function SearchBar({
     }, [params]);
 
     useEffect(() => {
-        setSearchQuery(params.get("search") || "");
-    }, [params]);
+        setSearchQuery(params.get(queryParam || "search") || "");
+    }, [params, queryParam]);
 
     function search(query: string) {
         if (onSearch) {
@@ -32,7 +38,7 @@ export default function SearchBar({
         } else {
             console.log("searching...");
             const params = new URLSearchParams();
-            params.set("search", query);
+            params.set(queryParam || "search", query);
             router.push(`${pathname}?${params.toString()}`);
         }
     }
@@ -40,7 +46,7 @@ export default function SearchBar({
     function clearSearch() {
         setSearchQuery("");
         const params = new URLSearchParams();
-        params.delete("search");
+        params.delete(queryParam || "search");
         router.push(`${pathname}?${params.toString()}`);
     }
 
@@ -49,7 +55,7 @@ export default function SearchBar({
     }
 
     return (
-        <div className="min-w-[250px]">
+        <div className="min-w-[200px]">
             <div
                 className={`group flex overflow-hidden relative ml-auto rounded-full bg-stone-100  outline-design-green outline-[1.5px] ${
                     !!searchQuery ? "outline" : "focus-within:outline"
@@ -57,9 +63,10 @@ export default function SearchBar({
             >
                 <div className="absolute flex h-full w-[80%] ">
                     <input
+                        autoFocus={autoFocus}
                         className={`w-full px-5 my-auto transition-opacity duration-300 bg-transparent outline-none opacity-100 cursor-pointer placeholder:italic group-focus-within:cursor-auto`}
                         type="text"
-                        placeholder="Insert your search"
+                        placeholder={placeholder || "Insert your search"}
                         value={searchQuery}
                         onKeyDown={(event) => {
                             if (event.key === "Enter") {

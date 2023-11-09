@@ -5,6 +5,7 @@ import LogoPinned from "@/lib/assets/logo-simple.svg";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 import IndicatorIcon from "@/lib/assets/indicator.svg";
 import GlobeIcon from "@/lib/assets/globe-alt.svg";
+import SearchIcon from "@/lib/assets/search.svg";
 import { Suspense, useEffect, useRef, useState } from "react";
 import useScroll from "../hooks/useScroll";
 import { usePathname } from "next/navigation";
@@ -85,7 +86,7 @@ export default function Navbar({ locale }: { locale: string }) {
     }, [scrollDirection, scrollPosition]);
 
     function onSearch(query: string) {
-        router.push(`/latest?search=${query}`);
+        router.push(`/search?q=${query}`);
     }
 
     return (
@@ -129,7 +130,7 @@ export default function Navbar({ locale }: { locale: string }) {
                             ></LogoPinned>
                         </I18nLink>
                     </div>
-                    <ul className="navbar-menu hidden lg:inline-flex mr-10">
+                    <ul className="navbar-menu hidden lg:inline-flex mr-4">
                         <li className="flex">
                             <I18nLink
                                 href={"/about-us"}
@@ -137,7 +138,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                     isAboutUs ? "active" : ""
                                 }`}
                             >
-                                <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
+                                <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
                                     <span>About us</span>
                                 </div>
@@ -151,7 +152,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                     isOurWork ? "active" : ""
                                 }`}
                             >
-                                <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
+                                <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
                                     <span>Our work</span>
                                 </div>
@@ -303,7 +304,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                     isTeam ? "active" : ""
                                 }`}
                             >
-                                <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
+                                <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
                                     <span>Meet the team</span>
                                 </div>
@@ -316,7 +317,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                     isLatest ? "active" : ""
                                 }`}
                             >
-                                <IndicatorIcon className="indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
+                                <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
                                     <span>Latest updates</span>
                                 </div>
@@ -324,7 +325,10 @@ export default function Navbar({ locale }: { locale: string }) {
                         </li>
                     </ul>
                     <div className="hidden lg:flex items-center gap-4">
-                        {/* <SearchIcon className="w-6 h-6"></SearchIcon> */}
+                        <div>
+                            {/* <SearchIcon className="w-6 h-6"></SearchIcon> */}
+                            <SearchBar placeholder="Search..." queryParam="q" onSearch={onSearch}></SearchBar>
+                        </div>
                         <div className="relative h-6">
                             <button
                                 onClick={() =>
@@ -367,7 +371,7 @@ export default function Navbar({ locale }: { locale: string }) {
             >
                 <div className="page-container mt-10">
                     <Suspense fallback={null}>
-                        <SearchBar onSearch={onSearch}></SearchBar>
+                        <SearchBar placeholder="Search..." onSearch={onSearch} queryParam="q"></SearchBar>
                     </Suspense>
                     <div className="mt-5 flex flex-col divide-design-cyan border-y-design-cyan border-y divide-y">
                         <div className="w-full flex items-center py-4">
@@ -384,7 +388,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                 <div className="w-full h-full flex items-center py-4">
                                     <IndicatorIcon className="fill-design-yellow mr-3"></IndicatorIcon>
                                     <I18nLink
-                                        href={"/about-us"}
+                                        href={"/our-work"}
                                         className="text-sm font-medium uppercase text-design-cyan leading-normal"
                                     >
                                         Our Work

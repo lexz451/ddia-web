@@ -99,7 +99,7 @@ export default function OurWork({
                     <Swiper
                         className="lg:hidden"
                         spaceBetween={50}
-                        slidesPerView={1}
+                        slidesPerView={1}                        
                         pagination={swiperPagination}
                         modules={[Pagination]}
                     >
@@ -136,7 +136,7 @@ export default function OurWork({
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="w-fit max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
-                                <ReportsIcon className="mb-10"></ReportsIcon>
+                                <ReportsIcon className="mb-10 w-14 h-14"></ReportsIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
                                     {t('home.our-work.reports.title')}
                                 </div>
@@ -169,7 +169,7 @@ export default function OurWork({
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="w-fit max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
-                                <SearchIcon className="mb-10"></SearchIcon>
+                                <CapacityIcon className="mb-10 w-14 h-14"></CapacityIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
                                     {t('home.our-work.capacity.title')}
                                 </div>
@@ -199,8 +199,8 @@ export default function OurWork({
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="w-fit max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
-                                <SearchIcon className="mb-10"></SearchIcon>
+                            <div className="w-fit h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
+                                <PolicyIcon className="mb-10 w-14 h-14"></PolicyIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
                                     {t('home.our-work.policy.title')}
                                 </div>
