@@ -92,7 +92,7 @@ export default function CapacityBuilding({
                     >
                         <div className="w-full lg:flex-1 h-[1px] bg-design-green bg-opacity-50"></div>
                         <div className="IntroductoryText text-center text-design-green text-3xl font-extrabold  leading-7">
-                            Resources & Tools
+                            External Resources
                         </div>
                         <div className="w-full lg:flex-1 h-[1px] bg-design-green bg-opacity-50"></div>
                     </div>
@@ -180,12 +180,12 @@ export default function CapacityBuilding({
                             )
                         )}
                     </div>
-                    <div
+                    {/* <div
                         id="additional-resources"
                         className="IntroductoryText mt-20 text-center text-gray-900 text-xl font-extrabold  uppercase leading-7"
                     >
                         Additional Resources
-                    </div>
+                    </div> */}
                     <div className="flex flex-col gap-5 w-full mt-10">
                         {capacity.resourcesAndTools.resources.map((post) => (
                             <I18nLink
