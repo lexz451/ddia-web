@@ -39,13 +39,8 @@ export default function GetInvolved() {
                         U.S. Latinos or Latin America and where the two
                         intersect? Are you a policymaker working on tech policy?
                     </p>
-                    <p className="mt-4 text-neutral-100 lg:text-lg">
-                        Contact us at{" "}
-                        <a className="underline" href="mailto:info@ddia.org">
-                            info@ddia.org
-                        </a>{" "}
-                        to explore partnerships, press inquiries or to learn
-                        more about our work.
+                    <p className="mt-4 text-neutral-100 lg:text-lg leading-normal">
+                        Contact us at <a className="underline" href="mailto:info@ddia.org">info@ddia.org</a> with press inquiries, to explore partnerships, and to learn more about our work.
                     </p>
                     <input
                         required
