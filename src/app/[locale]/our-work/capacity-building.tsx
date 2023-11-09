@@ -60,7 +60,7 @@ export default function CapacityBuilding({
                             >
                                 <div className="flex-1">
                                     <div className="SupportingText text-sky-900 text-base font-normal leading-tight">
-                                        {parsePostDate(post.createdAt)}
+                                        {parsePostDate(post.created_date)}
                                     </div>
                                     <div className="block mt-1 text-gray-900 text-xl lg:text-2xl font-extrabold ">
                                         {post.title}
@@ -161,7 +161,7 @@ export default function CapacityBuilding({
                                                     </div>
                                                     <div className="SupportingText mt-1 text-gray-500 text-sm font-normal leading-tight">
                                                         {parsePostDate(
-                                                            post.publish_date
+                                                            post.created_date
                                                         )}{" "}
                                                         {!post.platform_url && (
                                                             <>
@@ -196,7 +196,7 @@ export default function CapacityBuilding({
                             >
                                 <div>
                                     <div className="SupportingText text-sky-900 text-base font-normal leading-tight">
-                                        {parsePostDate(post.createdAt)}
+                                        {parsePostDate(post.created_date)}
                                     </div>
                                     <div className="Headline mt-1 text-gray-900 text-xl lg:text-2xl font-extrabold ">
                                         {post.title}

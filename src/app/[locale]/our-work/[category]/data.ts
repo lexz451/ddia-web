@@ -37,7 +37,7 @@ export function buildPostsQuery(category: string, tag?: string, query?: string) 
         pagination: {
             limit: 6,
         },
-        sort: ['publish_date:desc']
+        sort: ['created_date:desc']
     
     }
 }

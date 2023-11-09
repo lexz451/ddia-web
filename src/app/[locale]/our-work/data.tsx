@@ -21,7 +21,7 @@ export async function fetchData() {
         pagination: {
             limit: 3,
         },
-        sort: ['publish_date:desc']
+        sort: ['created_date:asc']
     }, {
         next: { tags: ["post"] },
     });
@@ -44,7 +44,7 @@ export async function fetchData() {
         pagination: {
             limit: 6,
         },
-        sort: ['publish_date:desc']
+        sort: ['created_date:desc']
     }, {
         next: { tags: ["post"] },
     });
@@ -72,7 +72,7 @@ export async function fetchData() {
         pagination: {
             limit: 3,
         },
-        sort: ['publish_date:desc']
+        sort: ['created_date:desc']
     }, {
         next: { tags: ["post"] },
     })
@@ -105,7 +105,7 @@ export async function fetchData() {
         pagination: {
             limit: 3,
         },
-        sort: ['publish_date:desc']
+        sort: ['created_date:desc']
     }, {
         next: { tags: ["post"] },
     })
@@ -138,7 +138,7 @@ export async function fetchData() {
         pagination: {
             limit: 3,
         },
-        sort: ['publish_date:desc']
+        sort: ['created_date:desc']
     }, {
         next: { tags: ["post"] },
     })
@@ -161,7 +161,7 @@ export async function fetchData() {
         pagination: {
             limit: 3,
         },
-        sort: ['publish_date:desc']
+        sort: ['created_date:desc']
     }, {
         next: { tags: ["post"] },
     })

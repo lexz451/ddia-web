@@ -46,7 +46,7 @@ function PostItem({ post }: { post: TPost }) {
                             -
                         </span>
                         <h5 className="font-medium text-xs text-neutral-400 leading-3">
-                            {parsePostDate(post.createdAt)}
+                            {parsePostDate(post.created_date)}
                         </h5>
                     </div>
 

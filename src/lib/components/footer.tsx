@@ -207,7 +207,7 @@ export default function Footer({
                                     href={"/team"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Meet the team
+                                    Meet the Team
                                 </I18nLink>
                             </div>
                         </div>

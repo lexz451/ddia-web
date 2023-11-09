@@ -27,6 +27,7 @@ export default function ResearchAndAnalysis({
         publicOpinionResearch: TPost[];
     };
 }) {
+
     return (
         <section
             id="research-and-analysis"
@@ -119,7 +120,7 @@ export default function ResearchAndAnalysis({
                                                     {post.authors[0].name}
                                                 </div>
                                                 <div className="SupportingText text-gray-500 text-sm font-normal leading-tight">
-                                                    {parsePostDate(post.publish_date)} · {parseReadTime(post.content)}
+                                                    {parsePostDate(post.created_date)} · {parseReadTime(post.content)}
                                                 </div>
                                             </div>
                                         </div>

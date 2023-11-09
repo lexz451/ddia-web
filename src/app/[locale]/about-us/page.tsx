@@ -22,10 +22,10 @@ export default function AboutUs() {
             <div className="flex w-full h-full lg:py-8 lg:px-12 lg:bg-design-light rounded-2xl">
               <div className="m-auto">
                 <h1 className="text-4xl lg:text-5xl text-design-green font-avenir font-semibold pb-8">
-                  Our mission
+                  Our Mission
                 </h1>
                 <p className="text-base text-design-dark font-avenir min-w-prose">
-                  The Digital Democracy Institute of the Americas (DIA) is
+                  The Digital Democracy Institute of the Americas (DDIA) is
                   bringing together insights and actors across the hemisphere to
                   shape a more participatory, inclusive, and resilient digital
                   democracy. We apply research at the intersection of
@@ -41,7 +41,7 @@ export default function AboutUs() {
             <div className="flex w-full h-full lg:py-8 lg:px-12 lg:bg-design-light rounded-2xl">
               <div className="m-auto">
                 <h1 className="text-4xl lg:text-5xl text-design-green font-avenir font-semibold pb-8">
-                  Our vision
+                  Our Vision
                 </h1>
                 <p className="text-base text-design-dark font-avenir min-w-prose">
                   We envision a world where Latinos are surrounded by
@@ -95,7 +95,7 @@ export default function AboutUs() {
         <div className="page-container">
           <div className="flex flex-col lg:items-center mx-auto pb-footer mb-12 lg:max-w-[80%]">
             <h1 className="text-4xl lg:text-5xl text-design-green font-semibold pb-8">
-              Core strategies
+              Core Strategies
             </h1>
             <p className="text-base text-design-dark lg:text-center font-avenir mb-16 max-w-prose">
               In our effort to foster an online information environment that is

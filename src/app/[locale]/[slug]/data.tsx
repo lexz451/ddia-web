@@ -69,7 +69,7 @@ export async function fetchData(slug: string) {
             limit: 3
         },
         populate: ["feature_media", "post_type", "authors"],
-        sort: ['publish_date:desc']
+        sort: ['created_date:desc']
     }, {
         next: { tags: ["post"] }
     });
