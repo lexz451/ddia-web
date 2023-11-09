@@ -55,7 +55,7 @@ function PostItem({ post }: { post: TPost }) {
                             {author?.name}
                         </div>
                         <div className="text-gray-500 text-sm font-normal leading-tight">
-                            {parsePostDate(post?.createdAt)}
+                            {parsePostDate(post?.created_date)}
                             <span className="mx-1">·</span>
                             {parseReadTime(post?.content)}
                         </div>

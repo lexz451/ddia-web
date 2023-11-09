@@ -27,7 +27,7 @@ const postParams = QueryString.stringify({
     pagination: {
         limit: 6,
     },
-    sort: ["publish_date:desc"],
+    sort: ["created_date:desc"],
 });
 
 function PostItem({ post }: { post: TPost }) {
@@ -75,7 +75,7 @@ function PostItem({ post }: { post: TPost }) {
                             {post.authors?.[0]?.name}
                         </div>
                         <div className="SupportingText text-gray-500 text-sm font-normal  leading-tight">
-                            {parsePostDate(post.publish_date)}
+                            {parsePostDate(post.created_date)}
                             <span className="mx-2">·</span>
                             {parseReadTime(post?.content)}
                         </div>

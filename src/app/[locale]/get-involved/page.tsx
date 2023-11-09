@@ -70,15 +70,13 @@ export default function ContactUs() {
                             >
                                 <XIcon className="w-5 h-5 fill-design-light"></XIcon>
                             </I18nLink>
-                            
+
                             <I18nLink
                                 href="https://www.facebook.com/profile.php?id=61552925446237"
                                 className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
                             >
                                 <FacebookIcon className="w-6 h-6 fill-design-light"></FacebookIcon>
                             </I18nLink>
-                            
-                            
                         </div>
                     </div>
                 </section>
@@ -96,8 +94,8 @@ export default function ContactUs() {
                                 Our Newsletter
                             </div>
                             <p className="IntroductoryText mt-10 text-neutral-100 md:text-lg font-light font-inter leading-relaxed">
-                                Sign up to recieve our latest research,
-                                narrative analysis reports, and even updates
+                                Sign up to receive our latest research,
+                                narrative analysis reports, and updates.
                             </p>
 
                             <input
@@ -112,7 +110,7 @@ export default function ContactUs() {
                                 placeholder="Title"
                                 className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                             ></input>
-                           
+
                             <div className="block relative w-full mt-4">
                                 <input
                                     placeholder="Email"
@@ -127,7 +125,6 @@ export default function ContactUs() {
                 </section>
 
                 <section className="mb-32 px-4 pb-footer">
-
                     <LogoCircle className="w-20 h-20 mx-auto"></LogoCircle>
 
                     <h1 className="font-avenir text-center w-fit mt-10 mx-auto font-semibold text-2xl lg:text-5xl text-design-green mb-4">
@@ -136,9 +133,8 @@ export default function ContactUs() {
 
                     <p className="max-w-prose text-center font-avenir mx-auto mt-5">
                         Thank you for your interest in joining our team! At this
-                        time, we don&apos;t have any job offers available. However,
-                        please stay tuned for future opportunities to become a
-                        part of our mission-driven organization.
+                        time, we do not have any open roles available. Please
+                        check back for future opportunities.
                     </p>
 
                     {/* {jobPositions.map((job) => {

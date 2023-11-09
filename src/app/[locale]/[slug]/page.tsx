@@ -66,7 +66,7 @@ export default async function ArticlePage({
                                 <span className='mx-2'>-</span>
                                 <span className="text-neutral-400 text-xs font-semibold">
                                     {
-                                        parsePostDate(post.publish_date)
+                                        parsePostDate(post.created_date)
                                     }
                                 </span>
                             </div>
@@ -121,7 +121,7 @@ export default async function ArticlePage({
                                             </span>
                                             <span className='mx-2'>-</span>
                                             <span className="text-neutral-400 text-xs font-semibold leading-3">
-                                                {parsePostDate(post.publish_date)}
+                                                {parsePostDate(post.created_date)}
                                             </span>
                                         </div>
                                     </div>

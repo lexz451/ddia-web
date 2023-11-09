@@ -30,7 +30,7 @@ export default function Hero() {
         <section className="page-container gradient-green-page lg:bg-none pt-[80px] lg:pt-0">
             <div className="flex flex-col items-center lg:px-10 py-20 lg:gradient-green-container rounded-3xl">
                 <div className="text-center text-design-green text-4xl lg:text-6xl font-extrabold  leading-10">
-                    Our work
+                    Our Work
                 </div>
                 <div className="mt-5 lg:mt-10 text-center text-design-green text-lg font-normal leading-normal">
                     Our work is explicitly Latino, connects disciplines and
@@ -86,7 +86,7 @@ export default function Hero() {
                         ></Image>
                         <div className="overlay absolute transition-all duration-300 group-hover:bg-black group-hover:bg-opacity-50 bg-design-green  top-0 left-0 w-full h-full"></div>
                         <div className="text-left relative z-10 flex-1 text-white text-2xl lg:text-3xl font-extrabold  leading-9">
-                            Capacity <br></br> Building
+                            Capacity-Building
                         </div>
                         <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] rotate-90"></ArrowCircleIcon>
                     </button>

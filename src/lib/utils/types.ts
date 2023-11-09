@@ -66,4 +66,5 @@ export type TPost = {
     tags: any[];
     categories: any[];
     platform_url: string;
+    created_date: string;
 };
