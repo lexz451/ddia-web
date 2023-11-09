@@ -14,9 +14,9 @@ export default async function OurWorkPage({
     searchParams
 }: { params: { category: string }, searchParams: any }) {
 
-    const { search, tag } = searchParams;
+    const { q, tag } = searchParams;
 
-    const { posts, tags } = await fetchData(category, tag, search);
+    const { posts, tags } = await fetchData(category, tag, q);
 
     return (
         <main>
@@ -30,7 +30,7 @@ export default async function OurWorkPage({
                     <LoadMoreWrapper
                         category={category}
                         tag={tag}
-                        query={search}
+                        query={q}
                         posts={posts.data} 
                         total={posts.total} 
                         className="grid lg:grid-cols-3 gap-10"></LoadMoreWrapper>

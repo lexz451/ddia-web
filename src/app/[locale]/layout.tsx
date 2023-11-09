@@ -11,7 +11,20 @@ import { dir } from "i18next";
 
 export const metadata: Metadata = {
     title: "DDIA - Digital Democracy Institute of the Americas",
-    description: "Digital Democracy Institute of the Americas website",
+    description: "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
+    robots: {
+        follow: true,
+        index: true,
+    },
+    publisher: "DDIA",
+    alternates: {
+        canonical: `${process.env.SITE_HOST}/en`,
+        languages: {
+            'en-US': `${process.env.SITE_HOST}/en`,
+            'es-ES': `${process.env.SITE_HOST}/es`,
+            'pt-BR': `${process.env.SITE_HOST}/pt`,
+        }
+    }
 };
 
 export function generateStaticParams() {

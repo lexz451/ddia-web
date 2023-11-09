@@ -1,6 +1,7 @@
 import SearchBar from "@/lib/components/search-bar";
 import LoadMoreWrapper from "./load-more";
 import { fetchData } from "./data";
+import SearchWrapper from "./search";
 
 export default async function SearchPage({
     searchParams,
@@ -13,10 +14,15 @@ export default async function SearchPage({
 
     return (
         <main className="page-container mt-[150px]">
-            <section className="">
-                <SearchBar queryParam="q" autoFocus></SearchBar>
-            </section>
-            <section className="mt-10">
+            <SearchWrapper q={q}></SearchWrapper>
+            {posts?.total > 0 && (
+                <section className="mt-5 ml-5">
+                    <small className="text-sm text-gray-500 font-bold">
+                        Showing {posts?.total} results for &quot;{q}&quot;
+                    </small>
+                </section>
+            )}
+            <section className="mt-5">
                 {posts?.total == 0 && !q && (
                     <div className="text-center my-20">
                         <h1 className="text-2xl font-bold">
@@ -25,7 +31,7 @@ export default async function SearchPage({
                     </div>
                 )}
                 {posts?.total === 0 && q && (
-                    <div className="text-center">
+                    <div className="text-center my-20">
                         <h1 className="text-2xl font-bold">
                             No results found for &quot;{q}&quot;
                         </h1>

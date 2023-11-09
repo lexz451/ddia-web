@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import i18nConfig from "@/i18nConfig";
 import { useRouter } from "@lexz451/next-nprogress";
@@ -12,11 +12,18 @@ export default function useI18nRouter() {
     );
     const hrefLocale = currentLocale ? `/${currentLocale}` : "";
 
+    const startsWithLocale = (url: string) => {
+        return url.startsWith(hrefLocale);
+    };
+
     const push = (url: string) => {
-       return router.push(`${hrefLocale}${url == "/" ? "" : url}`)
-    }
+        if (startsWithLocale(url)) {
+            return router.push(url);
+        }
+        return router.push(`${hrefLocale}${url == "/" ? "" : url}`);
+    };
 
     return {
-        push
-    }
+        push,
+    };
 }

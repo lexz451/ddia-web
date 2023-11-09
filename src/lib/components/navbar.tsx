@@ -326,8 +326,7 @@ export default function Navbar({ locale }: { locale: string }) {
                     </ul>
                     <div className="hidden lg:flex items-center gap-4">
                         <div>
-                            {/* <SearchIcon className="w-6 h-6"></SearchIcon> */}
-                            <SearchBar placeholder="Search..." queryParam="q" onSearch={onSearch}></SearchBar>
+                            <SearchBar autoClean={true} placeholder="Search..." onSearch={onSearch}></SearchBar>
                         </div>
                         <div className="relative h-6">
                             <button
@@ -371,7 +370,7 @@ export default function Navbar({ locale }: { locale: string }) {
             >
                 <div className="page-container mt-10">
                     <Suspense fallback={null}>
-                        <SearchBar placeholder="Search..." onSearch={onSearch} queryParam="q"></SearchBar>
+                        <SearchBar placeholder="Search..." onSearch={onSearch}></SearchBar>
                     </Suspense>
                     <div className="mt-5 flex flex-col divide-design-cyan border-y-design-cyan border-y divide-y">
                         <div className="w-full flex items-center py-4">
