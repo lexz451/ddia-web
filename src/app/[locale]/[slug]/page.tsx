@@ -49,7 +49,7 @@ export default async function ArticlePage({
 
     return (
         <>
-            {/* <ArticleJsonLd
+            <ArticleJsonLd
                 useAppDir={true}
                 url={`${process.env.SITE_HOST}/${post.slug}`}
                 title={post.title}
@@ -63,14 +63,15 @@ export default async function ArticlePage({
                 publisherName="DDIA"
                 publisherLogo={`${process.env.SITE_HOST}/logo.png`}
                 isAccessibleForFree={true}
-            /> */}
+            />
             <article className="pt-[104px]">
                 <header className="flex flex-col">
                     {post.feature_media && (
                         <ServerImage
                             {...post.feature_media}
                             priority={true}
-                            className="h-[40vh] lg:h-[60vh] w-full object-cover"
+                            className="h-[40vh] lg:h-[60vh] w-full object-cover object-top"
+                            sizes="100vw"
                         ></ServerImage>
                     )}
                     <div className="page-container">

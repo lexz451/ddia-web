@@ -7,6 +7,7 @@ export default function SubmitButton() {
 
     return (
         <button
+            aria-label="Submit"
             type="submit"
             className={`absolute hover:bg-design-light-green transition-colors duration-300 ${pending ? 'bg-design-light-green' : 'bg-white'} rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center`}
         >

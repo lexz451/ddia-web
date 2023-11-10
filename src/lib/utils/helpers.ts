@@ -38,12 +38,18 @@ export function parsePostContent(content: string): string {
         image.classList.add('w-full');
         image.classList.add('h-auto');
         image.setAttribute('loading', 'lazy');
+        if (image.getAttribute('alt') === '') {
+            image.setAttribute('alt', 'Image');
+        }
     });
 
     const p = root.querySelectorAll('p');
     p.forEach((paragraph: HTMLElement) => {
         // remove empty paragraphs
         if (paragraph.innerHTML === '') {
+            paragraph.remove();
+        }
+        if (paragraph.innerHTML === '<br>') {
             paragraph.remove();
         }
         // remove style attributes
