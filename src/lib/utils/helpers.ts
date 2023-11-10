@@ -49,6 +49,9 @@ export function parsePostContent(content: string): string {
         if (paragraph.innerHTML === '') {
             paragraph.remove();
         }
+        if (paragraph.innerHTML === '<br>') {
+            paragraph.remove();
+        }
         // remove style attributes
         paragraph.removeAttribute('style');
     });

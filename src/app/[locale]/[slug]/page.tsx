@@ -70,7 +70,7 @@ export default async function ArticlePage({
                         <ServerImage
                             {...post.feature_media}
                             priority={true}
-                            className="h-[40vh] lg:h-[60vh] w-full object-cover"
+                            className="h-[40vh] lg:h-[60vh] w-full object-cover object-top"
                             sizes="100vw"
                         ></ServerImage>
                     )}
