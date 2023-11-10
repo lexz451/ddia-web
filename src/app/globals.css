@@ -73,10 +73,13 @@
       @apply w-full h-auto aspect-[8.5/11];
     }
     p {
-        @apply leading-normal;
+        @apply leading-normal my-4;
     }
     li::marker {
         @apply text-design-light-green;
+    }
+    a {
+        @apply break-words;
     }
   }
 

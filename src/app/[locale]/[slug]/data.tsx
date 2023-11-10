@@ -12,49 +12,70 @@ export async function fetchData(slug: string) {
                 $ne: null
             }
         },
-        populate: ["feature_media", "post_type", "authors"]
+        populate: ["feature_media", "post_type", "authors", "categories"]
     }, {
         next: { tags: ["post"] }
     });
 
-    const { data: whatAreWeReading } = await getApi<TPost[]>('/posts', {
-        filters: {
-            id: {
-                $ne: post?.id
-            },
-            tags: {
-                slug: {
-                    $eq: 'what-we-are-reading'
-                }
-            },
-        },
-        pagination: {
-            limit: 1
-        },
-        populate: ["feature_media", "authors"]
-    }, {
-        next: { tags: ["post"] }
-    });
+    const postCategory = post?.categories?.[0]?.slug;
 
-    const { data: inTheNews } = await getApi<TPost[]>('/posts', {
+    const { data: related } = await getApi<TPost[]>(`/posts`, {
         filters: {
             id: {
                 $ne: post?.id
             },
-            tags: {
+            categories: {
                 slug: {
-                    $eq: 'in-the-news'
+                    $eq: postCategory
                 }
             },
         },
         pagination: {
             limit: 3
         },
-        fields: ["title", "slug"]
-        // populate: ["feature_media", "authors"]
+        populate: ["feature_media", "post_type", "authors"]
     }, {
         next: { tags: ["post"] }
     });
+
+    // const { data: whatAreWeReading } = await getApi<TPost[]>('/posts', {
+    //     filters: {
+    //         id: {
+    //             $ne: post?.id
+    //         },
+    //         tags: {
+    //             slug: {
+    //                 $eq: 'what-we-are-reading'
+    //             }
+    //         },
+    //     },
+    //     pagination: {
+    //         limit: 3
+    //     },
+    //     populate: ["feature_media", "authors"]
+    // }, {
+    //     next: { tags: ["post"] }
+    // });
+
+    // const { data: inTheNews } = await getApi<TPost[]>('/posts', {
+    //     filters: {
+    //         id: {
+    //             $ne: post?.id
+    //         },
+    //         tags: {
+    //             slug: {
+    //                 $eq: 'in-the-news'
+    //             }
+    //         },
+    //     },
+    //     pagination: {
+    //         limit: 3
+    //     },
+    //     fields: ["title", "slug"]
+    //     // populate: ["feature_media", "authors"]
+    // }, {
+    //     next: { tags: ["post"] }
+    // });
 
     const { data: latestPosts } = await getApi<TPost[]>('/posts', {
         filters: {
@@ -77,7 +98,8 @@ export async function fetchData(slug: string) {
     return {
         post,
         latestPosts,
-        whatAreWeReading,
-        inTheNews
+        related,
+        // whatAreWeReading,
+        // inTheNews
     };
 }

@@ -8,18 +8,18 @@ export default async function LatestUpdates({
   searchParams
 }: { searchParams: { [key: string]: string | undefined } }) {
 
-  const { search, tag } = searchParams;
+  const { q, tag } = searchParams;
 
-  const { posts } = await fetchData({ tag, query: search });
+  const { posts } = await fetchData({ tag, query: q });
 
   return (
-    <main className="page-container mt-[12rem]">
+    <main className="page-container mt-[150px]">
       <Filters tags={TAGS}></Filters>
 
       <section className="pt-10">
         <LoadMoreWrapper
           tag={tag}
-          query={search}
+          query={q}
           posts={posts?.data || []}
           total={posts?.total || 0}
           className="flex flex-col gap-10"

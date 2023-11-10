@@ -41,7 +41,7 @@ async function fetchApi<T>(url: string, params: { [key: string]: any } = {}, opt
     }
 
     // @ts-ignore
-    const response = await fetch(apiUrl, { next: nextOptions, cache, headers });
+    const response = await fetch(apiUrl, { next: cache !== 'no-cache' ? nextOptions: {}, cache, headers });
     if (!response.ok) {
         throw new Error(`Failed to fetch API: ${response.status} ${response.statusText}`);
     }
