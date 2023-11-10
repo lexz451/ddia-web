@@ -2,12 +2,9 @@
 
 import Logo from "@/lib/assets/logo.svg";
 import FacebookIcon from "@/lib/assets/facebook.svg";
-import InstagramIcon from "@/lib/assets/instagram.svg";
 import XIcon from "@/lib/assets/x-twitter.svg";
 import ArrowIcon from "../assets/arrow.svg";
 import LinkedInIcon from "@/lib/assets/linked-in.svg";
-import MediumIcon from "@/lib/assets/medium.svg";
-import YoutubeIcon from "@/lib/assets/yt.svg";
 import I18nLink from "./I18nLink";
 import useI18n from "../hooks/useI18n";
 

@@ -38,6 +38,9 @@ export function parsePostContent(content: string): string {
         image.classList.add('w-full');
         image.classList.add('h-auto');
         image.setAttribute('loading', 'lazy');
+        if (image.getAttribute('alt') === '') {
+            image.setAttribute('alt', 'Image');
+        }
     });
 
     const p = root.querySelectorAll('p');

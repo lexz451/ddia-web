@@ -71,6 +71,7 @@ export default async function ArticlePage({
                             {...post.feature_media}
                             priority={true}
                             className="h-[40vh] lg:h-[60vh] w-full object-cover"
+                            sizes="100vw"
                         ></ServerImage>
                     )}
                     <div className="page-container">
