@@ -25,7 +25,7 @@ export default function Hero({
           </I18nLink>
         </div>
         <div>
-          <Image priority={true} alt='hero' src={HeroImg} />
+          <Image priority={true} alt='hero' sizes="100vw" src={HeroImg} />
         </div>
       </div>
     </section>
