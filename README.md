@@ -1,4 +1,5 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![CodeQL](https://github.com/lexz451/ddia-web/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/lexz451/ddia-web/actions/workflows/github-code-scanning/codeql)
+[![Production Build](https://github.com/lexz451/ddia-web/actions/workflows/production.yml/badge.svg)](https://github.com/lexz451/ddia-web/actions/workflows/production.yml)
 
 ## Getting Started
 
