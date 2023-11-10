@@ -2,6 +2,7 @@ import SearchBar from "@/lib/components/search-bar";
 import LoadMoreWrapper from "./load-more";
 import { fetchData } from "./data";
 import SearchWrapper from "./search";
+import { Suspense } from "react";
 
 export default async function SearchPage({
     searchParams,
@@ -14,7 +15,9 @@ export default async function SearchPage({
 
     return (
         <main className="page-container mt-[150px]">
-            <SearchWrapper q={q}></SearchWrapper>
+            <Suspense fallback={true}>
+                <SearchWrapper q={q}></SearchWrapper>
+            </Suspense>
             {posts?.total > 0 && (
                 <section className="mt-5 ml-5">
                     <small className="text-sm text-gray-500 font-bold">

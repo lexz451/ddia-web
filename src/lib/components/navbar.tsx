@@ -325,9 +325,13 @@ export default function Navbar({ locale }: { locale: string }) {
                         </li>
                     </ul>
                     <div className="hidden lg:flex items-center gap-4">
-                        <div>
-                            <SearchBar autoClean={true} placeholder="Search..." onSearch={onSearch}></SearchBar>
-                        </div>
+                        <Suspense fallback={null}>
+                            <SearchBar
+                                autoClean={true}
+                                placeholder="Search..."
+                                onSearch={onSearch}
+                            ></SearchBar>
+                        </Suspense>
                         <div className="relative h-6">
                             <button
                                 onClick={() =>
@@ -370,7 +374,10 @@ export default function Navbar({ locale }: { locale: string }) {
             >
                 <div className="page-container mt-10">
                     <Suspense fallback={null}>
-                        <SearchBar placeholder="Search..." onSearch={onSearch}></SearchBar>
+                        <SearchBar
+                            placeholder="Search..."
+                            onSearch={onSearch}
+                        ></SearchBar>
                     </Suspense>
                     <div className="mt-5 flex flex-col divide-design-cyan border-y-design-cyan border-y divide-y">
                         <div className="w-full flex items-center py-4">

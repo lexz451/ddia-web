@@ -1,9 +1,8 @@
 "use client";
 
 import SearchBar from "./search-bar";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "@lexz451/next-nprogress";
 import useI18nRouter from "../hooks/useI18nRouter";
 
 export default function Filters({ tags }: { tags: any[] }) {

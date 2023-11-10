@@ -1,6 +1,7 @@
 import Filters from "@/lib/components/filters";
 import { fetchData } from "./data";
 import LoadMoreWrapper from "./load-more";
+import { Suspense } from "react";
 
 export async function generateStaticParams() {   
     return [
@@ -22,7 +23,9 @@ export default async function OurWorkPage({
         <main>
             <section className="pt-[150px]">
                 <div className="page-container">
-                    <Filters tags={tags}></Filters>
+                   <Suspense fallback={null}>
+                        <Filters tags={tags}></Filters>
+                   </Suspense>
                 </div>
             </section>
             <section className="mt-10 lg:mt-20">
