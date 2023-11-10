@@ -30,17 +30,17 @@ export default function LatestUpdates({
               <I18nLink href={`${upd.platform_url ? upd.platform_url : `/${upd.slug}`}`} className="relative w-full mb-4 group rounded-2xl overflow-hidden">
                 {upd.feature_media && <ServerImage {...upd.feature_media} sizes="33vw" className="aspect-[9/6] object-cover transition-transform duration-700 group-hover:scale-110" />}
               </I18nLink>
-              <h4 className="text-sm tracking-tight text-gray-400 uppercase">
+              <span className="block text-sm tracking-tight text-gray-500 uppercase">
                 {upd.post_type?.name}
-              </h4>
+              </span>
               <I18nLink href={`${upd.platform_url ? upd.platform_url : `/${upd.slug}`}`}>
                 <h3 className="mt-2 mb-4 text-xl font-semibold tracking-tight text-design-dark-green">
                   {upd.title}
                 </h3>
               </I18nLink>
-              <h4 className="tracking-tighter text-gray-500 line-clamp-3">
+              <span className="block tracking-tighter text-gray-500 line-clamp-3">
                 {upd.description}
-              </h4>
+              </span>
               <div className="flex flex-row items-center my-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

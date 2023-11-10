@@ -32,18 +32,21 @@ export default function Footer({
                             </p>
                             <div className="SocialIcons flex gap-3 mt-10">
                                 <I18nLink
+                                    aria-label="LinkedIn"
                                     href="https://www.linkedin.com/company/digital-democracy-institute-of-the-americas/?viewAsMember=true"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <LinkedInIcon className="w-6 h-6 fill-black"></LinkedInIcon>
                                 </I18nLink>
                                 <I18nLink
+                                    aria-label="X"
                                     href="https://twitter.com/DDIAmericas"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <XIcon className="w-5 h-5 fill-black"></XIcon>
                                 </I18nLink>
                                 <I18nLink
+                                    aria-label="Facebook"
                                     href="https://www.facebook.com/profile.php?id=61552925446237"
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
@@ -241,7 +244,7 @@ export default function Footer({
                                         placeholder="Email"
                                         className="rounded-3xl px-4 bg-transparent border border-design-light-green h-12 w-full placeholder:text-design-light-green text-white text-sm"
                                     ></input>
-                                    <button className="group absolute bg-white hover:bg-design-light-green transition-colors duration-300 rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center">
+                                    <button aria-label="Submit" className="group absolute bg-white hover:bg-design-light-green transition-colors duration-300 rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center">
                                         <ArrowIcon></ArrowIcon>
                                     </button>
                                 </div>

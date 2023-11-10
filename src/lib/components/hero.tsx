@@ -20,7 +20,7 @@ export default function Hero({
             {/* The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy. */}
             {t('home.hero.subtitle')}
           </p>
-          <I18nLink href={'/get-involved'} className="Rectangle129 r-btn border-none bg-design-yellow rounded-3xl mt-10 text-design-green">
+          <I18nLink href={'/get-involved'} className="Rectangle129 r-btn border-none bg-design-yellow bg-opacity-95 rounded-3xl mt-10 text-design-green">
             Get Involved
           </I18nLink>
         </div>

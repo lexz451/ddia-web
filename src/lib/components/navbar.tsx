@@ -5,7 +5,6 @@ import LogoPinned from "@/lib/assets/logo-simple.svg";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 import IndicatorIcon from "@/lib/assets/indicator.svg";
 import GlobeIcon from "@/lib/assets/globe-alt.svg";
-import SearchIcon from "@/lib/assets/search.svg";
 import { Suspense, useEffect, useRef, useState } from "react";
 import useScroll from "../hooks/useScroll";
 import { usePathname } from "next/navigation";
@@ -113,6 +112,7 @@ export default function Navbar({ locale }: { locale: string }) {
                         }`}
                     >
                         <I18nLink
+                            aria-label="home"
                             href="/"
                             className={`brand-logo block relative transition-all duration-300 ease-in-out ${
                                 isScrolled ? "w-24 h-16" : "w-32 h-20"
@@ -356,6 +356,7 @@ export default function Navbar({ locale }: { locale: string }) {
                         </div>
                     </div>
                     <button
+                        aria-label="Toggle menu"
                         onClick={() => setIsOpen(!isOpen)}
                         className="lg:hidden flex-shrink-0 p-2"
                     >
