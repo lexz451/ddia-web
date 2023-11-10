@@ -22,7 +22,7 @@ export default function GetInvolved() {
                 <Image
                     alt="mail"
                     src={MailImg}
-                    quality={80}
+                    sizes="100vw"
                     className="order-2 lg:order-1"
                 ></Image>
                 <form

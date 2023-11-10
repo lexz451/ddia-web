@@ -10,7 +10,7 @@ export default function AboutUs({
 }) {
   return (
     <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20'>
-      <Image alt='' src={AbtImg} className="order-2 lg:order-1" />
+      <Image alt='' src={AbtImg} className="order-2 lg:order-1" sizes="100vw" />
       <div className='flex flex-col items-start self-center w-full order-1 lg:order-2'>
         <div className="Headline text-design-green text-4xl lg:text-5xl font-semibold leading-10 mb-5 lg:mb-10">
             {t('home.about.title')}
