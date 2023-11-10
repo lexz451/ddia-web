@@ -2,6 +2,7 @@ import Filters from "@/lib/components/filters";
 import { TAGS, fetchData } from "./data";
 import LoadMoreWrapper from "./load-more";
 import ContactUsBanner from "@/lib/components/ContactUsBanner";
+import { Suspense } from "react";
 
 
 export default async function LatestUpdates({
@@ -14,7 +15,9 @@ export default async function LatestUpdates({
 
   return (
     <main className="page-container mt-[150px]">
-      <Filters tags={TAGS}></Filters>
+      <Suspense fallback={null}>
+        <Filters tags={TAGS}></Filters>
+      </Suspense>
 
       <section className="pt-10">
         <LoadMoreWrapper

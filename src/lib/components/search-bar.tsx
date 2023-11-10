@@ -1,7 +1,6 @@
 "use client";
 import SearchIcon from "@/lib/assets/search.svg";
 import CloseIcon from "@/lib/assets/close.svg";
-import { useRouter } from "@lexz451/next-nprogress";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
