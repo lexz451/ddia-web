@@ -18,6 +18,41 @@ import I18nLink from "@/lib/components/I18nLink";
 import Image from "next/image";
 import ContactUsBanner from "@/lib/components/ContactUsBanner";
 import { ArticleJsonLd } from "next-seo";
+import { Metadata, ResolvingMetadata } from "next";
+
+export async function generateMetadata(
+    {
+        params,
+    }: {
+        params: { slug: string };
+    },
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const { slug } = params;
+    const { post } = await fetchData(slug);
+
+    return {
+        title: post.title,
+        description: post.description,
+        authors: post.authors?.map((a) => ({
+            name: a.name,
+        })),
+        openGraph: {
+            images: [
+                {
+                    url: `${process.env.NEXT_PUBLIC_API_URL}${post.feature_media?.url}`,
+                },
+            ],
+        },
+        twitter: {
+            images: [
+                {
+                    url: `${process.env.NEXT_PUBLIC_API_URL}${post.feature_media?.url}`,
+                },
+            ],
+        },
+    }
+}
 
 export async function generateStaticParams() {
     const { data: posts } = await getApi<TPost[]>(`/posts`, {

@@ -10,7 +10,11 @@ import i18nConfig from "@/i18nConfig";
 import { dir } from "i18next";
 
 export const metadata: Metadata = {
-    title: "DDIA - Digital Democracy Institute of the Americas",
+    metadataBase: new URL(process.env.SITE_HOST || "http://localhost:3000"),
+    title: {
+        default: "DDIA - Digital Democracy Institute of the Americas",
+        template: `%s - DDIA`,
+    },
     description: "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
     robots: {
         follow: true,
@@ -24,7 +28,7 @@ export const metadata: Metadata = {
             'es-ES': `${process.env.SITE_HOST}/es`,
             'pt-BR': `${process.env.SITE_HOST}/pt`,
         }
-    }
+    },
 };
 
 export function generateStaticParams() {
