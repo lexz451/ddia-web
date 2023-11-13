@@ -5,21 +5,23 @@ import I18nLink from "./I18nLink";
 
 export default function LatestUpdates({
   posts,
+  t
 }: {
   posts: TPost[];
+  t: any;
 }) {
 
   return (
     <section className="flex flex-col">
       <div className="flex items-center w-full">
         <h2 className="text-5xl font-avenir tracking-tighter text-design-dark-green">
-          Latest Updates
+          {t('latest-updates')}
         </h2>
         <I18nLink
           href={"/latest"}
           className="hidden lg:block ml-auto text-sm r-btn border-none bg-design-green text-white"
         >
-          See all
+          {t("see-all")}
         </I18nLink>
       </div>
 
@@ -58,7 +60,7 @@ export default function LatestUpdates({
                   className="pl-2 text-sm font-bold underline text-design-green"
                   href={`${upd.platform_url ? upd.platform_url : `/${upd.slug}`}`}
                 >
-                  Read more
+                  {t("read-more")}
                 </I18nLink>
               </div>
             </div>

@@ -10,8 +10,16 @@ import ResearchImg from "@/lib/assets/our-work/research.png";
 import ReportImg from "@/lib/assets/our-work/report.png";
 import CapacityImg from "@/lib/assets/our-work/capacity.png";
 import PolicyImg from "@/lib/assets/our-work/policy.png";
+import useI18n from "@/lib/hooks/useI18n";
 
-export default function Hero() {
+export default function Hero({
+    locale
+}: {
+    locale: string;
+}) {
+
+    const {t} = useI18n(locale);
+
     useIsomorphicLayoutEffect(() => {
         gsap.registerPlugin(ScrollToPlugin);
     });
@@ -30,12 +38,10 @@ export default function Hero() {
         <section className="page-container gradient-green-page lg:bg-none pt-[80px] lg:pt-0">
             <div className="flex flex-col items-center lg:px-10 py-20 lg:gradient-green-container rounded-3xl">
                 <div className="text-center text-design-green text-4xl lg:text-6xl font-extrabold  leading-10">
-                    Our Work
+                    {t('our-work')}
                 </div>
                 <div className="mt-5 lg:mt-10 text-center text-design-green text-lg font-normal leading-normal">
-                    Our work is explicitly Latino, connects disciplines and
-                    regions (the U.S. and Latin America), and addresses the root
-                    causes of belief and behavior.
+                    {t('our-work-page.description')}
                 </div>
                 <div className="grid lg:grid-cols-2 gap-8 mt-14 w-full lg:px-16">
                     <button
@@ -52,7 +58,7 @@ export default function Hero() {
                         ></Image>
                         <div className="overlay absolute transition-all duration-300 group-hover:bg-black group-hover:bg-opacity-50 bg-design-green top-0 left-0 w-full h-full"></div>
                         <div className="Headline relative z-10 text-left flex-1 text-white text-2xl lg:text-3xl font-extrabold  lg:leading-9">
-                            Research <br /> and Analysis
+                            {t('research-and-analysis')}
                         </div>
                         <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] rotate-90"></ArrowCircleIcon>
                     </button>
@@ -70,7 +76,7 @@ export default function Hero() {
                         ></Image>
                         <div className="overlay absolute transition-all duration-300 group-hover:bg-black group-hover:bg-opacity-50 bg-design-green top-0 left-0 w-full h-full"></div>
                         <div className="Headline text-left relative z-10 flex-1 text-white text-2xl lg:text-3xl font-extrabold lg:leading-9">
-                            Reports <br /> and Publications
+                            {t('reports-and-publications')}
                         </div>
                         <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] rotate-90"></ArrowCircleIcon>
                     </button>
@@ -86,7 +92,7 @@ export default function Hero() {
                         ></Image>
                         <div className="overlay absolute transition-all duration-300 group-hover:bg-black group-hover:bg-opacity-50 bg-design-green  top-0 left-0 w-full h-full"></div>
                         <div className="text-left relative z-10 flex-1 text-white text-2xl lg:text-3xl font-extrabold  leading-9">
-                            Capacity-Building
+                            {t('capacity-building')}
                         </div>
                         <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] rotate-90"></ArrowCircleIcon>
                     </button>
@@ -102,7 +108,7 @@ export default function Hero() {
                         ></Image>
                         <div className="overlay absolute transition-all duration-300 group-hover:bg-black group-hover:bg-opacity-50 bg-design-green top-0 left-0 w-full h-full"></div>
                         <div className="Headline text-left flex-1 relative z-10 text-white text-2xl lg:text-3xl font-extrabold  leading-9">
-                            Policy
+                            {t('policy')}
                         </div>
                         <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] rotate-90"></ArrowCircleIcon>
                     </button>

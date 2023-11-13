@@ -1,3 +1,4 @@
+import initTranslations from "@/i18n";
 import I18nLink from "@/lib/components/I18nLink";
 import TeamAccordion from "@/lib/components/team-accordion";
 import { getApi } from "@/lib/utils/api";
@@ -41,21 +42,26 @@ async function fetchData() {
     };
 }
 
-export default async function MeetTheTeam() {
+export default async function MeetTheTeam({
+    params: { locale },
+}: {
+    params: { locale: string };
+}) {
     const { ourTeam, advisory, board } = await fetchData();
+    const {t} = await initTranslations(locale)
 
     return (
         <main className="bg-gradient-to-b from-design-light-green via-white to-white pt-[150px]">
             <div className="page-container">
                 <section className="flex flex-col items-center mt-10">
                     <h1 className="w-fit mx-auto font-extrabold text-4xl lg:text-6xl text-design-green mb-4">
-                        Meet the Team
+                        {t("meet-the-team")}
                     </h1>
                     <I18nLink
                         className="r-btn border-design-green text-design-green mt-10 mx-auto"
                         href={"/careers"}
                     >
-                        Work with us
+                        {t("work-with-us")}
                     </I18nLink>
                 </section>
                 <section className="mt-20 flex flex-col gap-8">
@@ -73,7 +79,7 @@ export default async function MeetTheTeam() {
                         }}
                     ></div>
                     <h2 className="text-design-green mb-5 font-semibold text-4xl leading-10">
-                        Board of Directors
+                        {t("board-of-directors")}
                     </h2>
                     <div className="flex flex-col gap-8">
                         {board.map((member) => (
@@ -91,7 +97,7 @@ export default async function MeetTheTeam() {
                         }}
                     ></div>
                     <h2 className="text-design-green mb-5 font-semibold text-4xl leading-10">
-                        Advisory Council
+                        {t("advisory-council")}
                     </h2>
                     <div className="flex flex-col gap-8">
                     {advisory.map((member) => (

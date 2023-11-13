@@ -11,9 +11,9 @@ export async function generateStaticParams() {
 }
 
 export default async function OurWorkPage({
-    params: { category },
+    params: { category, locale },
     searchParams
-}: { params: { category: string }, searchParams: any }) {
+}: { params: { category: string, locale: string }, searchParams: any }) {
 
     const { q, tag } = searchParams;
 
@@ -24,7 +24,7 @@ export default async function OurWorkPage({
             <section className="pt-[150px]">
                 <div className="page-container">
                    <Suspense fallback={null}>
-                        <Filters tags={tags}></Filters>
+                        <Filters locale={locale} tags={tags}></Filters>
                    </Suspense>
                 </div>
             </section>

@@ -6,8 +6,9 @@ import { Suspense } from "react";
 
 
 export default async function LatestUpdates({
+    params: { locale },
   searchParams
-}: { searchParams: { [key: string]: string | undefined } }) {
+}: { params: { locale: string }, searchParams: { [key: string]: string | undefined } }) {
 
   const { q, tag } = searchParams;
 
@@ -16,7 +17,7 @@ export default async function LatestUpdates({
   return (
     <main className="page-container mt-[150px]">
       <Suspense fallback={null}>
-        <Filters tags={TAGS}></Filters>
+        <Filters tags={TAGS} locale={locale}></Filters>
       </Suspense>
 
       <section className="pt-10">

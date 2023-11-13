@@ -21,7 +21,7 @@ export default function Hero({
             {t('home.hero.subtitle')}
           </p>
           <I18nLink href={'/get-involved'} className="Rectangle129 r-btn border-none bg-design-yellow bg-opacity-95 rounded-3xl mt-10 text-design-green">
-            Get Involved
+            {t('get-involved')}
           </I18nLink>
         </div>
         <div>

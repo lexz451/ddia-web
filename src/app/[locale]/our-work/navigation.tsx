@@ -5,8 +5,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useScroll from "@/lib/hooks/useScroll";
 import gsap from "gsap";
 import { MouseEventHandler, useEffect } from "react";
+import useI18n from "@/lib/hooks/useI18n";
 
-export default function Navigation() {
+export default function Navigation({ locale }: { locale: string }) {
+    const { t } = useI18n(locale);
     const { scrollPosition, scrollDirection } = useScroll();
 
     useEffect(() => {
@@ -74,7 +76,7 @@ export default function Navigation() {
                 data-id="research-and-analysis"
                 className="snap-start max-w-none hover:bg-design-green hover:text-white transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn"
             >
-                Research and Analysis
+                {t("research-and-analysis")}
             </button>
             <div className="w-8 h-[2px] bg-design-green"></div>
             <button
@@ -82,7 +84,7 @@ export default function Navigation() {
                 data-id="reports-and-publications"
                 className="whitespace-nowrap hover:bg-design-green hover:text-white transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn"
             >
-                Reports and Publications
+                {t("reports-and-publications")}
             </button>
             <div className="w-8 h-[2px] bg-design-green"></div>
             <button
@@ -90,7 +92,7 @@ export default function Navigation() {
                 data-id="capacity-building"
                 className="whitespace-nowrap hover:bg-design-green hover:text-white transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn"
             >
-                Capacity-Building
+                {t("capacity-building")}
             </button>
             <div className="w-8 h-[2px] bg-design-green"></div>
             <button
@@ -98,7 +100,7 @@ export default function Navigation() {
                 data-id="policy"
                 className="whitespace-nowrap hover:bg-design-green hover:text-white transition-colors duration-100 min-w-[200px] text-sm border-design-green text-design-green r-btn"
             >
-                Policy
+                {t("policy")}
             </button>
         </section>
     );

@@ -13,23 +13,13 @@ export default function Policy({ policy, t }: { policy: TPost[]; t: any }) {
                 <div className="flex flex-col items-center">
                     <IndicatorIcon className="fill-design-green w-4 h-4"></IndicatorIcon>
                     <div className="Headline mt-10 text-center text-design-green text-4xl lg:text-6xl font-extrabold  leading-10">
-                        Policy
+                        {t("policy")}
                     </div>
                     <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-normal">
                         <p className="mb-4">
-                            DDIA is working to improve institutional
-                            decision-making by anchoring policies to the needs
-                            of Latinos and by centering U.S. Latino and Latin
-                            American voices in discussions that have been
-                            traditionally siloed or dominated by the U.S. and
-                            Europe.
+                            {t("our-work-page.research.message11")}
                         </p>
-                        <p>
-                            We inform policy by convening and working with
-                            organizations and governments to connect efforts,
-                            share best practices and collaborate on joint
-                            initiatives.
-                        </p>
+                        <p>{t("our-work-page.research.message12")}</p>
                     </div>
 
                     <div className="grid lg:grid-cols-3 mt-20 gap-10">

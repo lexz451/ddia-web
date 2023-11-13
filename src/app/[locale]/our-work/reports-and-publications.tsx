@@ -7,7 +7,7 @@ import QueryString from "qs";
 import ServerImage from "@/lib/components/server-image";
 import { parsePostDate, parseReadTime } from "@/lib/utils/helpers";
 import I18nLink from "@/lib/components/I18nLink";
-
+import useI18n from "@/lib/hooks/useI18n";
 
 const postParams = QueryString.stringify({
     filters: {
@@ -30,7 +30,7 @@ const postParams = QueryString.stringify({
     sort: ["created_date:desc"],
 });
 
-function PostItem({ post }: { post: TPost }) {
+function PostItem({ post }: { post: TPost; }) {
     return (
         <div
             key={post.slug}
@@ -88,9 +88,14 @@ function PostItem({ post }: { post: TPost }) {
 
 export default function ReportsAndPublications({
     reports,
+    locale
 }: {
     reports: { data: TPost[]; total: number };
+    locale: string;
 }) {
+
+    const { t } = useI18n(locale);
+
     return (
         <section
             id="reports-and-publications"
@@ -100,13 +105,10 @@ export default function ReportsAndPublications({
                 <div className="flex flex-col items-center">
                     <IndicatorIcon className="fill-white w-4 h-4"></IndicatorIcon>
                     <div className="Headline mt-10 text-center text-design-green text-4xl lg:text-6xl font-extrabold  leading-10">
-                        Reports and Publications
+                        {t("reports-and-publications")}
                     </div>
                     <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-normal">
-                        DDIA&apos;s reports and publications contribute to the
-                        development of a set of theories on what is unique to
-                        Latinos and Latin Americans when it comes to information
-                        disorder online.
+                        {t("our-work-page.research.message8")}
                     </div>
                     <div className="flex flex-col mt-10">
                         <LoadMore

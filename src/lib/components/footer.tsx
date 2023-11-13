@@ -76,7 +76,7 @@ export default function Footer({
                                     href={"/about-us#core-strategies"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Core Strategies
+                                    {t('core-strategies')}
                                 </I18nLink>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
@@ -84,13 +84,13 @@ export default function Footer({
                                     href={"/our-work"}
                                     className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2"
                                 >
-                                    Our Work
+                                    {t('our-work')}
                                 </I18nLink>
                                 <I18nLink
                                     href={"/our-work#research-and-analysis"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Research and Analysis
+                                    {t('research-and-analysis')}
                                 </I18nLink>
                                 <ul className="list-disc pl-6 text-design-light-green w-full">
                                     <li>
@@ -100,7 +100,7 @@ export default function Footer({
                                             }
                                             className="Text block text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                         >
-                                            Public Opinion Research
+                                            {t('public-opinion-research')}
                                         </I18nLink>
                                     </li>
                                     <li className="mt-3">
@@ -108,10 +108,9 @@ export default function Footer({
                                             href={
                                                 "/our-work#social-listening-and-osint-investigations"
                                             }
-                                            className="Text block whitespace-nowrap text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
+                                            className="Text block whitespace-wrap text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                         >
-                                            Social Listening and <br /> OSINT
-                                            Investigations
+                                            {t('social-listening-osint-investigations')}
                                         </I18nLink>
                                     </li>
                                 </ul>
@@ -119,13 +118,13 @@ export default function Footer({
                                     href={"/our-work#reports-and-publications"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Reports and Publications
+                                    {t('reports-and-publications')}
                                 </I18nLink>
                                 <I18nLink
                                     href={"/our-work#capacity-building"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Capacity-Building
+                                    {t('capacity-building')}
                                 </I18nLink>
                                 <ul className="list-disc pl-6 text-design-light-green w-full">
                                     <li>
@@ -135,7 +134,7 @@ export default function Footer({
                                             }
                                             className="block Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                         >
-                                            Workshops & Events
+                                            {t('workshops-and-events')}
                                         </I18nLink>
                                     </li>
                                 </ul>
@@ -143,7 +142,7 @@ export default function Footer({
                                     href={"/our-work#policy"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Policy
+                                    {t('policy')}
                                 </I18nLink>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
@@ -151,37 +150,37 @@ export default function Footer({
                                     href={"/latest"}
                                     className="Heading self-stretch text-design-light-green text-[0.8rem] font-semibold  uppercase leading-tight mb-2"
                                 >
-                                    Latest Updates
+                                    {t('latest-updates')}
                                 </I18nLink>
                                 <I18nLink
                                     href="/latest?tag=announcements"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Announcements
+                                    {t('announcements')}
                                 </I18nLink>
                                 <I18nLink
                                     href="/latest?tag=blog"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Blog
+                                    {t('blog')}
                                 </I18nLink>
                                 <I18nLink
                                     href="/latest?tag=in-the-news"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    In the News
+                                    {t('in-the-news')}
                                 </I18nLink>
                                 <I18nLink
                                     href="/latest?tag=resources"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Resources
+                                    {t('resources')}
                                 </I18nLink>
                                 <I18nLink
                                     href="/latest?tag=events"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Events
+                                    {t('events')}
                                 </I18nLink>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
@@ -195,7 +194,7 @@ export default function Footer({
                                     href={"/get-involved"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Contact Us
+                                    {t('contact-us')}
                                 </I18nLink>
                                 {/* <I18nLink
                                     href={"/faq"}
@@ -207,7 +206,7 @@ export default function Footer({
                                     href={"/team"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Meet the Team
+                                    {t('meet-the-team')}
                                 </I18nLink>
                             </div>
                         </div>
@@ -216,29 +215,28 @@ export default function Footer({
                         <div className="page-container lg:px-0 Content py-8 flex flex-col gap-8">
                             <div className="Cta flex-col justify-start items-start gap-2 inline-flex">
                                 <div className="Heading self-stretch text-gray-400 text-sm font-semibold  uppercase leading-tight tracking-wide">
-                                    Subscribe to our newsletter
+                                    {t('footer.newsletter.title')}
                                 </div>
                                 <div className="SupportingText text-gray-300 text-base font-normal  leading-normal">
-                                    Subscribe to receive updates and research
-                                    from DDIA.
+                                    {t('footer.newsletter.subtitle')}
                                 </div>
                             </div>
                             <div className="FootersSubscribeForm grid lg:grid-cols-4 w-full gap-4">
                                 <input
-                                    placeholder="Name"
+                                    placeholder={t('name')}
                                     className="rounded-3xl px-4 bg-transparent border border-design-light-green h-12 placeholder:text-design-light-green text-white text-sm"
                                 ></input>
                                 <input
-                                    placeholder="Title"
+                                    placeholder={t('title')}
                                     className="rounded-3xl px-4 bg-transparent border border-design-light-green h-12 placeholder:text-design-light-green text-white text-sm"
                                 ></input>
                                 <input
-                                    placeholder="Organization"
+                                    placeholder={t('organization')}
                                     className="rounded-3xl px-4 bg-transparent border border-design-light-green h-12 placeholder:text-design-light-green text-white text-sm"
                                 ></input>
                                 <div className="block relative">
                                     <input
-                                        placeholder="Email"
+                                        placeholder={t('email')}
                                         className="rounded-3xl px-4 bg-transparent border border-design-light-green h-12 w-full placeholder:text-design-light-green text-white text-sm"
                                     ></input>
                                     <button aria-label="Submit" className="group absolute bg-white hover:bg-design-light-green transition-colors duration-300 rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center">
@@ -251,7 +249,7 @@ export default function Footer({
                     <div className="lg:mt-10 mt-5 flex lg:flex-row flex-col lg:items-center justify-between">
                         <div className="IntroductoryText text-black lg:text-neutral-100 mt-5 lg:mt-0 py-2 bg-white lg:bg-transparent text-center lg:text-left order-2 lg:order-1">
                             <span className=" text-sm font-normal leading-7">
-                                Website designed and developed by{" "}
+                                {t('footer.copyright')}{" "}
                             </span>
                             <span className=" text-sm font-bold leading-7">
                                 W.LAND
@@ -259,15 +257,15 @@ export default function Footer({
                         </div>
                         <div className="order-1 lg:order-2 Copyright text-center lg:text-right text-gray-400 text-sm font-normal font-avenir uppercase leading-normal">
                             <span className="hover:text-design-light-green">
-                                Privacy Policy
+                                {t('privacy-policy')}
                             </span>{" "}
                             |{" "}
                             <span className="hover:text-design-light-green">
-                                Terms of Use
+                                {t('terms-of-use')}
                             </span>{" "}
                             |{" "}
                             <span className="hover:text-design-light-green">
-                                Cookie Policy
+                                {t('cookie-policy')}
                             </span>
                         </div>
                     </div>
