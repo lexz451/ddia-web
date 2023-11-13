@@ -10,53 +10,37 @@ import MailImg from "@/lib/assets/get-involved.png";
 import ArrowIcon from "@/lib/assets/arrow.svg";
 import LogoCircle from "@/lib/assets/logo-circle.svg";
 import I18nLink from "@/lib/components/I18nLink";
+import initTranslations from "@/i18n";
 
-export default function ContactUs() {
-    const jobPositions = [
-        {
-            id: 1,
-            position: "Job Position",
-            department: "Department",
-            location: "Location",
-            date: "Date",
-        },
-        {
-            id: 2,
-            position: "Job Position",
-            department: "Department",
-            location: "Location",
-            date: "Date",
-        },
-        {
-            id: 3,
-            position: "Job Position",
-            department: "Department",
-            location: "Location",
-            date: "Date",
-        },
-    ];
+export default async function ContactUs({
+    params: { locale },
+}: {
+    params: { locale: string };
+}) {
+
+    const { t } = await initTranslations(locale);
 
     return (
         <main className="bg-gradient-to-b from-design-light-green via-design-light to-white pt-[150px]">
             <div className="page-container px-0">
                 <section className="w-full items-center mt-10 mb-20 px-4">
                     <h1 className="font-avenir text-center w-fit mx-auto font-extrabold text-4xl lg:text-6xl text-design-green mb-4">
-                        Contact Us
+                        {t("contact-us")}
                     </h1>
 
                     <p className="text-design-green font-avenir mb-10 font-medium max-w-md mx-auto text-center">
-                        Contact us at{" "}
+                        {t('get-involved-page.message1')}{" "}
                         <I18nLink
                             className="underline font-semibold"
                             href={"info@ddia.org"}
                         >
                             info@ddia.org
                         </I18nLink>{" "}
-                        to explore partnerships or to learn more about our work.
+                        {t('get-involved-page.message2')}
                     </p>
 
                     <div className="flex flex-col items-center mx-auto w-fit">
-                        <p>Follow us:</p>
+                        <p>{t('follow-us')}</p>
                         <div className="SocialIcons flex gap-3 mt-4">
                             <I18nLink
                                 href="https://www.linkedin.com/company/digital-democracy-institute-of-the-americas/?viewAsMember=true"
@@ -91,29 +75,28 @@ export default function ContactUs() {
                         ></Image>
                         <div className="flex flex-col justify-center order-1 md:order-2">
                             <div className="Headline text-design-light-green text-4xl md:text-5xl font-extrabold font-avenir leading-10">
-                                Our Newsletter
+                                {t("newsletter-form.title")}
                             </div>
                             <p className="IntroductoryText mt-10 text-neutral-100 md:text-lg font-light font-inter leading-relaxed">
-                                Sign up to receive our latest research,
-                                narrative analysis reports, and updates.
+                                {t("newsletter-form.message")}
                             </p>
 
                             <input
-                                placeholder="Name"
+                                placeholder={t("name")}
                                 className="mt-10 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                             ></input>
                             <input
-                                placeholder="Organization"
+                                placeholder={t("organization")}
                                 className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                             ></input>
                             <input
-                                placeholder="Title"
+                                placeholder={t("title")}
                                 className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                             ></input>
 
                             <div className="block relative w-full mt-4">
                                 <input
-                                    placeholder="Email"
+                                    placeholder={t("email")}
                                     className="rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                                 ></input>
                                 <button className="absolute bg-white hover:bg-design-light-green duration-300 transition-colors rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center">
@@ -128,13 +111,11 @@ export default function ContactUs() {
                     <LogoCircle className="w-20 h-20 mx-auto"></LogoCircle>
 
                     <h1 className="font-avenir text-center w-fit mt-10 mx-auto font-semibold text-2xl lg:text-5xl text-design-green mb-4">
-                        Career Oportunities
+                        {t("get-involved-page.careers.title")}
                     </h1>
 
                     <p className="max-w-prose text-center font-avenir mx-auto mt-5">
-                        Thank you for your interest in joining our team! At this
-                        time, we do not have any open roles available. Please
-                        check back for future opportunities.
+                        {t("get-involved-page.careers.message")}
                     </p>
 
                     {/* {jobPositions.map((job) => {
