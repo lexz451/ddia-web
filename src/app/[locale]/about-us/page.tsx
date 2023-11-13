@@ -1,3 +1,4 @@
+import initTranslations from "@/i18n";
 import imgapproach from "@/lib/assets/approach-11.png";
 import imgfakeNews from "@/lib/assets/fake-news.png";
 import imgholdingWorld from "@/lib/assets/hombre-negocios-mundo-mano-1.png";
@@ -6,7 +7,13 @@ import imgvision1 from "@/lib/assets/vision-1.png";
 import imgvision2 from "@/lib/assets/vision-2.png";
 import Image from "next/image";
 
-export default function AboutUs() {
+export default async function AboutUs({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const { t } = await initTranslations(locale);
+
   return (
     <main className="">
       <section id="our-mission" className="gradient-green-page pt-[120px]">
@@ -22,17 +29,19 @@ export default function AboutUs() {
             <div className="flex w-full h-full lg:py-8 lg:px-12 lg:bg-design-light rounded-2xl">
               <div className="m-auto">
                 <h1 className="text-4xl lg:text-5xl text-design-green font-avenir font-semibold pb-8">
-                  Our Mission
+                  {t('about.our-mission.title')}
+                  {/*Our Mission*/}
                 </h1>
                 <p className="text-base text-design-dark font-avenir min-w-prose">
-                  The Digital Democracy Institute of the Americas (DDIA) is
+                  {t('about.our-mission.subtitle')}
+                  {/*The Digital Democracy Institute of the Americas (DDIA) is
                   bringing together insights and actors across the hemisphere to
                   shape a more participatory, inclusive, and resilient digital
                   democracy. We apply research at the intersection of
                   information integrity, belief, and behavior to build trust,
                   connection, and capacity with Latino communities and to shape
                   policy interventions that bridge-build and depolarize shared
-                  information spaces for healthier democracies in the Americas.
+                  information spaces for healthier democracies in the Americas.*/}
                 </p>
               </div>
             </div>
@@ -41,15 +50,17 @@ export default function AboutUs() {
             <div className="flex w-full h-full lg:py-8 lg:px-12 lg:bg-design-light rounded-2xl">
               <div className="m-auto">
                 <h1 className="text-4xl lg:text-5xl text-design-green font-avenir font-semibold pb-8">
-                  Our Vision
+                  {t('about.our-vision.title')}
+                  {/*Our Vision*/}
                 </h1>
                 <p className="text-base text-design-dark font-avenir min-w-prose">
-                  We envision a world where Latinos are surrounded by
+                  {t('about.our-vision.subtitle')}
+                  {/*We envision a world where Latinos are surrounded by
                   fact-based, reputable information that empowers them to make
                   their voices heard across the ocean of content that is today’s
                   Internet. Communities in the Americas deserve an information
                   environment free of fear and repression, one that rewards
-                  connection, security, and fair participation in democracy.
+                connection, security, and fair participation in democracy.*/}
                 </p>
               </div>
             </div>
@@ -77,14 +88,16 @@ export default function AboutUs() {
             />
             <div className="basis-1/2 grow shrink-0 w-full px-12">
               <h1 className="text-4xl lg:text-5xl text-design-green font-semibold pb-8">
-                Our Approach
+                {t('about.our-approach.title')}
+                {/*Our Approach*/}
               </h1>
               <p className="text-base text-design-dark font-avenir max-w-prose">
-                We foster research and an exchange of ideas across disciplines,
+                {t('about.our-approach.subtitle')}
+                {/*We foster research and an exchange of ideas across disciplines,
                 leaders, and countries; guide interventions that serve our
                 communities in the U.S. and across the Americas; and center
                 Latinos and Latin Americans in policy conversations about the
-                future of the digital information ecosystem.
+              future of the digital information ecosystem.*/}
               </p>
             </div>
           </div>
@@ -95,12 +108,14 @@ export default function AboutUs() {
         <div className="page-container">
           <div className="flex flex-col lg:items-center mx-auto pb-footer mb-12 lg:max-w-[80%]">
             <h1 className="text-4xl lg:text-5xl text-design-green font-semibold pb-8">
-              Core Strategies
+              {t('about.core-strategies.title')}
+              {/*Core Strategies*/}
             </h1>
             <p className="text-base text-design-dark lg:text-center font-avenir mb-16 max-w-prose">
-              In our effort to foster an online information environment that is
+              {t('about.core-strategies.subtitle')}
+              {/*In our effort to foster an online information environment that is
               trustworthy, welcoming, and conducive to stronger democracies and
-              societies, we are moving beyond a focus on content to:
+              societies, we are moving beyond a focus on content to:*/}
             </p>
 
             <div className="lg:h-[300px] grid grid-rows-2 lg:grid lg:grid-rows-1 lg:grid-cols-2 mb-12 bg-design-light-yellow rounded-2xl">
@@ -133,9 +148,10 @@ export default function AboutUs() {
                   />
                 </svg>
                 <p className="text-xl text-design-dark font-avenir max-w-prose mt-5">
-                  Shape understanding of the systemic, social and behavioral
+                  {t('about.core-strategies.first')}
+                  {/*Shape understanding of the systemic, social and behavioral
                   factors that contribute to the spread of false, misleading,
-                  and hate-fueled information in Latino spaces online
+                  and hate-fueled information in Latino spaces online*/}
                 </p>
               </div>
             </div>
@@ -167,8 +183,9 @@ export default function AboutUs() {
                   />
                 </svg>
                 <p className="text-xl text-design-dark font-avenir max-w-prose mt-5">
-                  Incubate and adapt proven-effective interventions and
-                  approaches in service of Latino communities
+                  {t('about.core-strategies.second')}
+                  {/*Incubate and adapt proven-effective interventions and
+                  approaches in service of Latino communities*/}
                 </p>
               </div>
             </div>
@@ -200,9 +217,10 @@ export default function AboutUs() {
                   />
                 </svg>
                 <p className="text-xl text-design-dark font-avenir max-w-prose mt-5">
-                  Center Latinos’ perspectives and experiences in policy
+                  {t('about.core-strategies.third')}
+                  {/*Center Latinos’ perspectives and experiences in policy
                   discussions and decisions made about the future of the
-                  Internet and online world.
+                Internet and online world.*/}
                 </p>
               </div>
             </div>
