@@ -334,6 +334,7 @@ export default function Navbar({ locale }: { locale: string }) {
                         </Suspense>
                         <div className="relative h-6">
                             <button
+                                aria-label="Toggle locale switcher"
                                 onClick={() =>
                                     setShowLocaleSwitch(!showLocaleSwitch)
                                 }
