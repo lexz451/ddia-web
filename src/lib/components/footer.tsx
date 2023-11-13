@@ -76,7 +76,7 @@ export default function Footer({
                                     href={"/about-us#core-strategies"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    Core Strategies
+                                    {t('core-strategies')}
                                 </I18nLink>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
