@@ -270,7 +270,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                 }
                                                 className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                             >
-                                                Resources & Tools
+                                                External Resources
                                             </I18nLink>
                                             <ul className="list-disc ml-4 mt-2">
                                                 <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
@@ -282,7 +282,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                         What We Are Reading
                                                     </I18nLink>
                                                 </li>
-                                                <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
+                                                {/* <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
                                                     <I18nLink
                                                         href={
                                                             "/our-work#additional-resources"
@@ -290,7 +290,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                     >
                                                         Additional Resources
                                                     </I18nLink>
-                                                </li>
+                                                </li> */}
                                             </ul>
                                         </div>
                                     </div>
@@ -334,6 +334,7 @@ export default function Navbar({ locale }: { locale: string }) {
                         </Suspense>
                         <div className="relative h-6">
                             <button
+                                aria-label="Toggle locale switcher"
                                 onClick={() =>
                                     setShowLocaleSwitch(!showLocaleSwitch)
                                 }
@@ -491,7 +492,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                         href={"/our-work#resources-and-tools"}
                                         className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
                                     >
-                                        Resources & Tools
+                                        External Resources 
                                     </I18nLink>
                                     <ul className="list-disc ml-4 mt-2">
                                         <li className="text-white hover:text-[#6ABDC2] text-sm font-medium leading-normal">
@@ -503,7 +504,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                 What We Are Reading
                                             </I18nLink>
                                         </li>
-                                        <li className="text-white hover:text-[#6ABDC2] text-sm font-medium  leading-normal">
+                                        {/* <li className="text-white hover:text-[#6ABDC2] text-sm font-medium  leading-normal">
                                             <I18nLink
                                                 href={
                                                     "/our-work#additional-resources"
@@ -511,7 +512,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                             >
                                                 Additional Resources
                                             </I18nLink>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </div>
                                 <div className="flex flex-col">
