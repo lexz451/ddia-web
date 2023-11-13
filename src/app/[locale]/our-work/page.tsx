@@ -9,36 +9,34 @@ import initTranslations from "@/i18n";
 import dynamic from "next/dynamic";
 
 const ResearchAndAnalysis = dynamic(() => import("./research-and-analysis"));
-const ReportsAndPublications = dynamic(() => import("./reports-and-publications"));
+const ReportsAndPublications = dynamic(
+    () => import("./reports-and-publications")
+);
 const CapacityBuilding = dynamic(() => import("./capacity-building"));
 const Policy = dynamic(() => import("./policy"));
-
 
 export default async function OurWorkPage({
     params: { locale },
 }: {
     params: { locale: string };
 }) {
-    const {
-        research,
-        reports,
-        capacity,
-        policy,
-    } = await fetchData();
+    const { research, reports, capacity, policy } = await fetchData();
 
-    const { t } = await initTranslations(locale)
+    const { t } = await initTranslations(locale);
 
     return (
         <main className="bg-design-light lg:pt-[150px]">
-            <Hero></Hero>
-            <Navigation></Navigation>
-            <ResearchAndAnalysis research={research}></ResearchAndAnalysis>
+            <Hero locale={locale}></Hero>
+            <Navigation locale={locale}></Navigation>
+            <ResearchAndAnalysis
+                research={research}
+                t={t}
+            ></ResearchAndAnalysis>
             <ReportsAndPublications
                 reports={reports}
+                locale={locale}
             ></ReportsAndPublications>
-            <CapacityBuilding
-                capacity={capacity}
-            ></CapacityBuilding>
+            <CapacityBuilding t={t} capacity={capacity}></CapacityBuilding>
             <Policy policy={policy} t={t}></Policy>
         </main>
     );

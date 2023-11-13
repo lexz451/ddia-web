@@ -18,6 +18,7 @@ import I18nLink from "@/lib/components/I18nLink";
 import Image from "next/image";
 import ContactUsBanner from "@/lib/components/ContactUsBanner";
 import { ArticleJsonLd } from "next-seo";
+import initTranslations from "@/i18n";
 
 export async function generateStaticParams() {
     const { data: posts } = await getApi<TPost[]>(`/posts`, {
@@ -33,11 +34,13 @@ export async function generateStaticParams() {
 }
 
 export default async function ArticlePage({
-    params: { slug },
+    params: { slug, locale },
 }: {
-    params: { slug: string };
+    params: { slug: string, locale: string };
 }) {
     const { post, latestPosts, related } = await fetchData(slug);
+
+    const { t } = await initTranslations(locale);
 
     if (!post) {
         return notFound();
@@ -219,7 +222,7 @@ export default async function ArticlePage({
                 </main>
                 <footer className="page-container flex flex-col gap-10 mb-20 pb-footer">
                     <ContactUsBanner></ContactUsBanner>
-                    <LatestUpdates posts={latestPosts}></LatestUpdates>
+                    <LatestUpdates t={t} posts={latestPosts}></LatestUpdates>
                 </footer>
             </article>
         </>

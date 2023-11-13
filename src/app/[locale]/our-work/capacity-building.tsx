@@ -7,6 +7,7 @@ import I18nLink from "@/lib/components/I18nLink";
 
 export default function CapacityBuilding({
     capacity,
+    t
 }: {
     capacity: {
         workshopsAndEvents: TPost[];
@@ -15,6 +16,7 @@ export default function CapacityBuilding({
             resources: TPost[];
         };
     };
+    t: any;
 }) {
     return (
         <section
@@ -25,20 +27,12 @@ export default function CapacityBuilding({
                 <div className="flex flex-col items-center">
                     <IndicatorIcon className="fill-white w-4 h-4"></IndicatorIcon>
                     <div className="Headline mt-10 text-center text-design-light-yellow text-4xl lg:text-6xl font-extrabold  leading-10">
-                        Capacity-Building
+                        {t("capacity-building")}
                     </div>
                     <div className="IntroductoryText mt-8 max-w-prose text-center text-stone-50 text-lg font-normal  leading-normal">
-                        DDIA is working to strengthen a healthier internet by
-                        applying research to practical solutions and
-                        interventions that reflect and serve the needs of Latino
-                        communities. <br />
+                        {t('our-work-page.research.message9')} <br />
                         <br />
-                        We use our research to guide those working directly with
-                        communities on framing of narratives, inoculation
-                        exercises, depolarization workshops, media and digital
-                        literacy training, or other interventions. We also
-                        connect what has worked in one context to other
-                        contexts.
+                        {t("our-work-page.research.message10")}
                     </div>
                     <div
                         id="workshops-and-events"
@@ -46,7 +40,7 @@ export default function CapacityBuilding({
                     >
                         <div className="w-full lg:flex-1 h-[1px] bg-design-light bg-opacity-50"></div>
                         <div className="IntroductoryText text-center text-design-light text-2xl lg:text-3xl font-extrabold  leading-7">
-                            Workshops & Events
+                            {t("workshops-and-events")}
                         </div>
                         <div className="w-full lg:flex-1 h-[1px] bg-design-light bg-opacity-50"></div>
                     </div>
@@ -83,7 +77,7 @@ export default function CapacityBuilding({
                             href={`/latest?tag=events`}
                             className="r-btn border-none text-white bg-design-green mt-10"
                         >
-                            See all
+                            {t("see-all")}
                         </I18nLink>
                     )}
                     <div
@@ -92,7 +86,7 @@ export default function CapacityBuilding({
                     >
                         <div className="w-full lg:flex-1 h-[1px] bg-design-green bg-opacity-50"></div>
                         <div className="IntroductoryText text-center text-design-green text-3xl font-extrabold  leading-7">
-                            External Resources
+                            {t("external-resources")}
                         </div>
                         <div className="w-full lg:flex-1 h-[1px] bg-design-green bg-opacity-50"></div>
                     </div>
@@ -100,7 +94,7 @@ export default function CapacityBuilding({
                         id="what-we-are-reading"
                         className="IntroductoryText text-center text-design-green text-xl font-extrabold  uppercase leading-7"
                     >
-                        What We Are Reading
+                        {t("what-we-are-reading")}
                     </div>
                     <div className="grid lg:grid-cols-3 mt-10 gap-5">
                         {capacity.resourcesAndTools.whatWeAreReading.map(
@@ -212,7 +206,7 @@ export default function CapacityBuilding({
                         href={`/latest?tag=resources`}
                         className="r-btn border-none text-white bg-design-green mt-10"
                     >
-                        See all
+                        {t("see-all")}
                     </I18nLink>
                 </div>
             </div>

@@ -20,6 +20,7 @@ import {
 } from "body-scroll-lock-upgrade";
 import NavbarAccordion from "./navbar-accordion";
 import useI18nRouter from "../hooks/useI18nRouter";
+import useI18n from "../hooks/useI18n";
 
 export default function Navbar({ locale }: { locale: string }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +32,8 @@ export default function Navbar({ locale }: { locale: string }) {
     const { scrollPosition, scrollDirection } = useScroll();
     const pathname = usePathname();
     const router = useI18nRouter();
+
+    const { t } = useI18n(locale)
 
     const isHome = pathname == "/";
     const isAboutUs = pathname == "/about-us";
@@ -140,7 +143,7 @@ export default function Navbar({ locale }: { locale: string }) {
                             >
                                 <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
-                                    <span>About us</span>
+                                    <span>{t('about-us')}</span>
                                 </div>
                             </I18nLink>
                             <div></div>
@@ -154,7 +157,7 @@ export default function Navbar({ locale }: { locale: string }) {
                             >
                                 <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
-                                    <span>Our work</span>
+                                    <span>{t('our-work')}</span>
                                 </div>
                             </I18nLink>
                             <div
@@ -172,7 +175,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                 className="group inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 pb-2"
                                             >
                                                 <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
-                                                    Research and Analysis
+                                                    {t('research-and-analysis')}
                                                 </div>
                                                 <div className="flex items-center justify-center">
                                                     <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
@@ -184,7 +187,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                 }
                                                 className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                             >
-                                                Public Opinion Research
+                                                {t('public-opinion-research')}
                                             </I18nLink>
                                             <I18nLink
                                                 href={
@@ -192,8 +195,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                 }
                                                 className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                             >
-                                                Social Listening and OSINT
-                                                Investigations
+                                                {t('social-listening-osint-investigations')}
                                             </I18nLink>
                                             <ul className="list-disc ml-4 mt-2">
                                                 <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
@@ -202,7 +204,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                             "/our-work#issues-and-narratives"
                                                         }
                                                     >
-                                                        Issues and Narratives
+                                                        {t('issues-and-narratives')}
                                                     </I18nLink>
                                                 </li>
                                                 <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
@@ -211,7 +213,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                             "/our-work#platforms-and-apps"
                                                         }
                                                     >
-                                                        Platforms and Apps
+                                                        {t('platforms-and-apps')}
                                                     </I18nLink>
                                                 </li>
                                             </ul>
@@ -224,7 +226,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                 className="group inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 pb-2"
                                             >
                                                 <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
-                                                    Reports and Publications
+                                                    {t('reports-and-publications')}
                                                 </div>
                                                 <div className="flex items-center justify-center">
                                                     <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
@@ -235,7 +237,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                 className="group mt-4 inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 pb-2"
                                             >
                                                 <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
-                                                    Policy
+                                                    {t('policy')}
                                                 </div>
                                                 <div className="flex items-center justify-center">
                                                     <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
@@ -250,7 +252,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                 className="group inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 pb-2"
                                             >
                                                 <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
-                                                    Capacity-Building
+                                                    {t('capacity-building')}
                                                 </div>
                                                 <div className="flex items-center justify-center">
                                                     <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
@@ -262,7 +264,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                 }
                                                 className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                             >
-                                                Workshops & Events
+                                                {t('workshops-and-events')}
                                             </I18nLink>
                                             <I18nLink
                                                 href={
@@ -270,7 +272,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                 }
                                                 className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                                             >
-                                                External Resources
+                                                {t('external-resources')}
                                             </I18nLink>
                                             <ul className="list-disc ml-4 mt-2">
                                                 <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
@@ -279,7 +281,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                             "/our-work#what-we-are-reading"
                                                         }
                                                     >
-                                                        What We Are Reading
+                                                        {t('what-we-are-reading')}
                                                     </I18nLink>
                                                 </li>
                                                 {/* <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
@@ -306,7 +308,7 @@ export default function Navbar({ locale }: { locale: string }) {
                             >
                                 <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
-                                    <span>Meet the team</span>
+                                    <span>{t('meet-the-team')}</span>
                                 </div>
                             </I18nLink>
                         </li>
@@ -319,7 +321,7 @@ export default function Navbar({ locale }: { locale: string }) {
                             >
                                 <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
-                                    <span>Latest updates</span>
+                                    <span>{t('latest-updates')}</span>
                                 </div>
                             </I18nLink>
                         </li>
@@ -388,7 +390,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                 href={"/about-us"}
                                 className="text-sm font-medium uppercase text-design-cyan leading-normal"
                             >
-                                About Us
+                                {t('about-us')}
                             </I18nLink>
                         </div>
                         <NavbarAccordion
@@ -399,7 +401,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                         href={"/our-work"}
                                         className="text-sm font-medium uppercase text-design-cyan leading-normal"
                                     >
-                                        Our Work
+                                        {t('our-work')}
                                     </I18nLink>
                                 </div>
                             }
@@ -411,7 +413,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                         className="group inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 py-2"
                                     >
                                         <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
-                                            Research and Analysis
+                                            {t('research-and-analysis')}
                                         </div>
                                         <div className="flex items-center justify-center">
                                             <ArrowCircleIcon className="w-8 h-8 stroke-[#6ABDC2]"></ArrowCircleIcon>
@@ -423,7 +425,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                         }
                                         className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
                                     >
-                                        Public Opinion Research
+                                        {t('public-opinion-research')}
                                     </I18nLink>
                                     <I18nLink
                                         href={
@@ -431,8 +433,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                         }
                                         className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
                                     >
-                                        Social Listening and OSINT
-                                        Investigations
+                                        {t('social-listening-osint-investigations')}
                                     </I18nLink>
                                     <ul className="list-disc ml-4 mt-2">
                                         <li className="text-white hover:text-[#6ABDC2] text-sm font-medium  leading-normal">
@@ -441,7 +442,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                     "/our-work#issues-and-narratives"
                                                 }
                                             >
-                                                Issues and Narratives
+                                                {t('issues-and-narratives')}
                                             </I18nLink>
                                         </li>
                                         <li className="text-white hover:text-[#6ABDC2] text-sm font-medium  leading-normal">
@@ -450,7 +451,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                     "/our-work#platforms-and-apps"
                                                 }
                                             >
-                                                Platforms and Apps
+                                                {t('platforms-and-apps')}
                                             </I18nLink>
                                         </li>
                                     </ul>
@@ -463,7 +464,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                         className="group inline-flex items-center border-y border-[#6ABDC2] border-opacity-50 py-2 mt-4"
                                     >
                                         <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
-                                            Reports and Publications
+                                            {t('reports-and-publications')}
                                         </div>
                                         <div className="flex items-center justify-center">
                                             <ArrowCircleIcon className="w-8 h-8 stroke-[#6ABDC2]"></ArrowCircleIcon>
@@ -476,7 +477,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                         className="group inline-flex items-center border-b border-[#6ABDC2] border-opacity-50 py-2"
                                     >
                                         <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
-                                            Capacity-Building
+                                            {t('capacity-building')}
                                         </div>
                                         <div className="flex items-center justify-center">
                                             <ArrowCircleIcon className="w-8 h-8 stroke-[#6ABDC2]"></ArrowCircleIcon>
@@ -486,13 +487,13 @@ export default function Navbar({ locale }: { locale: string }) {
                                         href={"/our-work#workshops-and-events"}
                                         className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
                                     >
-                                        Workshops & Events
+                                        {t('workshops-and-events')}
                                     </I18nLink>
                                     <I18nLink
                                         href={"/our-work#resources-and-tools"}
                                         className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
                                     >
-                                        External Resources 
+                                        {t('external-resources')}
                                     </I18nLink>
                                     <ul className="list-disc ml-4 mt-2">
                                         <li className="text-white hover:text-[#6ABDC2] text-sm font-medium leading-normal">
@@ -501,7 +502,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                                     "/our-work#what-we-are-reading"
                                                 }
                                             >
-                                                What We Are Reading
+                                                {t('what-we-are-reading')}
                                             </I18nLink>
                                         </li>
                                         {/* <li className="text-white hover:text-[#6ABDC2] text-sm font-medium  leading-normal">
@@ -521,7 +522,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                         className="group mt-4 inline-flex items-center border-t border-[#6ABDC2] border-opacity-50 py-2"
                                     >
                                         <div className="flex-1 text-white group-hover:text-[#6ABDC2] text-xl font-semibold leading-10">
-                                            Policy
+                                            {t('policy')}
                                         </div>
                                         <div className="flex items-center justify-center">
                                             <ArrowCircleIcon className="w-8 h-8 stroke-white group-hover:stroke-[#6ABDC2]"></ArrowCircleIcon>
@@ -536,7 +537,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                 href={"/team"}
                                 className="text-sm font-medium uppercase text-design-cyan leading-normal"
                             >
-                                Meet the team
+                                {t('meet-the-team')}
                             </I18nLink>
                         </div>
                         <div className="w-full flex items-center py-4">
@@ -545,7 +546,7 @@ export default function Navbar({ locale }: { locale: string }) {
                                 href={"/latest"}
                                 className="text-sm font-medium uppercase text-design-cyan leading-normal"
                             >
-                                Latest updates
+                                {t('latest-updates')}
                             </I18nLink>
                         </div>
                     </div>

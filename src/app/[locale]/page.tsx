@@ -48,9 +48,9 @@ export default async function Home({
             <section>
                 <OurWork locale={locale}></OurWork>
             </section>
-            <GetInvolved></GetInvolved>
+            <GetInvolved locale={locale}></GetInvolved>
             <section className="page-container my-20 pb-footer">
-                <LatestUpdates posts={latestPosts}></LatestUpdates>
+                <LatestUpdates t={t} posts={latestPosts}></LatestUpdates>
             </section>
         </main>
     );

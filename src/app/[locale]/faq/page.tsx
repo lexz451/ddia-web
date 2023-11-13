@@ -83,7 +83,7 @@ export default async function FAQ() {
             </section>
 
             <section className="my-20 pb-footer page-container">
-                <LatestUpdates posts={latestPosts} />
+                {/* <LatestUpdates posts={latestPosts} /> */}
             </section>
         </main>
     );

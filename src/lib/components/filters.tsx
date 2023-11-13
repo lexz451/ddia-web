@@ -4,8 +4,16 @@ import SearchBar from "./search-bar";
 import { useCallback } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import useI18nRouter from "../hooks/useI18nRouter";
+import useI18n from "../hooks/useI18n";
 
-export default function Filters({ tags }: { tags: any[] }) {
+export default function Filters({
+    tags,
+    locale,
+}: {
+    tags: any[];
+    locale: string;
+}) {
+    const { t } = useI18n(locale);
     const router = useI18nRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
@@ -53,7 +61,7 @@ export default function Filters({ tags }: { tags: any[] }) {
                 }`}
                     onClick={() => resetTag()}
                 >
-                    All
+                    {t("all")}
                 </button>
                 {tags.map((tag: any) => {
                     return (
@@ -66,7 +74,7 @@ export default function Filters({ tags }: { tags: any[] }) {
                             }`}
                             onClick={() => handleTagClick(tag)}
                         >
-                            {tag.title}
+                            {t(tag.slug)}
                         </button>
                     );
                 })}
@@ -75,7 +83,7 @@ export default function Filters({ tags }: { tags: any[] }) {
                 <SearchBar
                     onSearch={onSearch}
                     onClear={onClearSearch}
-                    placeholder="Filter"
+                    placeholder={t('filter')}
                 />
             </div>
         </div>

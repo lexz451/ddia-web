@@ -6,13 +6,14 @@ export default function Careers() {
                     Careers
                 </h1>
             </section>
-            <section className="pb-footer mb-20">
+            <section className="mb-20">
                 <p className="max-w-prose text-center mx-auto text-lg">
                     Thank you for your interest in joining our team! At this
                     time, we do not have any open roles available. Please check
                     back for future opportunities.
                 </p>
             </section>
+            <section className="pb-footer"></section>
         </main>
     );
 }

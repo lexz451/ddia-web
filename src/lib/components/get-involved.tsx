@@ -5,8 +5,16 @@ import MailImg from "../assets/get-involved.png";
 import { sendContactInfo } from "../utils/actions";
 import SubmitButton from "./SubmitButton";
 import { useFormState } from "react-dom";
+import useI18n from "../hooks/useI18n";
 
-export default function GetInvolved() {
+export default function GetInvolved({
+    locale
+}: {
+    locale: string;
+}) {
+
+    const { t } = useI18n(locale)
+
     const [state, sendInfo] = useFormState(sendContactInfo, {
         message: "",
         error: false,
@@ -30,34 +38,30 @@ export default function GetInvolved() {
                     className="flex flex-col justify-center order-1 lg:order-2"
                 >
                     <div className="Headline text-design-light-green text-4xl lg:text-5xl font-extrabold font-avenir leading-10">
-                        Get Involved
+                        {t('get-involved')}
                     </div>
                     <p className="IntroductoryText mt-5 lg:mt-10 text-neutral-100 lg:text-lg font-inter leading-normal">
-                        Are you working to strengthen a healthy Internet for
-                        democracy? Do you want to learn more about narratives
-                        circulating in Latino spaces online? Have an interest in
-                        U.S. Latinos or Latin America and where the two
-                        intersect? Are you a policymaker working on tech policy?
+                        {t("home.get-involved.message")}
                     </p>
                     <p className="mt-4 text-neutral-100 lg:text-lg leading-normal">
-                        Contact us at <a className="underline" href="mailto:info@ddia.org">info@ddia.org</a> with press inquiries, to explore partnerships, and to learn more about our work.
+                        {t("home.get-involved.message2")} <a className="underline" href="mailto:info@ddia.org">info@ddia.org</a> {t("home.get-involved.message3")}
                     </p>
                     <input
                         required
                         name="name"
-                        placeholder="Name"
+                        placeholder={t('name')}
                         className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                     ></input>
                     <input
                         required
                         name="organization"
-                        placeholder="Organization"
+                        placeholder={t('organization')}
                         className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                     ></input>
                     <input
                         required
                         name="title"
-                        placeholder="Title"
+                        placeholder={t('title')}
                         className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                     ></input>
                     <div className="block relative w-full mt-4">
@@ -65,7 +69,7 @@ export default function GetInvolved() {
                             required
                             name="email"
                             type="email"
-                            placeholder="Email"
+                            placeholder={t('email')}
                             className="rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                         ></input>
                         {/* <button type="submit" className="absolute hover:bg-design-light-green transition-colors duration-300 bg-white rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center">
@@ -88,7 +92,7 @@ export default function GetInvolved() {
                     </div>
                     
                     <p className="my-4 text-neutral-100 lg:text-lg">
-                        Sign up to receive our latest updates.
+                    {t("home.get-involved.message4")}
                     </p>
 
                 </form>
