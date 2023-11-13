@@ -53,7 +53,7 @@ export default async function MeetTheTeam() {
                     </h1>
                     <I18nLink
                         className="r-btn border-design-green text-design-green mt-10 mx-auto"
-                        href={"/"}
+                        href={"/careers"}
                     >
                         Work with us
                     </I18nLink>
