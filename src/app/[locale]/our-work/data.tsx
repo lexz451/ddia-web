@@ -86,7 +86,7 @@ export async function fetchData() {
             },
             categories: {
                 slug: {
-                    $eq: 'resources-and-tools'
+                    $eq: 'external-resources'
                 }
             },
             tags: {
