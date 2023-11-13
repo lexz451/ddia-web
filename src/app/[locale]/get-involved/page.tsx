@@ -1,16 +1,10 @@
 import FacebookIcon from "@/lib/assets/facebook.svg";
-import InstagramIcon from "@/lib/assets/instagram.svg";
 import XIcon from "@/lib/assets/x-twitter.svg";
 import LinkedInIcon from "@/lib/assets/linked-in.svg";
-import MediumIcon from "@/lib/assets/medium.svg";
-import YoutubeIcon from "@/lib/assets/yt.svg";
-
-import Image from "next/image";
-import MailImg from "@/lib/assets/get-involved.png";
-import ArrowIcon from "@/lib/assets/arrow.svg";
 import LogoCircle from "@/lib/assets/logo-circle.svg";
 import I18nLink from "@/lib/components/I18nLink";
 import initTranslations from "@/i18n";
+import Form from "./form";
 
 export default async function ContactUs({
     params: { locale },
@@ -66,45 +60,7 @@ export default async function ContactUs({
                 </section>
 
                 <section className="md:page-container my-20">
-                    <div className="Rectangle157 bg-design-green md:rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-10 px-5 md:px-10 py-14">
-                        <Image
-                            alt="mail"
-                            src={MailImg}
-                            quality={80}
-                            className="order-2 md:order-1"
-                        ></Image>
-                        <div className="flex flex-col justify-center order-1 md:order-2">
-                            <div className="Headline text-design-light-green text-4xl md:text-5xl font-extrabold font-avenir leading-10">
-                                {t("newsletter-form.title")}
-                            </div>
-                            <p className="IntroductoryText mt-10 text-neutral-100 md:text-lg font-light font-inter leading-relaxed">
-                                {t("newsletter-form.message")}
-                            </p>
-
-                            <input
-                                placeholder={t("name")}
-                                className="mt-10 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
-                            ></input>
-                            <input
-                                placeholder={t("organization")}
-                                className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
-                            ></input>
-                            <input
-                                placeholder={t("title")}
-                                className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
-                            ></input>
-
-                            <div className="block relative w-full mt-4">
-                                <input
-                                    placeholder={t("email")}
-                                    className="rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
-                                ></input>
-                                <button className="absolute bg-white hover:bg-design-light-green duration-300 transition-colors rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center">
-                                    <ArrowIcon></ArrowIcon>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <Form locale={locale}></Form>
                 </section>
 
                 <section className="mb-32 px-4 pb-footer">
