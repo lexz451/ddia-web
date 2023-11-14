@@ -51,6 +51,9 @@ export type TAuthor = {
 }
 
 export type TPost = {
+    inherited_feature_metadata: boolean;
+    alt_feature_metadata?: string;
+    caption_feature_metadata?: string;
     id: number;
     title: string;
     description: string;

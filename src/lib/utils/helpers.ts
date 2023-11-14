@@ -35,11 +35,20 @@ export function parsePostContent(content: string): string {
 
     const images = root.querySelectorAll('img');
     images.forEach((image: HTMLElement) => {
-        image.classList.add('w-full');
         image.classList.add('h-auto');
         image.setAttribute('loading', 'lazy');
         if (image.getAttribute('alt') === '') {
             image.setAttribute('alt', 'Image');
+        }
+        if (image.getAttribute('caption') !== null) {
+            // create a figure element
+            const figure = parse(
+                `<figure>
+                    ${image.outerHTML}
+                    <figcaption>${image.getAttribute('caption') || ''}</figcaption>
+                </figure>`);
+            // replace image with figure
+            image.replaceWith(figure);
         }
     });
 
