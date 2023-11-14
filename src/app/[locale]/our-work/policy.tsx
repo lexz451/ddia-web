@@ -74,7 +74,7 @@ export default function Policy({ policy, t }: { policy: TPost[]; t: any }) {
                             href={`/latest?tag=policy`}
                             className="r-btn border-none text-white bg-design-green mt-10"
                         >
-                            See all
+                            {t("see-all")}
                         </I18nLink>
                     </div>
                 </div>
