@@ -330,7 +330,7 @@ export default function Navbar({ locale }: { locale: string }) {
                         <Suspense fallback={null}>
                             <SearchBar
                                 autoClean={true}
-                                placeholder="Search..."
+                                placeholder={t("search")}
                                 onSearch={onSearch}
                             ></SearchBar>
                         </Suspense>
