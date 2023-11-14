@@ -8,10 +8,12 @@ import { Suspense } from "react";
 import { avenir } from "@/lib/utils/fonts";
 import i18nConfig from "@/i18nConfig";
 import { dir } from "i18next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
     title: "DDIA - Digital Democracy Institute of the Americas",
-    description: "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
+    description:
+        "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
     robots: {
         follow: true,
         index: true,
@@ -20,11 +22,11 @@ export const metadata: Metadata = {
     alternates: {
         canonical: `${process.env.SITE_HOST}/en`,
         languages: {
-            'en-US': `${process.env.SITE_HOST}/en`,
-            'es-ES': `${process.env.SITE_HOST}/es`,
-            'pt-BR': `${process.env.SITE_HOST}/pt`,
-        }
-    }
+            "en-US": `${process.env.SITE_HOST}/en`,
+            "es-ES": `${process.env.SITE_HOST}/es`,
+            "pt-BR": `${process.env.SITE_HOST}/pt`,
+        },
+    },
 };
 
 export function generateStaticParams() {
@@ -63,6 +65,23 @@ export default function RootLayout({
                         options={{ showSpinner: false }}
                     />
                 </Suspense>
+                <Script id="gtag" strategy="lazyOnload">
+                    {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                        })(window,document,'script','dataLayer','GTM-T95MVZ4K');`}
+                </Script>
+                {/* <!-- Google Tag Manager (noscript) --> */}
+                <noscript>
+                    <iframe
+                        src="https://www.googletagmanager.com/ns.html?id=GTM-T95MVZ4K"
+                        height="0"
+                        width="0"
+                        style={{ display: "none", visibility: "hidden" }}
+                    ></iframe>
+                </noscript>
+                {/* <!-- End Google Tag Manager (noscript) --> */}
             </body>
         </html>
     );
