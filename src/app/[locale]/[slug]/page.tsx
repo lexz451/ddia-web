@@ -36,7 +36,7 @@ export async function generateStaticParams() {
 export default async function ArticlePage({
     params: { slug, locale },
 }: {
-    params: { slug: string, locale: string };
+    params: { slug: string; locale: string };
 }) {
     const { post, latestPosts, related } = await fetchData(slug);
 
@@ -70,12 +70,26 @@ export default async function ArticlePage({
             <article className="pt-[104px]">
                 <header className="flex flex-col">
                     {post.feature_media && (
-                        <ServerImage
-                            {...post.feature_media}
-                            priority={true}
-                            className="h-[40vh] lg:h-[60vh] w-full object-cover object-top"
-                            sizes="100vw"
-                        ></ServerImage>
+                        <figure>
+                            <ServerImage
+                                {...post.feature_media}
+                                alternativeText={
+                                    (!post.inherited_feature_metadata &&
+                                        post.alt_feature_metadata) ||
+                                    ""
+                                }
+                                priority={true}
+                                className="h-[40vh] lg:h-[60vh] w-full object-cover object-top"
+                                sizes="100vw"
+                            ></ServerImage>
+                            {!post.inherited_feature_metadata && (
+                                <figcaption className="leading-normal text-sm mt-2 text-[#6b7280]">
+                                    <div className="page-container">
+                                    {post.caption_feature_metadata || ""}
+                                    </div>
+                                </figcaption>
+                            )}
+                        </figure>
                     )}
                     <div className="page-container">
                         <div className="flex items-center justify-center my-12">
