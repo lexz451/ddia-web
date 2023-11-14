@@ -4,8 +4,9 @@ export async function sendContactInfo(prevState: any, form: FormData) {
     const data: any = Object.fromEntries(form.entries());
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
         method: "POST",
-        body: data,
+        body: JSON.stringify(data),
         headers: {
+            'Content-Type': 'application/json',
             'Authorization': `Bearer ${process.env.FORMS_TOKEN}`,
         }
     });
