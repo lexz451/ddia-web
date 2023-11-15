@@ -11,6 +11,7 @@ export async function sendContactInfo(prevState: any, form: FormData) {
         }
     });
     if (!response.ok) {
+        console.error(response.text);
         return {
             error: true,
             submitted: false,
