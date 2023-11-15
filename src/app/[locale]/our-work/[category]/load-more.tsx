@@ -15,7 +15,7 @@ function PostItem({ post }: { post: TPost }) {
             key={post?.slug}
             className="overflow-hidden bg-white rounded-lg flex-col justify-stretch items-start inline-flex"
         >
-            <I18nLink href={`${post?.platform_url ? post.platform_url : `/${post.slug}`}`}>
+            <I18nLink className="w-full" href={`${post?.platform_url ? post.platform_url : `/${post.slug}`}`}>
                 {post?.feature_media && (
                     <ServerImage
                         {...post.feature_media}
