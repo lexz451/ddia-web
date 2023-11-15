@@ -11,11 +11,11 @@ export async function sendContactInfo(prevState: any, form: FormData) {
         }
     });
     if (!response.ok) {
-        console.error(response.text);
         return {
             error: true,
             submitted: false,
-            message: "There was an error sending your message. Please try again later.",
+            // message: "There was an error sending your message. Please try again later.",
+            message: await response.text(),
         }
     }
     return {
