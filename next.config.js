@@ -4,7 +4,15 @@ const nextConfig = {
     output: 'standalone',
     images: {
         formats: ['image/avif', 'image/webp'],
-        domains: ['api-ddla.datalis.dev'],
+        // domains: ['api-ddla.datalis.dev'],
+        remotePatterns: [
+            {
+                hostname: 'api-ddla.datalis.dev'
+            },
+            {
+                hostname: 'api.ddia.org',
+            }
+        ]
     },
     webpack: (config, { isServer }) => {
         // Add SVGR Loader
