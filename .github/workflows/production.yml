@@ -17,6 +17,7 @@ jobs:
           run: |
             echo "NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}" >> .env
             echo "API_TOKEN=${{ secrets.API_TOKEN }}" >> .env
+            echo "FORMS_TOKEN=${{ secrets.API_TOKEN }}" >> .env
             echo "REVALIDATION_TOKEN=${{ secrets.REVALIDATION_TOKEN }}" >> .env
             echo "SITE_HOST=${{ secrets.SITE_HOST }}" >> .env
             echo "I18NEXUS_API_KEY=${{ secrets.I18NEXUS_API_KEY }}" >> .env
