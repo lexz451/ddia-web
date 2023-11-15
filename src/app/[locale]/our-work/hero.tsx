@@ -35,7 +35,8 @@ export default function Hero({
     };
 
     return (
-        <section className="page-container gradient-green-page lg:bg-none pt-[80px] lg:pt-0">
+        <section className="gradient-green-page lg:bg-none pt-[80px] lg:pt-0">
+            <div className="page-container">
             <div className="flex flex-col items-center lg:px-10 py-20 lg:gradient-green-container rounded-3xl">
                 <div className="text-center text-design-green text-4xl lg:text-6xl font-extrabold  leading-10">
                     {t('our-work')}
@@ -113,6 +114,7 @@ export default function Hero({
                         <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] rotate-90"></ArrowCircleIcon>
                     </button>
                 </div>
+            </div>
             </div>
         </section>
     );
