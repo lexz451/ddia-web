@@ -77,7 +77,7 @@ export default function Navbar({ locale }: { locale: string }) {
                     duration: 0.3,
                 });
             }
-        } else if (scrollPosition == 0) {
+        } else if (scrollPosition == 0 && !isOpen) {
             setIsScrolled(false);
             gsap.to(navbar, {
                 position: "absolute",
@@ -85,6 +85,8 @@ export default function Navbar({ locale }: { locale: string }) {
                 duration: 0.3,
             });
         }
+        
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [scrollDirection, scrollPosition]);
 
     function onSearch(query: string) {
