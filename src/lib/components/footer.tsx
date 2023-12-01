@@ -14,7 +14,6 @@ import SubmitButton from "./SubmitButton";
 export default function Footer({ locale }: { locale: string }) {
     const { t } = useI18n(locale);
     const [state, sendInfo] = useFormState(sendContactInfo, {
-        message: "",
         error: false,
         submitted: false,
     });
@@ -183,7 +182,7 @@ export default function Footer({ locale }: { locale: string }) {
                                     href="/latest?tag=events"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    {t("events")}
+                                    {t("workshops-and-events")}
                                 </I18nLink>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
@@ -264,17 +263,14 @@ export default function Footer({ locale }: { locale: string }) {
                                     <SubmitButton></SubmitButton>
                                     {state?.error && (
                                         <p className="text-red-500 text-sm mt-2">
-                                            {state?.message}
+                                            {t("submit_subscribe_error")}
                                         </p>
                                     )}
                                     {state?.submitted && (
                                         <p className="text-design-light-green text-sm mt-5">
-                                            {state?.message}
+                                            {t("submit_subscribe_success")}
                                         </p>
                                     )}
-                                    <p aria-live="polite" className="sr-only">
-                                        {state?.message}
-                                    </p>
                                 </div>
                             </div>
                         </form>
