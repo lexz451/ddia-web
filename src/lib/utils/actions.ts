@@ -15,12 +15,11 @@ export async function sendContactInfo(prevState: any, form: FormData) {
             error: true,
             submitted: false,
             // message: "There was an error sending your message. Please try again later.",
-            message: await response.text(),
         }
     }
     return {
         error: false,
         submitted: true,
-        message: "Your message was sent successfully.",
+        // message: "Your message was sent successfully.",
     }
 }

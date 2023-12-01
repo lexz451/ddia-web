@@ -235,7 +235,7 @@ export default async function ArticlePage({
                     </div>
                 </main>
                 <footer className="page-container flex flex-col gap-10 mb-20 pb-footer">
-                    <ContactUsBanner></ContactUsBanner>
+                    <ContactUsBanner locale={locale}></ContactUsBanner>
                     <LatestUpdates t={t} posts={latestPosts}></LatestUpdates>
                 </footer>
             </article>

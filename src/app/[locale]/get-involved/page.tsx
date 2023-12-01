@@ -5,6 +5,7 @@ import LogoCircle from "@/lib/assets/logo-circle.svg";
 import I18nLink from "@/lib/components/I18nLink";
 import initTranslations from "@/i18n";
 import Form from "./form";
+import ContactButton from "@/lib/components/ContactButton";
 
 export default async function ContactUs({
     params: { locale },
@@ -22,16 +23,17 @@ export default async function ContactUs({
                         {t("contact-us")}
                     </h1>
 
-                    <p className="text-design-green font-avenir mb-10 font-medium max-w-md mx-auto text-center">
-                        {t('get-involved-page.message1')}{" "}
+                    <div className="text-design-green font-avenir mb-10 font-medium max-w-md mx-auto text-center">
+                        {/* {t('get-involved-page.message1')}{" "}
                         <I18nLink
                             className="underline font-semibold"
                             href={"info@ddia.org"}
                         >
                             info@ddia.org
-                        </I18nLink>{" "}
+                        </I18nLink>{" "} */}
+                        <ContactButton locale={locale}></ContactButton>
                         {t('get-involved-page.message2')}
-                    </p>
+                    </div>
 
                     <div className="flex flex-col items-center mx-auto w-fit">
                         <p>{t('follow-us')}</p>

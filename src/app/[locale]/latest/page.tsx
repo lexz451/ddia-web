@@ -31,7 +31,7 @@ export default async function LatestUpdates({
       </section>
 
       <section className="pb-footer mb-20">
-        <ContactUsBanner></ContactUsBanner>
+        <ContactUsBanner locale={locale}></ContactUsBanner>
       </section>
     </main>
   );

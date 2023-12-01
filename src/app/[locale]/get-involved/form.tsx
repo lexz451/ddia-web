@@ -10,7 +10,6 @@ export default function Form({ locale }: { locale: string }) {
     const { t } = useI18n(locale);
 
     const [state, sendInfo] = useFormState(sendContactInfo, {
-        message: "",
         error: false,
         submitted: false,
     });
@@ -64,17 +63,14 @@ export default function Form({ locale }: { locale: string }) {
                     <SubmitButton></SubmitButton>
                     {state?.error && (
                         <p className="text-red-500 text-sm mt-2">
-                            {state?.message}
+                            {t("submit_subscribe_error")}
                         </p>
                     )}
                     {state?.submitted && (
                         <p className="text-design-light-green text-sm mt-5">
-                            {state?.message}
+                            {t("submit_subscribe_success")}
                         </p>
                     )}
-                    <p aria-live="polite" className="sr-only">
-                        {state?.message}
-                    </p>
                     {/* <button className="absolute bg-white hover:bg-design-light-green duration-300 transition-colors rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center">
                         <ArrowIcon></ArrowIcon>
                     </button> */}

@@ -6,6 +6,7 @@ import { sendContactInfo } from "../utils/actions";
 import SubmitButton from "./SubmitButton";
 import { useFormState } from "react-dom";
 import useI18n from "../hooks/useI18n";
+import ContactButton from "./ContactButton";
 
 export default function GetInvolved({
     locale
@@ -16,7 +17,6 @@ export default function GetInvolved({
     const { t } = useI18n(locale)
 
     const [state, sendInfo] = useFormState(sendContactInfo, {
-        message: "",
         error: false,
         submitted: false,
     });
@@ -44,7 +44,7 @@ export default function GetInvolved({
                         {t("home.get-involved.message")}
                     </p>
                     <p className="mt-4 text-neutral-100 lg:text-lg leading-normal">
-                        {t("home.get-involved.message2")} <a className="underline" href="mailto:info@ddia.org">info@ddia.org</a> {t("home.get-involved.message3")}
+                        <ContactButton locale={locale}></ContactButton> {t("home.get-involved.message3")}
                     </p>
                     <input
                         required
@@ -78,17 +78,14 @@ export default function GetInvolved({
                         <SubmitButton></SubmitButton>
                         {state?.error && (
                             <p className="text-red-500 text-sm mt-2">
-                                {state?.message}
+                                {t("submit_subscribe_error")}
                             </p>
                         )}
                         {state?.submitted && (
                             <p className="text-design-light-green text-sm mt-5">
-                                {state?.message}
+                                {t("submit_subscribe_success")}
                             </p>
                         )}
-                        <p aria-live="polite" className="sr-only">
-                            {state?.message}
-                        </p>
                     </div>
                     
                     <p className="my-4 text-neutral-100 lg:text-lg">
