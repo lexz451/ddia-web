@@ -23,7 +23,7 @@ export default function ContactUsBanner({
 
     return (
         <>
-        <ContactModal showModal={showModal} onClose={() => setShowModal(false)} locale={locale}></ContactModal>
+        <ContactModal title="contact-us" showTextInput={true} showModal={showModal} onClose={() => setShowModal(false)} locale={locale}></ContactModal>
         <button onClick={() => setShowModal(true)} className="flex w-full my-10 h-80 overflow-hidden rounded-3xl bg-gradient-to-b from-design-light-green to-gray-100">
             <Image src={ContactUsDesktopImg} className="hidden lg:block w-full h-full object-cover hover:scale-105 transition-transform duration-300" alt="Contact Us"></Image>
             <Image src={ContactUsImg} className="block lg:hidden w-full h-full object-cover hover:scale-105 transition-transform duration-300" alt="Contact Us"></Image>
