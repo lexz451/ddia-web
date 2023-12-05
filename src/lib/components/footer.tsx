@@ -210,6 +210,12 @@ export default function Footer({ locale }: { locale: string }) {
                                 >
                                     {t("meet-the-team")}
                                 </I18nLink>
+                                <I18nLink
+                                    href={"/careers"}
+                                    className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
+                                >
+                                    {t("work-with-us")}
+                                </I18nLink>
                             </div>
                         </div>
                     </div>
