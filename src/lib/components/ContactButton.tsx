@@ -21,7 +21,7 @@ export default function ContactButton({
 
     return (
         <>
-            <ContactModal showModal={showModal} onClose={() => setShowModal(false)} locale={locale}></ContactModal>
+            <ContactModal showTextInput={true} title="contact-us" showModal={showModal} onClose={() => setShowModal(false)} locale={locale}></ContactModal>
             <span className="underline cursor-pointer" onClick={() => setShowModal(true)}>Contact us</span>
         </>
     );
