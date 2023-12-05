@@ -32,7 +32,8 @@ export default async function ContactUs({
                             info@ddia.org
                         </I18nLink>{" "} */}
                         <ContactButton locale={locale}></ContactButton>
-                        {t('get-involved-page.message2')}
+                        {" "}
+                        <span>{t('get-involved-page.message2')}</span>
                     </div>
 
                     <div className="flex flex-col items-center mx-auto w-fit">
