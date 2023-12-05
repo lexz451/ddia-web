@@ -285,17 +285,17 @@ export default function Footer({ locale }: { locale: string }) {
                             </span>
                         </div>
                         <div className="order-1 lg:order-2 Copyright text-center lg:text-right text-gray-400 text-sm font-normal font-avenir uppercase leading-normal">
-                            <span className="hover:text-design-light-green">
+                            <I18nLink href={`/digital-democracy-institute-of-the-americas-privacy-policy`} className="hover:text-design-light-green">
                                 {t("privacy-policy")}
-                            </span>{" "}
+                            </I18nLink>{" "}
                             |{" "}
-                            <span className="hover:text-design-light-green">
+                            <I18nLink href={'/digital-democracy-institute-of-the-americas-privacy-policy'} className="hover:text-design-light-green">
                                 {t("terms-of-use")}
-                            </span>{" "}
+                            </I18nLink>{" "}
                             |{" "}
-                            <span className="hover:text-design-light-green">
+                            <I18nLink href={'/digital-democracy-institute-of-the-americas-privacy-policy'} className="hover:text-design-light-green">
                                 {t("cookie-policy")}
-                            </span>
+                            </I18nLink>
                         </div>
                     </div>
                 </div>
