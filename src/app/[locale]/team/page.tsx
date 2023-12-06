@@ -8,7 +8,12 @@ async function fetchData() {
     const ourTeam = await getApi(
         "/our-teams",
         {
-            populate: ["avatar"],
+            populate: {
+                avatar: true,
+                descriptions: {
+                    populate: ["language"]
+                },
+            },
             sort: ['order:asc']
         },
         {
@@ -18,7 +23,12 @@ async function fetchData() {
     const board = await getApi(
         "/boards",
         {
-            populate: ["avatar"],
+            populate: {
+                avatar: true,
+                descriptions: {
+                    populate: ["language"]
+                },
+            },
             sort: ['order:asc']
         },
         {
@@ -28,13 +38,20 @@ async function fetchData() {
     const advisory = await getApi(
         "/advisories",
         {
-            populate: ["avatar"],
+            populate: {
+                avatar: true,
+                descriptions: {
+                    populate: ["language"]
+                },
+            },
             sort: ['order:asc']
         },
         {
             next: { tags: ["advisory"] },
         }
     );
+
+
     return {
         ourTeam: ourTeam.data as TMember[],
         board: board.data as TMember[],
@@ -66,7 +83,7 @@ export default async function MeetTheTeam({
                 </section>
                 <section className="mt-20 flex flex-col gap-8">
                     {ourTeam.map((member) => (
-                        <TeamAccordion {...member} key={member.slug} />
+                        <TeamAccordion locale={locale} {...member} key={member.slug} />
                     ))}
                 </section>
                 <section>
@@ -83,8 +100,8 @@ export default async function MeetTheTeam({
                     </h2>
                     <div className="flex flex-col gap-8">
                         {board.map((member) => (
-                            <TeamAccordion {...member} key={member.slug} />
-                        ))}
+                            <TeamAccordion locale={locale} {...member} key={member.slug} />
+                        ))} 
                     </div>
                 </section>
                 <section className="pb-footer mb-32">
@@ -101,7 +118,7 @@ export default async function MeetTheTeam({
                     </h2>
                     <div className="flex flex-col gap-8">
                     {advisory.map((member) => (
-                        <TeamAccordion {...member} key={member.slug} />
+                        <TeamAccordion locale={locale} {...member} key={member.slug} />
                     ))}
                     </div>
                 </section>

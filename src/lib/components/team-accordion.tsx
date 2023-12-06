@@ -6,18 +6,34 @@ import parse from "html-react-parser";
 
 export default function TeamAccordion({
     avatar,
-    prime,
     name,
     role,
     description,
+    descriptions,
+    locale,
 }: {
     avatar: TServerImage;
     name: string;
     role: string;
     prime?: string;
     description: string;
+    descriptions: {
+        language: {
+            code: string;
+        };
+        role: string;
+        content: string;
+    }[];
+    locale: string;
 }) {
     const [expanded, setExpanded] = useState<boolean>(false);
+
+    const localeDescription = descriptions.find(
+        (desc) => desc.language.code === locale
+    ) || {
+        content: description,
+        role: role,
+    };
 
     return (
         <div
@@ -49,8 +65,7 @@ export default function TeamAccordion({
                             {name}
                         </h3>
                         <div className="flex text-base font-avenir mt-1">
-                            <h4 className="uppercase text-sm">{role}</h4>
-                            <h4 className="font-semibold">{prime}</h4>
+                            <h4 className="uppercase text-sm">{localeDescription.role}</h4>
                         </div>
                     </div>
 
@@ -92,7 +107,7 @@ export default function TeamAccordion({
                             expanded ? "pb-4" : "pb-0"
                         }`}
                     >
-                        {parse(description)}
+                        {parse(localeDescription.content)}
                     </div>
                 </div>
             </div>
