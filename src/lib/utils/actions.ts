@@ -1,6 +1,10 @@
 "use server";
 
+
 export async function sendContactInfo(prevState: any, form: FormData) {
+    
+    
+
     const data: any = Object.fromEntries(form.entries());
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
         method: "POST",

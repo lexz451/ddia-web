@@ -82,6 +82,11 @@ export default function RootLayout({
                     ></iframe>
                 </noscript>
                 {/* <!-- End Google Tag Manager (noscript) --> */}
+                <Script
+                    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+                    async={true}
+                    defer={true}
+                />
             </body>
         </html>
     );
