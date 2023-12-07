@@ -1,14 +1,18 @@
 import { NextRequest } from "next/server";
 
-const validate = async (request: NextRequest) => {
+
+export async function POST(request: NextRequest) {
     const secret = process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY;
     if (!secret) {
-        return new Response(JSON.stringify({
-            error: true,
-            message: "No Cloudflare secret key found",
-        }), { status: 401 });
+        return Response.json(
+            {
+                error: true,
+                message: "No Cloudflare secret key found",
+            },
+            { status: 401 }
+        );
     }
-    const form = new URLSearchParams();
+    const form = new FormData();
     const { headers } = request;
     const body = await request.json();
     const remoteIp = headers.get("x-forwarded-for") as string;
@@ -24,31 +28,44 @@ const validate = async (request: NextRequest) => {
     );
 
     const data = await result.json();
-    return data?.success;
-};
 
-export async function POST(req: NextRequest) {
-    const isValid = await validate(req);
-    if (!isValid) {
-        return new Response(
-            JSON.stringify({
+    if (!data.success) {
+        return Response.json(
+            {
                 error: true,
                 message: "Invalid captcha",
-            }),
+            },
             { status: 401 }
         );
     }
-    const data = await req.json();
-    const response = await fetch(
+
+    const contact = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
         {
             method: "POST",
-            body: JSON.stringify(data),
+            body: JSON.stringify(body),
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${process.env.FORMS_TOKEN}`,
             },
         }
     );
-    return new Response(JSON.stringify(response), { status: response.status });
+
+    if (!contact.ok) {
+        return Response.json(
+            {
+                error: true,
+                message: "There was an error sending your message. Please try again later.",
+            },
+            { status: 500 }
+        );
+    }
+    
+    return Response.json(
+        {
+            error: false,
+            message: "Your message was sent successfully.",
+        },
+        { status: 200 }
+    );
 }

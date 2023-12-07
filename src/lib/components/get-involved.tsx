@@ -2,37 +2,41 @@
 
 import Image from "next/image";
 import MailImg from "../assets/get-involved.png";
-import { sendContactInfo } from "../utils/actions";
 import SubmitButton from "./SubmitButton";
-import { useFormState } from "react-dom";
 import useI18n from "../hooks/useI18n";
 import ContactButton from "./ContactButton";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function GetInvolved({ locale }: { locale: string }) {
     const { t } = useI18n(locale);
+    const formRef = useRef<HTMLFormElement>(null);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
+    const [pending, setPending] = useState(false);
 
-    // const [state, sendInfo] = useFormState(sendContactInfo, {
-    //     error: false,
-    //     submitted: false,
-    // });
 
     const onSubmit = async (e: any) => {
+        setPending(true);
         e.preventDefault();
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
+        console.log(data);
         const response = await fetch("/api/contact", {
             method: "POST",
             body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+            },
         });
         const json = await response.json();
         if (json.error) {
+            console.error(json.error);
             setError(true);            
         } else {
             setSubmitted(true);
+            formRef?.current?.reset();
         }
+        setPending(false);
     };
 
     return (
@@ -48,6 +52,7 @@ export default function GetInvolved({ locale }: { locale: string }) {
                     className="order-2 lg:order-1"
                 ></Image>
                 <form
+                    ref={formRef}
                     onSubmit={onSubmit}
                     className="flex flex-col justify-center order-1 lg:order-2"
                 >
@@ -62,7 +67,7 @@ export default function GetInvolved({ locale }: { locale: string }) {
                         <span>{t("home.get-involved.message3")}</span>
                     </div>
                     <div
-                        className="cf-turnstile checkbox"
+                        className="cf-turnstile checkbox mt-4"
                         data-sitekey={
                             process.env
                                 .NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY
@@ -94,10 +99,7 @@ export default function GetInvolved({ locale }: { locale: string }) {
                             placeholder={t("email")}
                             className="rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                         ></input>
-                        {/* <button type="submit" className="absolute hover:bg-design-light-green transition-colors duration-300 bg-white rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center">
-                            <ArrowIcon></ArrowIcon>
-                        </button> */}
-                        <SubmitButton></SubmitButton>
+                        <SubmitButton pending={pending}></SubmitButton>
                         {error && (
                             <p className="text-red-500 text-sm mt-2">
                                 {t("submit_subscribe_error")}

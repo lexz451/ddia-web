@@ -1,10 +1,8 @@
 "use client";
 import useI18n from "../hooks/useI18n";
-import { sendContactInfo } from "../utils/actions";
-import { createPortal, useFormState } from "react-dom";
 import SubmitButton from "./SubmitButton";
 import CloseIcon from "@/lib/assets/close.svg";
-import { Suspense, useEffect, useRef } from "react";
+import { useRef, useState } from "react";
 import ClientPortal from "./ClientPortal";
 
 export default function ContactModal({
@@ -21,18 +19,35 @@ export default function ContactModal({
     title: string;
 }) {
     const { t } = useI18n(locale);
+
     const formRef = useRef<HTMLFormElement>(null);
+    const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState(false);
+    const [pending, setPending] = useState(false);
 
-    const [state, sendInfo] = useFormState(sendContactInfo, {
-        error: false,
-        submitted: false,
-    });
-
-    useEffect(() => {
-        if (state.submitted) {
-            formRef.current?.reset();
+    const onSubmit = async (e: any) => {
+        setPending(true);
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+        console.log(data);
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        const json = await response.json();
+        if (json.error) {
+            console.error(json.error);
+            setError(true);
+        } else {
+            setSubmitted(true);
+            formRef?.current?.reset();
         }
-    }, [state.submitted]);
+        setPending(false);
+    };
 
     return (
         <ClientPortal>
@@ -52,12 +67,20 @@ export default function ContactModal({
                     </div>
                     <form
                         ref={formRef}
-                        action={sendInfo}
+                        onSubmit={onSubmit}
                         className="flex flex-col items-center max-w-md mx-auto"
                     >
                         <div className="Headline text-center text-design-light-green text-4xl lg:text-5xl font-extrabold font-avenir leading-10">
                             {t(title)}
                         </div>
+
+                        <div
+                            className="cf-turnstile checkbox mt-4"
+                            data-sitekey={
+                                process.env
+                                    .NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY
+                            }
+                        />
 
                         <input
                             required
@@ -95,13 +118,13 @@ export default function ContactModal({
                                 className="rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                             ></input>
 
-                            <SubmitButton></SubmitButton>
-                            {state?.error && (
+                            <SubmitButton pending={pending}></SubmitButton>
+                            {error && (
                                 <p className="text-red-500 text-sm mt-2">
                                     {t("submit_contact_error")}
                                 </p>
                             )}
-                            {state?.submitted && (
+                            {submitted && (
                                 <p className="text-design-light-green text-sm mt-5">
                                     {t("submit_contact_success")}
                                 </p>
