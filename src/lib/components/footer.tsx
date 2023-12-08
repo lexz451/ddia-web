@@ -3,21 +3,42 @@
 import Logo from "@/lib/assets/logo.svg";
 import FacebookIcon from "@/lib/assets/facebook.svg";
 import XIcon from "@/lib/assets/x-twitter.svg";
-import ArrowIcon from "../assets/arrow.svg";
 import LinkedInIcon from "@/lib/assets/linked-in.svg";
 import I18nLink from "./I18nLink";
 import useI18n from "../hooks/useI18n";
-import { useFormState } from "react-dom";
-import { sendContactInfo } from "../utils/actions";
 import SubmitButton from "./SubmitButton";
+import { useRef, useState } from "react";
 
 export default function Footer({ locale }: { locale: string }) {
     const { t } = useI18n(locale);
-    const [state, sendInfo] = useFormState(sendContactInfo, {
-        message: "",
-        error: false,
-        submitted: false,
-    });
+    const formRef = useRef<HTMLFormElement>(null);
+    const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState(false);
+    const [pending, setPending] = useState(false);
+
+    const onSubmit = async (e: any) => {
+        setPending(true);
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+        console.log(data);
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        const json = await response.json();
+        if (json.error) {
+            console.error(json.error);
+            setError(true);
+        } else {
+            setSubmitted(true);
+            formRef?.current?.reset();
+        }
+        setPending(false);
+    };
 
     return (
         <footer className="lg:absolute bottom-0 lg:bottom-10 left-0 right-0 overflow-hidden">
@@ -183,7 +204,7 @@ export default function Footer({ locale }: { locale: string }) {
                                     href="/latest?tag=events"
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    {t("events")}
+                                    {t("workshops-and-events")}
                                 </I18nLink>
                             </div>
                             <div className="FootersColumn flex-col justify-start items-start gap-3 inline-flex mt-5">
@@ -211,12 +232,19 @@ export default function Footer({ locale }: { locale: string }) {
                                 >
                                     {t("meet-the-team")}
                                 </I18nLink>
+                                <I18nLink
+                                    href={"/careers"}
+                                    className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
+                                >
+                                    {t("careers")}
+                                </I18nLink>
                             </div>
                         </div>
                     </div>
                     <div className="Subscribe border-y border-white border-opacity-20 mt-10 lg:mt-14 px-5 lg:px-0">
                         <form
-                            action={sendInfo}
+                            onSubmit={onSubmit}
+                            ref={formRef}
                             className="page-container lg:px-0 Content py-8 flex flex-col gap-8"
                         >
                             <div className="Cta flex-col justify-start items-start gap-2 inline-flex">
@@ -227,6 +255,13 @@ export default function Footer({ locale }: { locale: string }) {
                                     {t("footer.newsletter.subtitle")}
                                 </div>
                             </div>
+                            <div
+                                className="cf-turnstile checkbox hidden"
+                                data-sitekey={
+                                    process.env
+                                        .NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY
+                                }
+                            />
                             <div className="FootersSubscribeForm grid lg:grid-cols-4 w-full gap-4">
                                 <input
                                     name="name"
@@ -261,20 +296,19 @@ export default function Footer({ locale }: { locale: string }) {
                                         <ArrowIcon></ArrowIcon>
                                     </button> */}
 
-                                    <SubmitButton></SubmitButton>
-                                    {state?.error && (
+                                    <SubmitButton
+                                        pending={pending}
+                                    ></SubmitButton>
+                                    {error && (
                                         <p className="text-red-500 text-sm mt-2">
-                                            {state?.message}
+                                            {t("submit_subscribe_error")}
                                         </p>
                                     )}
-                                    {state?.submitted && (
+                                    {submitted && (
                                         <p className="text-design-light-green text-sm mt-5">
-                                            {state?.message}
+                                            {t("submit_subscribe_success")}
                                         </p>
                                     )}
-                                    <p aria-live="polite" className="sr-only">
-                                        {state?.message}
-                                    </p>
                                 </div>
                             </div>
                         </form>
@@ -289,17 +323,30 @@ export default function Footer({ locale }: { locale: string }) {
                             </span>
                         </div>
                         <div className="order-1 lg:order-2 Copyright text-center lg:text-right text-gray-400 text-sm font-normal font-avenir uppercase leading-normal">
-                            <span className="hover:text-design-light-green">
+                            <I18nLink
+                                href={`/digital-democracy-institute-of-the-americas-privacy-policy`}
+                                className="hover:text-design-light-green"
+                            >
                                 {t("privacy-policy")}
-                            </span>{" "}
+                            </I18nLink>{" "}
                             |{" "}
-                            <span className="hover:text-design-light-green">
+                            <I18nLink
+                                href={
+                                    "/digital-democracy-institute-of-the-americas-privacy-policy"
+                                }
+                                className="hover:text-design-light-green"
+                            >
                                 {t("terms-of-use")}
-                            </span>{" "}
+                            </I18nLink>{" "}
                             |{" "}
-                            <span className="hover:text-design-light-green">
+                            <I18nLink
+                                href={
+                                    "/digital-democracy-institute-of-the-americas-privacy-policy"
+                                }
+                                className="hover:text-design-light-green"
+                            >
                                 {t("cookie-policy")}
-                            </span>
+                            </I18nLink>
                         </div>
                     </div>
                 </div>

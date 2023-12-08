@@ -21,6 +21,8 @@ jobs:
             echo "REVALIDATION_TOKEN=${{ secrets.REVALIDATION_TOKEN }}" >> .env
             echo "SITE_HOST=${{ secrets.SITE_HOST }}" >> .env
             echo "I18NEXUS_API_KEY=${{ secrets.I18NEXUS_API_KEY }}" >> .env
+            echo "CLOUDFLARE_TURNSTILE_SECRET_KEY=${{ secrets.CLOUDFLARE_TURNSTILE_SECRET_KEY }}" >> .env
+            echo "NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY=${{secrets.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY}}" >> .env
         - name: Login to DockerHub
           uses: docker/login-action@v1
           with:

@@ -1,9 +1,11 @@
 "use client";
-import { useFormStatus } from "react-dom";
 import ArrowIcon from "../assets/arrow.svg";
 
-export default function SubmitButton() {
-    const { pending } = useFormStatus();
+export default function SubmitButton({
+    pending,
+}: {
+    pending: boolean;
+}) {
 
     return (
         <button

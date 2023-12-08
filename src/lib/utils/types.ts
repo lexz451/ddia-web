@@ -30,6 +30,13 @@ export type TMember = {
     description: string;
     avatar: TServerImage;
     slug: string;
+    descriptions: {
+        role: string;
+        content: string;
+        language: {
+            code: string;
+        };
+    }[];
 }
 
 export type TPostType = {

@@ -2,24 +2,42 @@
 
 import Image from "next/image";
 import MailImg from "../assets/get-involved.png";
-import { sendContactInfo } from "../utils/actions";
 import SubmitButton from "./SubmitButton";
-import { useFormState } from "react-dom";
 import useI18n from "../hooks/useI18n";
+import ContactButton from "./ContactButton";
+import { useRef, useState } from "react";
 
-export default function GetInvolved({
-    locale
-}: {
-    locale: string;
-}) {
+export default function GetInvolved({ locale }: { locale: string }) {
+    const { t } = useI18n(locale);
+    const formRef = useRef<HTMLFormElement>(null);
+    const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState(false);
+    const [pending, setPending] = useState(false);
 
-    const { t } = useI18n(locale)
 
-    const [state, sendInfo] = useFormState(sendContactInfo, {
-        message: "",
-        error: false,
-        submitted: false,
-    });
+    const onSubmit = async (e: any) => {
+        setPending(true);
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+        console.log(data);
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        const json = await response.json();
+        if (json.error) {
+            console.error(json.error);
+            setError(true);            
+        } else {
+            setSubmitted(true);
+            formRef?.current?.reset();
+        }
+        setPending(false);
+    };
 
     return (
         <section
@@ -34,34 +52,43 @@ export default function GetInvolved({
                     className="order-2 lg:order-1"
                 ></Image>
                 <form
-                    action={sendInfo}
+                    ref={formRef}
+                    onSubmit={onSubmit}
                     className="flex flex-col justify-center order-1 lg:order-2"
                 >
                     <div className="Headline text-design-light-green text-4xl lg:text-5xl font-extrabold font-avenir leading-10">
-                        {t('get-involved')}
+                        {t("get-involved")}
                     </div>
                     <p className="IntroductoryText mt-5 lg:mt-10 text-neutral-100 lg:text-lg font-inter leading-normal">
                         {t("home.get-involved.message")}
                     </p>
-                    <p className="mt-4 text-neutral-100 lg:text-lg leading-normal">
-                        {t("home.get-involved.message2")} <a className="underline" href="mailto:info@ddia.org">info@ddia.org</a> {t("home.get-involved.message3")}
-                    </p>
+                    <div className="mt-4 inline text-neutral-100 lg:text-lg leading-normal">
+                        <ContactButton locale={locale}></ContactButton>{" "}
+                        <span>{t("home.get-involved.message3")}</span>
+                    </div>
+                    <div
+                        className="cf-turnstile checkbox mt-4"
+                        data-sitekey={
+                            process.env
+                                .NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY
+                        }
+                    />
                     <input
                         required
                         name="name"
-                        placeholder={t('name')}
+                        placeholder={t("name")}
                         className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                     ></input>
                     <input
                         required
                         name="organization"
-                        placeholder={t('organization')}
+                        placeholder={t("organization")}
                         className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                     ></input>
                     <input
                         required
                         name="title"
-                        placeholder={t('title')}
+                        placeholder={t("title")}
                         className="mt-4 rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                     ></input>
                     <div className="block relative w-full mt-4">
@@ -69,32 +96,25 @@ export default function GetInvolved({
                             required
                             name="email"
                             type="email"
-                            placeholder={t('email')}
+                            placeholder={t("email")}
                             className="rounded-3xl bg-transparent border border-design-light-green px-4 h-12 w-full placeholder:text-design-light-green text-white text-sm"
                         ></input>
-                        {/* <button type="submit" className="absolute hover:bg-design-light-green transition-colors duration-300 bg-white rounded-full right-0 top-0 bottom-0 h-12 w-12 flex items-center justify-center">
-                            <ArrowIcon></ArrowIcon>
-                        </button> */}
-                        <SubmitButton></SubmitButton>
-                        {state?.error && (
+                        <SubmitButton pending={pending}></SubmitButton>
+                        {error && (
                             <p className="text-red-500 text-sm mt-2">
-                                {state?.message}
+                                {t("submit_subscribe_error")}
                             </p>
                         )}
-                        {state?.submitted && (
+                        {submitted && (
                             <p className="text-design-light-green text-sm mt-5">
-                                {state?.message}
+                                {t("submit_subscribe_success")}
                             </p>
                         )}
-                        <p aria-live="polite" className="sr-only">
-                            {state?.message}
-                        </p>
                     </div>
-                    
-                    <p className="my-4 text-neutral-100 lg:text-lg">
-                    {t("home.get-involved.message4")}
-                    </p>
 
+                    <p className="my-4 text-neutral-100 lg:text-lg">
+                        {t("home.get-involved.message4")}
+                    </p>
                 </form>
             </div>
         </section>

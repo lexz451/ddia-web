@@ -3,7 +3,7 @@ import FacebookIcon from "@/lib/assets/facebook.svg";
 import TelegramIcon from "@/lib/assets/telegram.svg";
 import XIcon from "@/lib/assets/x-twitter.svg";
 import WAIcon from "@/lib/assets/whatsapp.svg";
-import NewsletterBanner from "@/lib/assets/banners/newsletter.png";
+
 
 import ServerImage from "@/lib/components/server-image";
 import { TPost } from "@/lib/utils/types";
@@ -19,6 +19,7 @@ import Image from "next/image";
 import ContactUsBanner from "@/lib/components/ContactUsBanner";
 import { ArticleJsonLd } from "next-seo";
 import initTranslations from "@/i18n";
+import SubscribeBanner from "@/lib/components/SubscribeBanner";
 
 export async function generateStaticParams() {
     const { data: posts } = await getApi<TPost[]>(`/posts`, {
@@ -158,16 +159,7 @@ export default async function ArticlePage({
                             {/* <CommentBox postId={post.id}></CommentBox> */}
                         </div>
                         <aside className="flex flex-col gap-10">
-                            <I18nLink
-                                href={"/"}
-                                className="Rectangle204 overflow-hidden bg-gradient-to-b from-emerald-300 to-emerald-300 rounded-2xl flex flex-col items-center justify-center"
-                            >
-                                <Image
-                                    src={NewsletterBanner}
-                                    alt="Newsletter"
-                                    className="hover:scale-105 transition-transform duration-300"
-                                ></Image>
-                            </I18nLink>
+                            <SubscribeBanner locale={locale}></SubscribeBanner>
                             <div className="top-24 flex flex-col">
                                 <div>
                                     <div className="IntroductoryText border-b border-neutral-800 mb-5 pb-5 text-neutral-800 text-xl font-semibold leading-3">
@@ -235,7 +227,7 @@ export default async function ArticlePage({
                     </div>
                 </main>
                 <footer className="page-container flex flex-col gap-10 mb-20 pb-footer">
-                    <ContactUsBanner></ContactUsBanner>
+                    <ContactUsBanner locale={locale}></ContactUsBanner>
                     <LatestUpdates t={t} posts={latestPosts}></LatestUpdates>
                 </footer>
             </article>
