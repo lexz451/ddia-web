@@ -236,7 +236,7 @@ export default function Footer({ locale }: { locale: string }) {
                                     href={"/careers"}
                                     className="Text text-gray-300 hover:text-design-light-green text-sm font-normal font-avenir leading-normal"
                                 >
-                                    {t("work-with-us")}
+                                    {t("careers")}
                                 </I18nLink>
                             </div>
                         </div>
@@ -255,14 +255,14 @@ export default function Footer({ locale }: { locale: string }) {
                                     {t("footer.newsletter.subtitle")}
                                 </div>
                             </div>
+                            <div
+                                className="cf-turnstile checkbox hidden"
+                                data-sitekey={
+                                    process.env
+                                        .NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY
+                                }
+                            />
                             <div className="FootersSubscribeForm grid lg:grid-cols-4 w-full gap-4">
-                                <div
-                                    className="cf-turnstile checkbox mt-4"
-                                    data-sitekey={
-                                        process.env
-                                            .NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY
-                                    }
-                                />
                                 <input
                                     name="name"
                                     required

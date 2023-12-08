@@ -18,6 +18,7 @@ export default function CapacityBuilding({
     };
     t: any;
 }) {
+
     return (
         <section
             id="capacity-building"
@@ -47,8 +48,8 @@ export default function CapacityBuilding({
                     <div className="w-full flex flex-col gap-5">
                         {capacity.workshopsAndEvents.map((post) => (
                             <I18nLink
-                                href={`${post.platform_url}`}
-                                target="_blank"
+                                href={!!post.platform_url ? post.platform_url : `/${post.slug}`}
+                                target={!!post.platform_url ? "_blank" : "_self"}
                                 key={post.slug}
                                 className="Rectangle267 cursor-pointer p-6 lg:p-10 gap-10 w-full duration-300 transition-colors bg-white hover:bg-[#F2EFE8] bg-opacity-40 rounded-xl lg:rounded-2xl flex items-center"
                             >
