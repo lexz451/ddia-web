@@ -22,12 +22,14 @@ import I18nLink from "@/lib/components/I18nLink";
 
 export default function ResearchAndAnalysis({
     research,
-    t
+    t,
+    translations,
 }: {
     research: {
         publicOpinionResearch: TPost[];
     };
     t: any;
+    translations: any;
 }) {
 
     return (
@@ -41,7 +43,8 @@ export default function ResearchAndAnalysis({
                     {t('research-and-analysis')}
                 </div>
                 <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-relaxed">
-                    {t('our-work-page.research.message')}
+                    {/* {t('our-work-page.research.message')} */}
+                    {translations?.research.message}
                 </div>
                 <div
                     id="public-opinion-research"
@@ -54,25 +57,30 @@ export default function ResearchAndAnalysis({
                     <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
                 </div>
                 <div className="IntroductoryText max-w-prose text-center text-design-green text-lg font-normal  leading-relaxed">
-                    {t('our-work-page.research.message2')}
+                    {/* {t('our-work-page.research.message2')} */}
+                    {translations?.research.message2}
                 </div>
                 <div className="IntroductoryText my-10 text-center text-design-green text-xl font-extrabold  uppercase leading-7">
-                    {t('our-work-page.research.message3')}
+                    {/* {t('our-work-page.research.message3')} */}
+                    {translations?.research.message3}
                 </div>
                 <div className="Rectangle247 border-none lg:max-w-[80%] flex flex-col lg:flex-row lg:items-center justify-between p-10 gap-10 lg:h-36 bg-design-extralight-yellow rounded-2xl">
                     <ShapeIcon className="w-12 h-12 flex-shrink-0"></ShapeIcon>
                     <div className="IntroductoryText text-neutral-800 text-xl lg:text-2xl font-normal  leading-none">
-                        {t('our-work-page.research.message4')}
+                        {/* {t('our-work-page.research.message4')} */}
+                        {translations?.research.message4}
                     </div>
                 </div>
                 <div className="Rectangle247 border-none mt-5 lg:max-w-[80%] flex flex-col lg:flex-row lg:items-center justify-between p-10 gap-10 lg:h-36 bg-design-extralight-yellow rounded-2xl">
                     <DetermineIcon className="w-12 h-12 flex-shrink-0"></DetermineIcon>
                     <div className="IntroductoryText text-neutral-800 text-xl lg:text-2xl font-normal  leading-none">
-                        {t('our-work-page.research.message5')}
+                        {/* {t('our-work-page.research.message5')} */}
+                        {translations?.research.message5}
                     </div>
                 </div>
                 <div className="IntroductoryText mt-10 max-w-prose text-center text-neutral-800 text-lg font-normal  leading-relaxed">
-                    {t('our-work-page.research.message6')}
+                    {/* {t('our-work-page.research.message6')} */}
+                    {translations?.research.message6}
                 </div>
 
                 <div className="grid lg:grid-cols-3 gap-10 mt-20">
@@ -136,7 +144,8 @@ export default function ResearchAndAnalysis({
                     <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
                 </div>
                 <div className="IntroductoryText max-w-prose text-center text-neutral-800 text-lg font-normal leading-relaxed">
-                    {t('our-work-page.research.message7')}
+                    {/* {t('our-work-page.research.message7')} */}
+                    {translations?.research.message7}
                 </div>
                 <div
                     id="issues-and-narratives"

@@ -13,9 +13,11 @@ import PolicyImg from "@/lib/assets/our-work/policy.png";
 import useI18n from "@/lib/hooks/useI18n";
 
 export default function Hero({
-    locale
+    locale,
+    translations,
 }: {
     locale: string;
+    translations: any;
 }) {
 
     const {t} = useI18n(locale);
@@ -42,7 +44,8 @@ export default function Hero({
                     {t('our-work')}
                 </div>
                 <div className="mt-5 lg:mt-10 text-center text-design-green text-lg font-normal leading-normal">
-                    {t('our-work-page.description')}
+                    {/* {t('our-work-page.description')} */}
+                    {translations?.description}
                 </div>
                 <div className="grid lg:grid-cols-2 gap-8 mt-14 w-full lg:px-16">
                     <button

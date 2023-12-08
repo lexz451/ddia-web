@@ -88,10 +88,12 @@ function PostItem({ post }: { post: TPost; }) {
 
 export default function ReportsAndPublications({
     reports,
-    locale
+    locale,
+    translations,
 }: {
     reports: { data: TPost[]; total: number };
     locale: string;
+    translations: any;
 }) {
 
     const { t } = useI18n(locale);
@@ -108,7 +110,8 @@ export default function ReportsAndPublications({
                         {t("reports-and-publications")}
                     </div>
                     <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-normal">
-                        {t("our-work-page.research.message8")}
+                        {/* {t("our-work-page.research.message8")} */}
+                        {translations?.research.message8}
                     </div>
                     <div className="flex flex-col mt-10">
                         <LoadMore

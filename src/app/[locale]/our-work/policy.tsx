@@ -3,7 +3,7 @@ import { TPost } from "@/lib/utils/types";
 import ServerImage from "@/lib/components/server-image";
 import I18nLink from "@/lib/components/I18nLink";
 
-export default function Policy({ policy, t }: { policy: TPost[]; t: any }) {
+export default function Policy({ policy, t, translations }: { policy: TPost[]; t: any; translations: any; }) {
     return (
         <section
             id="policy"
@@ -17,9 +17,13 @@ export default function Policy({ policy, t }: { policy: TPost[]; t: any }) {
                     </div>
                     <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-normal">
                         <p className="mb-4">
-                            {t("our-work-page.research.message11")}
+                            {/* {t("our-work-page.research.message11")} */}
+                            {translations?.research.message11}
                         </p>
-                        <p>{t("our-work-page.research.message12")}</p>
+                        <p>
+                            {/* {t("our-work-page.research.message12")} */}
+                            {translations?.research.message12}
+                        </p>
                     </div>
 
                     <div className="grid lg:grid-cols-3 mt-20 gap-10">
