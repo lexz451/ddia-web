@@ -29,7 +29,7 @@ export default function TeamAccordion({
     const [expanded, setExpanded] = useState<boolean>(false);
 
     const localeDescription = descriptions.find(
-        (desc) => desc.language.code === locale
+        (desc) => desc?.language?.code === locale
     ) || {
         content: description,
         role: role,
