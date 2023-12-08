@@ -9,7 +9,7 @@ import useI18n from "../hooks/useI18n";
 import SubmitButton from "./SubmitButton";
 import { useRef, useState } from "react";
 
-export default function Footer({ locale }: { locale: string }) {
+export default function Footer({ locale, translations }: { locale: string, translations: any }) {
     const { t } = useI18n(locale);
     const formRef = useRef<HTMLFormElement>(null);
     const [submitted, setSubmitted] = useState(false);
@@ -48,7 +48,8 @@ export default function Footer({ locale }: { locale: string }) {
                         <div className="lg:mr-10">
                             <Logo className="w-24 h-16 -ml-1"></Logo>
                             <p className="IntroductoryText  mt-8 leading-normal text-sm text-white">
-                                {t("footer.about")}
+                                {/* {t("footer.about")} */}
+                                {translations?.footer?.about}
                             </p>
                             <div className="SocialIcons flex gap-3 mt-10">
                                 <I18nLink

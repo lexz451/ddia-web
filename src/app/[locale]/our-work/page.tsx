@@ -20,24 +20,26 @@ export default async function OurWorkPage({
 }: {
     params: { locale: string };
 }) {
-    const { research, reports, capacity, policy } = await fetchData();
+    const { research, reports, capacity, policy, translations } = await fetchData(locale);
 
     const { t } = await initTranslations(locale);
 
     return (
         <main className="bg-design-light lg:pt-[150px]">
-            <Hero locale={locale}></Hero>
+            <Hero locale={locale} translations={translations}></Hero>
             <Navigation locale={locale}></Navigation>
             <ResearchAndAnalysis
+                translations={translations}
                 research={research}
                 t={t}
             ></ResearchAndAnalysis>
             <ReportsAndPublications
+                translations={translations}
                 reports={reports}
                 locale={locale}
             ></ReportsAndPublications>
-            <CapacityBuilding t={t} capacity={capacity}></CapacityBuilding>
-            <Policy policy={policy} t={t}></Policy>
+            <CapacityBuilding translations={translations} t={t} capacity={capacity}></CapacityBuilding>
+            <Policy translations={translations} policy={policy} t={t}></Policy>
         </main>
     );
 }

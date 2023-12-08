@@ -7,13 +7,18 @@ import useI18n from "../hooks/useI18n";
 import ContactButton from "./ContactButton";
 import { useRef, useState } from "react";
 
-export default function GetInvolved({ locale }: { locale: string }) {
+export default function GetInvolved({
+    locale,
+    translations,
+}: {
+    locale: string;
+    translations: any;
+}) {
     const { t } = useI18n(locale);
     const formRef = useRef<HTMLFormElement>(null);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
     const [pending, setPending] = useState(false);
-
 
     const onSubmit = async (e: any) => {
         setPending(true);
@@ -31,7 +36,7 @@ export default function GetInvolved({ locale }: { locale: string }) {
         const json = await response.json();
         if (json.error) {
             console.error(json.error);
-            setError(true);            
+            setError(true);
         } else {
             setSubmitted(true);
             formRef?.current?.reset();
@@ -60,11 +65,13 @@ export default function GetInvolved({ locale }: { locale: string }) {
                         {t("get-involved")}
                     </div>
                     <p className="IntroductoryText mt-5 lg:mt-10 text-neutral-100 lg:text-lg font-inter leading-normal">
-                        {t("home.get-involved.message")}
+                        {/* {t("home.get-involved.message")} */}
+                        {translations?.['get-involved'].message}
                     </p>
                     <div className="mt-4 inline text-neutral-100 lg:text-lg leading-normal">
                         <ContactButton locale={locale}></ContactButton>{" "}
-                        <span>{t("home.get-involved.message3")}</span>
+                        {/* <span>{t("home.get-involved.message3")}</span> */}
+                        <span>{translations?.['get-involved'].message3}</span>
                     </div>
                     <div
                         className="cf-turnstile checkbox mt-4"
@@ -113,7 +120,8 @@ export default function GetInvolved({ locale }: { locale: string }) {
                     </div>
 
                     <p className="my-4 text-neutral-100 lg:text-lg">
-                        {t("home.get-involved.message4")}
+                        {/* {t("home.get-involved.message4")} */}
+                        {translations?.['get-involved'].message4}
                     </p>
                 </form>
             </div>

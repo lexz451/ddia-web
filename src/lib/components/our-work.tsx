@@ -15,9 +15,11 @@ import useI18n from "../hooks/useI18n";
 import I18nLink from "./I18nLink";
 
 export default function OurWork({
-    locale
+    locale,
+    translations,
 }: {
     locale: string;
+    translations: any;
 }) {
 
     const { t } = useI18n(locale)
@@ -84,7 +86,8 @@ export default function OurWork({
                         {t('home.our-work.title')}
                     </div>
                     <div className="IntroductoryText lg:max-w-prose text-neutral-800 lg:text-lg font-normal  leading-relaxed mb-10">
-                        {t('home.our-work.subtitle')}
+                        {/* {t('home.our-work.subtitle')} */}
+                        {translations?.['our-work']?.subtitle}
                     </div>
                     <I18nLink
                         href={"/our-work"}
@@ -107,10 +110,12 @@ export default function OurWork({
                             <div className="w-fit max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                                 <SearchIcon className="mb-10"></SearchIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                    {t('home.our-work.research.title')}
+                                    {/* {t('home.our-work.research.title')} */}
+                                    {translations?.['our-work']?.research?.title}
                                 </div>
                                 <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
-                                    {t('home.our-work.research.subtitle')}
+                                    {/* {t('home.our-work.research.subtitle')} */}
+                                    {translations?.['our-work']?.research?.subtitle}
                                 </div>
                                 <div className="flex items-center mt-4">
                                     <svg
@@ -138,10 +143,12 @@ export default function OurWork({
                             <div className="w-fit max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                                 <ReportsIcon className="mb-10 w-14 h-14"></ReportsIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                    {t('home.our-work.reports.title')}
+                                    {/* {t('home.our-work.reports.title')} */}
+                                    {translations?.['our-work']?.reports?.title}
                                 </div>
                                 <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
-                                    {t('home.our-work.reports.subtitle')}
+                                    {/* {t('home.our-work.reports.subtitle')} */}
+                                    {translations?.['our-work']?.reports?.subtitle}
                                 </div>
                                 <div className="flex items-center mt-4">
                                     <svg
@@ -171,10 +178,12 @@ export default function OurWork({
                             <div className="w-fit max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                                 <CapacityIcon className="mb-10 w-14 h-14"></CapacityIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                    {t('home.our-work.capacity.title')}
+                                    {/* {t('home.our-work.capacity.title')} */}
+                                    {translations?.['our-work']?.capacity?.title}
                                 </div>
                                 <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
-                                    {t('home.our-work.capacity.subtitle')}
+                                    {/* {t('home.our-work.capacity.subtitle')} */}
+                                    {translations?.['our-work']?.capacity?.subtitle}
                                 </div>
                                 <div className="flex items-center mt-4">
                                     <svg
@@ -202,10 +211,12 @@ export default function OurWork({
                             <div className="w-fit h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                                 <PolicyIcon className="mb-10 w-14 h-14"></PolicyIcon>
                                 <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                    {t('home.our-work.policy.title')}
+                                    {/* {t('home.our-work.policy.title')} */}
+                                    {translations?.['our-work']?.policy?.title}
                                 </div>
                                 <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-relaxed">
-                                    {t('home.our-work.policy.subtitle')}
+                                    {/* {t('home.our-work.policy.subtitle')} */}
+                                    {translations?.['our-work']?.policy?.subtitle}
                                 </div>
                                 <div className="flex items-center mt-4">
                                     <svg
@@ -236,10 +247,11 @@ export default function OurWork({
                         <div className="self-center">
                             <div className="flex flex-col items-start">
                                 <div className="Headline text-design-green text-5xl font-extrabold  leading-10 mb-10">
-                                {t('home.our-work.title')}
+                                    {t('home.our-work.title')}
                                 </div>
                                 <div className="IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal mb-10">
-                                    {t('home.our-work.subtitle')}
+                                    {/* {t('home.our-work.subtitle')} */}
+                                    {translations?.['our-work']?.subtitle}
                                 </div>
                                 <I18nLink
                                     href={"/our-work"}
@@ -252,10 +264,12 @@ export default function OurWork({
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                             <SearchIcon className="mb-10"></SearchIcon>
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                {t('home.our-work.research.title')}
+                                {/* {t('home.our-work.research.title')} */}
+                                {translations?.['our-work']?.research?.title}
                             </div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
-                                {t('home.our-work.research.subtitle')}
+                                {/* {t('home.our-work.research.subtitle')} */}
+                                {translations?.['our-work']?.research?.subtitle}
                             </div>
                             <div className="flex items-center mt-4">
                                 <svg
@@ -281,10 +295,12 @@ export default function OurWork({
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                             <ReportsIcon className="mb-10 w-14 h-14"></ReportsIcon>
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                {t('home.our-work.reports.title')}
+                                {/* {t('home.our-work.reports.title')} */}
+                                {translations?.['our-work']?.reports?.title}
                             </div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
-                                {t('home.our-work.reports.subtitle')}
+                                {/* {t('home.our-work.reports.subtitle')} */}
+                                {translations?.['our-work']?.reports?.subtitle}
                             </div>
                             <div className="flex items-center mt-4">
                                 <svg
@@ -310,10 +326,12 @@ export default function OurWork({
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                             <CapacityIcon className="mb-10 w-14 h-14"></CapacityIcon>
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                {t('home.our-work.capacity.title')}
+                                {/* {t('home.our-work.capacity.title')} */}
+                                {translations?.['our-work']?.capacity?.title}
                             </div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
-                                {t('home.our-work.capacity.subtitle')}
+                                {/* {t('home.our-work.capacity.subtitle')} */}
+                                {translations?.['our-work']?.capacity?.subtitle}
                             </div>
                             <div className="flex items-center mt-4">
                                 <svg
@@ -339,10 +357,12 @@ export default function OurWork({
                         <div className="w-fit max-w-[40rem] max-h-[40rem] h-full rounded-3xl gradient-green-container-horizontal py-20 px-10">
                             <PolicyIcon className="mb-10 w-14 h-14"></PolicyIcon>
                             <div className="lg:mb-10 mb-5 Headline text-design-dark-green text-2xl lg:text-4xl font-extrabold  leading-9">
-                                {t('home.our-work.policy.title')}
+                                {/* {t('home.our-work.policy.title')} */}
+                                {translations?.['our-work']?.policy?.title}
                             </div>
                             <div className="mb-10 IntroductoryText max-w-prose text-neutral-800 text-lg font-normal  leading-normal">
-                                {t('home.our-work.policy.subtitle')}
+                                {/* {t('home.our-work.policy.subtitle')} */}
+                                {translations?.['our-work']?.policy?.subtitle}
                             </div>
                             <div className="flex items-center mt-4">
                                 <svg

@@ -7,7 +7,8 @@ import I18nLink from "@/lib/components/I18nLink";
 
 export default function CapacityBuilding({
     capacity,
-    t
+    t,
+    translations,
 }: {
     capacity: {
         workshopsAndEvents: TPost[];
@@ -17,6 +18,7 @@ export default function CapacityBuilding({
         };
     };
     t: any;
+    translations: any;
 }) {
 
     return (
@@ -31,9 +33,11 @@ export default function CapacityBuilding({
                         {t("capacity-building")}
                     </div>
                     <div className="IntroductoryText mt-8 max-w-prose text-center text-stone-50 text-lg font-normal  leading-normal">
-                        {t('our-work-page.research.message9')} <br />
+                        {/* {t('our-work-page.research.message9')} <br /> */}
+                        {translations?.research.message9} <br />
                         <br />
-                        {t("our-work-page.research.message10")}
+                        {/* {t("our-work-page.research.message10")} */}
+                        {translations?.research.message10}
                     </div>
                     <div
                         id="workshops-and-events"

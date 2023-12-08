@@ -9,6 +9,7 @@ import { avenir } from "@/lib/utils/fonts";
 import i18nConfig from "@/i18nConfig";
 import { dir } from "i18next";
 import Script from "next/script";
+import { getApi } from "@/lib/utils/api";
 
 export const metadata: Metadata = {
     title: "DDIA - Digital Democracy Institute of the Americas",
@@ -33,13 +34,15 @@ export function generateStaticParams() {
     return i18nConfig.locales.map((locale) => ({ locale }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
     params: { locale },
 }: {
     children: React.ReactNode;
     params: { locale: string };
 }) {
+    const translation = await getApi<any>(`/static-text/${locale}`);
+    const { footer: translations } = translation as any;
     return (
         <html lang={locale} dir={dir(locale)}>
             <head>
@@ -57,7 +60,7 @@ export default function RootLayout({
             <body className={`${avenir.variable}`}>
                 <Navbar locale={locale} />
                 {children}
-                <Footer locale={locale} />
+                <Footer locale={locale} translations={translation} />
                 <Suspense fallback={null}>
                     <ProgressBar
                         color="#015C6B"

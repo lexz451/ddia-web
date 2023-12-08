@@ -1,7 +1,10 @@
 import { getApi } from "@/lib/utils/api";
 import { TPost } from "@/lib/utils/types";
 
-export async function fetchData() {
+export async function fetchData(locale: string) {
+    
+    const translation = await getApi<any>(`/static-text/${locale}`);
+    const translations = (translation as any)['our-work-page'];
 
     const {data: publicOpinionResearch} = await getApi<TPost[]>(`/posts`, {
         filters: {
@@ -185,6 +188,7 @@ export async function fetchData() {
         // workshopsAndEvents,
         // whatWeAreReading,
         // additionalResources,
-        policy
+        policy,
+        translations
     };
 }
