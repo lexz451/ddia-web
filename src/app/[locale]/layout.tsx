@@ -60,7 +60,7 @@ export default async function RootLayout({
             <body className={`${avenir.variable}`}>
                 <Navbar locale={locale} />
                 {children}
-                <Footer locale={locale} />
+                <Footer locale={locale} translations={translation} />
                 <Suspense fallback={null}>
                     <ProgressBar
                         color="#015C6B"
