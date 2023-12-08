@@ -6,6 +6,7 @@ import I18nLink from "@/lib/components/I18nLink";
 import initTranslations from "@/i18n";
 import Form from "./form";
 import ContactButton from "@/lib/components/ContactButton";
+import { getApi } from "@/lib/utils/api";
 
 export default async function ContactUs({
     params: { locale },
@@ -13,6 +14,9 @@ export default async function ContactUs({
     params: { locale: string };
 }) {
 
+    const translation = await getApi<any>(`/static-text/${locale}`);
+    const translationsForm = (translation as any)['newsletter-form'];
+    const translations = (translation as any)['get-involved-page'];
     const { t } = await initTranslations(locale);
 
     return (
@@ -33,7 +37,10 @@ export default async function ContactUs({
                         </I18nLink>{" "} */}
                         <ContactButton locale={locale}></ContactButton>
                         {" "}
-                        <span>{t('get-involved-page.message2')}</span>
+                        <span>
+                            {/* {t('get-involved-page.message2')} */}
+                            {translations?.message2}
+                        </span>
                     </div>
 
                     <div className="flex flex-col items-center mx-auto w-fit">
@@ -63,18 +70,20 @@ export default async function ContactUs({
                 </section>
 
                 <section className="md:page-container my-20">
-                    <Form locale={locale}></Form>
+                    <Form translations={translationsForm} locale={locale}></Form>
                 </section>
 
                 <section className="mb-32 px-4 pb-footer">
                     <LogoCircle className="w-20 h-20 mx-auto"></LogoCircle>
 
                     <h1 className="font-avenir text-center w-fit mt-10 mx-auto font-semibold text-2xl lg:text-5xl text-design-green mb-4">
-                        {t("get-involved-page.careers.title")}
+                        {/* {t("get-involved-page.careers.title")} */}
+                        {translations?.careers.title}
                     </h1>
 
                     <p className="max-w-prose text-center font-avenir mx-auto mt-5">
-                        {t("get-involved-page.careers.message")}
+                        {/* {t("get-involved-page.careers.message")} */}
+                        {translations?.careers.message}
                     </p>
 
                     {/* {jobPositions.map((job) => {

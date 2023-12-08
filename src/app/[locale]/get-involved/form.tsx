@@ -5,9 +5,14 @@ import useI18n from "@/lib/hooks/useI18n";
 import SubmitButton from "@/lib/components/SubmitButton";
 import { useRef, useState } from "react";
 
-export default function Form({ locale }: { locale: string }) {
+export default function Form({
+    locale,
+    translations,
+}: {
+    locale: string;
+    translations: any;
+}) {
     const { t } = useI18n(locale);
-
     const formRef = useRef<HTMLFormElement>(null);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
@@ -51,10 +56,12 @@ export default function Form({ locale }: { locale: string }) {
                 className="flex flex-col justify-center order-1 md:order-2"
             >
                 <div className="Headline text-design-light-green text-4xl md:text-5xl font-extrabold font-avenir leading-10">
-                    {t("newsletter-form.title")}
+                    {/* {t("newsletter-form.title")} */}
+                    {translations?.title}
                 </div>
                 <p className="IntroductoryText mt-10 text-neutral-100 md:text-lg font-light font-inter leading-relaxed">
-                    {t("newsletter-form.message")}
+                    {/* {t("newsletter-form.message")} */}
+                    {translations?.message}
                 </p>
 
                 <div

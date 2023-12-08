@@ -1,4 +1,3 @@
-import initTranslations from "@/i18n";
 import imgapproach from "@/lib/assets/approach-11.png";
 import imgfakeNews from "@/lib/assets/fake-news.png";
 import imgholdingWorld from "@/lib/assets/hombre-negocios-mundo-mano-1.png";
@@ -15,7 +14,6 @@ export default async function AboutUs({
 }) {
     const translation = await getApi<any>(`/static-text/${locale}`);
     const { about: translations } = translation as any;
-    const { t } = await initTranslations(locale);
 
     return (
         <main className="">
