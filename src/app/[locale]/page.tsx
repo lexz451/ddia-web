@@ -7,7 +7,9 @@ import { TPost } from "@/lib/utils/types";
 import Hero from "@/lib/components/hero";
 import initTranslations from "@/i18n";
 
-async function fetchData() {
+async function fetchData(locale: string) {
+    const translation = await getApi<any>(`/static-text/${locale}`);
+    const { home } = translation as any;
     const { data: posts } = await getApi<TPost[]>(
         "/posts",
         {
@@ -28,6 +30,7 @@ async function fetchData() {
     );
     return {
         posts,
+        translations: home,
     };
 }
 
@@ -37,20 +40,20 @@ export default async function Home({
     params: { locale: string };
 }) {
     const { t } = await initTranslations(locale);
-    const { posts: latestPosts } = await fetchData();
+    const { posts: latestPosts, translations } = await fetchData(locale);
 
     return (
         <main>
-            <Hero t={t}></Hero>
+            <Hero t={t} translations={translations}></Hero>
             <section className="page-container my-20">
-                <AboutUs t={t}></AboutUs>
+                <AboutUs t={t} translations={translations}></AboutUs>
             </section>
             <section>
-                <OurWork locale={locale}></OurWork>
+                <OurWork locale={locale} translations={translations}></OurWork>
             </section>
-            <GetInvolved locale={locale}></GetInvolved>
+            <GetInvolved locale={locale} translations={translations}></GetInvolved>
             <section className="page-container my-20 pb-footer">
-                <LatestUpdates t={t} posts={latestPosts}></LatestUpdates>
+                <LatestUpdates t={t} posts={latestPosts} translations={translations}></LatestUpdates>
             </section>
         </main>
     );
