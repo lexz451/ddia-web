@@ -67,7 +67,7 @@ export function buildPostsQuery(tag?: string, query?: string) {
         },
         populate: ["feature_media", "post_type", "authors", "tags", "categories"],
         pagination: {
-            limit: 6,
+            limit: 8,
         },
         sort: ['created_date:desc']
     }
