@@ -94,7 +94,7 @@ export default async function ArticlePage({
                     )}
                     <div className="page-container">
                         <div className="flex items-center justify-center my-12">
-                            <div className="Title text-center text-neutral-800 text-[45px] font-semibold leading-[3.5rem]">
+                            <div className="Title text-center text-neutral-800 text-[24px] md:text-[45px] font-semibold leading-normal md:leading-[3.5rem]">
                                 {post.title}
                             </div>
                         </div>
