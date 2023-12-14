@@ -63,7 +63,9 @@ export default function Filters({
                 >
                     {t("all")}
                 </button>
-                {tags.map((tag: any) => {
+                {tags.sort(
+                    (a,b) => t(a.slug).localeCompare(t(b.slug))
+                ).map((tag: any) => {
                     return (
                         <button
                             key={tag.slug}

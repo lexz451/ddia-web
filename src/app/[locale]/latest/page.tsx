@@ -1,5 +1,5 @@
 import Filters from "@/lib/components/filters";
-import { TAGS, fetchData } from "./data";
+import { fetchData } from "./data";
 import LoadMoreWrapper from "./load-more";
 import ContactUsBanner from "@/lib/components/ContactUsBanner";
 import { Suspense } from "react";
@@ -12,12 +12,12 @@ export default async function LatestUpdates({
 
   const { q, tag } = searchParams;
 
-  const { posts } = await fetchData({ tag, query: q });
+  const { posts, tags } = await fetchData({ tag, query: q });
 
   return (
     <main className="page-container mt-[150px]">
       <Suspense fallback={null}>
-        <Filters tags={TAGS} locale={locale}></Filters>
+        <Filters tags={tags} locale={locale}></Filters>
       </Suspense>
 
       <section className="pt-10">

@@ -25,28 +25,28 @@ export const TAGS = [
     {
         title: "Policy",
         slug: "policy",
-    },{
+    },
+    {
         title: "Reports",
         slug: "reports",
-    }
-]
+    },
+];
 
 export function buildPostsQuery(tag?: string, query?: string) {
-
-    const filters: any = {}
+    const filters: any = {};
 
     if (tag) {
-        filters['tags'] = {
+        filters["tags"] = {
             slug: {
-                $eq: tag
-            }
-        }
+                $eq: tag,
+            },
+        };
     } else {
-        filters['tags'] = {
+        filters["tags"] = {
             slug: {
-                $in: TAGS.map(t => t.slug)
-            }
-        }
+                $in: TAGS.map((t) => t.slug),
+            },
+        };
     }
 
     return {
@@ -54,39 +54,58 @@ export function buildPostsQuery(tag?: string, query?: string) {
             ...filters,
             $or: [
                 {
-                  title: {
-                    $containsi: query
-                  }
+                    title: {
+                        $containsi: query,
+                    },
                 },
                 {
-                  description: {
-                    $containsi: query
-                  }
-                }
+                    description: {
+                        $containsi: query,
+                    },
+                },
             ],
         },
-        populate: ["feature_media", "post_type", "authors", "tags", "categories"],
+        populate: [
+            "feature_media",
+            "post_type",
+            "authors",
+            "tags",
+            "categories",
+        ],
         pagination: {
             limit: 8,
         },
-        sort: ['created_date:desc']
-    }
+        sort: ["created_date:desc"],
+    };
 }
 
 export async function fetchData({
     tag,
-    query
-}: { tag?: string, query?: string }) {
+    query,
+}: {
+    tag?: string;
+    query?: string;
+}) {
+    const tagRes = await getApi<any[]>(`/tags`, {
+        populate: ["categories"],
+        sort: ["title:asc"],
+    });
+
+    // filter out tags with expecific categories slugs
+    const tags = tagRes.data.filter((t) => {
+        const categories = t.categories.map((c: any) => c.slug);
+        return !categories.includes("issues-and-narratives") && !categories.includes("platforms-and-apps");
+    });
 
     const posts = await getApi<TPost[]>(`/posts`, buildPostsQuery(tag, query), {
         next: { tags: ["post"] },
     });
 
     return {
+        tags: tags,
         posts: {
             data: posts.data,
             total: posts.meta.pagination.total || 0,
-        }
-    }
-
+        },
+    };
 }

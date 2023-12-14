@@ -49,7 +49,7 @@ export default async function ArticlePage({
 
     const content = parsePostContent(post.content);
 
-    const shareUrl = encodeURI(`${process.env.SITE_HOST}/${post.slug}`);
+    const shareUrl = encodeURI(`${process.env.SITE_HOST}/${locale}/${post.slug}`);
 
     return (
         <>
