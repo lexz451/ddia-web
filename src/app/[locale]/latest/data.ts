@@ -88,6 +88,7 @@ export async function fetchData({
 }) {
     const tagRes = await getApi<any[]>(`/tags`, {
         populate: ["categories"],
+        sort: ["title:asc"],
     });
 
     // filter out tags with expecific categories slugs
