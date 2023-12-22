@@ -3,7 +3,26 @@ import { fetchData } from "./data";
 import LoadMoreWrapper from "./load-more";
 import ContactUsBanner from "@/lib/components/ContactUsBanner";
 import { Suspense } from "react";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: "Latest Updates | DDIA - Digital Democracy Institute of the Americas",
+    description:
+        "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
+    robots: {
+        follow: true,
+        index: true,
+    },
+    publisher: "DDIA",
+    alternates: {
+        canonical: `${process.env.SITE_HOST}/en/latest`,
+        languages: {
+            "en-US": `${process.env.SITE_HOST}/en/latest`,
+            "es-ES": `${process.env.SITE_HOST}/es/latest`,
+            "pt-BR": `${process.env.SITE_HOST}/pt/latest`,
+        },
+    },
+};
 
 export default async function LatestUpdates({
     params: { locale },

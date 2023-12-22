@@ -1,8 +1,27 @@
-import SearchBar from "@/lib/components/search-bar";
 import LoadMoreWrapper from "./load-more";
 import { fetchData } from "./data";
 import SearchWrapper from "./search";
 import { Suspense } from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Search | DDIA - Digital Democracy Institute of the Americas",
+    description:
+        "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
+    robots: {
+        follow: true,
+        index: true,
+    },
+    publisher: "DDIA",
+    alternates: {
+        canonical: `${process.env.SITE_HOST}/en/search`,
+        languages: {
+            "en-US": `${process.env.SITE_HOST}/en/search`,
+            "es-ES": `${process.env.SITE_HOST}/es/search`,
+            "pt-BR": `${process.env.SITE_HOST}/pt/search`,
+        },
+    },
+};
 
 export default async function SearchPage({
     searchParams,

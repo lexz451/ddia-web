@@ -3,6 +3,26 @@ import I18nLink from "@/lib/components/I18nLink";
 import TeamAccordion from "@/lib/components/team-accordion";
 import { getApi } from "@/lib/utils/api";
 import { TMember } from "@/lib/utils/types";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Our Team | DDIA - Digital Democracy Institute of the Americas",
+    description:
+        "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
+    robots: {
+        follow: true,
+        index: true,
+    },
+    publisher: "DDIA",
+    alternates: {
+        canonical: `${process.env.SITE_HOST}/en/team`,
+        languages: {
+            "en-US": `${process.env.SITE_HOST}/en/team`,
+            "es-ES": `${process.env.SITE_HOST}/es/team`,
+            "pt-BR": `${process.env.SITE_HOST}/pt/team`,
+        },
+    },
+};
 
 async function fetchData() {
     const ourTeam = await getApi(
