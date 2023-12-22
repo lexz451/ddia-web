@@ -1,4 +1,24 @@
 import { getApi } from "@/lib/utils/api";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Careers | DDIA - Digital Democracy Institute of the Americas",
+    description:
+        "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
+    robots: {
+        follow: true,
+        index: true,
+    },
+    publisher: "DDIA",
+    alternates: {
+        canonical: `${process.env.SITE_HOST}/en/careers`,
+        languages: {
+            "en-US": `${process.env.SITE_HOST}/en/careers`,
+            "es-ES": `${process.env.SITE_HOST}/es/careers`,
+            "pt-BR": `${process.env.SITE_HOST}/pt/careers`,
+        },
+    },
+};
 
 export default async function Careers({
     params: { locale },

@@ -7,6 +7,26 @@ import initTranslations from "@/i18n";
 import Form from "./form";
 import ContactButton from "@/lib/components/ContactButton";
 import { getApi } from "@/lib/utils/api";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Get Involved | DDIA - Digital Democracy Institute of the Americas",
+    description:
+        "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
+    robots: {
+        follow: true,
+        index: true,
+    },
+    publisher: "DDIA",
+    alternates: {
+        canonical: `${process.env.SITE_HOST}/en/get-involved`,
+        languages: {
+            "en-US": `${process.env.SITE_HOST}/en/get-involved`,
+            "es-ES": `${process.env.SITE_HOST}/es/get-involved`,
+            "pt-BR": `${process.env.SITE_HOST}/pt/get-involved`,
+        },
+    },
+};
 
 export default async function ContactUs({
     params: { locale },

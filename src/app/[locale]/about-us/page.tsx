@@ -5,7 +5,27 @@ import imghandsCircle from "@/lib/assets/manos-circulo.png";
 import imgvision1 from "@/lib/assets/vision-1.png";
 import imgvision2 from "@/lib/assets/vision-2.png";
 import { getApi } from "@/lib/utils/api";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+    title: "About Us | DDIA - Digital Democracy Institute of the Americas",
+    description:
+        "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
+    robots: {
+        follow: true,
+        index: true,
+    },
+    publisher: "DDIA",
+    alternates: {
+        canonical: `${process.env.SITE_HOST}/en/about-us`,
+        languages: {
+            "en-US": `${process.env.SITE_HOST}/en/about-us`,
+            "es-ES": `${process.env.SITE_HOST}/es/about-us`,
+            "pt-BR": `${process.env.SITE_HOST}/pt/about-us`,
+        },
+    },
+};
 
 export default async function AboutUs({
     params: { locale },

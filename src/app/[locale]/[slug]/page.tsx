@@ -15,7 +15,6 @@ import { notFound } from "next/navigation";
 // import CommentBox from '@/lib/components/comments/CommentBox';
 import { fetchData } from "./data";
 import I18nLink from "@/lib/components/I18nLink";
-import Image from "next/image";
 import ContactUsBanner from "@/lib/components/ContactUsBanner";
 import { ArticleJsonLd } from "next-seo";
 import initTranslations from "@/i18n";

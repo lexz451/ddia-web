@@ -7,6 +7,7 @@ import Navigation from "./navigation";
 import { fetchData } from "./data";
 import initTranslations from "@/i18n";
 import dynamic from "next/dynamic";
+import { Metadata } from "next";
 
 const ResearchAndAnalysis = dynamic(() => import("./research-and-analysis"));
 const ReportsAndPublications = dynamic(
@@ -14,6 +15,25 @@ const ReportsAndPublications = dynamic(
 );
 const CapacityBuilding = dynamic(() => import("./capacity-building"));
 const Policy = dynamic(() => import("./policy"));
+
+export const metadata: Metadata = {
+    title: "Our Work | DDIA - Digital Democracy Institute of the Americas",
+    description:
+        "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
+    robots: {
+        follow: true,
+        index: true,
+    },
+    publisher: "DDIA",
+    alternates: {
+        canonical: `${process.env.SITE_HOST}/en/our-work`,
+        languages: {
+            "en-US": `${process.env.SITE_HOST}/en/our-work`,
+            "es-ES": `${process.env.SITE_HOST}/es/our-work`,
+            "pt-BR": `${process.env.SITE_HOST}/pt/our-work`,
+        },
+    },
+};
 
 export default async function OurWorkPage({
     params: { locale },
