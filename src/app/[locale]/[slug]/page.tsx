@@ -37,7 +37,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({params: { slug, locale }}: { params: { slug: string, locale: string } }, parent: ResolvingMetadata): Promise<Metadata> {
     const { post } = await fetchData(slug);
     const images = [];
-    if (post.feature_media) {
+    if (post?.feature_media) {
         images.push(`${process.env.NEXT_PUBLIC_API_URL}${post?.feature_media?.url}`);
     }
     const previousImages = (await parent).openGraph?.images || []
@@ -96,14 +96,14 @@ export default async function ArticlePage({
                 authorName={post.authors?.map((a) => ({
                     name: a.name,
                 }))}
-                images={[post.feature_media?.url]}
+                images={[post?.feature_media?.url]}
                 publisherName="DDIA"
                 publisherLogo={`${process.env.SITE_HOST}/logo.png`}
                 isAccessibleForFree={true}
             />
             <article className="pt-[104px]">
                 <header className="flex flex-col">
-                    {post.feature_media && (
+                    {post?.feature_media && (
                         <figure>
                             <ServerImage
                                 {...post.feature_media}
@@ -202,7 +202,7 @@ export default async function ArticlePage({
                                         {related.map((post) => (
                                             <div key={post.slug}>
                                                 <div className="overflow-hidden">
-                                                    {post.feature_media && (
+                                                    {post?.feature_media && (
                                                         <ServerImage
                                                             {...post.feature_media}
                                                             sizes="160px"
