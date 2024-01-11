@@ -170,7 +170,7 @@ export default async function ArticlePage({
                                     </I18nLink>
                                     <I18nLink
                                         data-action="share/whatsapp/share"
-                                        href={`https://web.whatsapp.com/send?text=${shareUrl}`}
+                                        href={`https://api.whatsapp.com/send?text=${shareUrl}`}
                                         className="w-8 h-8 rounded-full bg-design-dark flex items-center justify-center"
                                     >
                                         <WAIcon className="fill-white w-6 h-6"></WAIcon>
