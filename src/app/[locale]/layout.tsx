@@ -12,6 +12,7 @@ import Script from "next/script";
 import { getApi } from "@/lib/utils/api";
 
 export const metadata: Metadata = {
+    metadataBase: new URL(process.env.SITE_HOST as string),
     title: "DDIA - Digital Democracy Institute of the Americas",
     description:
         "The Digital Democracy Institute of the Americas (DDIA) is bringing together insights and actors across the Western Hemisphere to shape a more participatory, inclusive, and resilient digital democracy.",
@@ -28,6 +29,16 @@ export const metadata: Metadata = {
             "pt-BR": `${process.env.SITE_HOST}/pt`,
         },
     },
+    openGraph: {
+        images: [
+            `${process.env.SITE_HOST}/preview.png`,
+        ]
+    },
+    twitter: {
+        images: [
+            `${process.env.SITE_HOST}/preview.png`,
+        ]
+    }
 };
 
 export function generateStaticParams() {
@@ -42,7 +53,7 @@ export default async function RootLayout({
     params: { locale: string };
 }) {
     const translation = await getApi<any>(`/static-text/${locale}`);
-    const { footer: translations } = translation as any;
+    // const { footer: translations } = translation as any;
     return (
         <html lang={locale} dir={dir(locale)}>
             <head>

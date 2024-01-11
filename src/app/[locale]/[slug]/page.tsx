@@ -19,6 +19,7 @@ import ContactUsBanner from "@/lib/components/ContactUsBanner";
 import { ArticleJsonLd } from "next-seo";
 import initTranslations from "@/i18n";
 import SubscribeBanner from "@/lib/components/SubscribeBanner";
+import { Metadata, ResolvingMetadata } from "next";
 
 export async function generateStaticParams() {
     const { data: posts } = await getApi<TPost[]>(`/posts`, {
@@ -31,6 +32,43 @@ export async function generateStaticParams() {
     return posts.map((post: TPost) => ({
         slug: post.slug,
     }));
+}
+
+export async function generateMetadata({params: { slug, locale }}: { params: { slug: string, locale: string } }, parent: ResolvingMetadata): Promise<Metadata> {
+    const { post } = await fetchData(slug);
+    if (!post) return {
+        title: "About Us | DDIA - Digital Democracy Institute of the Americas",
+        description: "The page you're looking for was not found"
+    };
+    const images = [];
+    if (post?.feature_media) {
+        images.push(`${process.env.NEXT_PUBLIC_API_URL}${post?.feature_media?.url}`);
+    }
+    const previousImages = (await parent).openGraph?.images || []
+    images.push(...previousImages)
+    return {
+        title: post.title,
+        description: post.description,
+        robots: {
+            follow: true,
+            index: true,
+        },
+        publisher: "DDIA",
+        alternates: {
+            canonical: `${process.env.SITE_HOST}/en/${post.slug}`,
+            languages: {
+                "en-US": `${process.env.SITE_HOST}/en/${post.slug}`,
+                "es-ES": `${process.env.SITE_HOST}/es/${post.slug}`,
+                "pt-BR": `${process.env.SITE_HOST}/pt/${post.slug}`,
+            },
+        },
+        openGraph: {
+            images
+        },
+        twitter: {
+            images
+        }
+    }
 }
 
 export default async function ArticlePage({
@@ -62,14 +100,14 @@ export default async function ArticlePage({
                 authorName={post.authors?.map((a) => ({
                     name: a.name,
                 }))}
-                images={[post.feature_media?.url]}
+                images={[post?.feature_media?.url]}
                 publisherName="DDIA"
                 publisherLogo={`${process.env.SITE_HOST}/logo.png`}
                 isAccessibleForFree={true}
             />
             <article className="pt-[104px]">
                 <header className="flex flex-col">
-                    {post.feature_media && (
+                    {post?.feature_media && (
                         <figure>
                             <ServerImage
                                 {...post.feature_media}
@@ -136,7 +174,7 @@ export default async function ArticlePage({
                                     </I18nLink>
                                     <I18nLink
                                         data-action="share/whatsapp/share"
-                                        href={`https://web.whatsapp.com/send?text=${shareUrl}`}
+                                        href={`https://api.whatsapp.com/send?text=${shareUrl}`}
                                         className="w-8 h-8 rounded-full bg-design-dark flex items-center justify-center"
                                     >
                                         <WAIcon className="fill-white w-6 h-6"></WAIcon>
@@ -168,7 +206,7 @@ export default async function ArticlePage({
                                         {related.map((post) => (
                                             <div key={post.slug}>
                                                 <div className="overflow-hidden">
-                                                    {post.feature_media && (
+                                                    {post?.feature_media && (
                                                         <ServerImage
                                                             {...post.feature_media}
                                                             sizes="160px"
