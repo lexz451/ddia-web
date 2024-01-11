@@ -36,6 +36,10 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({params: { slug, locale }}: { params: { slug: string, locale: string } }, parent: ResolvingMetadata): Promise<Metadata> {
     const { post } = await fetchData(slug);
+    if (!post) return {
+        title: "About Us | DDIA - Digital Democracy Institute of the Americas",
+        description: "The page you're looking for was not found"
+    };
     const images = [];
     if (post?.feature_media) {
         images.push(`${process.env.NEXT_PUBLIC_API_URL}${post?.feature_media?.url}`);
