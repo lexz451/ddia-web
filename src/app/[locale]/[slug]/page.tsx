@@ -19,6 +19,7 @@ import ContactUsBanner from "@/lib/components/ContactUsBanner";
 import { ArticleJsonLd } from "next-seo";
 import initTranslations from "@/i18n";
 import SubscribeBanner from "@/lib/components/SubscribeBanner";
+import { Metadata, ResolvingMetadata } from "next";
 
 export async function generateStaticParams() {
     const { data: posts } = await getApi<TPost[]>(`/posts`, {
@@ -31,6 +32,39 @@ export async function generateStaticParams() {
     return posts.map((post: TPost) => ({
         slug: post.slug,
     }));
+}
+
+export async function generateMetadata({params: { slug, locale }}: { params: { slug: string, locale: string } }, parent: ResolvingMetadata): Promise<Metadata> {
+    const { post } = await fetchData(slug);
+    const images = [];
+    if (post.feature_media) {
+        images.push(`${process.env.NEXT_PUBLIC_API_URL}${post?.feature_media?.url}`);
+    }
+    const previousImages = (await parent).openGraph?.images || []
+    images.push(...previousImages)
+    return {
+        title: post.title,
+        description: post.description,
+        robots: {
+            follow: true,
+            index: true,
+        },
+        publisher: "DDIA",
+        alternates: {
+            canonical: `${process.env.SITE_HOST}/en/${post.slug}`,
+            languages: {
+                "en-US": `${process.env.SITE_HOST}/en/${post.slug}`,
+                "es-ES": `${process.env.SITE_HOST}/es/${post.slug}`,
+                "pt-BR": `${process.env.SITE_HOST}/pt/${post.slug}`,
+            },
+        },
+        openGraph: {
+            images
+        },
+        twitter: {
+            images
+        }
+    }
 }
 
 export default async function ArticlePage({
