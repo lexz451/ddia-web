@@ -1,3 +1,4 @@
+import ContactButton from "@/lib/components/ContactButton";
 import { getApi } from "@/lib/utils/api";
 import { parsePostContent } from "@/lib/utils/helpers";
 import { Metadata, ResolvingMetadata } from "next";
@@ -80,7 +81,8 @@ export default async function CareerDetailPage({
             <section className="heading bg-gradient-to-b from-design-light-green to-design-light pt-[150px]">
                 <div className="container mx-auto px-5 flex flex-col items-center justify-center pt-10 pb-20">
                     <h1 className="text-center font-avenir font-extrabold text-4xl lg:text-5xl text-design-green">{post.title}</h1>
-                    <button className="r-btn border-design-green text-design-green mt-10">Contact Us</button>
+                    {/* <button className="r-btn border-design-green text-design-green mt-10">Contact Us</button> */}
+                    <ContactButton classes="r-btn border-design-green text-design-green mt-10 cursor-pointer" locale={locale}></ContactButton>
                 </div>
             </section>
             <section className="content page-container grid lg:grid-cols-[300px_1fr] gap-10 mt-10 mb-10">
