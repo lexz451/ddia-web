@@ -5,9 +5,11 @@ export default function NotFoundPage() {
         <main className="pt-[120px] pb-footer">
             <div className="page-container flex items-center justify-center ">
                 <div className="flex flex-col items-center justify-center h-[60vh]">
-                    <h2>Not Found</h2>
-                    <p>Could not find requested resource</p>
-                    <I18nLink href="/">Return Home</I18nLink>
+                    <h2 className="text-3xl font-bold text-design-green">Not Found</h2>
+                    <p className="mt-2">Could not find requested resource</p>
+                    <I18nLink href="/" className="mt-10 underline">
+                        Go back to home
+                    </I18nLink>
                 </div>
             </div>
 
