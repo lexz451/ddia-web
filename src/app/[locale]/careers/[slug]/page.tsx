@@ -2,11 +2,15 @@ import ContactButton from "@/lib/components/ContactButton";
 import { getApi } from "@/lib/utils/api";
 import { parsePostContent } from "@/lib/utils/helpers";
 import { Metadata, ResolvingMetadata } from "next";
+import { notFound } from "next/navigation";
 
 
 export async function generateStaticParams() {
     const { data: posts } = await getApi<any[]>(`/careers`, {
         filters: {
+            enabled: {
+                $eq: true,
+            },
             content: {
                 $ne: null,
             },
@@ -56,6 +60,9 @@ export async function generateMetadata({params: { slug, locale }}: { params: { s
 async function fetchData(slug: string) {
     const { data: [post] } = await getApi<any[]>(`/careers`, {
         filters: {
+            enabled: {
+                $eq: true,
+            },
             slug: {
                 $eq: slug
             },
@@ -73,6 +80,7 @@ export default async function CareerDetailPage({
     params: { slug: string; locale: string };
 }) {
     const { post } = await fetchData(slug);
+    if (!post) return notFound();
 
     const content = parsePostContent(post.content);
 
