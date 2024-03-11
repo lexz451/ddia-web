@@ -103,7 +103,7 @@ export default async function CareerDetailPage({
                         {
                             post.url && (
                                 <a href={post.url} className="r-btn border-none text-white bg-design-green mt-10">
-                                    Apply for this job
+                                    Apply
                                 </a>
                             )
                         }
