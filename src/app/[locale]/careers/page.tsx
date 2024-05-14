@@ -1,5 +1,7 @@
 import { getApi } from "@/lib/utils/api";
 import { Metadata } from "next";
+import { fetchData } from "./data";
+import I18nLink from "@/lib/components/I18nLink";
 
 export const metadata: Metadata = {
     title: "Careers | DDIA - Digital Democracy Institute of the Americas",
@@ -28,6 +30,7 @@ export default async function Careers({
 
     const translation = await getApi<any>(`/static-text/${locale}`);
     const translations = (translation as any)['careers-page'];
+    const { careers } = await fetchData()
 
     return (
         <main className="page-container">
@@ -37,12 +40,34 @@ export default async function Careers({
                     {translations?.title}
                 </h1>
             </section>
-            <section className="mb-20">
-                <p className="max-w-prose text-center mx-auto text-lg">
-                    {/* {t("careers-page.message")} */}
-                    {translations?.message}
-                </p>
-            </section>
+            {
+                careers.length === 0 && (
+                    <section className="mb-20">
+                        <p className="max-w-prose text-center mx-auto text-lg">
+                            {/* {t("careers-page.message")} */}
+                            {translations?.message}
+                        </p>
+                    </section>)
+            }
+            <div className="flex flex-col mt-10">
+                {
+                    careers.map((career: any, index: number) => {
+                        return (
+                            <div key={index} className="mb-20 bg-design-extralight-yellow p-5 rounded-xl">
+                                <I18nLink href={`/careers/${career.slug}`} className="text-2xl font-bold hover:text-design-green transition-all duration-300">
+                                    {career.title}
+                                </I18nLink>
+                                <div className="flex items-center gap-2 mt-3">
+                                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="6.5" cy="6.5" r="5.5" stroke="#0F8BA0" strokeWidth="2" />
+                                    </svg>
+                                    <span className="leading-none">{career.location}</span>
+                                </div>
+                            </div>
+                        );
+                    })
+                }
+            </div>
             <section className="pb-footer"></section>
         </main>
     );

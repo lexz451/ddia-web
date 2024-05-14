@@ -28,6 +28,24 @@ export const metadata: Metadata = {
     },
 };
 
+async function fetchData() {
+    const { data: careers } = await getApi<any[]>(
+        "/careers",
+        {
+            filters: {
+                enabled: {
+                    $eq: true,
+                },
+            },
+        },
+        {
+            next: { tags: ["career"] },
+        }
+    );
+
+    return { careers };
+}
+
 export default async function ContactUs({
     params: { locale },
 }: {
@@ -38,6 +56,8 @@ export default async function ContactUs({
     const translationsForm = (translation as any)['newsletter-form'];
     const translations = (translation as any)['get-involved-page'];
     const { t } = await initTranslations(locale);
+
+    const { careers } = await fetchData();
 
     return (
         <main className="bg-gradient-to-b from-design-light-green via-design-light to-white pt-[150px]">
@@ -101,83 +121,96 @@ export default async function ContactUs({
                         {translations?.careers.title}
                     </h1>
 
-                    <p className="max-w-prose text-center font-avenir mx-auto mt-5">
-                        {/* {t("get-involved-page.careers.message")} */}
-                        {translations?.careers.message}
-                    </p>
+                    {
+                        careers.length === 0 && (
+                            <p className="max-w-prose text-center font-avenir mx-auto mt-5">
+                                {/* {t("get-involved-page.careers.message")} */}
+                                {translations?.careers.message}
+                            </p>)
+                    }
 
-                    {/* {jobPositions.map((job) => {
-                        return (
-                            <div
-                                className="my-4 grid grid-cols-2 grid-rows-[auto_1fr] gap-2 bg-design-light-gray rounded-xl px-10 py-4"
-                                key={job.id}
-                            >
-                                <h2 className="col-start-1 text-2xl font-medium my-auto">
-                                    {job.position}
-                                </h2>
-                                <ul className="flex flex-wrap col-start-1 h-auto row-start-2 col-span-2 lg:col-end-1 gap-2">
-                                    <li className="flex mr-4 gap-3 items-center">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="13"
-                                            height="13"
-                                            viewBox="0 0 13 13"
-                                            fill="none"
-                                        >
-                                            <circle
-                                                cx="6.5"
-                                                cy="6.5"
-                                                r="5.5"
-                                                stroke="#0F8BA0"
-                                                strokeWidth="2"
-                                            />
-                                        </svg>
-                                        {job.department}
-                                    </li>
-                                    <li className="flex mr-4 gap-3 items-center">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="13"
-                                            height="13"
-                                            viewBox="0 0 13 13"
-                                            fill="none"
-                                        >
-                                            <circle
-                                                cx="6.5"
-                                                cy="6.5"
-                                                r="5.5"
-                                                stroke="#0F8BA0"
-                                                strokeWidth="2"
-                                            />
-                                        </svg>
-                                        {job.location}
-                                    </li>
-                                    <li className="flex mr-4 gap-3 items-center">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="13"
-                                            height="13"
-                                            viewBox="0 0 13 13"
-                                            fill="none"
-                                        >
-                                            <circle
-                                                cx="6.5"
-                                                cy="6.5"
-                                                r="5.5"
-                                                stroke="#0F8BA0"
-                                                strokeWidth="2"
-                                            />
-                                        </svg>
-                                        {job.date}
-                                    </li>
-                                </ul>
+                    <div className="mt-10">
+                        {careers.map((job) => {
+                            return (
+                                <div
+                                    className="my-4 grid grid-cols-[1fr_auto] grid-rows-[auto_1fr] gap-x-10 gap-y-2 bg-design-light-gray rounded-xl px-10 py-4"
+                                    key={job.id}
+                                >
+                                    <I18nLink href={`/careers/${job.slug}`} className="col-start-1 font-bold hover:text-design-green transition-all duration-300 text-2xl my-auto leading-tight">
+                                        {job.title}
+                                    </I18nLink>
+                                    <ul className="flex flex-wrap col-start-1 h-auto row-start-2 col-span-2 lg:col-end-1 gap-2">
+                                        {
+                                            job.profile && (
+                                                <li className="flex mr-4 gap-3 items-center">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="13"
+                                                        height="13"
+                                                        viewBox="0 0 13 13"
+                                                        fill="none"
+                                                    >
+                                                        <circle
+                                                            cx="6.5"
+                                                            cy="6.5"
+                                                            r="5.5"
+                                                            stroke="#0F8BA0"
+                                                            strokeWidth="2"
+                                                        />
+                                                    </svg>
+                                                    {job.profile}
+                                                </li>
+                                            )
+                                        }
+                                        <li className="flex mr-4 gap-3 items-center">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="13"
+                                                height="13"
+                                                viewBox="0 0 13 13"
+                                                fill="none"
+                                            >
+                                                <circle
+                                                    cx="6.5"
+                                                    cy="6.5"
+                                                    r="5.5"
+                                                    stroke="#0F8BA0"
+                                                    strokeWidth="2"
+                                                />
+                                            </svg>
+                                            {job.location}
+                                        </li>
+                                        {/* <li className="flex mr-4 gap-3 items-center">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="13"
+                                                height="13"
+                                                viewBox="0 0 13 13"
+                                                fill="none"
+                                            >
+                                                <circle
+                                                    cx="6.5"
+                                                    cy="6.5"
+                                                    r="5.5"
+                                                    stroke="#0F8BA0"
+                                                    strokeWidth="2"
+                                                />
+                                            </svg>
+                                            {job.createdAt}
+                                        </li> */}
+                                    </ul>
 
-                                <button className="r-btn bg-design-green text-white font-normal row-end-1 md:row-start-1 md:row-span-2 col-start-2 ml-auto my-auto">
-                                    Apply
-                                </button>
-                            </div>
-                        );
-                    })} */}
+                                    {
+                                        job.url && (
+                                            <a href={job.url} className="r-btn bg-design-green text-white font-normal row-end-1 md:row-start-1 md:row-span-2 col-start-2 ml-auto my-auto">
+                                                Apply
+                                            </a>
+                                        )
+                                    }
+                                </div>
+                            );
+                        })}
+                    </div>
                 </section>
             </div>
         </main>
