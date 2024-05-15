@@ -80,7 +80,7 @@ export default function HtmlContent(
         )
       }
     });
-    sequense(runList, scriptsDone);
+    runList.length && sequense(runList, scriptsDone);
   }
 
   useEffect(() => {
