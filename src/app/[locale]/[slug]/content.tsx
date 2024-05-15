@@ -32,7 +32,7 @@ export default function HtmlContent(
     if (!index) {
       index = 0
     }
-    arr[index](function () {
+    arr?.[index](function () {
       index!!++
       if (index === arr.length) {
         callback()
