@@ -101,6 +101,12 @@
         a {
             @apply break-words text-[#3391ff];
         }
+        .tai-prose-html {
+            overflow: scroll;
+            iframe {
+                max-width: 100%;
+            }
+        }
     }
 
     .menu-icon {
