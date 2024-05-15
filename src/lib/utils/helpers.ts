@@ -75,9 +75,10 @@ export function parsePostContent(content: string): string {
   htmlEmbed.forEach((html) => {
     const inner = html.getAttribute("inner");
     if (inner) {
-      let _inner = Buffer.from(inner, "base64").toString("utf-8");
+      let _inner = Buffer.from(inner, "base64").toString();
       _inner = decodeURIComponent(_inner);
       html.appendChild(parse(_inner));
+      html.removeAttribute('inner');
     }
   });
 
