@@ -34,53 +34,54 @@ function PostItem({ post }: { post: TPost; }) {
     return (
         <div
             key={post.slug}
-            className="BlogSectionsPost grid lg:grid-cols-2 relative bg-white rounded-2xl overflow-hidden"
+            className="relative grid lg:grid-cols-2 bg-white rounded-2xl overflow-hidden BlogSectionsPost"
         >
             <I18nLink href={`/${post.slug}`}>
                 {post.feature_media && (
                     <ServerImage
                         {...post.feature_media}
-                        className="relative w-full h-full object-cover object-center"
+                        className="relative w-full h-full object-center object-cover"
                     ></ServerImage>
                 )}
             </I18nLink>
-            <div className="Content p-10  bg-white flex-col justify-center items-start gap-9 inline-flex">
-                <div className="LeadingContent self-stretch h-40 flex-col justify-start items-start gap-2 inline-flex">
-                    <div className="Category self-stretch text-design-light-green text-sm font-medium  uppercase leading-tight">
+            <div className="inline-flex flex-col justify-center items-start gap-9 bg-white p-10 Content">
+                <div className="flex flex-col justify-start items-start gap-2 LeadingContent self-stretch">
+                    <div className="font-medium text-design-light-green text-sm uppercase leading-tight Category self-stretch">
                         Report
                     </div>
-                    <div className="TitleAndPreview self-stretch flex-col justify-start items-start gap-3 flex">
+                    <div className="flex flex-col justify-start items-start gap-3 self-stretch TitleAndPreview">
                         <I18nLink
                             href={`/${post.slug}`}
-                            className="Title self-stretch text-gray-900 text-xl font-semibold font-avenir leading-7"
+                            className="font-avenir font-semibold text-gray-900 text-xl leading-7 self-stretch Title"
                         >
                             {post.title}
                         </I18nLink>
-                        <p className="Preview self-stretch text-gray-500 text-base font-normal leading-normal line-clamp-3">
+                        <p className="line-clamp-3 font-normal text-base text-gray-500 leading-normal Preview self-stretch">
                             {post.description}
                         </p>
                     </div>
-                </div>
-                <div className="BlogSectionsAvatarWithText justify-start items-center gap-3 inline-flex">
-                    {post.authors?.[0]?.avatar && (
-                        <div className="Avatar w-10 h-10 flex items-center justify-center bg-stone-100 rounded-full">
-                            <ServerImage
-                                {...post.authors?.[0]?.avatar}
-                                className="w-full h-full object-cover object-center rounded-full"
-                            ></ServerImage>
-                        </div>
-                    )}
-                    <div className="Text flex-col justify-start items-start inline-flex">
-                        <div className="Title text-gray-900 text-sm font-medium  leading-tight">
-                            {post.authors?.[0]?.name}
-                        </div>
-                        <div className="SupportingText text-gray-500 text-sm font-normal  leading-tight">
-                            {parsePostDate(post.created_date)}
-                            <span className="mx-2">·</span>
-                            {parseReadTime(post?.content)}
+                    <div className="inline-flex justify-start items-center gap-3 BlogSectionsAvatarWithText">
+                        {post.authors?.[0]?.avatar && (
+                            <div className="flex justify-center items-center bg-stone-100 rounded-full w-10 h-10 Avatar">
+                                <ServerImage
+                                    {...post.authors?.[0]?.avatar}
+                                    className="rounded-full w-full h-full object-center object-cover"
+                                ></ServerImage>
+                            </div>
+                        )}
+                        <div className="inline-flex flex-col justify-start items-start Text">
+                            <div className="font-medium text-gray-900 text-sm leading-tight Title">
+                                {post.authors?.[0]?.name}
+                            </div>
+                            <div className="font-normal text-gray-500 text-sm leading-tight SupportingText">
+                                {parsePostDate(post.created_date)}
+                                <span className="mx-2">·</span>
+                                {parseReadTime(post?.content)}
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     );
@@ -101,15 +102,15 @@ export default function ReportsAndPublications({
     return (
         <section
             id="reports-and-publications"
-            className="our-work-section gradient-green-section"
+            className="gradient-green-section our-work-section"
         >
-            <div className="page-container pt-10 lg:pt-20 pb-10 lg:pb-28">
+            <div className="pt-10 lg:pt-20 pb-10 lg:pb-28 page-container">
                 <div className="flex flex-col items-center">
-                    <IndicatorIcon className="fill-white w-4 h-4"></IndicatorIcon>
-                    <div className="Headline mt-10 text-center text-design-green text-4xl lg:text-6xl font-extrabold  leading-10">
+                    <IndicatorIcon className="w-4 h-4 fill-white"></IndicatorIcon>
+                    <div className="mt-10 font-extrabold text-4xl text-center text-design-green lg:text-6xl leading-10 Headline">
                         {t("reports-and-publications")}
                     </div>
-                    <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-normal">
+                    <div className="mt-8 max-w-prose font-normal text-center text-design-green text-lg leading-normal IntroductoryText">
                         {/* {t("our-work-page.research.message8")} */}
                         {translations?.research.message8}
                     </div>
