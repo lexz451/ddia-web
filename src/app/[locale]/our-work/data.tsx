@@ -22,7 +22,7 @@ export async function fetchData(locale: string) {
             "tags"
         ],
         pagination: {
-            limit: 3,
+            limit: 6,
         },
         sort: ['created_date:desc']
     }, {

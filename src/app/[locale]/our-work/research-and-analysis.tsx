@@ -35,85 +35,85 @@ export default function ResearchAndAnalysis({
     return (
         <section
             id="research-and-analysis"
-            className="our-work-section page-container py-10 lg:py-20"
+            className="py-10 lg:py-20 our-work-section page-container"
         >
             <div className="flex flex-col items-center">
-                <IndicatorIcon className="fill-design-yellow w-4 h-4"></IndicatorIcon>
-                <div className="Headline mt-10 text-center text-design-green text-4xl lg:text-6xl font-extrabold  leading-10">
+                <IndicatorIcon className="w-4 h-4 fill-design-yellow"></IndicatorIcon>
+                <div className="mt-10 font-extrabold text-4xl text-center text-design-green lg:text-6xl leading-10 Headline">
                     {t('research-and-analysis')}
                 </div>
-                <div className="IntroductoryText mt-8 max-w-prose text-center text-design-green text-lg font-normal  leading-relaxed">
+                <div className="mt-8 max-w-prose font-normal text-center text-design-green text-lg leading-relaxed IntroductoryText">
                     {/* {t('our-work-page.research.message')} */}
                     {translations?.research.message}
                 </div>
                 <div
                     id="public-opinion-research"
-                    className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 my-10 lg:my-20 w-full"
+                    className="flex lg:flex-row flex-col items-center gap-4 lg:gap-10 my-10 lg:my-20 w-full"
                 >
-                    <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
-                    <div className="IntroductoryText text-center text-design-green text-2xl lg:text-3xl font-extrabold  leading-7">
+                    <div className="lg:flex-1 bg-neutral-400 bg-opacity-50 w-full h-[1px]"></div>
+                    <div className="font-extrabold text-2xl text-center text-design-green lg:text-3xl leading-7 IntroductoryText">
                         {t('public-opinion-research')}
                     </div>
-                    <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
+                    <div className="lg:flex-1 bg-neutral-400 bg-opacity-50 w-full h-[1px]"></div>
                 </div>
-                <div className="IntroductoryText max-w-prose text-center text-design-green text-lg font-normal  leading-relaxed">
+                <div className="max-w-prose font-normal text-center text-design-green text-lg leading-relaxed IntroductoryText">
                     {/* {t('our-work-page.research.message2')} */}
                     {translations?.research.message2}
                 </div>
-                <div className="IntroductoryText my-10 text-center text-design-green text-xl font-extrabold  uppercase leading-7">
+                <div className="my-10 font-extrabold text-center text-design-green text-xl uppercase leading-7 IntroductoryText">
                     {/* {t('our-work-page.research.message3')} */}
                     {translations?.research.message3}
                 </div>
-                <div className="Rectangle247 border-none lg:max-w-[80%] flex flex-col lg:flex-row lg:items-center justify-between p-10 gap-10 lg:h-36 bg-design-extralight-yellow rounded-2xl">
-                    <ShapeIcon className="w-12 h-12 flex-shrink-0"></ShapeIcon>
-                    <div className="IntroductoryText text-neutral-800 text-xl lg:text-2xl font-normal  leading-none">
+                <div className="flex lg:flex-row flex-col justify-between lg:items-center gap-10 bg-design-extralight-yellow p-10 border-none rounded-2xl lg:max-w-[80%] lg:h-36 Rectangle247">
+                    <ShapeIcon className="flex-shrink-0 w-12 h-12"></ShapeIcon>
+                    <div className="font-normal text-neutral-800 text-xl lg:text-2xl leading-none IntroductoryText">
                         {/* {t('our-work-page.research.message4')} */}
                         {translations?.research.message4}
                     </div>
                 </div>
-                <div className="Rectangle247 border-none mt-5 lg:max-w-[80%] flex flex-col lg:flex-row lg:items-center justify-between p-10 gap-10 lg:h-36 bg-design-extralight-yellow rounded-2xl">
-                    <DetermineIcon className="w-12 h-12 flex-shrink-0"></DetermineIcon>
-                    <div className="IntroductoryText text-neutral-800 text-xl lg:text-2xl font-normal  leading-none">
+                <div className="flex lg:flex-row flex-col justify-between lg:items-center gap-10 bg-design-extralight-yellow mt-5 p-10 border-none rounded-2xl lg:max-w-[80%] lg:h-36 Rectangle247">
+                    <DetermineIcon className="flex-shrink-0 w-12 h-12"></DetermineIcon>
+                    <div className="font-normal text-neutral-800 text-xl lg:text-2xl leading-none IntroductoryText">
                         {/* {t('our-work-page.research.message5')} */}
                         {translations?.research.message5}
                     </div>
                 </div>
-                <div className="IntroductoryText mt-10 max-w-prose text-center text-neutral-800 text-lg font-normal  leading-relaxed">
+                <div className="mt-10 max-w-prose font-normal text-center text-lg text-neutral-800 leading-relaxed IntroductoryText">
                     {/* {t('our-work-page.research.message6')} */}
                     {translations?.research.message6}
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-10 mt-20">
+                <div className="gap-10 grid lg:grid-cols-3 lg:grid-rows-2 mt-20 lg:min-h-screen">
                     {research.publicOpinionResearch.map((post) => (
-                        <div key={post.slug} className="BlogSectionsPost overflow-hidden bg-white rounded-xl h-auto grid grid-rows-2">
+                        <div key={post.slug} className="grid grid-rows-2 bg-white rounded-xl h-auto overflow-hidden BlogSectionsPost">
                             {
                                 post.feature_media && (
-                                   <I18nLink href={post.platform_url ? post.platform_url : `/${post.slug}`}>
-                                        <ServerImage {...post.feature_media} className="relative h-full w-full object-cover object-center"></ServerImage>
-                                   </I18nLink>
+                                    <I18nLink href={post.platform_url ? post.platform_url : `/${post.slug}`}>
+                                        <ServerImage {...post.feature_media} className="relative w-full h-full object-center object-cover"></ServerImage>
+                                    </I18nLink>
                                 )
                             }
-                            <div className="Content p-6 bg-white flex-col justify-start items-start gap-6 inline-flex">
-                                <div className="LeadingContent self-stretch flex-col justify-start items-start gap-2 inline-flex">
-                                    <div className="TitleAndPreview self-stretch  flex-col justify-start items-start gap-3 flex">
-                                        <I18nLink href={post.platform_url ? post.platform_url : `/${post.slug}`} className="Title self-stretch text-gray-900 text-xl font-semibold font-avenir leading-normal">
+                            <div className="inline-flex flex-col justify-start items-start gap-6 bg-white p-6 Content">
+                                <div className="inline-flex flex-col justify-start items-start gap-2 LeadingContent self-stretch">
+                                    <div className="flex flex-col justify-start items-start gap-3 self-stretch TitleAndPreview">
+                                        <I18nLink href={post.platform_url ? post.platform_url : `/${post.slug}`} className="line-clamp-3 font-avenir font-semibold text-gray-900 text-lg leading-normal self-stretch Title">
                                             {post.title}
                                         </I18nLink>
                                     </div>
                                 </div>
                                 {
                                     post.authors?.length > 0 && (
-                                        <div className="BlogSectionsAvatarWithText  mt-auto justify-start items-center gap-3 inline-flex">
-                                           {
-                                                  post.authors[0].avatar && (
-                                                    <ServerImage {...post.authors[0].avatar} className="Avatar w-10 h-10 bg-stone-100 rounded-full object-cover"></ServerImage>
-                                                  )
-                                           }
-                                            <div className="Text flex-col justify-start items-start inline-flex">
-                                                <div className="Title text-gray-900 text-sm font-medium leading-tight">
+                                        <div className="inline-flex justify-start items-center gap-3 mt-auto BlogSectionsAvatarWithText">
+                                            {
+                                                post.authors[0].avatar && (
+                                                    <ServerImage {...post.authors[0].avatar} className="bg-stone-100 rounded-full w-10 h-10 Avatar object-cover"></ServerImage>
+                                                )
+                                            }
+                                            <div className="inline-flex flex-col justify-start items-start Text">
+                                                <div className="font-medium text-gray-900 text-sm leading-tight Title">
                                                     {post.authors[0].name}
                                                 </div>
-                                                <div className="SupportingText text-gray-500 text-sm font-normal leading-tight">
+                                                <div className="font-normal text-gray-500 text-sm leading-tight SupportingText">
                                                     {parsePostDate(post.created_date)} · {parseReadTime(post.content)}
                                                 </div>
                                             </div>
@@ -123,226 +123,226 @@ export default function ResearchAndAnalysis({
                             </div>
                         </div>
                     ))}
-                    
+
                 </div>
-                {/* <div className="flex items-center justify-center w-full">
+                {/* <div className="flex justify-center items-center w-full">
                     <Link
                         href={`#`}
-                        className="r-btn border-none text-white bg-design-green"
+                        className="bg-design-green border-none text-white r-btn"
                     >
                         See all
                     </Link>
                 </div> */}
                 <div
                     id="social-listening-and-osint-investigations"
-                    className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 my-20 w-full"
+                    className="flex lg:flex-row flex-col items-center gap-4 lg:gap-10 my-20 w-full"
                 >
-                    <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
-                    <div className="IntroductoryText text-center text-design-green text-2xl lg:text-3xl font-extrabold  leading-7">
+                    <div className="lg:flex-1 bg-neutral-400 bg-opacity-50 w-full h-[1px]"></div>
+                    <div className="font-extrabold text-2xl text-center text-design-green lg:text-3xl leading-7 IntroductoryText">
                         {t('social-listening-osint-investigations')}
                     </div>
-                    <div className="w-full lg:flex-1 h-[1px] bg-neutral-400 bg-opacity-50"></div>
+                    <div className="lg:flex-1 bg-neutral-400 bg-opacity-50 w-full h-[1px]"></div>
                 </div>
-                <div className="IntroductoryText max-w-prose text-center text-neutral-800 text-lg font-normal leading-relaxed">
+                <div className="max-w-prose font-normal text-center text-lg text-neutral-800 leading-relaxed IntroductoryText">
                     {/* {t('our-work-page.research.message7')} */}
                     {translations?.research.message7}
                 </div>
                 <div
                     id="issues-and-narratives"
-                    className="IntroductoryText mt-20 text-center text-design-green text-xl font-extrabold  uppercase leading-7"
+                    className="mt-20 font-extrabold text-center text-design-green text-xl uppercase leading-7 IntroductoryText"
                 >
                     {t('issues-and-narratives')}
                 </div>
-                <div className="grid lg:grid-cols-3 lg:grid-rows-2 mt-10 gap-5 lg:gap-10 w-full">
+                <div className="gap-5 lg:gap-10 grid lg:grid-cols-3 lg:grid-rows-2 mt-10 w-full">
                     <I18nLink
                         href={`/our-work/issues-and-narratives?tag=elections-and-voting`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
+                        className="relative flex justify-between items-center bg-design-cyan p-8 rounded-xl lg:rounded-2xl overflow-hidden group lg:aspect-[4/2]"
                     >
                         <Image
                             src={ElectionsImg}
                             alt=""
-                            className="absolute left-0 top-0 w-full h-full"
+                            className="top-0 left-0 absolute w-full h-full"
                         ></Image>
-                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 Headline text-white text-xl lg:text-3xl font-extrabold ">
+                        <div className="group-hover:bg-black top-0 left-0 absolute bg-design-cyan group-hover:bg-opacity-50 w-full h-full transition-all duration-300 overlay"></div>
+                        <div className="relative z-10 font-extrabold text-white text-xl lg:text-3xl Headline">
                             {t('elections-and-voting')}
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 flex-shrink-0 mt-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                     </I18nLink>
                     <I18nLink
                         href={`/our-work/issues-and-narratives?tag=identity-and-culture`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
+                        className="relative flex justify-between items-center bg-design-cyan p-8 rounded-xl lg:rounded-2xl overflow-hidden group lg:aspect-[4/2]"
                     >
                         <Image
                             src={DiversityImg}
                             alt=""
-                            className="absolute left-0 top-0 w-full h-full"
+                            className="top-0 left-0 absolute w-full h-full"
                         ></Image>
-                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 Headline text-white text-xl lg:text-3xl font-extrabold ">
+                        <div className="group-hover:bg-black top-0 left-0 absolute bg-design-cyan group-hover:bg-opacity-50 w-full h-full transition-all duration-300 overlay"></div>
+                        <div className="relative z-10 font-extrabold text-white text-xl lg:text-3xl Headline">
                             {t('identity-and-culture')}
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 flex-shrink-0 mt-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                     </I18nLink>
 
                     <I18nLink
                         href={`/our-work/issues-and-narratives?tag=public-health`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
+                        className="relative flex justify-between items-center bg-design-cyan p-8 rounded-xl lg:rounded-2xl overflow-hidden group lg:aspect-[4/2]"
                     >
                         <Image
                             src={PHealthImg}
                             alt=""
-                            className="absolute left-0 top-0 w-full h-full"
+                            className="top-0 left-0 absolute w-full h-full"
                         ></Image>
-                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 whitespace-nowrap lg:whitespace-normal Headline text-white text-xl lg:text-3xl font-extrabold ">
+                        <div className="group-hover:bg-black top-0 left-0 absolute bg-design-cyan group-hover:bg-opacity-50 w-full h-full transition-all duration-300 overlay"></div>
+                        <div className="relative z-10 font-extrabold text-white text-xl lg:text-3xl whitespace-nowrap lg:whitespace-normal Headline">
                             {t('public-health')}
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 flex-shrink-0 mt-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                     </I18nLink>
 
                     <I18nLink
                         href={`/our-work/issues-and-narratives?tag=migration`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
+                        className="relative flex justify-between items-center bg-design-cyan p-8 rounded-xl lg:rounded-2xl overflow-hidden group lg:aspect-[4/2]"
                     >
                         <Image
                             src={MigrationImg}
                             alt=""
-                            className="absolute left-0 top-0 w-full h-full"
+                            className="top-0 left-0 absolute w-full h-full"
                         ></Image>
-                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 Headline text-white text-xl lg:text-3xl font-extrabold">
+                        <div className="group-hover:bg-black top-0 left-0 absolute bg-design-cyan group-hover:bg-opacity-50 w-full h-full transition-all duration-300 overlay"></div>
+                        <div className="relative z-10 font-extrabold text-white text-xl lg:text-3xl Headline">
                             {t('migration')}
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 flex-shrink-0 mt-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                     </I18nLink>
 
                     <I18nLink
                         href={`/our-work/issues-and-narratives?tag=artificial-intelligence`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
+                        className="relative flex justify-between items-center bg-design-cyan p-8 rounded-xl lg:rounded-2xl overflow-hidden group lg:aspect-[4/2]"
                     >
                         <Image
                             src={IAImg}
                             alt=""
-                            className="absolute left-0 top-0 w-full h-full"
+                            className="top-0 left-0 absolute w-full h-full"
                         ></Image>
-                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 Headline text-white text-xl lg:text-3xl font-extrabold">
+                        <div className="group-hover:bg-black top-0 left-0 absolute bg-design-cyan group-hover:bg-opacity-50 w-full h-full transition-all duration-300 overlay"></div>
+                        <div className="relative z-10 font-extrabold text-white text-xl lg:text-3xl Headline">
                             {t('artificial-intelligence')}
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 flex-shrink-0 mt-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                     </I18nLink>
 
                     <I18nLink
                         href={`/our-work/issues-and-narratives?tag=conspiracy-networks`}
-                        className="group relative overflow-hidden bg-design-cyan rounded-xl lg:rounded-2xl flex items-center justify-between lg:aspect-[4/2] p-8"
+                        className="relative flex justify-between items-center bg-design-cyan p-8 rounded-xl lg:rounded-2xl overflow-hidden group lg:aspect-[4/2]"
                     >
                         <Image
                             src={ConspiracyImg}
                             alt=""
-                            className="absolute left-0 top-0 w-full h-full"
+                            className="top-0 left-0 absolute w-full h-full"
                         ></Image>
-                        <div className="transition-all duration-300 overlay absolute top-0 left-0 w-full h-full group-hover:bg-black group-hover:bg-opacity-50 bg-design-cyan"></div>
-                        <div className="relative z-10 Headline text-white text-xl lg:text-3xl font-extrabold">
+                        <div className="group-hover:bg-black top-0 left-0 absolute bg-design-cyan group-hover:bg-opacity-50 w-full h-full transition-all duration-300 overlay"></div>
+                        <div className="relative z-10 font-extrabold text-white text-xl lg:text-3xl Headline">
                             {t('conspiracy-networks')}
                         </div>
-                        <ArrowCircleIcon className="relative z-10 stroke-design-light-green stroke-[1.5] mt-auto flex-shrink-0"></ArrowCircleIcon>
+                        <ArrowCircleIcon className="relative z-10 flex-shrink-0 mt-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                     </I18nLink>
                 </div>
 
                 <div
                     id="platforms-and-apps"
-                    className="IntroductoryText text-center mt-20 text-design-green text-xl font-extrabold  uppercase leading-7"
+                    className="mt-20 font-extrabold text-center text-design-green text-xl uppercase leading-7 IntroductoryText"
                 >
                     {t('platforms-and-apps')}
                 </div>
-                <div className="grid w-full lg:grid-cols-3 lg:grid-rows-2 mt-10 gap-5 lg:gap-10">
+                <div className="gap-5 lg:gap-10 grid lg:grid-cols-3 lg:grid-rows-2 mt-10 w-full">
                     <I18nLink
                         href={
                             "/our-work/platforms-and-apps?tag=facebook-and-instagram"
                         }
-                        className="Rectangle17 bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="flex flex-col justify-between bg-design-cyan hover:bg-design-green p-8 rounded-xl lg:rounded-2xl h-full transition-all duration-300 Rectangle17"
                     >
-                        <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
-                            <FacebookIcon className=" fill-white"></FacebookIcon>
+                        <div className="flex justify-center items-center bg-white bg-opacity-30 rounded-full w-11 h-11 Ellipse59">
+                            <FacebookIcon className="fill-white"></FacebookIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
+                            <div className="mt-5 font-extrabold text-white text-xl lg:text-3xl Headline">
                                 Facebook / Instagram
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="flex-shrink-0 ml-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                         </div>
                     </I18nLink>
                     <I18nLink
                         href={
                             "/our-work/platforms-and-apps?tag=x-formerly-twitter"
                         }
-                        className="bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="flex flex-col justify-between bg-design-cyan hover:bg-design-green p-8 rounded-xl lg:rounded-2xl h-full transition-all duration-300"
                     >
-                        <div className=" w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
+                        <div className="flex justify-center items-center bg-white bg-opacity-30 rounded-full w-11 h-11">
                             <XIcon className="w-5 h-5 fill-white"></XIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
+                            <div className="mt-5 font-extrabold text-white text-xl lg:text-3xl Headline">
                                 {t('x-twitter')}
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="flex-shrink-0 ml-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                         </div>
                     </I18nLink>
                     <I18nLink
                         href={"/our-work/platforms-and-apps?tag=tiktok"}
-                        className="bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="flex flex-col justify-between bg-design-cyan hover:bg-design-green p-8 rounded-xl lg:rounded-2xl h-full transition-all duration-300"
                     >
-                        <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
-                            <TikTokIcon className=" fill-white"></TikTokIcon>
+                        <div className="flex justify-center items-center bg-white bg-opacity-30 rounded-full w-11 h-11 Ellipse59">
+                            <TikTokIcon className="fill-white"></TikTokIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
+                            <div className="mt-5 font-extrabold text-white text-xl lg:text-3xl Headline">
                                 {t('tiktok')}
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="flex-shrink-0 ml-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                         </div>
                     </I18nLink>
                     <I18nLink
                         href={"/our-work/platforms-and-apps?tag=whatsapp"}
-                        className="bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="flex flex-col justify-between bg-design-cyan hover:bg-design-green p-8 rounded-xl lg:rounded-2xl h-full transition-all duration-300"
                     >
-                        <div className="w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
-                            <WhatsappIcon className=" fill-white"></WhatsappIcon>
+                        <div className="flex justify-center items-center bg-white bg-opacity-30 rounded-full w-11 h-11">
+                            <WhatsappIcon className="fill-white"></WhatsappIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
+                            <div className="mt-5 font-extrabold text-white text-xl lg:text-3xl Headline">
                                 {t('whatsapp')}
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="flex-shrink-0 ml-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                         </div>
                     </I18nLink>
                     <I18nLink
                         href={"/our-work/platforms-and-apps?tag=youtube"}
-                        className=" bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="flex flex-col justify-between bg-design-cyan hover:bg-design-green p-8 rounded-xl lg:rounded-2xl h-full transition-all duration-300"
                     >
-                        <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
+                        <div className="flex justify-center items-center bg-white bg-opacity-30 rounded-full w-11 h-11 Ellipse59">
                             <YoutubeIcon className="fill-white"></YoutubeIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
+                            <div className="mt-5 font-extrabold text-white text-xl lg:text-3xl Headline">
                                 {t('youtube')}
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="flex-shrink-0 ml-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                         </div>
                     </I18nLink>
                     <I18nLink
                         href={"/our-work/platforms-and-apps?tag=telegram"}
-                        className=" bg-design-cyan hover:bg-design-green transition-all duration-300 rounded-xl lg:rounded-2xl flex flex-col justify-between h-full p-8"
+                        className="flex flex-col justify-between bg-design-cyan hover:bg-design-green p-8 rounded-xl lg:rounded-2xl h-full transition-all duration-300"
                     >
-                        <div className="Ellipse59 w-11 h-11 flex items-center justify-center bg-white bg-opacity-30 rounded-full">
+                        <div className="flex justify-center items-center bg-white bg-opacity-30 rounded-full w-11 h-11 Ellipse59">
                             <TelegramIcon className="w-5 h-5 fill-white"></TelegramIcon>
                         </div>
                         <div className="flex items-end">
-                            <div className="Headline mt-5 text-white text-xl lg:text-3xl font-extrabold ">
+                            <div className="mt-5 font-extrabold text-white text-xl lg:text-3xl Headline">
                                 {t('telegram')}
                             </div>
-                            <ArrowCircleIcon className="stroke-design-light-green stroke-[1.5] ml-auto flex-shrink-0"></ArrowCircleIcon>
+                            <ArrowCircleIcon className="flex-shrink-0 ml-auto stroke-[1.5] stroke-design-light-green"></ArrowCircleIcon>
                         </div>
                     </I18nLink>
                 </div>
