@@ -2,11 +2,11 @@ import { getApi } from "@/lib/utils/api";
 import { TPost } from "@/lib/utils/types";
 
 export async function fetchData(locale: string) {
-    
+
     const translation = await getApi<any>(`/static-text/${locale}`);
     const translations = (translation as any)['our-work-page'];
 
-    const {data: publicOpinionResearch} = await getApi<TPost[]>(`/posts`, {
+    const { data: publicOpinionResearch } = await getApi<TPost[]>(`/posts`, {
         filters: {
             categories: {
                 slug: {
@@ -24,7 +24,7 @@ export async function fetchData(locale: string) {
         pagination: {
             limit: 3,
         },
-        sort: ['created_date:asc']
+        sort: ['created_date:desc']
     }, {
         next: { tags: ["post"] },
     });
