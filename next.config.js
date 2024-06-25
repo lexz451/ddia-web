@@ -3,7 +3,7 @@ const nextConfig = {
     reactStrictMode: true,
     output: 'standalone',
     images: {
-        formats: ['image/avif', 'image/webp'],
+        formats: ['image/webp'],
         // domains: ['api-ddla.datalis.dev'],
         remotePatterns: [
             {
