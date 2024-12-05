@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@lexz451/next-nprogress':
     specifier: ^0.1.6
@@ -56,8 +60,8 @@ dependencies:
     specifier: ^0.32.6
     version: 0.32.6
   swiper:
-    specifier: ^11.0.1
-    version: 11.0.1
+    specifier: ^11.0.5
+    version: 11.0.5
 
 devDependencies:
   '@svgr/webpack':
@@ -4728,8 +4732,8 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /swiper@11.0.1:
-    resolution: {integrity: sha512-pxVygCS5CVL2pRYSnv8RbjlOC/nN+JrAn5/JM0WBQzIWisv9FYe1s69KEB82TOeqh/T3zc9zks/gxctY6G/XMg==}
+  /swiper@11.0.5:
+    resolution: {integrity: sha512-rhCwupqSyRnWrtNzWzemnBLMoyYuoDgGgspAm/8iBD3jCvAWycPLH4Z3TB0O5520DHLzMx94yUMH/B9Efpa48w==}
     engines: {node: '>= 4.7.0'}
     dev: false
 
@@ -5067,7 +5071,3 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
