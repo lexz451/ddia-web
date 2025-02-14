@@ -29,13 +29,19 @@ export const TAGS = [
     {
         title: "Reports",
         slug: "reports",
-    },
+    }
 ];
 
 export function buildPostsQuery(tag?: string, query?: string) {
     const filters: any = {};
 
-    if (tag) {
+    if (tag == 'public-opinion-research') {
+        filters["categories"] = {
+            slug: {
+                $eq: tag,
+            },
+        };
+    }else if (tag) {
         filters["tags"] = {
             slug: {
                 $eq: tag,
@@ -102,7 +108,14 @@ export async function fetchData({
     });
 
     return {
-        tags: tags,
+        tags: [
+            ...tags,
+            {
+                title: "Research and Analysis",
+                slug: "public-opinion-research",
+                key: "research-and-analysis"
+            }
+        ],
         posts: {
             data: posts.data,
             total: posts.meta.pagination.total || 0,
