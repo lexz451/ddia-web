@@ -64,7 +64,7 @@ export default function Filters({
                     {t("all")}
                 </button>
                 {tags.sort(
-                    (a,b) => t(a.slug).localeCompare(t(b.slug))
+                    (a,b) => t(a.title).localeCompare(t(b.title))
                 ).map((tag: any) => {
                     return (
                         <button
@@ -76,7 +76,7 @@ export default function Filters({
                             }`}
                             onClick={() => handleTagClick(tag)}
                         >
-                            {t(tag.slug)}
+                            {t(tag.key ?? tag.slug)}
                         </button>
                     );
                 })}

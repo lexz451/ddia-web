@@ -28,7 +28,7 @@ function PostItem({ post }: { post: TPost }) {
       <div className="flex items-center">
         <div className="flex-1 self-stretch">
           <span className="block mb-3 uppercase text-design-green text-sm">
-            {post.post_type.name}
+            {t(post.post_type.name.trim().replaceAll(' ', '-').toLowerCase())}
           </span>
           <I18nLink
             href={post.platform_url || `/${post.slug}`}

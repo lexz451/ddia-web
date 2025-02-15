@@ -123,16 +123,16 @@ export default function ResearchAndAnalysis({
                             </div>
                         </div>
                     ))}
-
                 </div>
-                {/* <div className="flex justify-center items-center w-full">
-                    <Link
-                        href={`#`}
+               
+                <div className="flex justify-center items-center w-full mt-10">
+                    <I18nLink
+                        href={`/latest?tag=public-opinion-research`}
                         className="bg-design-green border-none text-white r-btn"
                     >
                         See all
-                    </Link>
-                </div> */}
+                    </I18nLink>
+                </div>
                 <div
                     id="social-listening-and-osint-investigations"
                     className="flex lg:flex-row flex-col items-center gap-4 lg:gap-10 my-20 w-full"
