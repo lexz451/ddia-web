@@ -128,7 +128,7 @@ export default function CapacityBuilding({
                                                 {post.tags
                                                     ?.map(
                                                         (category: any) =>
-                                                            category.title
+                                                            t(category.slug)
                                                     )
                                                     .join(", ")}
                                             </div>
