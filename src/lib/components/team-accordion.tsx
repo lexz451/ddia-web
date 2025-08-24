@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { TServerImage } from "../utils/types";
 import ServerImage from "./server-image";
 import parse from "html-react-parser";
@@ -27,6 +27,7 @@ export default function TeamAccordion({
     locale: string;
 }) {
     const [expanded, setExpanded] = useState<boolean>(false);
+    const accordionRef = useRef<HTMLDivElement>(null);
 
     const localeDescription = descriptions.find(
         (desc) => desc?.language?.code === locale
@@ -35,10 +36,35 @@ export default function TeamAccordion({
         role: role,
     };
 
+    const handleHeaderClick = () => {
+        setExpanded(!expanded);
+    };
+
+    const handleContentClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
+    };
+
+    // Handle clicks outside the accordion
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (accordionRef.current && !accordionRef.current.contains(event.target as Node)) {
+                setExpanded(false);
+            }
+        };
+
+        if (expanded) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [expanded]);
+
     return (
         <div
-            onClick={() => setExpanded(!expanded)}
-            className={`grid cursor-pointer lg:grid-cols-[1fr_5fr] lg:gap-10 py-4 px-5 lg:px-10 rounded-2xl transition-all ease-out duration-300 ${
+            ref={accordionRef}
+            className={`grid lg:grid-cols-[1fr_5fr] lg:gap-10 py-4 px-5 lg:px-10 rounded-2xl transition-all ease-out duration-300 ${
                 expanded
                     ? "text-white bg-design-green"
                     : "text-design-green bg-[#F2EFE8]"
@@ -59,7 +85,10 @@ export default function TeamAccordion({
             </div>
 
             <div className="flex flex-col relative">
-                <div className="flex my-4">
+                <div 
+                    onClick={handleHeaderClick}
+                    className="flex my-4 cursor-pointer"
+                >
                     <div className="">
                         <h3 className="text-3xl font-extrabold font-avenir cursor-pointer">
                             {name}
@@ -103,6 +132,7 @@ export default function TeamAccordion({
                     }] col-[2] transition-all ease-out duration-200`}
                 >
                     <div
+                        onClick={handleContentClick}
                         className={`overflow-y-hidden font-avenir text-white text-lg leading-normal prose ${
                             expanded ? "pb-4" : "pb-0"
                         }`}

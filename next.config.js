@@ -2,6 +2,9 @@
 const nextConfig = {
     reactStrictMode: true,
     output: 'standalone',
+    experimental: {
+        serverComponentsExternalPackages: ['lighthouse', 'chrome-launcher'],
+    },
     images: {
         formats: ['image/webp'],
         // domains: ['api-ddla.datalis.dev'],

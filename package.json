@@ -6,17 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:lighthouse": "node scripts/test-lighthouse.js",
+    "test:lighthouse:local": "node scripts/test-local-lighthouse.js"
   },
   "dependencies": {
     "@lexz451/next-nprogress": "^0.1.6",
     "accept-language": "^3.0.18",
     "body-scroll-lock-upgrade": "^1.0.4",
+    "chrome-launcher": "^1.2.0",
     "gsap": "^3.12.2",
     "html-react-parser": "^5.0.6",
     "i18next": "^23.6.0",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-resources-to-backend": "^1.1.4",
+    "lighthouse": "^11.7.1",
     "next": "latest",
     "next-i18n-router": "^5.0.1",
     "next-seo": "^6.4.0",

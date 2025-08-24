@@ -48,16 +48,21 @@ export default function SearchBar({
     // }
 
     return (
-        <div className="min-w-[200px]">
+        <div className="min-w-[150px]">
             <div
-                className={`group flex overflow-hidden relative ml-auto rounded-full bg-stone-100  outline-design-green outline-[1.5px] ${
+                className={`group flex h-9 overflow-hidden relative ml-auto rounded-full bg-stone-100  outline-design-green outline-[1.5px] ${
                     !!searchQuery ? "outline" : "focus-within:outline"
                 } `}
             >
                 <div className="absolute flex h-full w-[80%] ">
                     <input
+                        id="search-bar"
+                        aria-label="Search"
+                        aria-describedby="search-bar-description"
+                        aria-required="true"
+                        inputMode="search"
                         ref={inputRef}
-                        className={`w-full px-5 my-auto transition-opacity duration-300 bg-transparent outline-none opacity-100 cursor-pointer placeholder:italic group-focus-within:cursor-auto`}
+                        className={`w-full px-5 my-1 transition-opacity duration-300 bg-transparent outline-none opacity-100 cursor-pointer placeholder:italic group-focus-within:cursor-auto`}
                         type="text"
                         placeholder={placeholder || "Insert your search"}
                         value={searchQuery}
@@ -73,7 +78,7 @@ export default function SearchBar({
                 </div>
 
                 <div
-                    className="flex ml-auto rounded-full h-11 w-11"
+                    className="flex ml-auto rounded-full h-9 w-9"
                 >
                     {searchQuery ? (
                         <CloseIcon onClick={clearSearch} className="cursor-pointer m-auto w-5 h-5 fill-design-green"></CloseIcon>
