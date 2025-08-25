@@ -3,7 +3,7 @@ const nextConfig = {
     reactStrictMode: true,
     output: 'standalone',
     experimental: {
-        serverComponentsExternalPackages: ['lighthouse', 'chrome-launcher'],
+        serverComponentsExternalPackages: [],
     },
     images: {
         formats: ['image/webp'],
