@@ -7,10 +7,6 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
       },
-      {
-        userAgent: '*',
-        disallow: '/lighthouse',
-      },
     ],
     // sitemap: 'https://acme.com/sitemap.xml',
   }
