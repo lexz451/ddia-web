@@ -9,6 +9,8 @@ import IndicatorIcon from "@/lib/assets/indicator.svg";
 import { parsePostDate } from "@/lib/utils/helpers";
 import I18nLink from "@/lib/components/I18nLink";
 import { t } from "i18next";
+import Image from "next/image";
+import PlaceholderImage from "@/lib/assets/placeholder.png";
 
 function PostItem({ post }: { post: TPost }) {
   return (
@@ -17,12 +19,16 @@ function PostItem({ post }: { post: TPost }) {
       className="grid lg:grid-cols-[320px_1fr] border-b border-neutral-400 gap-5 lg:gap-14 pb-10"
     >
       <I18nLink href={post.platform_url || `/${post.slug}`} className="">
-        {post.feature_media && (
+        {post.feature_media ? (
           <ServerImage
             {...post.feature_media}
             sizes="320px"
             className="rounded-2xl aspect-[9/6] object-cover w-full"
           ></ServerImage>
+        ) : (
+          <div className="relative  w-full aspect-[9/6]">
+            <Image src={PlaceholderImage} alt="Placeholder" fill sizes="320px" className="rounded-2xl h-full object-cover w-full bg-neutral-200" />
+          </div>
         )}
       </I18nLink>
       <div className="flex items-center">
