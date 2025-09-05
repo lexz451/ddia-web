@@ -5,6 +5,11 @@ import LogoPinned from "@/lib/assets/logo-simple.svg";
 import ArrowCircleIcon from "@/lib/assets/arrow-circle.svg";
 import IndicatorIcon from "@/lib/assets/indicator.svg";
 import GlobeIcon from "@/lib/assets/globe-alt.svg";
+import LinkedInIcon from "@/lib/assets/linked-in.svg";
+import XIcon from "@/lib/assets/x-twitter.svg";
+import FacebookIcon from "@/lib/assets/facebook.svg";
+import YouTubeIcon from "@/lib/assets/yt.svg";
+import InstagramIcon from "@/lib/assets/instagram.svg";
 import { Suspense, useEffect, useRef, useState } from "react";
 import useScroll from "../hooks/useScroll";
 import { usePathname } from "next/navigation";
@@ -315,6 +320,43 @@ export default function Navbar({ locale }: { locale: string }) {
                 onSearch={onSearch}
               ></SearchBar>
             </Suspense>
+            <div className="flex items-center gap-2">
+              <I18nLink
+                aria-label="LinkedIn"
+                href="https://www.linkedin.com/company/digital-democracy-institute-of-the-americas/?viewAsMember=true"
+                className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+              >
+                <LinkedInIcon className="w-4 h-4 fill-black"></LinkedInIcon>
+              </I18nLink>
+              <I18nLink
+                aria-label="X"
+                href="https://twitter.com/DDIAmericas"
+                className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+              >
+                <XIcon className="w-3 h-3 fill-black"></XIcon>
+              </I18nLink>
+              <I18nLink
+                aria-label="Facebook"
+                href="https://www.facebook.com/profile.php?id=61552925446237"
+                className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+              >
+                <FacebookIcon className="w-4 h-4 fill-black"></FacebookIcon>
+              </I18nLink>
+              <I18nLink
+                aria-label="YouTube"
+                href="https://www.youtube.com/@DDIAmericas"
+                className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+              >
+                <YouTubeIcon className="w-4 h-4 fill-black"></YouTubeIcon>
+              </I18nLink>
+              <I18nLink
+                aria-label="Instagram"
+                href="https://www.instagram.com/ddia_org/"
+                className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+              >
+                <InstagramIcon className="w-4 h-4 fill-black"></InstagramIcon>
+              </I18nLink>
+            </div>
             <div className="relative h-6">
               <button
                 aria-label="Toggle locale switcher"
@@ -522,7 +564,52 @@ export default function Navbar({ locale }: { locale: string }) {
                 {t("latest-updates")}
               </I18nLink>
             </div>
+            <div className="w-full py-4">
+              <div className="flex items-center">
+                <IndicatorIcon className="fill-design-yellow mr-3"></IndicatorIcon>
+                <span className="text-sm font-medium uppercase text-design-cyan leading-normal">
+                  Follow Us
+                </span>
+              </div>
+            </div>
           </div>
+          <div className="flex gap-3 justify-center mt-5">
+                <I18nLink
+                  aria-label="LinkedIn"
+                  href="https://www.linkedin.com/company/digital-democracy-institute-of-the-americas/?viewAsMember=true"
+                  className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+                >
+                  <LinkedInIcon className="w-5 h-5 fill-black"></LinkedInIcon>
+                </I18nLink>
+                <I18nLink
+                  aria-label="X"
+                  href="https://twitter.com/DDIAmericas"
+                  className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+                >
+                  <XIcon className="w-4 h-4 fill-black"></XIcon>
+                </I18nLink>
+                <I18nLink
+                  aria-label="Facebook"
+                  href="https://www.facebook.com/profile.php?id=61552925446237"
+                  className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+                >
+                  <FacebookIcon className="w-5 h-5 fill-black"></FacebookIcon>
+                </I18nLink>
+                <I18nLink
+                  aria-label="YouTube"
+                  href="https://www.youtube.com/@DDIAmericas"
+                  className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+                >
+                  <YouTubeIcon className="w-5 h-5 fill-black"></YouTubeIcon>
+                </I18nLink>
+                <I18nLink
+                  aria-label="Instagram"
+                  href="https://www.instagram.com/ddia_org/"
+                  className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+                >
+                  <InstagramIcon className="w-5 h-5 fill-black"></InstagramIcon>
+                </I18nLink>
+              </div>
         </div>
       </div>
     </header>

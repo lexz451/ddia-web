@@ -99,6 +99,7 @@ export async function fetchData({
 
     // filter out tags with expecific categories slugs
     const tags = tagRes.data.filter((t) => {
+        return true;
         const categories = t.categories.map((c: any) => c.slug);
         return !categories.includes("issues-and-narratives") && !categories.includes("platforms-and-apps");
     });

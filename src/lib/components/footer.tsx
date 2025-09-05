@@ -4,6 +4,8 @@ import Logo from "@/lib/assets/logo.svg";
 import FacebookIcon from "@/lib/assets/facebook.svg";
 import XIcon from "@/lib/assets/x-twitter.svg";
 import LinkedInIcon from "@/lib/assets/linked-in.svg";
+import YouTubeIcon from "@/lib/assets/yt.svg";
+import InstagramIcon from "@/lib/assets/instagram.svg";
 import I18nLink from "./I18nLink";
 import useI18n from "../hooks/useI18n";
 import SubmitButton from "./SubmitButton";
@@ -72,6 +74,20 @@ export default function Footer({ locale, translations }: { locale: string, trans
                                     className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
                                 >
                                     <FacebookIcon className="w-6 h-6 fill-black"></FacebookIcon>
+                                </I18nLink>
+                                <I18nLink
+                                    aria-label="YouTube"
+                                    href="https://www.youtube.com/@DDIAmericas"
+                                    className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
+                                >
+                                    <YouTubeIcon className="w-6 h-6 fill-black"></YouTubeIcon>
+                                </I18nLink>
+                                <I18nLink
+                                    aria-label="Instagram"
+                                    href="https://www.instagram.com/ddia_org/"
+                                    className="w-8 h-8 bg-design-light-green rounded-full flex items-center justify-center"
+                                >
+                                    <InstagramIcon className="w-6 h-6 fill-black"></InstagramIcon>
                                 </I18nLink>
                             </div>
                         </div>
