@@ -20,8 +20,6 @@ import initTranslations from "@/i18n";
 import SubscribeBanner from "@/lib/components/SubscribeBanner";
 import { Metadata, ResolvingMetadata } from "next";
 import HtmlContent from "./content";
-import Image from "next/image";
-import PlaceholderImage from "@/lib/assets/placeholder.png";
 
 export async function generateStaticParams() {
   const { data: posts } = await getApi<TPost[]>(`/posts`, {
@@ -114,8 +112,8 @@ export default async function ArticlePage({
         isAccessibleForFree={true}
       />
       <article className="pt-[104px]">
-        <header className="flex flex-col page-container">
-          {post?.feature_media ? (
+        <header className="flex flex-col">
+          {post?.feature_media && (
             <figure>
               <ServerImage
                 {...post.feature_media}
@@ -125,7 +123,7 @@ export default async function ArticlePage({
                   ""
                 }
                 priority={true}
-                className="h-[40vh] lg:h-[60vh] w-full object-cover object-top aspect-[16/9]"
+                className="h-[40vh] lg:h-[60vh] w-full object-cover object-top"
                 sizes="100vw"
               ></ServerImage>
               {!post.inherited_feature_metadata && (
@@ -136,10 +134,6 @@ export default async function ArticlePage({
                 </figcaption>
               )}
             </figure>
-          ) : (
-            <div className="relative h-[40vh] lg:h-[60vh]">
-              <Image src={PlaceholderImage} alt="Placeholder" fill sizes="100vw" className="object-cover w-full bg-neutral-200" />
-            </div>
           )}
           <div className="page-container">
             <div className="flex items-center justify-center my-12">
