@@ -79,14 +79,16 @@ export default function LoadMoreWrapper({
   tag,
   query,
   className,
+  locale,
 }: {
   posts: any[];
   total: number;
   className?: string;
   tag?: string;
   query?: string;
+  locale?: string;
 }) {
-  const postsQuery = buildPostsQuery(tag, query);
+  const postsQuery = buildPostsQuery(tag, query, locale);
 
   return (
     <LoadMore

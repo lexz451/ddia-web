@@ -31,7 +31,7 @@ export default async function LatestUpdates({
 
   const { q, tag } = searchParams;
 
-  const { posts, tags } = await fetchData({ tag, query: q });
+  const { posts, tags } = await fetchData({ tag, query: q, locale });
 
   return (
     <main className="page-container mt-[150px]">
@@ -46,6 +46,7 @@ export default async function LatestUpdates({
           posts={posts?.data || []}
           total={posts?.total || 0}
           className="flex flex-col gap-10"
+          locale={locale}
         ></LoadMoreWrapper>
       </section>
 

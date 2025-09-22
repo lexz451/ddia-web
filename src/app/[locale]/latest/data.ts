@@ -32,7 +32,7 @@ export const TAGS = [
     }
 ];
 
-export function buildPostsQuery(tag?: string, query?: string) {
+export function buildPostsQuery(tag?: string, query?: string, locale?: string) {
     const filters: any = {};
 
     if (tag == 'public-opinion-research') {
@@ -41,7 +41,7 @@ export function buildPostsQuery(tag?: string, query?: string) {
                 $eq: tag,
             },
         };
-    }else if (tag) {
+    } else if (tag) {
         filters["tags"] = {
             slug: {
                 $eq: tag,
@@ -52,6 +52,14 @@ export function buildPostsQuery(tag?: string, query?: string) {
             slug: {
                 $in: TAGS.map((t) => t.slug),
             },
+        };
+    }
+
+    if (locale && locale == "en") {
+        filters["language"] = {
+            code: {
+                $eq: locale,
+            }
         };
     }
 
@@ -77,6 +85,7 @@ export function buildPostsQuery(tag?: string, query?: string) {
             "authors",
             "tags",
             "categories",
+            "language"
         ],
         pagination: {
             limit: 8,
@@ -88,9 +97,11 @@ export function buildPostsQuery(tag?: string, query?: string) {
 export async function fetchData({
     tag,
     query,
+    locale,
 }: {
     tag?: string;
     query?: string;
+    locale?: string;
 }) {
     const tagRes = await getApi<any[]>(`/tags`, {
         populate: ["categories"],
@@ -100,13 +111,15 @@ export async function fetchData({
     // filter out tags with expecific categories slugs
     const tags = tagRes.data.filter((t) => {
         return true;
-        const categories = t.categories.map((c: any) => c.slug);
-        return !categories.includes("issues-and-narratives") && !categories.includes("platforms-and-apps");
+        // const categories = t.categories.map((c: any) => c.slug);
+        // return !categories.includes("issues-and-narratives") && !categories.includes("platforms-and-apps");
     });
 
-    const posts = await getApi<TPost[]>(`/posts`, buildPostsQuery(tag, query), {
+    const posts = await getApi<TPost[]>(`/posts`, buildPostsQuery(tag, query, locale || "en"), {
         next: { tags: ["post"] },
     });
+
+    console.log(posts.data);
 
     return {
         tags: [
