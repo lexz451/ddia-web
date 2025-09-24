@@ -5,7 +5,7 @@ import { getApi } from "@/lib/utils/api";
 import { TPost } from "@/lib/utils/types";
 import { notFound } from "next/navigation";
 
-async function fetchData() {
+async function fetchData(locale?: string) {
     const { data: faqs } = await getApi<any[]>(
         "/faqs",
         {},
@@ -20,6 +20,13 @@ async function fetchData() {
                 front_page: {
                     $eq: true,
                 },
+                ...(locale && locale == "en" ? {
+                    language: {
+                        code: {
+                            $eq: locale,
+                        }
+                    }
+                } : {}),
             },
             pagination: {
                 limit: 3,
@@ -34,11 +41,15 @@ async function fetchData() {
     return { posts, faqs };
 }
 
-export default async function FAQ() {
+export default async function FAQ({
+    params: { locale },
+}: {
+    params: { locale: string };
+}) {
     // temp disabled
     return notFound();
 
-    const { posts: latestPosts, faqs } = await fetchData();
+    const { posts: latestPosts, faqs } = await fetchData(locale);
 
     return (
         <main className="bg-design-light">

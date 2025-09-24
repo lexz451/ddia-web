@@ -38,7 +38,7 @@ export async function generateMetadata(
   { params: { slug, locale } }: { params: { slug: string; locale: string } },
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  const { post } = await fetchData(slug);
+  const { post } = await fetchData(slug, locale);
   if (!post)
     return {
       title: "About Us | DDIA - Digital Democracy Institute of the Americas",
@@ -82,7 +82,7 @@ export default async function ArticlePage({
 }: {
   params: { slug: string; locale: string };
 }) {
-  const { post, latestPosts, related } = await fetchData(slug);
+  const { post, latestPosts, related } = await fetchData(slug, locale);
 
   const { t } = await initTranslations(locale);
 

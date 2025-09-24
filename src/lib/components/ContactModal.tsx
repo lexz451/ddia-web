@@ -30,7 +30,6 @@ export default function ContactModal({
         e.preventDefault();
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
-        console.log(data);
         const response = await fetch("/api/contact", {
             method: "POST",
             body: JSON.stringify(data),

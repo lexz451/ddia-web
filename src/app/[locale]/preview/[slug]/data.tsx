@@ -1,7 +1,7 @@
 import { TPost } from "@/lib/utils/types";
 import { getApi } from "@/lib/utils/api";
 
-export async function fetchData(slug: string) {
+export async function fetchData(slug: string, locale?: string) {
   const {
     data: [post],
   } = await getApi<TPost[]>(
@@ -14,6 +14,13 @@ export async function fetchData(slug: string) {
         content: {
           $ne: null,
         },
+        ...(locale && locale == "en" ? {
+          language: {
+            code: {
+              $eq: locale,
+            }
+          }
+        } : {}),
       },
       publicationState: "preview",
       populate: ["feature_media", "post_type", "authors", "categories"],
@@ -37,6 +44,13 @@ export async function fetchData(slug: string) {
             $eq: postCategory,
           },
         },
+        ...(locale && locale == "en" ? {
+          language: {
+            code: {
+              $eq: locale,
+            }
+          }
+        } : {}),
       },
       pagination: {
         limit: 3,
@@ -59,6 +73,13 @@ export async function fetchData(slug: string) {
         front_page: {
           $eq: true,
         },
+        ...(locale && locale == "en" ? {
+          language: {
+            code: {
+              $eq: locale,
+            }
+          }
+        } : {}),
       },
       pagination: {
         limit: 3,

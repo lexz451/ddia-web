@@ -119,7 +119,6 @@ export async function fetchData({
         next: { tags: ["post"] },
     });
 
-    console.log(posts.data);
 
     return {
         tags: [

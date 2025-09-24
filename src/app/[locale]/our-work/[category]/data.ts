@@ -1,7 +1,7 @@
 import { getApi } from "@/lib/utils/api";
 import { TPost } from "@/lib/utils/types";
 
-export function buildPostsQuery(category: string, tag?: string, query?: string) {
+export function buildPostsQuery(category: string, tag?: string, query?: string, locale?: string) {
     return {
         filters: {
             categories: {
@@ -26,6 +26,13 @@ export function buildPostsQuery(category: string, tag?: string, query?: string) 
                     }
                 }
             ],
+            ...(locale && locale == "en" ? {
+                language: {
+                    code: {
+                        $eq: locale,
+                    }
+                }
+            } : {}),
         },
         populate: [
             "feature_media",
@@ -45,7 +52,8 @@ export function buildPostsQuery(category: string, tag?: string, query?: string) 
 export async function fetchData(
     category: string,
     tag?: string,
-    query?: string) {
+    query?: string,
+    locale?: string) {
 
     const { data: [categoryData] } = await getApi<any[]>('/categories', {
         filters: {
@@ -63,7 +71,7 @@ export async function fetchData(
     })
 
     
-    const posts = await getApi<TPost[]>(`/posts`, buildPostsQuery(category, tag, query), {
+    const posts = await getApi<TPost[]>(`/posts`, buildPostsQuery(category, tag, query, locale), {
         next: { tags: ["post"] },
     });
 

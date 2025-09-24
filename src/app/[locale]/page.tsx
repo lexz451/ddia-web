@@ -16,7 +16,14 @@ async function fetchData(locale: string) {
             filters: {
                 front_page: {
                     $eq: true,
-                }
+                },
+                ...(locale && locale == "en" ? {
+                    language: {
+                        code: {
+                            $eq: locale,
+                        }
+                    }
+                } : {}),
             },
             pagination: {
                 limit: 3,
