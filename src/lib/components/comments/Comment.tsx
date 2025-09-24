@@ -13,8 +13,6 @@ export const Comment = ({
     const [showReplyForm, setShowReplyForm] = useState(false);
     const [busy, setBusy] = useState(false);
 
-    console.log(comment);
-
     const onSubmitForm = async (event: any) => {
         setBusy(true);
         await postComment(event);

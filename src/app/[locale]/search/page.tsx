@@ -25,12 +25,14 @@ export const metadata: Metadata = {
 
 export default async function SearchPage({
     searchParams,
+    params: { locale },
 }: {
     searchParams: { [key: string]: string | undefined };
+    params: { locale: string };
 }) {
     const { q } = searchParams;
 
-    const { posts } = await fetchData({ query: q });
+    const { posts } = await fetchData({ query: q, locale });
 
     return (
         <main className="page-container mt-[150px]">

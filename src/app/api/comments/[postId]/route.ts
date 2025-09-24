@@ -28,7 +28,6 @@ export async function GET(req: Request, {
 export async function POST(req: NextRequest, { params }: { params: { postId: string }}) {
     const { postId } = params;
     const data = await req.json();
-    console.log(data);
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/comments/api::post.post:${postId}`, {
         method: 'POST',
         body: JSON.stringify(data),

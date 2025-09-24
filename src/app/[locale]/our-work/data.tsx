@@ -12,7 +12,14 @@ export async function fetchData(locale: string) {
                 slug: {
                     $eq: 'public-opinion-research'
                 }
-            }
+            },
+            ...(locale && locale == "en" ? {
+                language: {
+                    code: {
+                        $eq: locale,
+                    }
+                }
+            } : {}),
         },
         populate: [
             "feature_media",
@@ -35,7 +42,14 @@ export async function fetchData(locale: string) {
                 id: {
                     $eq: 2
                 }
-            }
+            },
+            ...(locale && locale == "en" ? {
+                language: {
+                    code: {
+                        $eq: locale,
+                    }
+                }
+            } : {}),
         },
         populate: [
             "feature_media",
@@ -63,7 +77,14 @@ export async function fetchData(locale: string) {
                 slug: {
                     $eq: 'workshops-and-events'
                 }
-            }
+            },
+            ...(locale && locale == "en" ? {
+                language: {
+                    code: {
+                        $eq: locale,
+                    }
+                }
+            } : {}),
         },
         populate: [
             "feature_media",
@@ -96,7 +117,14 @@ export async function fetchData(locale: string) {
                 slug: {
                     $eq: 'what-we-are-reading'
                 }
-            }
+            },
+            ...(locale && locale == "en" ? {
+                language: {
+                    code: {
+                        $eq: locale,
+                    }
+                }
+            } : {}),
         },
         populate: [
             "feature_media",
@@ -129,7 +157,14 @@ export async function fetchData(locale: string) {
                 slug: {
                     $eq: 'resources'
                 }
-            }
+            },
+            ...(locale && locale == "en" ? {
+                language: {
+                    code: {
+                        $eq: locale,
+                    }
+                }
+            } : {}),
         },
         populate: [
             "feature_media",
@@ -152,7 +187,14 @@ export async function fetchData(locale: string) {
                 id: {
                     $eq: 6
                 }
-            }
+            },
+            ...(locale && locale == "en" ? {
+                language: {
+                    code: {
+                        $eq: locale,
+                    }
+                }
+            } : {}),
         },
         populate: [
             "feature_media",
