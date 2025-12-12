@@ -47,13 +47,14 @@ export function buildPostsQuery(tag?: string, query?: string, locale?: string) {
                 $eq: tag,
             },
         };
-    } else {
-        filters["tags"] = {
-            slug: {
-                $in: TAGS.map((t) => t.slug),
-            },
-        };
-    }
+    } 
+    // else {
+    //     filters["tags"] = {
+    //         slug: {
+    //             $in: TAGS.map((t) => t.slug),
+    //         },
+    //     };
+    // }
 
     if (locale && locale == "en") {
         filters["language"] = {
@@ -103,6 +104,8 @@ export async function fetchData({
     query?: string;
     locale?: string;
 }) {
+
+
     const tagRes = await getApi<any[]>(`/tags`, {
         populate: ["categories"],
         sort: ["title:asc"],
