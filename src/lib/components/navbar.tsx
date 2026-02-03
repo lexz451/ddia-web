@@ -244,20 +244,22 @@ export default function Navbar({ locale }: { locale: string }) {
                         </div>
                       </I18nLink>
                       <I18nLink
-                        href={"/our-work#workshops-and-events"}
-                        className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
-                      >
-                        {t("workshops-and-events")}
-                      </I18nLink>
-                      <I18nLink
                         href={"/our-work#resources-and-tools"}
-                        className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
+                        className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                       >
                         {t("external-resources")}
                       </I18nLink>
                       <I18nLink className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal" href={"/our-work#what-we-are-reading"}>
                         {t("what-we-are-reading")}
                       </I18nLink>
+                      <I18nLink
+                        href={"/our-work#workshops-and-events"}
+                        className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
+                      >
+                        {t("workshops-and-events")}
+                      </I18nLink>
+                      
+                    
                       
                     </div>
                   </div>
@@ -471,37 +473,27 @@ export default function Navbar({ locale }: { locale: string }) {
                   </I18nLink>
                   <I18nLink
                     onClick={onMobileNavbarClick}
-                    href={"/our-work#workshops-and-events"}
-                    className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
-                  >
-                    {t("workshops-and-events")}
-                  </I18nLink>
-                  <I18nLink
-                    onClick={onMobileNavbarClick}
                     href={"/our-work#resources-and-tools"}
-                    className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
+                    className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
                   >
                     {t("external-resources")}
                   </I18nLink>
-                  <ul className="list-disc ml-4 mt-2">
-                    <li className="text-white hover:text-[#6ABDC2] text-sm font-medium leading-normal">
-                      <I18nLink
-                        onClick={onMobileNavbarClick}
-                        href={"/our-work#what-we-are-reading"}
-                      >
-                        {t("what-we-are-reading")}
-                      </I18nLink>
-                    </li>
-                    {/* <li className="text-white hover:text-[#6ABDC2] text-sm font-medium  leading-normal">
-                                            <I18nLink
-                                                href={
-                                                    "/our-work#additional-resources"
-                                                }
-                                            >
-                                                Additional Resources
-                                            </I18nLink>
-                                        </li> */}
-                  </ul>
+                  <I18nLink
+                    onClick={onMobileNavbarClick}
+                    href={"/our-work#what-we-are-reading"}
+                    className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
+                  >
+                    {t("what-we-are-reading")}
+                  </I18nLink>
+                  <I18nLink
+                    onClick={onMobileNavbarClick}
+                    href={"/our-work#workshops-and-events"}
+                    className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
+                  >
+                    {t("workshops-and-events")}
+                  </I18nLink>
+                  
+                 
                 </div>
                 <div className="flex flex-col">
                   <I18nLink
