@@ -149,9 +149,9 @@ export async function fetchData(locale: string) {
                 }
             },
             categories: {
-                slug: {
-                    $eq: 'resources-and-tools'
-                }
+                // slug: {
+                //     $eq: 'resources-and-tools'
+                // }
             },
             tags: {
                 slug: {
