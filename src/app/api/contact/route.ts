@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
             body: JSON.stringify(body),
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${process.env.FORMS_TOKEN}`,
+                Authorization: `Bearer ${process.env.API_TOKEN}`,
             },
         }
     );

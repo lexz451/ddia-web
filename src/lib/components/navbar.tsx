@@ -107,39 +107,33 @@ export default function Navbar({ locale }: { locale: string }) {
     <header
       ref={scrollLockTarget}
       id="navbar"
-      className={`navbar h-auto absolute transition-colors duration-100 lg:duration-300 will-change-transform left-0 right-0 mx-auto z-50 ${
-        isOpen
+      className={`navbar h-auto absolute transition-colors duration-100 lg:duration-300 will-change-transform left-0 right-0 mx-auto z-50 ${isOpen
           ? "bg-design-light h-screen overflow-y-auto"
           : "bg-transparent duration-0"
-      } `}
+        } `}
     >
       <nav
-        className={`navbar-nav  ${
-          isScrolled ? "bg-design-light bg-opacity-70 backdrop-blur-sm" : ""
-        }`}
+        className={`navbar-nav  ${isScrolled ? "bg-design-light bg-opacity-70 backdrop-blur-sm" : ""
+          }`}
       >
         <div className="page-container flex items-center lg:items-stretch">
           <div
-            className={`navbar-brand transition-all duration-300 ease-in-out flex-1 ${
-              isScrolled ? "py-2" : "py-3"
-            }`}
+            className={`navbar-brand transition-all duration-300 ease-in-out flex-1 ${isScrolled ? "py-2" : "py-3"
+              }`}
           >
             <I18nLink
               aria-label="home"
               href="/"
-              className={`brand-logo block relative transition-all duration-300 ease-in-out ${
-                isScrolled ? "w-24 h-16" : "w-32 h-20"
-              } ${isHome ? "active" : ""}`}
+              className={`brand-logo block relative transition-all duration-300 ease-in-out ${isScrolled ? "w-24 h-16" : "w-32 h-20"
+                } ${isHome ? "active" : ""}`}
             >
               <Logo
-                className={`absolute transition-all duration-300 ease-in-out brand-expanded ${
-                  isScrolled ? "opacity-0" : "opacity-100"
-                }`}
+                className={`absolute transition-all duration-300 ease-in-out brand-expanded ${isScrolled ? "opacity-0" : "opacity-100"
+                  }`}
               ></Logo>
               <LogoPinned
-                className={`absolute transition-all duration-300 ease-in-out brand-collapsed ${
-                  isScrolled ? "opacity-100" : "opacity-0"
-                }`}
+                className={`absolute transition-all duration-300 ease-in-out brand-collapsed ${isScrolled ? "opacity-100" : "opacity-0"
+                  }`}
               ></LogoPinned>
             </I18nLink>
           </div>
@@ -147,9 +141,8 @@ export default function Navbar({ locale }: { locale: string }) {
             <li className="flex">
               <I18nLink
                 href={"/about-us"}
-                className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
-                  isAboutUs ? "active" : ""
-                }`}
+                className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${isAboutUs ? "active" : ""
+                  }`}
               >
                 <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
@@ -161,9 +154,8 @@ export default function Navbar({ locale }: { locale: string }) {
             <li className="flex">
               <I18nLink
                 href={"/our-work"}
-                className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
-                  isOurWork ? "active" : ""
-                }`}
+                className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${isOurWork ? "active" : ""
+                  }`}
               >
                 <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
@@ -171,9 +163,8 @@ export default function Navbar({ locale }: { locale: string }) {
                 </div>
               </I18nLink>
               <div
-                className={`overflow-menu bg-design-green absolute left-0 right-0 opacity-0 h-0 overflow-hidden transition-all duration-200 ease-in-out ${
-                  isScrolled ? "top-[80px]" : "top-[104px]"
-                }`}
+                className={`overflow-menu bg-design-green absolute left-0 right-0 opacity-0 h-0 overflow-hidden transition-all duration-200 ease-in-out ${isScrolled ? "top-[80px]" : "top-[104px]"
+                  }`}
               >
                 <div className="page-container py-10">
                   <div className="grid grid-cols-3 gap-20">
@@ -253,33 +244,23 @@ export default function Navbar({ locale }: { locale: string }) {
                         </div>
                       </I18nLink>
                       <I18nLink
-                        href={"/our-work#workshops-and-events"}
-                        className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
-                      >
-                        {t("workshops-and-events")}
-                      </I18nLink>
-                      <I18nLink
                         href={"/our-work#resources-and-tools"}
-                        className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
+                        className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
                       >
                         {t("external-resources")}
                       </I18nLink>
-                      <ul className="list-disc ml-4 mt-2">
-                        <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
-                          <I18nLink href={"/our-work#what-we-are-reading"}>
-                            {t("what-we-are-reading")}
-                          </I18nLink>
-                        </li>
-                        {/* <li className="text-white hover:text-[#6ABDC2] text-sm font-normal  leading-normal">
-                                                    <I18nLink
-                                                        href={
-                                                            "/our-work#additional-resources"
-                                                        }
-                                                    >
-                                                        Additional Resources
-                                                    </I18nLink>
-                                                </li> */}
-                      </ul>
+                      <I18nLink className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal" href={"/our-work#what-we-are-reading"}>
+                        {t("what-we-are-reading")}
+                      </I18nLink>
+                      <I18nLink
+                        href={"/our-work#workshops-and-events"}
+                        className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-normal  uppercase leading-normal"
+                      >
+                        {t("workshops-and-events")}
+                      </I18nLink>
+                      
+                    
+                      
                     </div>
                   </div>
                 </div>
@@ -288,9 +269,8 @@ export default function Navbar({ locale }: { locale: string }) {
             <li className="flex">
               <I18nLink
                 href={"/team"}
-                className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
-                  isTeam ? "active" : ""
-                }`}
+                className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${isTeam ? "active" : ""
+                  }`}
               >
                 <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
@@ -301,9 +281,8 @@ export default function Navbar({ locale }: { locale: string }) {
             <li className="flex">
               <I18nLink
                 href={"/latest"}
-                className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${
-                  isLatest ? "active" : ""
-                }`}
+                className={`flex items-start my-auto text-center text-design-green text-sm font-medium  uppercase px-4 ${isLatest ? "active" : ""
+                  }`}
               >
                 <IndicatorIcon className="absolute -ml-4 indicator opacity-0 transition-all duration-100 ease-in-out mr-2 mt-1"></IndicatorIcon>
                 <div className="text border-b-2 mt-1 border-transparent transition-all duration-100 ease-in-out">
@@ -367,11 +346,10 @@ export default function Navbar({ locale }: { locale: string }) {
 
               <div
                 ref={langDialog}
-                className={`absolute right-0 mt-2 px-5 py-2 rounded-lg shadow-lg transition-all duration-300 bg-white ${
-                  showLocaleSwitch
+                className={`absolute right-0 mt-2 px-5 py-2 rounded-lg shadow-lg transition-all duration-300 bg-white ${showLocaleSwitch
                     ? "opacity-100 visible"
                     : "opacity-0 collapse"
-                }`}
+                  }`}
               >
                 <I18nSwitcher currentLocale={locale}></I18nSwitcher>
               </div>
@@ -387,9 +365,8 @@ export default function Navbar({ locale }: { locale: string }) {
         </div>
       </nav>
       <div
-        className={`mobile-menu transition-all duration-300 delay-100 ${
-          isOpen ? "opacity-100 visible" : "opacity-0 collapse h-0 delay-0"
-        }`}
+        className={`mobile-menu transition-all duration-300 delay-100 ${isOpen ? "opacity-100 visible" : "opacity-0 collapse h-0 delay-0"
+          }`}
       >
         <div className="page-container mt-10">
           <Suspense fallback={null}>
@@ -496,37 +473,27 @@ export default function Navbar({ locale }: { locale: string }) {
                   </I18nLink>
                   <I18nLink
                     onClick={onMobileNavbarClick}
-                    href={"/our-work#workshops-and-events"}
-                    className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
-                  >
-                    {t("workshops-and-events")}
-                  </I18nLink>
-                  <I18nLink
-                    onClick={onMobileNavbarClick}
                     href={"/our-work#resources-and-tools"}
-                    className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
+                    className="mt-5 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
                   >
                     {t("external-resources")}
                   </I18nLink>
-                  <ul className="list-disc ml-4 mt-2">
-                    <li className="text-white hover:text-[#6ABDC2] text-sm font-medium leading-normal">
-                      <I18nLink
-                        onClick={onMobileNavbarClick}
-                        href={"/our-work#what-we-are-reading"}
-                      >
-                        {t("what-we-are-reading")}
-                      </I18nLink>
-                    </li>
-                    {/* <li className="text-white hover:text-[#6ABDC2] text-sm font-medium  leading-normal">
-                                            <I18nLink
-                                                href={
-                                                    "/our-work#additional-resources"
-                                                }
-                                            >
-                                                Additional Resources
-                                            </I18nLink>
-                                        </li> */}
-                  </ul>
+                  <I18nLink
+                    onClick={onMobileNavbarClick}
+                    href={"/our-work#what-we-are-reading"}
+                    className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
+                  >
+                    {t("what-we-are-reading")}
+                  </I18nLink>
+                  <I18nLink
+                    onClick={onMobileNavbarClick}
+                    href={"/our-work#workshops-and-events"}
+                    className="mt-2 text-white hover:text-[#6ABDC2] text-sm font-medium  uppercase leading-normal"
+                  >
+                    {t("workshops-and-events")}
+                  </I18nLink>
+                  
+                 
                 </div>
                 <div className="flex flex-col">
                   <I18nLink
@@ -574,42 +541,42 @@ export default function Navbar({ locale }: { locale: string }) {
             </div>
           </div>
           <div className="flex gap-3 justify-center mt-5">
-                <I18nLink
-                  aria-label="LinkedIn"
-                  href="https://www.linkedin.com/company/digital-democracy-institute-of-the-americas/?viewAsMember=true"
-                  className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
-                >
-                  <LinkedInIcon className="w-5 h-5 fill-black"></LinkedInIcon>
-                </I18nLink>
-                <I18nLink
-                  aria-label="X"
-                  href="https://twitter.com/DDIAmericas"
-                  className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
-                >
-                  <XIcon className="w-4 h-4 fill-black"></XIcon>
-                </I18nLink>
-                <I18nLink
-                  aria-label="Facebook"
-                  href="https://www.facebook.com/profile.php?id=61552925446237"
-                  className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
-                >
-                  <FacebookIcon className="w-5 h-5 fill-black"></FacebookIcon>
-                </I18nLink>
-                <I18nLink
-                  aria-label="YouTube"
-                  href="https://www.youtube.com/@DDIAmericas"
-                  className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
-                >
-                  <YouTubeIcon className="w-5 h-5 fill-black"></YouTubeIcon>
-                </I18nLink>
-                <I18nLink
-                  aria-label="Instagram"
-                  href="https://www.instagram.com/ddia_org/"
-                  className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
-                >
-                  <InstagramIcon className="w-5 h-5 fill-black"></InstagramIcon>
-                </I18nLink>
-              </div>
+            <I18nLink
+              aria-label="LinkedIn"
+              href="https://www.linkedin.com/company/digital-democracy-institute-of-the-americas/?viewAsMember=true"
+              className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+            >
+              <LinkedInIcon className="w-5 h-5 fill-black"></LinkedInIcon>
+            </I18nLink>
+            <I18nLink
+              aria-label="X"
+              href="https://twitter.com/DDIAmericas"
+              className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+            >
+              <XIcon className="w-4 h-4 fill-black"></XIcon>
+            </I18nLink>
+            <I18nLink
+              aria-label="Facebook"
+              href="https://www.facebook.com/profile.php?id=61552925446237"
+              className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+            >
+              <FacebookIcon className="w-5 h-5 fill-black"></FacebookIcon>
+            </I18nLink>
+            <I18nLink
+              aria-label="YouTube"
+              href="https://www.youtube.com/@DDIAmericas"
+              className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+            >
+              <YouTubeIcon className="w-5 h-5 fill-black"></YouTubeIcon>
+            </I18nLink>
+            <I18nLink
+              aria-label="Instagram"
+              href="https://www.instagram.com/ddia_org/"
+              className="w-10 h-10 bg-design-light-green rounded-full flex items-center justify-center hover:bg-design-green transition-colors duration-200"
+            >
+              <InstagramIcon className="w-5 h-5 fill-black"></InstagramIcon>
+            </I18nLink>
+          </div>
         </div>
       </div>
     </header>

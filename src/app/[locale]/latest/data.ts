@@ -19,7 +19,7 @@ export const TAGS = [
         slug: "resources",
     },
     {
-        title: "Workshops and Events",
+        title: "Events and Engagements",
         slug: "events",
     },
     {
