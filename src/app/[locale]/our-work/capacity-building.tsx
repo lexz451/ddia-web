@@ -159,12 +159,12 @@ export default function CapacityBuilding({
                     </I18nLink>
 
                     <div
-                        id="what-we-are-reading"
+                        id="trainings-and-workshops"
                         className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 my-10 lg:my-20 w-full"
                     >
                         <div className="w-full lg:flex-1 h-[1px] bg-design-light bg-opacity-50"></div>
                         <div className="IntroductoryText text-center text-design-light text-3xl font-extrabold  leading-7">
-                            {t("what-we-are-reading")}
+                            {t("trainings-and-workshops")}
                         </div>
                         <div className="w-full lg:flex-1 h-[1px] bg-design-light bg-opacity-50"></div>
                     </div>
@@ -250,7 +250,7 @@ export default function CapacityBuilding({
 
                     {capacity.resourcesAndTools.whatWeAreReading.length > 0 && (
                         <I18nLink
-                            href={`/latest?tag=what-we-are-reading`}
+                            href={`/latest?tag=trainings-and-workshops`}
                             className="r-btn border-none text-white bg-design-green mt-10"
                         >
                             {t("see-all")}

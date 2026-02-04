@@ -115,7 +115,7 @@ export async function fetchData(locale: string) {
             },
             tags: {
                 slug: {
-                    $eq: 'what-we-are-reading'
+                    $eq: 'trainings-and-workshops'
                 }
             },
             ...(locale && locale == "en" ? {
