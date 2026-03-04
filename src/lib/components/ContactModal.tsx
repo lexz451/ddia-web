@@ -2,8 +2,17 @@
 import useI18n from "../hooks/useI18n";
 import SubmitButton from "./SubmitButton";
 import CloseIcon from "@/lib/assets/close.svg";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ClientPortal from "./ClientPortal";
+
+declare global {
+    interface Window {
+        turnstile?: {
+            render: (container: HTMLElement, options: Record<string, unknown>) => string;
+            reset: (widgetId?: string) => void;
+        };
+    }
+}
 
 export default function ContactModal({
     locale,
@@ -21,14 +30,71 @@ export default function ContactModal({
     const { t } = useI18n(locale);
 
     const formRef = useRef<HTMLFormElement>(null);
+    const turnstileRef = useRef<HTMLDivElement>(null);
+    const widgetIdRef = useRef<string | null>(null);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
     const [pending, setPending] = useState(false);
+    const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (!showModal) {
+            if (widgetIdRef.current && window.turnstile) {
+                window.turnstile.reset(widgetIdRef.current);
+            }
+            widgetIdRef.current = null;
+            setTurnstileToken(null);
+            return;
+        }
+
+        let cancelled = false;
+
+        const renderTurnstile = () => {
+            if (cancelled || !turnstileRef.current) return;
+            if (!window.turnstile) {
+                setTimeout(renderTurnstile, 200);
+                return;
+            }
+            if (widgetIdRef.current) return;
+
+            const sitekey =
+                process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY;
+            if (!sitekey) return;
+
+            widgetIdRef.current = window.turnstile.render(
+                turnstileRef.current,
+                {
+                    sitekey,
+                    callback: (token: string) => {
+                        setTurnstileToken(token);
+                    },
+                    "expired-callback": () => {
+                        setTurnstileToken(null);
+                    },
+                    "error-callback": () => {
+                        setTurnstileToken(null);
+                    },
+                }
+            );
+        };
+
+        renderTurnstile();
+
+        return () => {
+            cancelled = true;
+        };
+    }, [showModal]);
 
     const onSubmit = async (e: any) => {
         setPending(true);
         e.preventDefault();
+        if (!turnstileToken) {
+            setError(true);
+            setPending(false);
+            return;
+        }
         const formData = new FormData(e.target);
+        formData.set("cf-turnstile-response", turnstileToken);
         const data = Object.fromEntries(formData);
         const response = await fetch("/api/contact", {
             method: "POST",
@@ -74,11 +140,8 @@ export default function ContactModal({
                         </div>
 
                         <div
+                            ref={turnstileRef}
                             className="cf-turnstile checkbox mt-4"
-                            data-sitekey={
-                                process.env
-                                    .NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY
-                            }
                         />
 
                         <input
