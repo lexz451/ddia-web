@@ -44,6 +44,8 @@ export default function ContactModal({
             }
             widgetIdRef.current = null;
             setTurnstileToken(null);
+            setError(false);
+            setSubmitted(false);
             return;
         }
 
