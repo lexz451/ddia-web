@@ -1,5 +1,6 @@
 FROM node:22.13-alpine AS base
-RUN corepack enable && corepack prepare pnpm@11.1.3 --activate
+# Avoid Corepack keyid mismatch: bundled Corepack cannot verify current pnpm signatures.
+RUN npm install -g pnpm@11.1.3
 
 # 1. Install dependencies only when needed
 FROM base AS deps
