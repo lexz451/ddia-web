@@ -1,6 +1,8 @@
 import FacebookIcon from "@/lib/assets/facebook.svg";
 import XIcon from "@/lib/assets/x-twitter.svg";
 import LinkedInIcon from "@/lib/assets/linked-in.svg";
+import YouTubeIcon from "@/lib/assets/yt.svg";
+import InstagramIcon from "@/lib/assets/instagram.svg";
 import LogoCircle from "@/lib/assets/logo-circle.svg";
 import I18nLink from "@/lib/components/I18nLink";
 import initTranslations from "@/i18n";
@@ -87,12 +89,14 @@ export default async function ContactUs({
                         <p>{t('follow-us')}</p>
                         <div className="SocialIcons flex gap-3 mt-4">
                             <I18nLink
+                                aria-label="LinkedIn"
                                 href="https://www.linkedin.com/company/digital-democracy-institute-of-the-americas/?viewAsMember=true"
                                 className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
                             >
                                 <LinkedInIcon className="w-6 h-6 fill-design-light"></LinkedInIcon>
                             </I18nLink>
                             <I18nLink
+                                aria-label="X"
                                 href="https://twitter.com/DDIAmericas"
                                 className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
                             >
@@ -100,10 +104,25 @@ export default async function ContactUs({
                             </I18nLink>
 
                             <I18nLink
+                                aria-label="Facebook"
                                 href="https://www.facebook.com/profile.php?id=61552925446237"
                                 className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
                             >
                                 <FacebookIcon className="w-6 h-6 fill-design-light"></FacebookIcon>
+                            </I18nLink>
+                            <I18nLink
+                                aria-label="YouTube"
+                                href="https://www.youtube.com/@DDIAmericas"
+                                className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
+                            >
+                                <YouTubeIcon className="w-6 h-6 fill-design-light"></YouTubeIcon>
+                            </I18nLink>
+                            <I18nLink
+                                aria-label="Instagram"
+                                href="https://www.instagram.com/ddia_org/"
+                                className="w-8 h-8 bg-design-green rounded-full flex items-center justify-center"
+                            >
+                                <InstagramIcon className="w-6 h-6 fill-design-light"></InstagramIcon>
                             </I18nLink>
                         </div>
                     </div>
