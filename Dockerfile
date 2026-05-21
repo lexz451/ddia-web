@@ -12,14 +12,18 @@ RUN apk add --no-cache wget
 
 WORKDIR /app
 
+ENV CI=true
+
 # Install dependencies based on the preferred package manager
-COPY package.json pnpm-lock.yaml* ./
+COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml ./
 RUN pnpm install --frozen-lockfile
 
 
 # 2. Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
+
+ENV CI=true
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN pnpm run build
@@ -27,6 +31,8 @@ RUN pnpm run build
 # 3. Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app
+
+ENV CI=true
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
